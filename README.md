@@ -1,115 +1,227 @@
-﻿# O-Beat
+# O-Beat — Fast, Privacy-First Music Player for Android
 
-<img src="./assets/O-beat.webp" height="88" alt="O-Beat app icon">
-
-A Material 3 YouTube Music client & local music player for Android
-
-[![Latest release](https://img.shields.io/github/v/release/obeat/obeat?include_prereleases)](https://github.com/obeat/obeat/releases)
-[![License](https://img.shields.io/github/license/obeat/obeat)](https://www.gnu.org/licenses/gpl-3.0)
-[![Downloads](https://img.shields.io/github/downloads/obeat/obeat/total)](https://github.com/obeat/obeat/releases)
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/16cdbdb3-b3ac-4523-aa0d-3a97527ab3c9" />
 
 
-<!-- use  "â €â €" for spacing -->
-[<img src="assets/badge_github.png" alt="Get it on GitHub" height="40">](https://github.com/obeat/obeat/releases/latest)â €â €
-[<img src="assets/IzzyOnDroidButtonGreyBorder.svg" alt="Get it on IzzyOnDroid" height="40">](https://apt.izzysoft.de/fdroid/index/apk/com.dd3boh.obeat)â €â €
-[<img src="assets/badge_obtainium.png" alt="Get it on Obtainium" height="40">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.dd3boh.obeat%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FDD3Boh%2Fobeat%22%2C%22author%22%3A%22DD3Boh%22%2C%22name%22%3A%22obeat%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%5C%22%2C%5C%22shizukuPretendToBeGooglePlay%5C%22%3Afalse%2C%5C%22allowInsecure%5C%22%3Afalse%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22A%20Material%203%20YouTube%20Music%20client%20%26%20local%20music%20player%20for%20Android%5C%22%7D%22%2C%22overrideSource%22%3A%22GitHub%22%7D)
+O-Beat blends your **local music library** with your **YouTube Music** world.  
+It’s lightweight, beautiful, and respects your privacy: **no analytics, no trackers**.
 
+<p align="left">
+  <a href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue.svg"></a>
+  <img alt="Min SDK" src="https://img.shields.io/badge/Android-7.0%2B%20(API%2024%2B)-brightgreen.svg">
+  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-✅-7957d5.svg">
+  <img alt="Compose" src="https://img.shields.io/badge/Jetpack%20Compose-✅-2ea043.svg">
+</p>
 
-> [!NOTE]
-> We are looking for maintainers! If you wish to become a maintainer (or even are just curious about it), please send an email to obeat@protonmail.com with relevant experience.
+---
 
-> [!WARNING]
-> obeat is in a "stable beta" phase. While this app can certainly be used as your main music player, be aware there is a possibility of bugs, incomplete features, or any other unexpected behaviour.
+## Table of Contents
 
-## Features
+- [Highlights](#highlights)
+- [Screenshots](#screenshots)
+- [Download & Install](#download--install)
+- [Compatibility (CPU ABI)](#compatibility-cpu-abi)
+- [Build From Source](#build-from-source)
+  - [Flavors](#flavors)
+  - [Signing (Release)](#signing-release)
+- [Using O-Beat](#using-o-beat)
+- [Troubleshooting](#troubleshooting)
+- [Privacy](#privacy)
+- [Roadmap](#roadmap)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
+- [Sponsor / Support](#sponsor--support)
 
-obeat is a supercharged fork of [InnerTune](https://github.com/z-huang/InnerTune). This app is both a local media player, and a YouTube Music client.
+---
 
-- YouTube Music client features
-    - Song downloading (offline playback)
-    - Seamless playback: no ADs & background playback
-    - Account synchronization
-        - Full playlist sync from the app to the remote account is temporally unavailable 
-- Local audio file playback (ex. MP3, OGG, FLAC, etc.)
-    - Play local and Youtube Music songs at the same time
-    - Uses a custom tag extractor instead of MediaStore's broken metadata extractor! (e.g tags delimited with \\ now show up properly)
-- Sleek Material3 design
-- Multiple queues
-- Synchronized lyrics, and support for word by word/Karaoke lyrics formats (e.g LRC, TTML)
-- Audio normalization, tempo/pitch adjustment, and various other audio effects
-- Android Auto support
-- Support for Android 8 (Oreo) and higher
+## Highlights
 
-> [!NOTE]
-> Android 8 (Oreo) and higher is supported. While the app may work on Android 7.x (Nougat), we do not officially support this version
+- ⚡ **Fast & lightweight** — modern Kotlin + Jetpack Compose UI.
+- 🔒 **Privacy-first** — no analytics, no trackers; your data stays on your device.
+- 🎧 **Local + Cloud** — play MP3/FLAC/OGG/… and access your YouTube Music library.
+- 📥 **Smart downloads** — auto-download liked tracks, external storage support, M3U import/export.
+- 🧠 **Power tools** — queues, playlist sync (RO/RW), rich filters & sorting.
+- 📝 **Lyrics** — local/online sources, karaoke word-by-word mode, multi-line display.
+- 🎨 **Beautiful player** — color-adaptive theme, gradient/blur backdrops, tablet-optimized layout.
+- 🚗 **Android Auto** — control playback safely on the road.
+- 🧩 **Optional FFmpeg/TagLib** — robust metadata extraction for local files.
 
-> [!NOTE]
-> Read our FAQ and guides on our [wiki](https://github.com/obeat/obeat/wiki/Frequently-Asked-Questions-(FAQ))
-
+---
 
 ## Screenshots
 
-<img src="./assets/main-interface.jpg" alt="Main player interface" />
-<br/><br/>
-<img src="./assets/player.jpg" alt="Player interface"/>
-<br/><br/>
-<img src="./assets/ytm-sync.jpg" alt="Sync with YouTube Music"/>
+> _Add a few images from `app/src/main/play/listings` or your device._
 
-[Full image gallery](./assets/gallery)
+docs/
+├─ screenshots/
+│ ├─ now_playing.png
+│ ├─ library.png
+│ └─ settings.png
 
-> [!WARNING]
->
->If you're in a region where YouTube Music is not supported, you won't be able to use this app
-***unless*** you have a proxy or VPN to connect to a YTM supported region.
+markdown
+Copy code
 
-## Building & Contributing
+---
 
-We are looking for contributors, translators, and maintainers! If you would like to help out, or just wish to build the
-app yourself, please see the [building and contribution notes](./CONTRIBUTING.md).
+## Download & Install
 
-### Submitting Translations
+- **Recommended:** grab the latest **APK** from **GitHub Releases** and install on Android **7.0+ (API 24+)**.
+- On **Xiaomi/MIUI**, enable:
+  - **Settings → Additional settings → Developer options → Install via USB** (if installing with ADB/Android Studio),
+  - **Settings → Privacy → Special access → Install unknown apps** for the app you use to install (e.g., Files/SAI).
 
-We use Weblate to translate obeat. For more details or to submit translations, visit our [Weblate page](https://hosted.weblate.org/projects/obeat/).
+**ADB install (single APK):**
+```bash
+adb install -r O-Beat-*.apk
+ADB install-multiple (split APKs):
+```
+```bash
+Copy code
+adb install-multiple -r O-Beat-*.apk O-Beat-*.dm
+```
+Compatibility (CPU ABI)
+Your device CPU must match the native libraries in the APK:
 
-<a href="https://hosted.weblate.org/projects/obeat/">
-<img src="https://hosted.weblate.org/widget/obeat/multi-auto.svg" alt="Translation status" />
-</a>
+arm64-v8a → most modern devices (64-bit)
 
-Thank you very much for helping to make obeat accessible to many people worldwide.
+armeabi-v7a → older 32-bit devices (e.g., Redmi 9C)
 
-## Support us
+If you see “Package doesn’t contain native code compatible with this device’s CPU”, install an APK that includes your ABI.
+For legacy/32-bit phones, build/install a v7a-only APK (see below).
 
-If you like obeat, you're welcome to send a donation. Donations will support the development,
-including bug fixes and new features.
+Build From Source
+Requires: Android Studio (latest), JDK 21, Android SDK/NDK, and Git.
 
-<a href="https://paypal.me/DD3Boh"><img src="./assets/paypal.png" alt="PayPal" height="60" ></a>
+Quick Start (Windows PowerShell)
+powershell
+Copy code
+# Clone
+git clone https://github.com/OmarElkhali/O-Beat.git
+cd O-Beat
 
-## Help & Support
+# Debug build (easier for testing)
+.\gradlew :app:assembleFullDebug
 
-For bug reports and/or feature requests, please create a GitHub issue: https://github.com/obeat/obeat/issues
+# Universal release (arm64 + armeabi-v7a)
+.\gradlew :app:assembleFullRelease -x lint
 
-For all other inquiries, you can contact us at obeat@protonmail.com (this is not a support email!)
+# 32-bit only (for older devices like Redmi 9C)
+.\gradlew :app:assembleFullRelease -PabiFilters=armeabi-v7a -x lint
+Flavors
+core — default, smaller
 
-## Attribution
+full — includes extra modules (FFmpeg extensions, etc.)
 
-Thanks to all our contributors! Check them out [here](https://github.com/obeat/obeat/graphs/contributors)
+Pick tasks like assembleCoreRelease or assembleFullRelease.
 
-[z-huang/InnerTune](https://github.com/z-huang/InnerTune) for providing an awesome base for this fork, none of this
-would have been possible without it.
+Signing (Release)
+Create a keystore (use the same password for store & key to avoid “Cannot recover key”):
 
-[Musicolet](https://play.google.com/store/apps/details?id=in.krosbits.musicolet) for inspiration of a local music player
-experience done right.
+powershell
+Copy code
+# Create folder
+mkdir keystore -Force
 
-[Gramophone](https://github.com/FoedusProgramme/Gramophone) for emotional support, and a legendary lyrics parser
+# Generate keystore (JKS or PKCS12)
+keytool -genkeypair -v `
+  -keystore app\keystore\ot-release.jks `
+  -storetype JKS `
+  -keyalg RSA -keysize 2048 -validity 10000 `
+  -alias ot
+# When prompted for "key password", press ENTER to reuse the keystore password
+keystore.properties at repo root:
 
-[![Star History Chart](https://api.star-history.com/svg?repos=obeat/obeat&type=Date)](https://www.star-history.com/#obeat/obeat&Date)
+ini
+Copy code
+storeFile=keystore/ot-release.jks
+storePassword=YOUR_PASSWORD
+keyAlias=ot
+keyPassword=YOUR_PASSWORD
+Now build:
 
-## Disclaimer
+powershell
+Copy code
+.\gradlew :app:assembleFullRelease -x lint
+Using O-Beat
+Local library: choose folders to scan (MP3/OGG/FLAC/…).
 
-This project and its contents are not affiliated with, funded, authorized, endorsed by, or in any
-way associated with YouTube, Google LLC or any of its affiliates and subsidiaries.
+YouTube Music: sign in (advanced token supported) to sync library/playlists.
 
-Any trademark, service mark, trade name, or other intellectual property rights used in this project
-are owned by the respective owners.
+Downloads: set internal/external folder; migrate or rescan from Settings.
 
+Lyrics: prefer local files or online providers; enable karaoke mode if supported.
 
+Player UI: pick background style (theme/gradient/blur), tablet UI, slim navbar, etc.
+
+Sync modes:
+
+RO: view remote only,
+
+RW: modify remote playlists,
+
+Conflict resolution (add-only or overwrite).
+
+Troubleshooting
+“App not installed — incompatible native code”
+Install an APK that contains your device’s ABI. For older/32-bit devices, build with:
+
+powershell
+Copy code
+.\gradlew :app:assembleFullRelease -PabiFilters=armeabi-v7a -x lint
+INSTALL_FAILED_USER_RESTRICTED (MIUI / unknown sources)
+Allow install permissions:
+
+Settings → Privacy → Special access → Install unknown apps (for the installer you use).
+
+If installing via Android Studio/ADB: Developer options → Install via USB.
+
+Retry the install.
+
+“Cannot recover key” during signing
+The keystore password and key password differ.
+Regenerate the keystore or change the key password to match:
+
+powershell
+Copy code
+keytool -keypasswd -alias ot -keystore app\keystore\ot-release.jks
+Privacy
+No analytics. No trackers.
+
+Your local library never leaves your device.
+
+YouTube Music access uses your own account/token.
+
+Not affiliated with Google/YouTube.
+
+Roadmap
+More lyric providers and formats
+
+Smarter smart-downloads rules
+
+Widgets and Wear OS companion
+
+More granular backup/restore
+
+Acknowledgments
+Based on great open-source components (Jetpack, Media3, TagLib, optional FFmpeg integrations, etc.).
+
+Huge thanks to the broader Android OSS community.
+
+License
+GPL-3.0 — see LICENSE.
+
+Sponsor / Support
+If you enjoy O-Beat and want to support development:
+
+➡︎ https://paypal.me/omarelkhali
+
+Thank you! 🙌
+
+markdown
+Copy code
+
+**Tips**
+- Put this content into `README.md` at the repo root.
+- Add screenshots to `docs/screenshots/` and reference them in the README.
+- If you later need a French version, create `README.fr.md` and link both at the top.
+::contentReference[oaicite:0]{index=0}

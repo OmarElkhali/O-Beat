@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Bottom navigation -->
+  <string name="home">à¦¹à§‹à¦®</string>
+  <string name="songs">à¦—à¦¾à¦¨</string>
+  <string name="artists">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ</string>
+  <string name="albums">à¦…à§à¦¯à¦¾à¦²à¦¬à¦¾à¦®</string>
+  <string name="playlists">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</string>
+  <!-- Top bar -->
+  <plurals name="n_selected">
+    <item quantity="one">%d à¦¸à¦¿à¦²à§‡à¦•à§à¦Ÿà§‡à¦¡</item>
+    <item quantity="other">%d à¦¸à¦¿à¦²à§‡à¦•à§à¦Ÿà§‡à¦¡</item>
+  </plurals>
+  <!-- Home -->
+  <string name="history">à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿</string>
+  <string name="stats">à¦¸à§à¦Ÿà¦¾à¦Ÿà¦¸</string>
+  <string name="mood_and_genres">à¦®à§à¦¡ à¦“ à¦œà¦¨à¦°à¦¾</string>
+  <string name="account">à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ</string>
+  <string name="quick_picks">à¦•à§à¦‡à¦• à¦ªà¦¿à¦•à¦¸à§</string>
+  <string name="quick_picks_empty">à¦•à§à¦‡à¦• à¦ªà¦¿à¦• à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦¤à§‡ à¦†à¦—à§‡ à¦•à¦¿à¦›à§ à¦—à¦¾à¦¨ à¦¶à§à¦¨à§à¦¨</string>
+  <string name="new_release_albums">à¦¨à¦¤à§à¦¨ à¦…à§à¦¯à¦¾à¦²à¦¬à¦¾à¦® à¦“ à¦¸à¦¿à¦™à§à¦—à§‡à¦²</string>
+  <!-- History -->
+  <string name="today">à¦†à¦œ</string>
+  <string name="yesterday">à¦—à¦¤à¦•à¦¾à¦²</string>
+  <string name="this_week">à¦à¦‡ à¦¸à¦ªà§à¦¤à¦¾à¦¹</string>
+  <string name="last_week">à¦—à¦¤ à¦¸à¦ªà§à¦¤à¦¾à¦¹</string>
+  <!-- Stats -->
+  <string name="most_played_songs">à¦¸à¦°à§à¦¬à¦¾à¦§à¦¿à¦• à¦¶à§‹à¦¨à¦¾ à¦—à¦¾à¦¨à¦—à§à¦²à¦¿</string>
+  <string name="most_played_artists">à¦¸à¦°à§à¦¬à¦¾à¦§à¦¿à¦• à¦¶à§‹à¦¨à¦¾ à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ</string>
+  <string name="most_played_albums">à¦¸à¦°à§à¦¬à¦¾à¦§à¦¿à¦• à¦¶à§‹à¦¨à¦¾ à¦…à§à¦¯à¦¾à¦²à¦¬à¦¾à¦®</string>
+  <!-- Search -->
+  <string name="search">à¦¸à¦¾à¦°à§à¦š</string>
+  <string name="search_yt_music">YouTube Music à¦ à¦¸à¦¾à¦°à§à¦š à¦•à¦°à§à¦¨</string>
+  <string name="search_library">à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿à¦¤à§‡ à¦¸à¦¾à¦°à§à¦š à¦•à¦°à§à¦¨</string>
+  <string name="filter_library">à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿</string>
+  <string name="filter_liked">à¦²à¦¾à¦‡à¦•à¦¡</string>
+  <string name="filter_downloaded">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡à§‡à¦¡</string>
+  <string name="filter_all">à¦¸à¦¬</string>
+  <string name="filter_songs">à¦—à¦¾à¦¨</string>
+  <string name="filter_videos">à¦­à¦¿à¦¡à¦¿à¦“</string>
+  <string name="filter_albums">à¦…à§à¦¯à¦¾à¦²à¦¬à¦¾à¦®</string>
+  <string name="filter_artists">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ</string>
+  <string name="filter_playlists">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</string>
+  <string name="filter_community_playlists">à¦•à¦®à¦¿à¦‰à¦¨à¦¿à¦Ÿà¦¿ à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</string>
+  <string name="filter_featured_playlists">à¦«à¦¿à¦šà¦¾à¦°à§à¦¡ à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</string>
+  <string name="filter_bookmarked">à¦¬à§à¦•à¦®à¦¾à¦°à§à¦•à¦°à§à¦¡</string>
+  <string name="no_results_found">à¦•à¦¿à¦›à§ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿</string>
+  <!-- Artist screen -->
+  <string name="from_your_library">à¦†à¦ªà¦¨à¦¾à¦° à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿ à¦¥à§‡à¦•à§‡</string>
+  <!-- Playlist -->
+  <string name="liked_songs">à¦†à¦ªà¦¨à¦¾à¦° à¦²à¦¾à¦‡à¦• à¦•à¦°à¦¾ à¦—à¦¾à¦¨</string>
+  <string name="downloaded_songs">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦•à¦°à¦¾ à¦—à¦¾à¦¨</string>
+  <string name="playlist_is_empty">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ à¦–à¦¾à¦²à¦¿</string>
+  <!-- Button -->
+  <string name="retry">à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨</string>
+  <string name="radio">à¦°à§‡à¦¡à¦¿à¦“</string>
+  <string name="shuffle">à¦¶à¦¾à¦«à§‡à¦²</string>
+  <string name="reset">à¦°à¦¿à¦¸à§‡à¦Ÿ</string>
+  <!-- Menu -->
+  <string name="details">à¦¬à¦¿à¦¸à§à¦¤à¦¾à¦°à¦¿à¦¤</string>
+  <string name="edit">à¦à¦¡à¦¿à¦Ÿ</string>
+  <string name="start_radio">à¦°à§‡à¦¡à¦¿à¦“ à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨</string>
+  <string name="play">à¦ªà§à¦²à§‡</string>
+  <string name="play_next">à¦ªà¦°à¦¬à¦°à§à¦¤à§€ à¦—à¦¾à¦¨</string>
+  <string name="add_to_queue">à¦•à¦¿à¦‰à¦¤à§‡ à¦…à§à¦¯à¦¾à¦¡ à¦•à¦°à§à¦¨</string>
+  <string name="add_to_library">à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿ à¦¤à§‡ à¦…à§à¦¯à¦¾à¦¡ à¦•à¦°à§à¦¨</string>
+  <string name="remove_from_library">à¦²à¦¾à¦‡à¦¬à§à¦°à§‡à¦°à¦¿ à¦¥à§‡à¦•à§‡ à¦¸à¦°à¦¾à¦¨</string>
+  <string name="action_download">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡</string>
+  <string name="downloading">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦¹à¦šà§à¦›à§‡</string>
+  <string name="remove_download">à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦¥à§‡à¦•à§‡ à¦¸à¦°à¦¾à¦¨</string>
+  <string name="import_playlist">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ à¦‡à¦®à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à§à¦¨</string>
+  <string name="add_to_playlist">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿà§‡ à¦…à§à¦¯à¦¾à¦¡ à¦•à¦°à§à¦¨</string>
+  <string name="view_artist">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ à¦¦à§‡à¦–à§à¦¨</string>
+  <string name="view_album">à¦…à§à¦¯à¦¾à¦²à¦¬à¦¾à¦® à¦¦à§‡à¦–à§à¦¨</string>
+  <string name="refetch">à¦°à¦¿à¦«à§à¦°à§‡à¦¶</string>
+  <string name="share">à¦¶à§‡à§Ÿà¦¾à¦°</string>
+  <string name="delete">à¦¡à¦¿à¦²à¦¿à¦Ÿ</string>
+  <string name="remove_from_history">à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿ à¦¥à§‡à¦•à§‡ à¦¸à¦°à¦¾à¦¨</string>
+  <string name="search_online">à¦…à¦¨à¦²à¦¾à¦‡à¦¨ à¦ à¦–à§à¦à¦œà§à¦¨</string>
+  <string name="action_sync">à¦¸à¦¿à¦™à§à¦•à§à¦°à§‹à¦¨à¦¾à¦‡à¦œ</string>
+  <string name="advanced">à¦…à§à¦¯à¦¾à¦¡à¦­à¦¾à¦¨à§à¦¸</string>
+  <!-- Sort menu -->
+  <string name="sort_by_create_date">à¦¦à¦¿à¦¨</string>
+  <string name="sort_by_name">à¦¨à¦¾à¦®</string>
+  <string name="sort_by_artist">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ</string>
+  <string name="sort_by_year">à¦¬à¦›à¦°</string>
+  <string name="sort_by_song_count">à¦®à§‹à¦¸à§à¦Ÿ à¦ªà§à¦²à§‡à¦‡à¦¡</string>
+  <string name="sort_by_length">à¦—à¦¾à¦¨à§‡à¦° à¦²à§‡à¦¨à§à¦¥</string>
+  <string name="sort_by_play_time">à¦ªà§à¦²à§‡ à¦Ÿà¦¾à¦‡à¦®</string>
+  <string name="sort_by_custom">à¦•à¦¾à¦¸à§à¦Ÿà¦®</string>
+  <!-- Dialog -->
+  <string name="media_id">à¦®à¦¿à¦¡à¦¿à§Ÿà¦¾ à¦†à¦‡à¦¡à¦¿</string>
+  <string name="mime_type">à¦®à¦¾à¦‡à¦® à¦Ÿà¦¾à¦‡à¦ª</string>
+  <string name="codecs">à¦•à¦¡à§‡à¦•</string>
+  <string name="bitrate">à¦¬à¦¿à¦Ÿà¦°à§‡à¦Ÿ</string>
+  <string name="sample_rate">à¦¸à§à¦¯à¦¾à¦®à§à¦ªà¦² à¦°à§‡à¦Ÿ</string>
+  <string name="loudness">à¦²à¦¾à¦‰à¦¡à¦¨à§‡à¦¸</string>
+  <string name="volume">à¦­à¦²à¦¿à¦‰à¦®</string>
+  <string name="file_size">à¦«à¦¾à¦‡à¦² à¦¸à¦¾à¦‡à¦œ</string>
+  <string name="unknown">à¦†à¦¨à¦¨à§‹à¦¨</string>
+  <string name="copied">à¦•à§à¦²à¦¿à¦ªà¦¬à§‹à¦°à§à¦¡à§‡ à¦•à¦ªà¦¿ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡</string>
+  <string name="edit_lyrics">à¦—à¦¾à¦¨à§‡à¦° à¦²à¦¿à¦°à¦¿à¦• à¦à¦¡à¦¿à¦Ÿ</string>
+  <string name="search_lyrics">à¦—à¦¾à¦¨à§‡à¦° à¦²à¦¿à¦°à¦¿à¦• à¦¸à¦¾à¦°à§à¦š</string>
+  <string name="edit_song">à¦—à¦¾à¦¨ à¦à¦¡à¦¿à¦Ÿ à¦•à¦°à§à¦¨</string>
+  <string name="song_title">à¦Ÿà¦¾à¦‡à¦Ÿà§‡à¦²</string>
+  <string name="song_artists">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ</string>
+  <string name="error_song_title_empty">à¦—à¦¾à¦¨à§‡à¦° à¦Ÿà¦¾à¦‡à¦Ÿà§‡à¦² à¦–à¦¾à¦²à¦¿ à¦¹à¦¤à§‡ à¦ªà¦¾à¦°à§‡ à¦¨à¦¾à¥¤</string>
+  <string name="error_song_artist_empty">à¦—à¦¾à¦¨à§‡à¦° à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ à¦–à¦¾à¦²à¦¿ à¦¥à¦¾à¦•à¦¤à§‡ à¦ªà¦¾à¦°à§‡ à¦¨à¦¾à¥¤</string>
+  <string name="save">à¦¸à§‡à¦­</string>
+  <string name="choose_playlist">à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ à¦¸à¦¿à¦²à§‡à¦•à§à¦Ÿà§‡ à¦•à¦°à§à¦¨</string>
+  <string name="edit_playlist">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ à¦à¦¡à¦¿à¦Ÿ à¦•à¦°à§à¦¨</string>
+  <string name="create_playlist">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§à¦¨</string>
+  <string name="playlist_name">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿà§‡à¦° à¦¨à¦¾à¦®</string>
+  <string name="error_playlist_name_empty">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿà§‡à¦° à¦¨à¦¾à¦® à¦«à¦¾à¦•à¦¾ à¦°à¦¾à¦–à¦¾ à¦¯à¦¾à¦¬à§‡ à¦¨à¦¾à¥¤</string>
+  <string name="edit_artist">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ à¦à¦¡à¦¿à¦Ÿ à¦•à¦°à§à¦¨</string>
+  <string name="artist_name">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿà§‡à¦° à¦¨à¦¾à¦®</string>
+  <string name="error_artist_name_empty">à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿà§‡à¦° à¦¨à¦¾à¦® à¦–à¦¾à¦²à¦¿ à¦°à¦¾à¦–à¦¾ à¦¯à¦¾à¦¬à§‡ à¦¨à¦¾à¥¤</string>
+  <!-- Noun -->
+  <plurals name="n_song">
+    <item quantity="one">%d à¦—à¦¾à¦¨</item>
+    <item quantity="other">%d à¦Ÿà¦¾ à¦—à¦¾à¦¨</item>
+  </plurals>
+  <plurals name="n_artist">
+    <item quantity="one">%d à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ</item>
+    <item quantity="other">%d à¦Ÿà¦¾ à¦†à¦°à§à¦Ÿà¦¿à¦¸à§à¦Ÿ</item>
+  </plurals>
+  <plurals name="n_album">
+    <item quantity="one">%d à¦…à§à¦¯à¦¾à¦²à¦¬à¦¾à¦®</item>
+    <item quantity="other">%d à¦Ÿà¦¾ à¦…à§à¦¯à¦¾à¦²à¦¬à¦¾à¦®</item>
+  </plurals>
+  <plurals name="n_playlist">
+    <item quantity="one">%d à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</item>
+    <item quantity="other">%d à¦Ÿà¦¾ à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</item>
+  </plurals>
+  <plurals name="n_week">
+    <item quantity="one">%d à¦¸à¦ªà§à¦¤à¦¾à¦¹</item>
+    <item quantity="other">%d à¦¸à¦ªà§à¦¤à¦¾à¦¹</item>
+  </plurals>
+  <plurals name="n_month">
+    <item quantity="one">%d à¦®à¦¾à¦¸</item>
+    <item quantity="other">%d à¦®à¦¾à¦¸</item>
+  </plurals>
+  <plurals name="n_year">
+    <item quantity="one">%d à¦¬à¦›à¦°</item>
+    <item quantity="other">%d à¦¬à¦›à¦°</item>
+  </plurals>
+  <!-- Snackbar -->
+  <string name="playlist_imported">à¦‡à¦®à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à¦¾ à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</string>
+  <string name="removed_song_from_playlist">à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ à¦¥à§‡à¦•à§‡ \"%s\" à¦¸à¦°à¦¾à¦¨à§‹ à¦¹à¦¯à¦¼à§‡à¦›à§‡</string>
+  <string name="playlist_synced">à¦¸à¦¿à¦™à§à¦•à§à¦°à§‹à¦¨à¦¾à¦‡à¦œ à¦•à¦°à¦¾ à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</string>
+  <string name="undo">à¦¬à¦¾à¦¤à¦¿à¦² à¦•à¦°à§à¦¨</string>
+  <!-- Player -->
+  <string name="lyrics_not_found">à¦—à¦¾à¦¨à§‡à¦° à¦²à¦¿à¦°à¦¿à¦• à¦ªà¦¾à¦“à¦¯à¦¼à¦¾ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿</string>
+  <string name="sleep_timer">à¦¸à§à¦²à§€à¦ª à¦Ÿà¦¾à¦‡à¦®à¦¾à¦°</string>
+  <string name="end_of_song">à¦—à¦¾à¦¨ à¦¶à§‡à¦·à§‡</string>
+  <plurals name="minute">
+    <item quantity="one">%d à¦®à¦¿à¦¨à¦¿à¦Ÿ</item>
+    <item quantity="other">%d à¦®à¦¿à¦¨à¦¿à¦Ÿ</item>
+  </plurals>
+  <string name="error_no_stream">à¦¸à§à¦Ÿà§à¦°à¦¿à¦® à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿</string>
+  <string name="error_no_internet">à¦¨à§‡à¦Ÿà¦“à¦¯à¦¼à¦¾à¦°à§à¦• à¦•à¦¾à¦¨à§‡à¦•à¦¶à¦¨ à¦¨à§‡à¦‡</string>
+  <string name="error_timeout">à¦‡à¦°à¦° à¦Ÿà¦¾à¦‡à¦®à¦†à¦‰à¦Ÿ</string>
+  <string name="error_unknown">à¦†à¦¨à¦¨à§‹à¦¨ à¦‡à¦°à¦°</string>
+  <!-- Player action -->
+  <string name="action_like">à¦²à¦¾à¦‡à¦•</string>
+  <string name="action_remove_like">à¦…à¦²à¦¾à¦‡à¦•</string>
+  <string name="action_shuffle_on">à¦¶à¦¾à¦«à§‡à¦² à¦…à¦¨</string>
+  <string name="action_shuffle_off">à¦¶à¦¾à¦«à§‡à¦² à¦…à¦«</string>
+  <string name="repeat_mode_off">à¦°à¦¿à¦ªà¦¿à¦Ÿ à¦…à¦«</string>
+  <string name="repeat_mode_one">à¦à¦•à¦Ÿà¦¾ à¦—à¦¾à¦¨ à¦°à¦¿à¦ªà¦¿à¦Ÿ</string>
+  <string name="repeat_mode_all">à¦°à¦¿à¦ªà¦¿à¦Ÿ à¦•à¦¿à¦‰</string>
+  <!-- Queue Title -->
+  <string name="queue_all_songs">à¦¸à¦¬ à¦—à¦¾à¦¨ à¦•à¦¿à¦‰</string>
+  <string name="queue_searched_songs">à¦¸à¦¾à¦°à§à¦š à¦•à¦°à¦¾ à¦—à¦¾à¦¨ à¦•à¦¿à¦‰</string>
+  <!-- Notification name -->
+  <string name="music_player">à¦ªà§à¦²à§‡à§Ÿà¦¾à¦°</string>
+  <!-- Settings -->
+  <string name="settings">à¦¸à§‡à¦Ÿà¦¿à¦‚à¦¸</string>
+  <string name="appearance">à¦¸à§à¦Ÿà¦¾à¦‡à¦²</string>
+  <string name="enable_dynamic_theme">à¦¡à¦¾à¦‡à¦¨à¦¾à¦®à¦¿à¦• à¦¥à¦¿à¦® à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨</string>
+  <string name="dark_theme">à¦¡à¦¾à¦°à§à¦• à¦¥à¦¿à¦®</string>
+  <string name="dark_theme_on">à¦…à¦¨</string>
+  <string name="dark_theme_off">à¦…à¦«</string>
+  <string name="dark_theme_follow_system">à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦¥à¦¿à¦®</string>
+  <string name="pure_black">à¦¬à§à¦²à§à¦¯à¦¾à¦•</string>
+  <string name="default_open_tab">à¦¡à¦¿à¦«à¦²à§à¦Ÿ à¦Ÿà§à¦¯à¦¾à¦¬</string>
+  <string name="customize_navigation_tabs">à¦¨à§‡à¦­à¦¿à¦—à§‡à¦¶à¦¨ à¦Ÿà§à¦¯à¦¾à¦¬ à¦•à¦¾à¦¸à§à¦Ÿà¦®à¦¾à¦‡à¦œ à¦•à¦°à§à¦¨</string>
+  <string name="lyrics_text_position">à¦²à¦¿à¦°à¦¿à¦•à§‡à¦° à¦ªà¦œà¦¿à¦¶à¦¨</string>
+  <string name="left">à¦¬à¦¾à¦®à§‡</string>
+  <string name="center">à¦®à¦¾à¦à§‡</string>
+  <string name="right">à¦¡à¦¾à¦¨à§‡</string>
+  <string name="content">à¦•à¦¨à¦Ÿà§‡à¦¨à§à¦Ÿ</string>
+  <string name="login">à¦²à¦— à¦‡à¦¨</string>
+  <string name="content_language">à¦¡à¦¿à¦«à¦²à§à¦Ÿ à¦•à¦¨à§à¦Ÿà§‡à¦¨à§à¦Ÿà§‡à¦° à¦­à¦¾à¦·à¦¾</string>
+  <string name="content_country">à¦¡à¦¿à¦«à¦²à§à¦Ÿ à¦•à¦¨à§à¦Ÿà§‡à¦¨à§à¦Ÿà§‡à¦° à¦¦à§‡à¦¶</string>
+  <string name="system_default">à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦®à§‡à¦° à¦¡à¦¿à¦«à¦²à§à¦Ÿ</string>
+  <string name="enable_proxy">à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨</string>
+  <string name="proxy_type">à¦ªà§à¦°à¦•à§à¦¸à¦¿à¦° à¦§à¦°à¦£</string>
+  <string name="proxy_url">à¦ªà§à¦°à¦•à§à¦¸à¦¿ URL</string>
+  <string name="restart_to_take_effect">à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨à¦—à§à¦²à¦¿ à¦†à¦ªà§à¦²à¦¾à¦‡ à¦•à¦°à¦¤à§‡ à¦…à§à¦¯à¦¾à¦ªà¦Ÿà¦¿ à¦†à¦¬à¦¾à¦° à¦šà¦¾à¦²à§ à¦•à¦°à§à¦¨</string>
+  <string name="player_and_audio">à¦ªà§à¦²à§‡à¦¯à¦¼à¦¾à¦° à¦“ à¦…à¦¡à¦¿à¦“</string>
+  <string name="audio_quality">à¦…à¦¡à¦¿à¦“ à¦•à§‹à§Ÿà¦¾à¦²à¦¿à¦Ÿà¦¿</string>
+  <string name="audio_quality_auto">à¦…à¦Ÿà§‹</string>
+  <string name="audio_quality_high">à¦¹à¦¾à¦‡</string>
+  <string name="audio_quality_low">à¦²à§‹</string>
+  <string name="persistent_queue">à¦…à¦¨à¦¬à¦°à¦¤ à¦•à¦¿à¦‰</string>
+  <string name="skip_silence">à¦¨à§€à¦°à¦¬ à¦¸à¦®à§Ÿà¦Ÿà§à¦•à§ à¦¸à§à¦•à¦¿à¦ª à¦•à¦°à§à¦¨</string>
+  <string name="audio_normalization">à¦…à¦¡à¦¿à¦“ à¦¨à¦°à¦®à¦¾à¦²à¦¾à¦‡à¦œà§‡à¦¶à¦¨</string>
+  <string name="equalizer">à¦…à¦¡à¦¿à¦“ à¦Ÿà¦¿à¦‰à¦¨à¦¾à¦°</string>
+  <string name="storage">à¦¸à§à¦Ÿà§‹à¦°à§‡à¦œ</string>
+  <string name="cache">à¦•à§à¦¯à¦¾à¦¶</string>
+  <string name="image_cache">à¦‡à¦®à§‡à¦œ à¦•à§à¦¯à¦¾à¦¶</string>
+  <string name="song_cache">à¦…à¦¡à¦¿à¦“ à¦•à§à¦¯à¦¾à¦¶</string>
+  <string name="max_cache_size">à¦•à§à¦¯à¦¾à¦¶ à¦¸à¦¾à¦‡à¦œ</string>
+  <string name="unlimited">à¦†à¦¨à¦²à¦¿à¦®à¦¿à¦Ÿà§‡à¦¡</string>
+  <string name="clear_all_downloads">à¦¸à¦¬ à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡ à¦®à§à¦›à§à¦¨</string>
+  <string name="max_image_cache_size">à¦‡à¦®à§‡à¦œ à¦•à§à¦¯à¦¾à¦¶ à¦¸à¦¾à¦‡à¦œ</string>
+  <string name="clear_image_cache">à¦‡à¦®à§‡à¦œ à¦•à§à¦¯à¦¾à¦¶à§‡ à¦•à§à¦²à¦¿à§Ÿà¦¾à¦° à¦•à¦°à§à¦¨</string>
+  <string name="max_song_cache_size">à¦…à¦¡à¦¿à¦“ à¦•à§à¦¯à¦¾à¦¶ à¦¸à¦¾à¦‡à¦œ</string>
+  <string name="clear_song_cache">à¦…à¦¡à¦¿à¦“ à¦•à§à¦¯à¦¾à¦¶à§‡ à¦•à§à¦²à¦¿à§Ÿà¦¾à¦° à¦•à¦°à§à¦¨</string>
+  <string name="size_used">%s à¦¬à§à¦¯à¦¬à¦¹à§ƒà¦¤</string>
+  <string name="privacy">à¦—à§‹à¦ªà¦¨à§€à¦¯à¦¼à¦¤à¦¾</string>
+  <string name="pause_listen_history">à¦ªà§à¦²à§‡à¦¬à§à¦¯à¦¾à¦• à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿ à¦¬à¦¨à§à¦§ à¦•à¦°à§à¦¨</string>
+  <string name="clear_listen_history">à¦ªà§à¦²à§‡à¦¬à§à¦¯à¦¾à¦• à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿ à¦•à§à¦²à¦¿à§Ÿà¦¾à¦° à¦•à¦°à§à¦¨</string>
+  <string name="clear_listen_history_confirm">à¦ªà§à¦²à§‡à¦¬à§à¦¯à¦¾à¦• à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿ à¦®à§à¦›à§‡ à¦«à§‡à¦²à¦¬à§‡à¦¨?</string>
+  <string name="pause_search_history">à¦¸à¦¾à¦°à§à¦š à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿ à¦¬à¦¨à§à¦§ à¦•à¦°à§à¦¨</string>
+  <string name="clear_search_history">à¦¸à¦¾à¦°à§à¦š à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿ à¦•à§à¦²à¦¿à§Ÿà¦¾à¦° à¦•à¦°à§à¦¨</string>
+  <string name="clear_search_history_confirm">à¦¸à¦¾à¦°à§à¦š à¦¹à¦¿à¦¸à§à¦Ÿà§à¦°à¦¿ à¦®à§à¦›à§‡ à¦«à§‡à¦²à¦¬à§‡à¦¨?</string>
+  <string name="enable_kugou">KuGou à¦¥à§‡à¦•à§‡ à¦²à¦¿à¦°à¦¿à¦• à¦¨à¦¿à¦¨</string>
+  <string name="backup_restore">à¦¬à§à¦¯à¦¾à¦•à¦†à¦ª à¦à¦¬à¦‚ à¦°à¦¿à¦¸à§à¦Ÿà§‹à¦°</string>
+  <string name="action_backup">à¦¬à§à¦¯à¦¾à¦•à¦†à¦ª</string>
+  <string name="action_restore">à¦°à¦¿à¦¸à§à¦Ÿà§‹à¦°</string>
+  <string name="imported_playlist">à¦‡à¦®à¦ªà§‹à¦°à§à¦Ÿà§‡à¦¡ à¦•à¦°à¦¾ à¦ªà§à¦²à§‡à¦²à¦¿à¦¸à§à¦Ÿ</string>
+  <string name="backup_create_success">à¦¬à§à¦¯à¦¾à¦•à¦†à¦ª à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡</string>
+  <string name="backup_create_failed">à¦¬à§à¦¯à¦¾à¦•à¦†à¦ª à¦•à¦°à¦¤à§‡ à¦¬à¦¾à¦°à§à¦¥</string>
+  <string name="restore_failed">à¦¬à§à¦¯à¦¾à¦•à¦†à¦ª à¦¥à§‡à¦•à§‡ à¦°à¦¿à¦¸à§à¦Ÿà§‹à¦° à¦•à¦°à¦¤à§‡ à¦…à¦•à§à¦·à¦®</string>
+  <string name="about">à¦…à§à¦¯à¦¾à¦ª à¦¸à¦®à§à¦ªà¦°à§à¦•à§‡</string>
+  <string name="app_version">à¦…à§à¦¯à¦¾à¦ª à¦­à¦¾à¦°à§à¦¸à¦¨</string>
+  <string name="new_version_available">à¦¨à¦¤à§à¦¨ à¦­à¦¾à¦°à§à¦¸à¦¨ à¦à¦¸à§‡à¦›à§‡</string>
+  <string name="translation_models">à¦Ÿà§à¦°à¦¾à¦¨à§à¦¸à¦²à§‡à¦¶à¦¨ à¦®à¦¡à§‡à¦²</string>
+  <string name="clear_translation_models">à¦Ÿà§à¦°à¦¾à¦¨à§à¦¸à¦²à§‡à¦¶à¦¨ à¦®à¦¡à§‡à¦² à¦•à§à¦²à¦¿à§Ÿà¦¾à¦° à¦•à¦°à§à¦¨</string>
+  <string name="app_name">O-Beat</string>
+</resources>

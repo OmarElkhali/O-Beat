@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="err_stop_on_too_many_errors">Daha Ã§ox sÉ™hvlÉ™r. SÉ™slÉ™nmÉ™ dayandÄ±rÄ±ldÄ±</string>
+    <string name="folders">Qovluqlar</string>
+    <string name="library">Kitabxana</string>
+    <string name="recent_activity">Son fÉ™aliyyÉ™t</string>
+    <string name="local_history">Yerli</string>
+    <string name="queue_local_history">TarixÃ§É™ (yerli)</string>
+    <string name="queue_remote_history">TarixÃ§É™ (tÉ™k)</string>
+    <string name="remote_history">TÉ™k</string>
+    <string name="create_queue">Yeni nÃ¶vbÉ™</string>
+    <string name="queue_searched_songs_ot">AxtarÄ±ÅŸ:</string>
+    <string name="song_added_to_queue">\"%s\" nÃ¶vbÉ™yÉ™ É™lavÉ™ edildi</string>
+    <string name="song_added_to_queue_end">\"%s\" nÃ¶vbÉ™nin sonuna É™lavÉ™ edildi</string>
+    <string name="auto_playlist">Avtomatik pleylist</string>
+    <string name="select">SeÃ§mÉ™ Ã¼sulu</string>
+    <string name="like_all">HamÄ±sÄ± kimi</string>
+    <string name="delete_lyric_confirm">Siz hÉ™qiqÉ™tÉ™n \"%s\" Ã¼Ã§Ã¼n saxlanmÄ±ÅŸ lirikanÄ± silmÉ™k istÉ™yirsiniz?</string>
+    <string name="err_play_next_on_error">XÉ™ta baÅŸ verdi. NÃ¶vbÉ™ti sÉ™slÉ™nir</string>
+    <string name="err_stop_on_error">XÉ™ta baÅŸ verdi. SÉ™slÉ™nmÉ™ dayandÄ±rÄ±ldÄ±</string>
+    <string name="wait_to_reconnect">TÉ™krar qoÅŸulmaÄŸÄ± gÃ¶zlÉ™yin</string>
+    <string name="special_thanks">XÃ¼susi tÉ™ÅŸÉ™kkÃ¼rlÉ™r</string>
+    <string name="grp_extra_scanner_settings">ÆlavÉ™ yoxlayÄ±cÄ± tÉ™nzimlÉ™mÉ™lÉ™ri</string>
+    <string name="sort_by_like_date">BÉ™yÉ™nilmÉ™ tarixi</string>
+    <string name="create_sync_playlist_description">Qeyd: Bu, YouTube Music ilÉ™ sinxronizasiya etmÉ™yÉ™ imkan verir. Bu sonra dÉ™yiÅŸdirilÉ™ bilmÉ™z. SinxronlaÅŸdÄ±rÄ±lan sÉ™slÉ™nmÉ™ siyahÄ±larÄ±na yerli mahnÄ±lar É™lavÉ™ edÉ™ bilmÉ™zsiniz.</string>
+    <string name="sort_by_date_modified">DÉ™yiÅŸdirilmÉ™ tarixi</string>
+    <string name="sort_by_play_count">SÉ™slÉ™nmÉ™ sayÄ±</string>
+    <string name="create_sync_playlist">Pleylisti SinxronlaÅŸdÄ±r</string>
+    <string name="play_count">SÉ™slÉ™nmÉ™ sayÄ±</string>
+    <string name="sync_progress_active">YouTube hesabÄ± ilÉ™ sinxronizasiya edilirâ€¦</string>
+    <string name="sync_progress_success">Sinxronizasiya tamamlandÄ±</string>
+    <string name="grp_interface">GÃ¶rÃ¼nÃ¼ÅŸ</string>
+    <string name="grp_layout">TÉ™rtibat</string>
+    <string name="grp_localization">YerlÉ™ÅŸmÉ™</string>
+    <string name="grp_lyrics_format">Formatlama</string>
+    <string name="grp_lyrics_parser">TÉ™hlil</string>
+    <string name="grp_proxy">Proxy</string>
+    <string name="attrib_zhuang">InnerTune Ã¼Ã§Ã¼n Zion Huang</string>
+    <string name="player_background_blur">BulanÄ±q</string>
+    <string name="player_background_default">Temaya uyÄŸun</string>
+    <string name="player_background_gradient">DÉ™yiÅŸkÉ™n</string>
+    <string name="player_background_style">SÉ™slÉ™ndirici arxa plan Ã¼slubu</string>
+    <string name="show_liked_and_downloaded_playlist">Kitabxanada bÉ™yÉ™nilÉ™n vÉ™ yÃ¼klÉ™nilÉ™n pleylistlÉ™ri gÃ¶stÉ™r</string>
+    <string name="queues_title">NÃ¶vbÉ™lÉ™r</string>
+    <string name="queues_empty">NÃ¶vbÉ™ yoxdur</string>
+    <string name="sort_by_date_released">BuraxÄ±lÄ±ÅŸ tarixi</string>
+    <string name="playlist_add_local_to_synced_note">Qeyd: Yerli mahnÄ±larÄ±n sinxronlaÅŸdÄ±rÄ±lan/uzaq sÉ™slÉ™nmÉ™ siyahÄ±larÄ±na É™lavÉ™ edilmÉ™si dÉ™stÉ™klÉ™nmir. Ä°stÉ™nilÉ™n digÉ™r tÉ™rtibat etibarlÄ±dÄ±r</string>
+    <string name="settings_debug">Sazlama</string>
+    <string name="grp_audio">SÉ™s</string>
+    <string name="grp_general">Ãœmumi</string>
+    <string name="prefs_advanced">QabaqcÄ±l</string>
+    <string name="grp_lyrics_source">Lirik mÉ™nbÉ™lÉ™r</string>
+    <string name="grp_manual_scanner">Æl ilÉ™ yoxlama</string>
+    <string name="new_interface">Yeni gÃ¶rÃ¼nÃ¼ÅŸ tÉ™rtibatÄ±</string>
+    <string name="android_auto">Android Auto</string>
+    <string name="more_settings">Daha Ã§ox ayarlar</string>
+    <string name="tap_show_more">Daha Ã§ox mÉ™lumat Ã¼Ã§Ã¼n kliklÉ™yin</string>
+    <string name="err_invalid_ytm_song">Musiqini oxutmaq mÃ¼mkÃ¼n olmadÄ±. YalnÄ±z YouTube Music-dÉ™ É™lÃ§atan olan mÉ™zmun oxuna bilÉ™r</string>
+    <string name="grp_account_sync">Hesab vÉ™ sinxronizasiya</string>
+    <string name="grp_behavior">DavranÄ±ÅŸ</string>
+    <string name="grp_library_and_content">Kitabxana vÉ™ kontentlÉ™r</string>
+    <string name="grp_sync">Sinxronizasiya</string>
+    <string name="app_info_title">Mobil É™lavÉ™ mÉ™lumatlarÄ±</string>
+    <string name="check_for_update">YenilÉ™mÉ™lÉ™ri yoxlayÄ±n</string>
+    <string name="checking_for_update">YenilÉ™mÉ™lÉ™r yoxlanÄ±lÄ±r</string>
+    <string name="device_info_title">Cihaz mÉ™lumatlarÄ±</string>
+    <string name="help_bug_report_action">XÉ™ta bildir</string>
+    <string name="help_support_forum">DÉ™stÉ™k</string>
+</resources>
+
+
+
+
+
+

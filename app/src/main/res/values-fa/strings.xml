@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <!-- Bottom navigation -->
+  <string name="home">Ø®Ø§Ù†Ù‡</string>
+  <string name="songs">ØªØ±Ø§Ù†Ù‡â€ŒÙ‡Ø§</string>
+  <string name="artists">Ù‡Ù†Ø±Ù…Ù†Ø¯Ù‡Ø§</string>
+  <string name="albums">Ù…Ø¬Ù…ÙˆØ¹Ù‡â€ŒÙ‡Ø§</string>
+  <string name="playlists">ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´â€ŒÙ‡Ø§</string>
+  <!-- Top bar -->
+  <plurals name="n_selected">
+    <item quantity="one">%d Ø§Ù†ØªØ®Ø§Ø¨â€ŒØ´Ø¯Ù‡</item>
+    <item quantity="other">%d Ø§Ù†ØªØ®Ø§Ø¨â€ŒØ´Ø¯Ù‡â€ŒØ§Ù†Ø¯</item>
+  </plurals>
+  <!-- Home -->
+  <string name="history">ØªØ§Ø±ÛŒØ®Ú†Ù‡</string>
+  <string name="stats">Ø¢Ù…Ø§Ø±</string>
+  <string name="mood_and_genres">Ø­Ø§Ù„Øª Ùˆ Ø³Ø¨Ú©</string>
+  <string name="account">Ø­Ø³Ø§Ø¨</string>
+  <string name="quick_picks">Ø§Ù†ØªØ®Ø§Ø¨â€ŒÙ‡Ø§ÛŒ Ø³Ø±ÛŒØ¹</string>
+  <string name="quick_picks_empty">Ø¨Ù‡ ØªØ±Ø§Ù†Ù‡â€ŒÙ‡Ø§ Ú¯ÙˆØ´ Ø¯Ù‡ÛŒØ¯ ØªØ§ Ø§Ù†ØªØ®Ø§Ø¨ Ø³Ø±ÛŒØ¹ Ø®ÙˆØ¯ Ø³Ø§Ø®ØªÙ‡ Ø´ÙˆØ¯</string>
+  <string name="new_release_albums">Ù…Ø¬Ù…ÙˆØ¹Ù‡â€ŒÙ‡Ø§ÛŒ Ù…Ù†ØªØ´Ø±Ø´Ø¯Ù‡â€ŒÛŒ Ø¬Ø¯ÛŒØ¯</string>
+  <!-- History -->
+  <string name="today">Ø§Ù…Ø±ÙˆØ²</string>
+  <string name="yesterday">Ø¯ÛŒØ±ÙˆØ²</string>
+  <string name="this_week">Ø§ÛŒÙ† Ù‡ÙØªÙ‡</string>
+  <string name="last_week">Ù‡ÙØªÙ‡â€ŒÛŒ Ú¯Ø°Ø´ØªÙ‡</string>
+  <!-- Stats -->
+  <string name="most_played_songs">Ø¨ÛŒØ´ØªØ±ÛŒÙ† ØªØ±Ø§Ù†Ù‡â€ŒÙ‡Ø§ÛŒ Ù¾Ø®Ø´â€ŒØ´Ø¯Ù‡</string>
+  <string name="most_played_artists">Ø¨ÛŒØ´ØªØ±ÛŒÙ† Ù‡Ù†Ø±Ù…Ù†Ø¯Ù‡Ø§ÛŒ Ù¾Ø®Ø´â€ŒØ´Ø¯Ù‡</string>
+  <string name="most_played_albums">Ø¨ÛŒØ´ØªØ±ÛŒÙ† Ù…Ø¬Ù…ÙˆØ¹Ù‡â€ŒÙ‡Ø§ÛŒ Ù¾Ø®Ø´â€ŒØ´Ø¯Ù‡</string>
+  <!-- Search -->
+  <string name="search">Ø¬Ø³ØªØ¬Ùˆ</string>
+  <string name="search_yt_music">Ø¬Ø³ØªØ¬Ùˆ Ø¯Ø± ÛŒÙˆØªÛŒÙˆØ¨ Ù…ÙˆØ²ÛŒÚ©â€¦</string>
+  <string name="search_library">Ø¬Ø³ØªØ¬ÙˆÛŒ Ú©ØªØ§Ø¨â€ŒØ®Ø§Ù†Ù‡â€¦</string>
+  <string name="filter_library">Ú©ØªØ§Ø¨â€ŒØ®Ø§Ù†Ù‡</string>
+  <string name="filter_liked">Ù¾Ø³Ù†Ø¯Ø´Ø¯Ù‡</string>
+  <string name="filter_downloaded">Ø¨Ø§Ø±Ú¯ÛŒØ±ÛŒâ€ŒØ´Ø¯Ù‡</string>
+  <string name="filter_all">Ù‡Ù…Ù‡</string>
+  <string name="filter_songs">ØªØ±Ø§Ù†Ù‡â€ŒÙ‡Ø§</string>
+  <string name="filter_videos">ÙÛŒÙ„Ù…â€ŒÙ‡Ø§</string>
+  <string name="filter_albums">Ù…Ø¬Ù…ÙˆØ¹Ù‡â€ŒÙ‡Ø§</string>
+  <string name="filter_artists">Ù‡Ù†Ø±Ù…Ù†Ø¯Ù‡Ø§</string>
+  <string name="filter_playlists">ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´â€ŒÙ‡Ø§</string>
+  <string name="filter_community_playlists">ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´â€ŒÙ‡Ø§ÛŒ Ø§Ù†Ø¬Ù…Ù†</string>
+  <string name="filter_featured_playlists">ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´â€ŒÙ‡Ø§ÛŒ ÙˆÛŒÚ˜Ù‡</string>
+  <string name="filter_bookmarked">Ù†Ø´Ø§Ù†Ú©â€ŒÚ¯Ø°Ø§Ø±ÛŒâ€ŒØ´Ø¯Ù‡</string>
+  <string name="no_results_found">Ù†ØªÛŒØ¬Ù‡â€ŒØ§ÛŒ Ù¾ÛŒØ¯Ø§ Ù†Ø´Ø¯</string>
+  <!-- Artist screen -->
+  <string name="from_your_library">Ø§Ø² Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø´Ù…Ø§</string>
+  <!-- Playlist -->
+  <string name="liked_songs">Ø¢Ù‡Ù†Ú¯ Ù‡Ø§ÛŒ Ù¾Ø³Ù†Ø¯ÛŒØ¯Ù‡ Ø´Ø¯Ù‡</string>
+  <string name="downloaded_songs">Ø¢Ù‡Ù†Ú¯ Ù‡Ø§ÛŒ Ø¯Ø§Ù†Ù„ÙˆØ¯ Ø´Ø¯Ù‡</string>
+  <string name="playlist_is_empty">ÙÙ‡Ø±Ø³Øªâ€Œ Ù¾Ø®Ø´ Ø®Ø§Ù„ÛŒ Ø§Ø³Øª</string>
+  <!-- Button -->
+  <string name="retry">ØªÙ„Ø§Ø´â€Œ Ù…Ø¬Ø¯Ø¯</string>
+  <string name="radio">Ø±Ø§Ø¯ÛŒÙˆ</string>
+  <string name="shuffle">Ù…Ø®Ù„ÙˆØ·</string>
+  <string name="reset">Ø¨Ø§Ø²Ù†Ø´Ø§Ù†ÛŒ</string>
+  <!-- Menu -->
+  <string name="details">Ø¬Ø²Ø¦ÛŒØ§Øª</string>
+  <string name="edit">ÙˆÛŒØ±Ø§ÛŒØ´</string>
+  <string name="start_radio">Ø´Ø±ÙˆØ¹ Ø±Ø§Ø¯ÛŒÙˆ</string>
+  <string name="play">Ù¾Ø®Ø´</string>
+  <string name="play_next">Ù¾Ø®Ø´ Ø¨Ø¹Ø¯ÛŒ</string>
+  <string name="add_to_queue">Ø§Ø¶Ø§ÙÙ‡â€ŒÚ©Ø±Ø¯Ù† Ø¨Ù‡ ØµÙ</string>
+  <string name="add_to_library">Ø§Ø¶Ø§ÙÙ‡â€ŒÚ©Ø±Ø¯Ù† Ø¨Ù‡ Ú©ØªØ§Ø¨â€ŒØ®Ø§Ù†Ù‡</string>
+  <string name="remove_from_library">Ø­Ø°Ù Ø§Ø² Ú©ØªØ§Ø¨â€Œ Ø®Ø§Ù†Ù‡</string>
+  <string name="action_download">Ø¯Ø§Ù†Ù„ÙˆØ¯</string>
+  <string name="downloading">Ø¯Ø±Ø­Ø§Ù„ Ø¯Ø§Ù†Ù„ÙˆØ¯</string>
+  <string name="remove_download">Ù„ØºÙˆ Ø¯Ø§Ù†Ù„ÙˆØ¯</string>
+  <string name="import_playlist">ÙˆØ§Ø±Ø¯Ú©Ø±Ø¯Ù† ÙÙ‡Ø±Ø³Øªâ€Œ Ù¾Ø®Ø´</string>
+  <string name="add_to_playlist">Ø§Ø¶Ø§ÙÙ‡â€ŒÚ©Ø±Ø¯Ù† Ø¨Ù‡ ÙÙ‡Ø±Ø³Øªâ€Œ Ù¾Ø®Ø´</string>
+  <string name="view_artist">Ù…Ø´Ø§Ù‡Ø¯Ù‡â€Œ Ù‡Ù†Ø±Ù…Ù†Ø¯</string>
+  <string name="view_album">Ù…Ø´Ø§Ù‡Ø¯Ù‡â€Œ Ù…Ø¬Ù…ÙˆØ¹Ù‡</string>
+  <string name="refetch">Ù†ÙˆØ³Ø§Ø²ÛŒ</string>
+  <string name="share">Ù‡Ù…â€ŒØ±Ø³Ø§Ù†ÛŒ</string>
+  <string name="delete">Ø­Ø°Ù</string>
+  <string name="remove_from_history">Ø­Ø°Ù Ø§Ø² ØªØ§Ø±ÛŒØ®Ú†Ù‡</string>
+  <string name="search_online">Ø¬Ø³ØªØ¬ÙˆÛŒ Ø¨Ø±Ø®Ø·</string>
+  <string name="action_sync">Ù‡Ù…Ú¯Ø§Ù…â€ŒØ³Ø§Ø²ÛŒ</string>
+  <string name="advanced">Ù¾ÛŒØ´Ø±ÙØªÙ‡</string>
+  <!-- Sort menu -->
+  <string name="sort_by_create_date">ØªØ§Ø±ÛŒØ® Ø§Ø¶Ø§ÙÙ‡â€ŒØ´Ø¯Ù‡</string>
+  <string name="sort_by_name">Ù†Ø§Ù…</string>
+  <string name="sort_by_artist">Ù‡Ù†Ø±Ù…Ù†Ø¯</string>
+  <string name="sort_by_year">Ø³Ø§Ù„</string>
+  <string name="sort_by_song_count">ØªØ¹Ø¯Ø§Ø¯ Ø¢Ù‡Ù†Ú¯</string>
+  <string name="sort_by_length">Ø·ÙˆÙ„</string>
+  <string name="sort_by_play_time">Ø²Ù…Ø§Ù† Ù¾Ø®Ø´</string>
+  <string name="sort_by_custom">ØªØ±ØªÛŒØ¨ Ø³ÙØ§Ø±Ø´ÛŒ</string>
+  <!-- Dialog -->
+  <string name="media_id">Ø´Ù†Ø§Ø³Ù‡â€ŒÛŒ Ø±Ø³Ø§Ù†Ù‡</string>
+  <string name="mime_type">Ù†ÙˆØ¹ Ø±Ø³Ø§Ù†Ù‡</string>
+  <string name="codecs">Ø±Ù…Ø²Ú¯Ø´Ø§Ù‡Ø§</string>
+  <string name="bitrate">Ù†Ø±Ø®â€ŒØ°Ø±Ù‡</string>
+  <string name="sample_rate">Ù†Ø±Ø® Ù†Ù…ÙˆÙ†Ù‡</string>
+  <string name="loudness">Ø¨Ù„Ù†Ø¯ÛŒ</string>
+  <string name="volume">Ø­Ø¬Ù…</string>
+  <string name="file_size">Ø§Ù†Ø¯Ø§Ø²Ù‡â€ŒÛŒ Ù¾Ø±ÙˆÙ†Ø¯Ù‡</string>
+  <string name="unknown">Ù†Ø§Ø´Ù†Ø§Ø®ØªÙ‡</string>
+  <string name="copied">Ø¯Ø± Ø¨ÙØ±ÛŒØ¯Ù‡â€ŒØ¯Ø§Ù† Ø±ÙˆÙ†ÙˆØ´Øªâ€ŒØ´Ø¯</string>
+  <string name="edit_lyrics">ÙˆÛŒØ±Ø§ÛŒØ´ Ù…ØªÙ†â€ŒØªØ±Ø§Ù†Ù‡</string>
+  <string name="search_lyrics">Ø¬Ø³ØªØ¬ÙˆÛŒ Ù…ØªÙ†â€ŒØªØ±Ø§Ù†Ù‡</string>
+  <string name="edit_song">ÙˆÛŒØ±Ø§ÛŒØ´ ØªØ±Ø§Ù†Ù‡</string>
+  <string name="song_title">Ø¹Ù†ÙˆØ§Ù† ØªØ±Ø§Ù†Ù‡</string>
+  <string name="song_artists">Ù‡Ù†Ø±Ù…Ù†Ø¯ ØªØ±Ø§Ù†Ù‡</string>
+  <string name="error_song_title_empty">Ø¹Ù†ÙˆØ§Ù† ØªØ±Ø§Ù†Ù‡ Ù†Ù…ÛŒ ØªÙˆØ§Ù†Ø¯ Ø®Ø§Ù„ÛŒ Ø¨Ø§Ø´Ø¯.</string>
+  <string name="error_song_artist_empty">Ù‡Ù†Ø±Ù…Ù†Ø¯ ØªØ±Ø§Ù†Ù‡ Ù†Ù…ÛŒ ØªÙˆØ§Ù†Ø¯ Ø®Ø§Ù„ÛŒ Ø¨Ø§Ø´Ø¯.</string>
+  <string name="save">Ø°Ø®ÛŒØ±Ù‡</string>
+  <string name="choose_playlist">Ø§Ù†ØªØ®Ø§Ø¨ ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´</string>
+  <string name="edit_playlist">ÙˆÛŒØ±Ø§ÛŒØ´ ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´</string>
+  <string name="create_playlist">Ø§ÛŒØ¬Ø§Ø¯ ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´</string>
+  <string name="playlist_name">Ù†Ø§Ù… ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´</string>
+  <string name="error_playlist_name_empty">Ù†Ø§Ù… ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´ Ù†Ù…ÛŒ ØªÙˆØ§Ù†Ø¯ Ø®Ø§Ù„ÛŒ Ø¨Ø§Ø´Ø¯.</string>
+  <string name="edit_artist">ÙˆÛŒØ±Ø§ÛŒØ´ Ù‡Ù†Ø±Ù…Ù†Ø¯</string>
+  <string name="artist_name">Ù†Ø§Ù… Ù‡Ù†Ø±Ù…Ù†Ø¯</string>
+  <string name="error_artist_name_empty">Ù†Ø§Ù… Ù‡Ù†Ø±Ù…Ù†Ø¯ Ù†Ù…ÛŒ ØªÙˆØ§Ù†Ø¯ Ø®Ø§Ù„ÛŒ Ø¨Ø§Ø´Ø¯.</string>
+  <!-- Noun -->
+  <plurals name="n_song">
+    <item quantity="one">%d ØªØ±Ø§Ù†Ù‡</item>
+    <item quantity="other">%d ØªØ±Ø§Ù†Ù‡â€ŒÙ‡Ø§</item>
+  </plurals>
+  <plurals name="n_artist">
+    <item quantity="one">%d Ù‡Ù†Ø±Ù…Ù†Ø¯</item>
+    <item quantity="other">%d Ù‡Ù†Ø±Ù…Ù†Ø¯Ù‡Ø§</item>
+  </plurals>
+  <plurals name="n_album">
+    <item quantity="one">%d Ù…Ø¬Ù…ÙˆØ¹Ù‡</item>
+    <item quantity="other">%d Ù…Ø¬Ù…ÙˆØ¹Ù‡â€ŒÙ‡Ø§</item>
+  </plurals>
+  <plurals name="n_playlist">
+    <item quantity="one">%d ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´</item>
+    <item quantity="other">%d ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´â€ŒÙ‡Ø§</item>
+  </plurals>
+  <plurals name="n_week">
+    <item quantity="one">%d Ù‡ÙØªÙ‡</item>
+    <item quantity="other">%d Ù‡ÙØªÙ‡â€ŒÙ‡Ø§</item>
+  </plurals>
+  <plurals name="n_month">
+    <item quantity="one">%d Ù…Ø§Ù‡</item>
+    <item quantity="other">%d Ù…Ø§Ù‡â€ŒÙ‡Ø§</item>
+  </plurals>
+  <plurals name="n_year">
+    <item quantity="one">%d Ø³Ø§Ù„</item>
+    <item quantity="other">%d Ø³Ø§Ù„â€ŒÙ‡Ø§</item>
+  </plurals>
+  <!-- Snackbar -->
+  <string name="playlist_imported">ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´ ÙˆØ§Ø±Ø¯Ø´Ø¯</string>
+  <string name="removed_song_from_playlist">Â«%sÂ» Ø§Ø² ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´ Ø­Ø°Ù Ø´Ø¯</string>
+  <string name="playlist_synced">ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´ Ù‡Ù…Ú¯Ø§Ù…â€ŒØ´Ø¯</string>
+  <string name="undo">ÙˆØ§Ú¯Ø±Ø¯</string>
+  <!-- Player -->
+  <string name="lyrics_not_found">Ù…ØªÙ†â€ŒØªØ±Ø§Ù†Ù‡ Ù¾ÛŒØ¯Ø§ Ù†Ø´Ø¯</string>
+  <string name="sleep_timer">Ø´Ù…Ø§Ø±Ù†Ø¯Ù‡â€ŒÛŒ Ø®ÙˆØ§Ø¨</string>
+  <string name="end_of_song">Ù¾Ø§ÛŒØ§Ù† ØªØ±Ø§Ù†Ù‡</string>
+  <plurals name="minute">
+    <item quantity="one">%d Ø¯Ù‚ÛŒÙ‚Ù‡</item>
+    <item quantity="other">%d Ø¯Ù‚ÛŒÙ‚Ù‡</item>
+  </plurals>
+  <string name="error_no_stream">Ø¬Ø±ÛŒØ§Ù†ÛŒ Ø¯Ø± Ø¯Ø³ØªØ±Ø³ Ù†ÛŒØ³Øª</string>
+  <string name="error_no_internet">Ø¨Ø¯ÙˆÙ† Ø§ØªØµØ§Ù„ Ø¨Ù‡ ØªØ§Ø±Ú©Ø¯Ù‡</string>
+  <string name="error_timeout">Ø§ØªÙ…Ø§Ù… ÙˆÙ‚Øª</string>
+  <string name="error_unknown">Ø®Ø·Ø§ÛŒ Ù†Ø§Ø´Ù†Ø§Ø®ØªÙ‡</string>
+  <!-- Player action -->
+  <string name="action_like">Ù¾Ø³Ù†Ø¯ÛŒØ¯Ù†</string>
+  <string name="action_remove_like">Ø­Ø°Ù Ù¾Ø³Ù†Ø¯ÛŒØ¯Ù†</string>
+  <string name="action_shuffle_on">Ø¨ÙØ±Ø²Ø¯Ù† Ø±ÙˆØ´Ù†</string>
+  <string name="action_shuffle_off">Ø¨ÙØ±Ø²Ø¯Ù† Ø®Ø§Ù…ÙˆØ´</string>
+  <string name="repeat_mode_off">Ø­Ø§Ù„Øª ØªÚ©Ø±Ø§Ø± Ø®Ø§Ù…ÙˆØ´</string>
+  <string name="repeat_mode_one">ØªÚ©Ø±Ø§Ø± ØªØ±Ø§Ù†Ù‡â€ŒÛŒ ÙØ¹Ù„ÛŒ</string>
+  <string name="repeat_mode_all">ØªØ±Ø§Ø± ØµÙ</string>
+  <!-- Queue Title -->
+  <string name="queue_all_songs">Ù‡Ù…Ù‡â€ŒÛŒ ØªØ±Ø§Ù†Ù‡â€ŒÙ‡Ø§</string>
+  <string name="queue_searched_songs">ØªØ±Ø§Ù†Ù‡â€ŒÙ‡Ø§ÛŒ Ø¬Ø³ØªØ¬ÙˆØ´Ø¯Ù‡</string>
+  <!-- Notification name -->
+  <string name="music_player">Ù¾Ø®Ø´â€ŒÚ©Ù†Ù†Ø¯Ù‡â€ŒÛŒ Ù…ÙˆØ³ÛŒÙ‚ÛŒ</string>
+  <!-- Settings -->
+  <string name="settings">ØªÙ†Ø¸ÛŒÙ…Ø§Øª</string>
+  <string name="appearance">Ø¸Ø§Ù‡Ø±</string>
+  <string name="enable_dynamic_theme">ÙØ¹Ø§Ù„â€ŒÚ©Ø±Ø¯Ù† Ø·Ø±Ø­ Ù¾ÙˆÛŒØ§</string>
+  <string name="dark_theme">ØªÙ… ØªØ§Ø±ÛŒÚ©</string>
+  <string name="dark_theme_on">Ø±ÙˆØ´Ù†</string>
+  <string name="dark_theme_off">Ø®Ø§Ù…ÙˆØ´</string>
+  <string name="dark_theme_follow_system">Ù¾ÛŒØ±ÙˆÛŒ Ø§Ø² Ø³ÛŒØ³ØªÙ…</string>
+  <string name="pure_black">Ù…Ø´Ú©ÛŒ Ø®Ø§Ù„Øµ</string>
+  <string name="default_open_tab">Ø²Ø¨Ø§Ù†Ù‡ Ø¨Ø§Ø² Ù¾ÛŒØ´â€ŒÙØ±Ø¶</string>
+  <string name="customize_navigation_tabs">Ø³ÙØ§Ø±Ø´ÛŒâ€ŒÚ©Ø±Ø¯Ù† Ø²Ø¨Ø§Ù†Ù‡â€ŒÙ‡Ø§ÛŒ Ù†Ø§ÙˆØ¨Ø±ÛŒ</string>
+  <string name="lyrics_text_position">Ù…ÙˆÙ‚Ø¹ÛŒØª Ù…ØªÙ† ØªØ±Ø§Ù†Ù‡</string>
+  <string name="left">Ú†Ù¾</string>
+  <string name="center">ÙˆØ³Ø·</string>
+  <string name="right">Ø±Ø§Ø³Øª</string>
+  <string name="content">Ù…Ø­ØªÙˆØ§</string>
+  <string name="login">ÙˆØ±ÙˆØ¯</string>
+  <string name="content_language">Ø²Ø¨Ø§Ù† Ù¾ÛŒØ´â€ŒÙØ±Ø¶ Ù…Ø­ØªÙˆØ§</string>
+  <string name="content_country">Ú©Ø´ÙˆØ± Ù¾ÛŒØ´â€ŒÙØ±Ø¶ Ù…Ø­ØªÙˆØ§</string>
+  <string name="system_default">Ù¾ÛŒØ´ ÙØ±Ø¶ Ø³ÛŒØ³ØªÙ…</string>
+  <string name="enable_proxy">ÙØ¹Ø§Ù„â€ŒÚ©Ø±Ø¯Ù† Ù¾Ø±ÙˆÚ©Ø³ÛŒ</string>
+  <string name="proxy_type">Ù†ÙˆØ¹ Ù¾Ø±ÙˆÚ©Ø³ÛŒ</string>
+  <string name="proxy_url">Ø¢Ø¯Ø±Ø³â€ŒØ§ÛŒÙ†ØªØ±Ù†ØªÛŒ Ù¾Ø±ÙˆÚ©Ø³ÛŒ</string>
+  <string name="restart_to_take_effect">Ø±Ø§Ù‡â€ŒØ§Ù†Ø¯Ø§Ø²ÛŒâ€ŒÙ…Ø¬Ø¯Ø¯ Ø¨Ø±Ø§ÛŒ Ø§Ø¹Ù…Ø§Ù„ Ø§Ø«Ø±</string>
+  <string name="player_and_audio">Ù¾Ø®Ø´â€ŒÚ©Ù†Ù†Ø¯Ù‡ Ùˆ ØµØ¯Ø§</string>
+  <string name="audio_quality">Ú©ÛŒÙÛŒØª ØµØ¯Ø§</string>
+  <string name="audio_quality_auto">Ø®ÙˆØ¯Ú©Ø§Ø±</string>
+  <string name="audio_quality_high">Ø¨Ø§Ù„Ø§</string>
+  <string name="audio_quality_low">Ù¾Ø§ÛŒÛŒÙ†</string>
+  <string name="persistent_queue">ØµÙ Ù…Ø¯Ø§ÙˆÙ…</string>
+  <string name="skip_silence">Ú¯Ø°Ø± Ø§Ø² Ø³Ú©ÙˆØª</string>
+  <string name="audio_normalization">Ø·Ø¨ÛŒØ¹ÛŒâ€ŒØ³Ø§Ø²ÛŒ ØµØ¯Ø§</string>
+  <string name="equalizer">Ù…ÛŒØ²Ø§Ù†â€ŒÚ¯Ø±</string>
+  <string name="storage">Ø°Ø®ÛŒØ±Ù‡â€ŒØ³Ø§Ø²ÛŒ</string>
+  <string name="cache">Ø­Ø§ÙØ¸Ù‡â€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù†</string>
+  <string name="image_cache">Ø­Ø§ÙØ¸Ù‡â€Œâ€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù† ØªØµÙˆÛŒØ±</string>
+  <string name="song_cache">Ø­Ø§ÙØ¸Ù‡â€Œâ€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù† ØªØ±Ø§Ù†Ù‡</string>
+  <string name="max_cache_size">Ø­Ø¯Ø§Ú©Ø«Ø± Ø§Ù†Ø¯Ø§Ø²Ù‡â€ŒÛŒ Ø­Ø§ÙØ¸Ù‡â€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù†</string>
+  <string name="unlimited">Ù†Ø§Ù…Ø­Ø¯ÙˆØ¯</string>
+  <string name="clear_all_downloads">Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† ØªÙ…Ø§Ù…ÛŒ Ø¨Ø§Ø±Ú¯ÛŒØ±ÛŒâ€ŒÙ‡Ø§</string>
+  <string name="max_image_cache_size">Ø¨ÛŒØ´ØªØ±ÛŒÙ† Ø§Ù†Ø¯Ø§Ø²Ù‡â€ŒÛŒ Ø­Ø§ÙØ¸Ù‡â€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù† ØªØµÙˆÛŒØ±</string>
+  <string name="clear_image_cache">Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† Ø­Ø§ÙØ¸Ù‡â€Œâ€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù† ØªØµÙˆÛŒØ±</string>
+  <string name="max_song_cache_size">Ø¨ÛŒØ´ØªØ±ÛŒÙ† Ø§Ù†Ø¯Ø§Ø²Ù‡â€ŒÛŒ Ø­Ø§ÙØ¸Ù‡â€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù† ØªØ±Ø§Ù†Ù‡</string>
+  <string name="clear_song_cache">Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† Ø­Ø§ÙØ¸Ù‡â€Œâ€ŒÛŒâ€ŒÙ¾Ù†Ù‡Ø§Ù† ØªØ±Ø§Ù†Ù‡</string>
+  <string name="size_used">%s Ø§Ø³ØªÙØ§Ø¯Ù‡â€ŒØ´Ø¯Ù‡â€ŒØ§Ø³Øª</string>
+  <string name="privacy">Ø­Ø±ÛŒÙ…â€ŒØ®ØµÙˆØµÛŒ</string>
+  <string name="pause_listen_history">Ù…ØªÙˆÙ‚Ùâ€ŒÚ©Ø±Ø¯Ù† ØªØ§Ø±ÛŒØ®Ú†Ù‡â€ŒÛŒ Ú¯ÙˆØ´â€ŒØ¯Ø§Ø¯Ù†</string>
+  <string name="clear_listen_history">Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† ØªØ§Ø±ÛŒØ®Ú†Ù‡â€ŒÛŒ Ú¯ÙˆØ´â€ŒØ¯Ø§Ø¯Ù†</string>
+  <string name="clear_listen_history_confirm">Ø¢ÛŒØ§ Ø§Ø² Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† ØªÙ…Ø§Ù…ÛŒ Ø³Ø§Ø¨Ù‚Ù‡â€ŒÛŒ Ú¯ÙˆØ´â€ŒØ¯Ø§Ø¯Ù† Ù…Ø·Ù…Ø¦Ù† Ù‡Ø³ØªÛŒØ¯ØŸ</string>
+  <string name="pause_search_history">Ù…ØªÙˆÙ‚Ùâ€ŒÚ©Ø±Ø¯Ù† ØªØ§Ø±ÛŒØ®Ú†Ù‡ Ø¬Ø³ØªØ¬Ùˆ</string>
+  <string name="clear_search_history">Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† ØªØ§Ø±ÛŒØ®Ú†Ù‡ Ø¬Ø³ØªØ¬Ùˆ</string>
+  <string name="clear_search_history_confirm">Ø¢ÛŒØ§ Ø¨Ø±Ø§ÛŒ Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† ØªÙ…Ø§Ù… Ø³Ø§Ø¨Ù‚Ù‡ Ø¬Ø³ØªØ¬Ùˆ Ù…Ø·Ù…Ø¦Ù† Ù‡Ø³ØªÛŒØ¯ØŸ</string>
+  <string name="enable_kugou">ÙØ¹Ø§Ù„â€ŒÚ©Ø±Ø¯Ù† Ø§Ø±Ø§Ø¦Ù‡â€ŒØ¯Ù‡Ù†Ø¯Ù‡â€ŒÛŒ Ù…ØªÙ†â€ŒØªØ±Ø§Ù†Ù‡â€ŒÛŒ KuGou</string>
+  <string name="backup_restore">Ù¾Ø´ØªÛŒØ¨Ø§Ù†â€ŒÚ¯ÛŒØ±ÛŒ Ùˆ Ø¨Ø§Ø²Ú¯Ø±Ø¯Ø§Ù†ÛŒ</string>
+  <string name="action_backup">Ù¾Ø´ØªÛŒØ¨Ø§Ù†â€ŒÚ¯ÛŒØ±ÛŒ</string>
+  <string name="action_restore">Ø¨Ø§Ø²Ú¯Ø±Ø¯Ø§Ù†ÛŒ</string>
+  <string name="imported_playlist">ÙÙ‡Ø±Ø³Øªâ€ŒÙ¾Ø®Ø´ ÙˆØ§Ø±Ø¯Ø´Ø¯</string>
+  <string name="backup_create_success">Ù¾Ø´ØªÛŒØ¨Ø§Ù† Ø¨Ø§Ù…ÙˆÙÙ‚ÛŒØª Ø§ÛŒØ¬Ø§Ø¯Ø´Ø¯</string>
+  <string name="backup_create_failed">Ù¾Ø´ØªÛŒØ¨Ø§Ù† Ø§ÛŒØ¬Ø§Ø¯ Ù†Ø´Ø¯</string>
+  <string name="restore_failed">Ø¨Ø§Ø²ÛŒØ§Ø¨ÛŒ Ù¾Ø´ØªÛŒØ¨Ø§Ù† Ø§Ù†Ø¬Ø§Ù…â€ŒÙ†Ø´Ø¯</string>
+  <string name="about">Ø¯Ø±Ø¨Ø§Ø±Ù‡</string>
+  <string name="app_version">Ù†Ø³Ø®Ù‡â€ŒÛŒ Ø¨Ø±Ù†Ø§Ù…Ù‡</string>
+  <string name="new_version_available">Ù†Ø³Ø®Ù‡â€ŒÛŒ Ø¬Ø¯ÛŒØ¯ Ø¯Ø±Ø¯Ø³ØªØ±Ø³â€ŒØ§Ø³Øª</string>
+  <string name="translation_models">Ù†Ù…ÙˆÙ†Ù‡â€ŒÙ‡Ø§ÛŒ ØªØ±Ø¬Ù…Ù‡</string>
+  <string name="clear_translation_models">Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† Ù†Ù…ÙˆÙ†Ù‡â€ŒÙ‡Ø§ÛŒ ØªØ±Ø¬Ù…Ù‡</string>
+  <string name="forgotten_favorites">Ù…ÙˆØ§Ø±Ø¯ Ø¯Ù„Ø®ÙˆØ§Ù‡ ÙØ±Ø§Ù…ÙˆØ´ Ø´Ø¯Ù‡</string>
+  <string name="keep_listening">Ø¨Ù‡ Ú¯ÙˆØ´ Ø¯Ø§Ø¯Ù† Ø§Ø¯Ø§Ù…Ù‡ Ø¨Ø¯Ù‡</string>
+  <string name="your_youtube_playlists">Ù„ÛŒØ³Øª Ù‡Ø§ÛŒ Ù¾Ø®Ø´ ÛŒÙˆØªÛŒÙˆØ¨ Ø´Ù…Ø§</string>
+  <string name="similar_to">Ø´Ø¨ÛŒÙ‡ Ø¨Ù‡</string>
+  <string name="library_song_empty">Ø¢Ù‡Ù†Ú¯â€Œ Ù‡Ø§ÛŒ Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø§ÛŒÙ†Ø¬Ø§ Ù†Ù…Ø§ÛŒØ´ Ø¯Ø§Ø¯Ù‡ Ù…ÛŒâ€Œ Ø´ÙˆÙ†Ø¯</string>
+  <string name="library_artist_empty">Ù‡Ù†Ø±Ù…Ù†Ø¯Ø§Ù† Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø§ÛŒÙ†Ø¬Ø§ Ù†Ù…Ø§ÛŒØ´ Ø¯Ø§Ø¯Ù‡ Ù…ÛŒ Ø´ÙˆÙ†Ø¯</string>
+  <string name="library_album_empty">Ø¢Ù„Ø¨ÙˆÙ…â€Œ Ù‡Ø§ÛŒ Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø§ÛŒÙ†Ø¬Ø§ Ù†Ù…Ø§ÛŒØ´ Ø¯Ø§Ø¯Ù‡ Ù…ÛŒâ€Œ Ø´ÙˆÙ†Ø¯</string>
+  <string name="library_playlist_empty">Ù„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ù¾Ø®Ø´ Ø´Ù…Ø§ Ø§ÛŒÙ†Ø¬Ø§ Ù†Ù…Ø§ÛŒØ´ Ø¯Ø§Ø¯Ù‡ Ù…ÛŒâ€Œ Ø´ÙˆÙ†Ø¯</string>
+  <string name="other_versions">Ù†Ø³Ø®Ù‡ Ù‡Ø§ÛŒ Ø¯ÛŒÚ¯Ø±</string>
+  <string name="remove_download_playlist_confirm">Ø¢ÛŒØ§ ÙˆØ§Ù‚Ø¹Ø§Ù‹ Ù…ÛŒâ€Œ Ø®ÙˆØ§Ù‡ÛŒØ¯ Ù‡Ù…Ù‡ Ø¢Ù‡Ù†Ú¯â€ŒÙ‡Ø§ÛŒ Ù„ÛŒØ³Øª Ù¾Ø®Ø´ Â«%sÂ» Ø±Ø§ Ø§Ø² Ø­Ø§ÙØ¸Ù‡ Ø¢Ù‡Ù†Ú¯â€Œ Ù‡Ø§ÛŒ Ø¯Ø§Ù†Ù„ÙˆØ¯ Ø´Ø¯Ù‡ Ø­Ø°Ù Ú©Ù†ÛŒØ¯ØŸ</string>
+  <string name="delete_playlist_confirm">Ø¢ÛŒØ§ ÙˆØ§Ù‚Ø¹Ø§Ù‹ Ù…ÛŒâ€Œ Ø®ÙˆØ§Ù‡ÛŒØ¯ Ù„ÛŒØ³Øª Ù¾Ø®Ø´ Â«%sÂ» Ø±Ø§ Ø­Ø°Ù Ú©Ù†ÛŒØ¯ØŸ</string>
+  <string name="add_all_to_library">Ù‡Ù…Ù‡ Ø±Ø§ Ø¨Ù‡ Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø§Ø¶Ø§ÙÙ‡ Ú©Ù†ÛŒØ¯</string>
+  <string name="remove_all_from_library">Ù‡Ù…Ù‡ Ø±Ø§ Ø§Ø² Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø­Ø°Ù Ú©Ù†ÛŒØ¯</string>
+  <string name="remove_from_playlist">Ø­Ø°Ù Ø§Ø² Ù„ÛŒØ³Øª Ù¾Ø®Ø´</string>
+  <string name="remove_from_queue">Ø­Ø°Ù Ø§Ø² ØµÙ</string>
+  <string name="tempo_and_pitch">ØªÙ…Ù¾Ùˆ Ùˆ Ø²ÛŒØ± Ùˆ Ø¨Ù…ÛŒ ØµØ¯Ø§</string>
+  <string name="app_name">O-Beat</string>
+</resources>

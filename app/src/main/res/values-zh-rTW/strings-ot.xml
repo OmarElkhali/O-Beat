@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_auto">Android Auto</string>
+    <string name="folders">è³‡æ–™å¤¾</string>
+    <string name="library">åª’é«”åº«</string>
+    <string name="recent_activity">æœ€è¿‘çš„æ´»å‹•</string>
+    <string name="local_history">æœ¬åœ°</string>
+    <string name="queue_local_history">æ­·å²(æœ¬åœ°)</string>
+    <string name="queue_remote_history">æ­·å²(é ç«¯)</string>
+    <string name="remote_history">é ç«¯</string>
+    <string name="library_empty">æ‚¨çš„åª’é«”åº«å°‡åœ¨æ­¤é¡¯ç¤º</string>
+    <string name="missing_media_permission_warning">éœ€è¦å„²å­˜ç©ºé–“æ¬Šé™ä»¥è®€å–æœ¬åœ°åª’é«”ã€‚é»žæ“ŠæŽˆäºˆæ¬Šé™ã€‚</string>
+    <string name="queues_title">ä½‡åˆ—</string>
+    <string name="create_queue">æ–°ä½‡åˆ—</string>
+    <string name="queue_searched_songs_ot">æœå°‹:</string>
+    <string name="song_added_to_queue">â€œ%sâ€ å·²æ’å…¥ä½‡åˆ—</string>
+    <string name="song_added_to_queue_end">â€œ%sâ€ å·²æ–°å¢žè‡³ä½‡åˆ—æœ«ç«¯</string>
+    <string name="queues_empty">æ²’æœ‰æ’­æ”¾ä½‡åˆ—</string>
+    <string name="auto_playlist">è‡ªå‹•æ’­æ”¾æ¸…å–®</string>
+    <string name="select">é¸æ“‡æ¨¡å¼</string>
+    <string name="like_all">å…¨éƒ¨å–œæ­¡</string>
+    <string name="more_settings">æ›´å¤šè¨­å®š</string>
+    <string name="delete_lyric_confirm">æ‚¨ç¢ºå®šè¦åˆªé™¤å·²å„²å­˜çš„\"%s\"æ­Œè©žå—Ž?</string>
+    <string name="err_invalid_ytm_song">ç„¡æ³•æ’­æ”¾æ­Œæ›²ã€‚åƒ…èƒ½æ’­æ”¾ Youtube Music ä¸Šå¯å­˜å–çš„å…§å®¹</string>
+    <string name="err_play_next_on_error">ç™¼ç”ŸéŒ¯èª¤ã€‚æ’­æ”¾ä¸‹ä¸€é¦–</string>
+    <string name="err_stop_on_error">ç™¼ç”ŸéŒ¯èª¤ã€‚æ’­æ”¾æš«åœ</string>
+    <string name="err_stop_on_too_many_errors">å¤ªå¤šéŒ¯èª¤ã€‚æ’­æ”¾æš«åœ</string>
+    <string name="wait_to_reconnect">ç­‰å¾…é‡æ–°é€£æŽ¥</string>
+    <string name="sort_by_date_modified">ä¿®æ”¹æ—¥æœŸ</string>
+    <string name="sort_by_date_released">ç™¼å¸ƒæ—¥æœŸ</string>
+    <string name="sort_by_like_date">å–œæ­¡çš„æ—¥æœŸ</string>
+    <string name="sort_by_play_count">æ’­æ”¾æ¬¡æ•¸</string>
+    <string name="create_sync_playlist">åŒæ­¥æ’­æ”¾æ¸…å–®</string>
+    <string name="create_sync_playlist_description">æ³¨æ„ï¼šé€™åƒ…å…è¨±èˆ‡Youtube MusicåŒæ­¥ã€‚ä¸å¯æ–¼æœªä¾†æ›´æ”¹ã€‚æ‚¨ä¸å¯æ–°å¢žæœ¬åœ°æ­Œæ›²åˆ°åŒæ­¥çš„æ’­æ”¾æ¸…å–®ã€‚</string>
+    <string name="play_count">æ’­æ”¾æ¬¡æ•¸</string>
+    <string name="sync_progress_active">æ­£åœ¨èˆ‡Youtube MusicåŒæ­¥â€¦</string>
+    <string name="grp_account_sync">å¸³è™Ÿèˆ‡åŒæ­¥</string>
+    <string name="ytm_sync">è‡ªå‹•èˆ‡æ‚¨çš„Youtube Musicå¸³è™ŸåŒæ­¥</string>
+    <string name="oobe_ytm_logon_title">å¸³è™Ÿ</string>
+</resources>
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select">Î›ÎµÎ¹Ï„Î¿Ï…ÏÎ³Î¯Î± ÎµÏ€Î¹Î»Î¿Î³Î®Ï‚</string>
+    <string name="queue_searched_songs_ot">Î‘Î½Î±Î¶Î®Ï„Î·ÏƒÎ·:</string>
+    <string name="local_history">Î¤Î¿Ï€Î¹ÎºÏŒ</string>
+    <string name="queue_local_history">Î™ÏƒÏ„Î¿ÏÎ¹ÎºÏŒ (Ï„Î¿Ï€Î¹ÎºÏŒ)</string>
+    <string name="queue_remote_history">Î™ÏƒÏ„Î¿ÏÎ¹ÎºÏŒ (Î±Ï€Î¿Î¼Î±ÎºÏÏ…ÏƒÎ¼Î­Î½Î¿)</string>
+    <string name="remote_history">Î‘Ï€Î¿Î¼Î±ÎºÏÏ…ÏƒÎ¼Î­Î½Î¿</string>
+    <string name="create_queue">ÎÎ­Î± Î¿Ï…ÏÎ¬</string>
+    <string name="song_added_to_queue">Î¤Î¿ Â«%sÂ» ÎµÎ¹ÏƒÎ®Ï‡Î¸Î· ÏƒÏ„Î·Î½ Î¿Ï…ÏÎ¬</string>
+    <string name="song_added_to_queue_end">Î¤Î¿ Â«%sÂ» Ï€ÏÎ¿ÏƒÏ„Î­Î¸Î·ÎºÎµ ÏƒÏ„Î¿ Ï„Î­Î»Î¿Ï‚ Ï„Î·Ï‚ Î¿Ï…ÏÎ¬Ï‚</string>
+    <string name="auto_playlist">Î‘Ï…Ï„ÏŒÎ¼Î±Ï„Î· Î»Î¯ÏƒÏ„Î± Î±Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î®Ï‚</string>
+    <string name="like_all">ÎœÎ¿Ï… Î±ÏÎ­ÏƒÎ¿Ï…Î½ ÏŒÎ»Î±</string>
+    <string name="folders">Î¦Î¬ÎºÎµÎ»Î¿Î¹</string>
+    <string name="library">Î’Î¹Î²Î»Î¹Î¿Î¸Î®ÎºÎ·</string>
+    <string name="recent_activity">Î ÏÏŒÏƒÏ†Î±Ï„Î· Î´ÏÎ±ÏƒÏ„Î·ÏÎ¹ÏŒÏ„Î·Ï„Î±</string>
+    <string name="delete_lyric_confirm">Î˜ÎµÏ‚ Ï€ÏÎ±Î³Î¼Î±Ï„Î¹ÎºÎ¬ Î½Î± Î´Î¹Î±Î³ÏÎ¬ÏˆÎµÎ¹Ï‚ Ï„Î¿Ï…Ï‚ Î±Ï€Î¿Î¸Î·ÎºÎµÏ…Î¼Î­Î½Î¿Ï…Ï‚ ÏƒÏ„Î¯Ï‡Î¿Ï…Ï‚ Î³Î¹Î± Â«%sÂ»;</string>
+    <string name="err_play_next_on_error">Î ÏÏŒÎµÎºÏ…ÏˆÎµ ÏƒÏ†Î¬Î»Î¼Î±. Î‘Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î® ÎµÏ€Î¿Î¼Î­Î½Î¿Ï…</string>
+    <string name="err_stop_on_error">Î ÏÏŒÎµÎºÏ…ÏˆÎµ ÏƒÏ†Î¬Î»Î¼Î±. Î— Î±Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î® ÏƒÏ„Î±Î¼Î¬Ï„Î·ÏƒÎµ</string>
+    <string name="err_stop_on_too_many_errors">Î Î¬ÏÎ± Ï€Î¿Î»Î»Î¬ ÏƒÏ†Î¬Î»Î¼Î±Ï„Î±. Î— Î±Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î® ÏƒÏ„Î±Î¼Î¬Ï„Î·ÏƒÎµ</string>
+    <string name="wait_to_reconnect">Î‘Î½Î±Î¼Î¿Î½Î® Î³Î¹Î± ÎµÏ€Î±Î½Î±ÏƒÏÎ½Î´ÎµÏƒÎ·</string>
+    <string name="sort_by_date_modified">Î—Î¼ÎµÏÎ¿Î¼Î·Î½Î¯Î± Ï„ÏÎ¿Ï€Î¿Ï€Î¿Î¯Î·ÏƒÎ·Ï‚</string>
+    <string name="sort_by_date_released">Î—Î¼ÎµÏÎ¿Î¼Î·Î½Î¯Î± ÎºÏ…ÎºÎ»Î¿Ï†Î¿ÏÎ¯Î±Ï‚</string>
+    <string name="sort_by_like_date">Î—Î¼ÎµÏÎ¿Î¼Î·Î½Î¯Î± Â«Î¼Î¿Ï… Î±ÏÎ­ÏƒÎµÎ¹Â»</string>
+    <string name="sort_by_play_count">Î‘Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î­Ï‚</string>
+    <string name="create_sync_playlist_description">Î£Î·Î¼ÎµÎ¯Ï‰ÏƒÎ·: Î‘Ï…Ï„ÏŒ ÎµÏ€Î¹Ï„ÏÎ­Ï€ÎµÎ¹ Ï„Î¿ ÏƒÏ…Î³Ï‡ÏÎ¿Î½Î¹ÏƒÎ¼ÏŒ Î¼Îµ Ï„Î¿ YouTube Music. Î‘Ï…Ï„ÏŒ Î”Î•Î Î±Î»Î»Î¬Î¶ÎµÎ¹ Î±ÏÎ³ÏŒÏ„ÎµÏÎ±. Î”ÎµÎ½ Î¼Ï€Î¿ÏÎµÎ¯Ï‚ Î½Î± Ï€ÏÎ¿ÏƒÎ¸Î­ÏƒÎµÎ¹Ï‚ Ï„Î¿Ï€Î¹ÎºÎ¬ Ï„ÏÎ±Î³Î¿ÏÎ´Î¹Î± Î³Î¹Î± ÏƒÎµ ÏƒÏ…Î³Ï‡ÏÎ¿Î½Î¹Î¶ÏŒÎ¼ÎµÎ½ÎµÏ‚ playlists.</string>
+    <string name="create_sync_playlist">Î£Ï…Î³Ï‡ÏÎ¿Î½Î¹ÏƒÎ¼ÏŒÏ‚ Playlist</string>
+    <string name="play_count">Î‘Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î­Ï‚</string>
+    <string name="grp_manual_scanner">Î§ÎµÎ¹ÏÎ¿ÎºÎ¯Î½Î·Ï„Î¿Ï‚ ÏƒÎ±ÏÏ‰Ï„Î®Ï‚</string>
+    <string name="prefs_advanced">Î ÏÎ¿Ï‡Ï‰ÏÎ·Î¼Î­Î½Î±</string>
+    <string name="playlist_add_local_to_synced_note">Î£Î·Î¼ÎµÎ¯Ï‰ÏƒÎ·: Î— Ï€ÏÎ¿ÏƒÎ¸Î®ÎºÎ· Ï„Î¿Ï€Î¹ÎºÏŽÎ½ Ï„ÏÎ±Î³Î¿Ï…Î´Î¹ÏŽÎ½ ÏƒÎµ ÏƒÏ…Î³Ï‡ÏÎ¿Î½Î¹ÏƒÎ¼Î­Î½ÎµÏ‚/Î±Ï€Î¿Î¼ÎºÎ±ÏÏ…ÏƒÎ¼Î­Î½ÎµÏ‚ playlists Î´ÎµÎ½ Ï…Ï€Î¿ÏƒÏ„Î·ÏÎ¯Î¶ÎµÏ„Î±Î¹. ÎšÎ¬Î¸Îµ Î¬Î»Î»Î¿Ï‚ ÏƒÏ…Î½Î´Ï…Î±ÏƒÎ¼ÏŒÏ‚ Î¹ÏƒÏ‡ÏÎµÎ¹</string>
+    <string name="sync_progress_active">Î£Ï…Î³Ï‡ÏÎ¿Î½Î¹ÏƒÎ¼ÏŒÏ‚ Î¼Îµ Î»Î¿Î³Î±ÏÎ¹Î±ÏƒÎ¼ÏŒ YouTubeâ€¦</string>
+    <string name="sync_progress_success">Î£Ï…Î³Ï‡ÏÎ¿Î½Î¹ÏƒÎ¼ÏŒÏ‚ Î¿Î»Î¿ÎºÎ»Î·ÏÏŽÎ¸Î·ÎºÎµ</string>
+    <string name="settings_debug">Î‘Ï€Î¿ÏƒÏ†Î±Î»Î¼Î¬Ï„Ï‰ÏƒÎ·</string>
+    <string name="grp_audio">Î‰Ï‡Î¿Ï‚</string>
+    <string name="grp_extra_scanner_settings">Î ÏÏŒÏƒÎ¸ÎµÏ„ÎµÏ‚ ÏÏ…Î¸Î¼Î¯ÏƒÎµÎ¹Ï‚ ÏƒÎ¬ÏÏ‰ÏƒÎ·Ï‚</string>
+    <string name="grp_general">Î“ÎµÎ½Î¹ÎºÎ¬</string>
+    <string name="grp_interface">Î”Î¹ÎµÏ€Î±Ï†Î®</string>
+    <string name="grp_layout">Î”Î¹Î¬Ï„Î±Î¾Î·</string>
+    <string name="grp_localization">Î¤Î¿Ï€Î¹ÎºÎ¿Ï€Î¿Î¯Î·ÏƒÎ·</string>
+    <string name="grp_lyrics_format">ÎœÎ¿ÏÏ†Î¿Ï€Î¿Î¯Î·ÏƒÎ·</string>
+    <string name="grp_lyrics_parser">Î‘Î½Î±Î»Ï…Ï„Î®Ï‚</string>
+    <string name="grp_lyrics_source">Î Î·Î³Î­Ï‚ ÏƒÏ„Î¯Ï‡Ï‰Î½</string>
+    <string name="grp_proxy">Î”Î¹Î±Î¼ÎµÏƒÎ¿Î»Î¬Î²Î·ÏƒÎ·</string>
+    <string name="attrib_zhuang">Zion Huang Î³Î¹Î± Ï„Î¿ InnerTune</string>
+    <string name="special_thanks">Î•Î¹Î´Î¹ÎºÎ­Ï‚ ÎµÏ…Ï‡Î±ÏÎ¹ÏƒÏ„Î¯ÎµÏ‚</string>
+    <string name="new_interface">ÎÎ­Î± Î´Î¹Î¬Ï„Î±Î¾Î· Î´Î¹ÎµÏ€Î±Ï†Î®Ï‚</string>
+    <string name="player_background_blur">Î˜ÏŒÎ»Ï‰Î¼Î±</string>
+    <string name="player_background_default">ÎŠÎ´Î¹Î¿ Î¼Îµ Î¸Î­Î¼Î±</string>
+    <string name="player_background_gradient">Î”Î¹Î±Î²Î¬Î¸Î¼Î¹ÏƒÎ·</string>
+    <string name="player_background_style">Î£Ï„Ï…Î» Ï€Î±ÏÎ±ÏƒÎºÎ·Î½Î¯Î¿Ï… Î±Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î­Î±</string>
+    <string name="show_liked_and_downloaded_playlist">Î•Î¼Ï†Î¬Î½Î¹ÏƒÎ· Î±Î³Î±Ï€Î·Î¼Î­Î½Ï‰Î½ ÎºÎ±Î¹ ÎºÎ±Ï„ÎµÎ²Î±ÏƒÎ¼Î­Î½Ï‰Î½ playlists ÏƒÏ„Î· Î²Î¹Î²Î»Î¹Î¿Î¸Î®ÎºÎ·</string>
+    <string name="slim_navbar_title">Î›ÎµÏ€Ï„Î® Î³ÏÎ±Î¼Î¼Î® Ï€Î»Î¿Î®Î³Î·ÏƒÎ·Ï‚</string>
+    <string name="slim_navbar_description">Î‘Ï†Î±Î¯ÏÎµÏƒÎ· ÎµÏ„Î¹ÎºÎµÏ„ÏŽÎ½ ÎºÎµÎ¹Î¼Î­Î½Î¿Ï… Î³Î¹Î± Ï„Î· Î¼ÎµÎ¯Ï‰ÏƒÎ· ÏÏˆÎ¿Ï…Ï‚ Ï„Î·Ï‚ Î³ÏÎ±Î¼Î¼Î®Ï‚ Ï€Î»Î¿Î®Î³Î·ÏƒÎ·Ï‚</string>
+    <string name="queues_title">ÎŸÏ…ÏÎ­Ï‚</string>
+    <string name="queues_empty">ÎšÎ±Î¼Î¯Î± Î¿Ï…ÏÎ¬</string>
+    <string name="tab_arrangement">Î‘Î½Î±Î´Î¹Î¬Ï„Î±Î¾Î· ÎºÎ±ÏÏ„ÎµÎ»ÏŽÎ½</string>
+    <string name="tab_arrangement_disable_tip">â€“ Î£ÏÏÎµ Ï€Î±ÏÎ±ÎºÎ¬Ï„Ï‰ Î³Î¹Î± Î±Ï€ÎµÎ½ÎµÏÎ³Î¿Ï€Î¿Î¯Î·ÏƒÎ· -</string>
+    <string name="tab_arrangement_home_required">Î— ÎºÎ±ÏÏ„Î­Î»Î± Î‘ÏÏ‡Î¹ÎºÎ® Î±Ï€Î±Î¹Ï„ÎµÎ¯Ï„Î±Î¹.</string>
+    <string name="android_auto">Android Auto</string>
+</resources>
+
+
+
+
+
+

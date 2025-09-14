@@ -1,0 +1,43 @@
+﻿<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Couleur du logo -->
+    <group>
+        <!-- Arceau -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#FFA000"
+            android:strokeWidth="10"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M30,48 A24,24 0 0 1 78,48" />
+
+        <!-- Écouteur gauche -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#FFA000"
+            android:strokeWidth="16"
+            android:strokeLineCap="round"
+            android:pathData="M30,66 V90" />
+
+        <!-- Écouteur droit -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#FFA000"
+            android:strokeWidth="16"
+            android:strokeLineCap="round"
+            android:pathData="M78,66 V90" />
+
+        <!-- Tracé “beat” au centre -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#FFA000"
+            android:strokeWidth="8"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M42,78 H48 L52,66 L56,90 L60,78 H72" />
+    </group>
+</vector>

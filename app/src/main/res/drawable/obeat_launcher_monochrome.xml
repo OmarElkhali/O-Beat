@@ -1,0 +1,14 @@
+﻿<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <inset
+      android:insetLeft="@dimen/launcher_inset"
+      android:insetTop="@dimen/launcher_inset"
+      android:insetRight="@dimen/launcher_inset"
+      android:insetBottom="@dimen/launcher_inset">
+      <bitmap
+        android:src="@drawable/obeat_logo"
+        android:tint="@android:color/black"
+        android:gravity="center"/>
+    </inset>
+  </item>
+</layer-list>

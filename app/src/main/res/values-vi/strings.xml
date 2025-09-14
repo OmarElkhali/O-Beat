@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Bottom navigation -->
+  <string name="home">Trang chá»§</string>
+  <string name="songs">BÃ i hÃ¡t</string>
+  <string name="artists">Nghá»‡ sÄ©</string>
+  <string name="albums">Album</string>
+  <string name="playlists">Danh sÃ¡ch phÃ¡t</string>
+  <!-- Top bar -->
+  <plurals name="n_selected">
+    <item quantity="other">ÄÃ£ chá»n %d</item>
+  </plurals>
+  <!-- Home -->
+  <string name="history">Lá»‹ch sá»­</string>
+  <string name="stats">Thá»‘ng kÃª</string>
+  <string name="mood_and_genres">TÃ¢m tráº¡ng vÃ  thá»ƒ loáº¡i</string>
+  <string name="account">TÃ i Khoáº£n</string>
+  <string name="quick_picks">Lá»±a chá»n nhanh</string>
+  <string name="quick_picks_empty">HÃ£y nghe cÃ¡c bÃ i hÃ¡t Ä‘á»ƒ táº¡o danh sÃ¡ch chá»n nhanh cá»§a báº¡n</string>
+  <string name="new_release_albums">CÃ¡c album má»›i phÃ¡t hÃ nh</string>
+  <!-- History -->
+  <string name="today">HÃ´m nay</string>
+  <string name="yesterday">HÃ´m qua</string>
+  <string name="this_week">Tuáº§n nÃ y</string>
+  <string name="last_week">Tuáº§n trÆ°á»›c</string>
+  <!-- Stats -->
+  <string name="most_played_songs">BÃ i hÃ¡t Ä‘Æ°á»£c phÃ¡t nhiá»u nháº¥t</string>
+  <string name="most_played_artists">Nghá»‡ sÄ© Ä‘Æ°á»£c phÃ¡t nhiá»u nháº¥t</string>
+  <string name="most_played_albums">Album Ä‘Æ°á»£c phÃ¡t nhiá»u nháº¥t</string>
+  <!-- Search -->
+  <string name="search">TÃ¬m kiáº¿m</string>
+  <string name="search_yt_music">TÃ¬m kiáº¿m trÃªn YouTube Musicâ€¦</string>
+  <string name="search_library">TÃ¬m kiáº¿m trong thÆ° viá»‡nâ€¦</string>
+  <string name="filter_library">ThÆ° viá»‡n</string>
+  <string name="filter_liked">ÄÃ£ thÃ­ch</string>
+  <string name="filter_downloaded">ÄÃ£ táº£i xuá»‘ng</string>
+  <string name="filter_all">Táº¥t cáº£</string>
+  <string name="filter_songs">BÃ i hÃ¡t</string>
+  <string name="filter_videos">Video</string>
+  <string name="filter_albums">Album</string>
+  <string name="filter_artists">Nghá»‡ sÄ©</string>
+  <string name="filter_playlists">Danh sÃ¡ch phÃ¡t</string>
+  <string name="filter_community_playlists">Danh sÃ¡ch phÃ¡t cá»™ng Ä‘á»“ng</string>
+  <string name="filter_featured_playlists">Danh sÃ¡ch phÃ¡t ná»•i báº­t</string>
+  <string name="filter_bookmarked">ÄÃ£ Ä‘Ã¡nh dáº¥u</string>
+  <string name="no_results_found">KhÃ´ng tÃ¬m tháº¥y káº¿t quáº£ nÃ o</string>
+  <!-- Artist screen -->
+  <string name="from_your_library">Tá»« thÆ° viá»‡n cá»§a báº¡n</string>
+  <!-- Playlist -->
+  <string name="liked_songs">BÃ i hÃ¡t Ä‘Æ°á»£c yÃªu thÃ­ch</string>
+  <string name="downloaded_songs">BÃ i hÃ¡t Ä‘Æ°á»£c táº£i xuá»‘ng</string>
+  <string name="playlist_is_empty">Danh sÃ¡ch phÃ¡t Ä‘ang trá»‘ng</string>
+  <!-- Button -->
+  <string name="retry">Thá»­ láº¡i</string>
+  <string name="radio">ÄÃ i phÃ¡t</string>
+  <string name="shuffle">Trá»™n bÃ i</string>
+  <string name="reset">CÃ i láº¡i</string>
+  <!-- Menu -->
+  <string name="details">Chi tiáº¿t</string>
+  <string name="edit">Chá»‰nh sá»­a</string>
+  <string name="start_radio">Báº¯t Ä‘áº§u Ä‘Ã i phÃ¡t</string>
+  <string name="play">PhÃ¡t</string>
+  <string name="play_next">PhÃ¡t bÃ i tiáº¿p theo</string>
+  <string name="add_to_queue">ThÃªm vÃ o hÃ ng chá»</string>
+  <string name="add_to_library">ThÃªm vÃ o thÆ° viá»‡n</string>
+  <string name="remove_from_library">XoÃ¡ khá»i thÆ° viá»‡n</string>
+  <string name="action_download">Táº£i xuá»‘ng</string>
+  <string name="downloading">Äang táº£i xuá»‘ng</string>
+  <string name="remove_download">XoÃ¡ má»¥c Ä‘Ã£ táº£i xuá»‘ng</string>
+  <string name="import_playlist">Nháº­p danh sÃ¡ch phÃ¡t</string>
+  <string name="add_to_playlist">ThÃªm vÃ o danh sÃ¡ch phÃ¡t</string>
+  <string name="view_artist">Xem nghá»‡ sÄ©</string>
+  <string name="view_album">Xem album</string>
+  <string name="refetch">LÃ m má»›i</string>
+  <string name="share">Chia sáº»</string>
+  <string name="delete">XoÃ¡</string>
+  <string name="remove_from_history">XoÃ¡ khá»i lá»‹ch sá»­</string>
+  <string name="search_online">TÃ¬m kiáº¿m trá»±c tuyáº¿n</string>
+  <string name="action_sync">Äá»“ng bá»™</string>
+  <string name="advanced">NÃ¢ng cao</string>
+  <!-- Sort menu -->
+  <string name="sort_by_create_date">NgÃ y thÃªm vÃ o</string>
+  <string name="sort_by_name">TÃªn</string>
+  <string name="sort_by_artist">Nghá»‡ sÄ©</string>
+  <string name="sort_by_year">NÄƒm</string>
+  <string name="sort_by_song_count">Sá»‘ lÆ°á»£ng bÃ i hÃ¡t</string>
+  <string name="sort_by_length">Äá»™ dÃ i</string>
+  <string name="sort_by_play_time">Thá»i gian phÃ¡t</string>
+  <string name="sort_by_custom">Tuá»³ chá»‰nh bá»™ lá»c</string>
+  <!-- Dialog -->
+  <string name="media_id">ID phÆ°Æ¡ng tiá»‡n</string>
+  <string name="mime_type">Äá»‹nh dáº¡ng</string>
+  <string name="codecs">Bá»™ giáº£i mÃ£</string>
+  <string name="bitrate">Tá»‘c Ä‘á»™ bit</string>
+  <string name="sample_rate">Tá»· lá»‡ máº«u</string>
+  <string name="loudness">Äá»™ á»“n</string>
+  <string name="volume">Ã‚m lÆ°á»£ng</string>
+  <string name="file_size">KÃ­ch thÆ°á»›c tá»‡p tin</string>
+  <string name="unknown">KhÃ´ng rÃµ</string>
+  <string name="copied">ÄÃ£ sao chÃ©p vÃ o clipboard</string>
+  <string name="edit_lyrics">Sá»­a lá»i bÃ i hÃ¡t</string>
+  <string name="search_lyrics">TÃ¬m kiáº¿m lá»i bÃ i hÃ¡t</string>
+  <string name="edit_song">Sá»­a bÃ i hÃ¡t</string>
+  <string name="song_title">TÃªn bÃ i hÃ¡t</string>
+  <string name="song_artists">Nghá»‡ sÄ© bÃ i hÃ¡t</string>
+  <string name="error_song_title_empty">TÃªn bÃ i hÃ¡t khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng.</string>
+  <string name="error_song_artist_empty">Nghá»‡ sÄ© bÃ i hÃ¡t khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng.</string>
+  <string name="save">LÆ°u</string>
+  <string name="choose_playlist">Chá»n danh sÃ¡ch phÃ¡t</string>
+  <string name="edit_playlist">Chá»‰nh sá»­a danh sÃ¡ch phÃ¡t</string>
+  <string name="create_playlist">Táº¡o danh sÃ¡ch phÃ¡t</string>
+  <string name="playlist_name">TÃªn danh sÃ¡ch phÃ¡t</string>
+  <string name="error_playlist_name_empty">TÃªn danh sÃ¡ch phÃ¡t khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng.</string>
+  <string name="edit_artist">Chá»‰nh sá»­a nghá»‡ sÄ©</string>
+  <string name="artist_name">TÃªn nghá»‡ sÄ©</string>
+  <string name="error_artist_name_empty">TÃªn nghá»‡ sÄ© khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng.</string>
+  <!-- Noun -->
+  <plurals name="n_song">
+    <item quantity="other">%d bÃ i hÃ¡t</item>
+  </plurals>
+  <plurals name="n_artist">
+    <item quantity="other">%d nghá»‡ sÄ©</item>
+  </plurals>
+  <plurals name="n_album">
+    <item quantity="other">%d album</item>
+  </plurals>
+  <plurals name="n_playlist">
+    <item quantity="other">%d danh sÃ¡ch phÃ¡t</item>
+  </plurals>
+  <plurals name="n_week">
+    <item quantity="other">%d tuáº§n</item>
+  </plurals>
+  <plurals name="n_month">
+    <item quantity="other">%d thÃ¡ng</item>
+  </plurals>
+  <plurals name="n_year">
+    <item quantity="other">%d nÄƒm</item>
+  </plurals>
+  <!-- Snackbar -->
+  <string name="playlist_imported">Danh sÃ¡ch phÃ¡t Ä‘Ã£ Ä‘Æ°á»£c nháº­p vÃ o</string>
+  <string name="removed_song_from_playlist">ÄÃ£ xoÃ¡ \"%s\" khá»i danh sÃ¡ch phÃ¡t</string>
+  <string name="playlist_synced">Danh sÃ¡ch phÃ¡t Ä‘Æ°á»£c Ä‘á»“ng bá»™</string>
+  <string name="undo">HoÃ n tÃ¡c</string>
+  <!-- Player -->
+  <string name="lyrics_not_found">KhÃ´ng tÃ¬m tháº¥y lá»i bÃ i hÃ¡t</string>
+  <string name="sleep_timer">Háº¹n giá» ngá»§</string>
+  <string name="end_of_song">Káº¿t thÃºc bÃ i hÃ¡t</string>
+  <plurals name="minute">
+    <item quantity="other">%d phÃºt</item>
+  </plurals>
+  <string name="error_no_stream">KhÃ´ng cÃ³ luá»“ng nÃ o kháº£ dá»¥ng</string>
+  <string name="error_no_internet">KhÃ´ng cÃ³ káº¿t ná»‘i máº¡ng</string>
+  <string name="error_timeout">Háº¿t giá»</string>
+  <string name="error_unknown">Lá»—i khÃ´ng xÃ¡c Ä‘á»‹nh</string>
+  <!-- Player action -->
+  <string name="action_like">ThÃ­ch</string>
+  <string name="action_remove_like">Bá» thÃ­ch</string>
+  <string name="action_shuffle_on">Báº­t trá»™n bÃ i</string>
+  <string name="action_shuffle_off">Táº¯t trá»™n bÃ i</string>
+  <string name="repeat_mode_off">Táº¯t láº·p láº¡i</string>
+  <string name="repeat_mode_one">Láº·p láº¡i bÃ i hÃ¡t nÃ y</string>
+  <string name="repeat_mode_all">Láº·p láº¡i hÃ ng Ä‘á»£i</string>
+  <!-- Queue Title -->
+  <string name="queue_all_songs">Táº¥t cáº£ bÃ i hÃ¡t</string>
+  <string name="queue_searched_songs">Nhá»¯ng bÃ i hÃ¡t Ä‘Æ°á»£c tÃ¬m kiáº¿m</string>
+  <!-- Notification name -->
+  <string name="music_player">TrÃ¬nh phÃ¡t nháº¡c</string>
+  <!-- Settings -->
+  <string name="settings">CÃ i Ä‘áº·t</string>
+  <string name="appearance">Hiá»ƒn thá»‹</string>
+  <string name="enable_dynamic_theme">Báº­t chá»§ Ä‘á» theo mÃ u sáº¯c</string>
+  <string name="dark_theme">Chá»§ Ä‘á» tá»‘i</string>
+  <string name="dark_theme_on">Báº­t</string>
+  <string name="dark_theme_off">Táº¯t</string>
+  <string name="dark_theme_follow_system">Theo há»‡ thá»‘ng</string>
+  <string name="pure_black">Tá»‘i hoÃ n toÃ n</string>
+  <string name="default_open_tab">Tab máº·c Ä‘á»‹nh</string>
+  <string name="customize_navigation_tabs">TÃ¹y chá»‰nh thanh tab Ä‘iá»u hÆ°á»›ng</string>
+  <string name="lyrics_text_position">Vá»‹ trÃ­ lá»i bÃ i hÃ¡t</string>
+  <string name="left">TrÃ¡i</string>
+  <string name="center">Giá»¯a</string>
+  <string name="right">Pháº£i</string>
+  <string name="content">Ná»™i dung</string>
+  <string name="login">Sá»± Ä‘Äƒng nháº­p</string>
+  <string name="content_language">Ná»™i dung ngÃ´n ngá»¯ máº·c Ä‘á»‹nh</string>
+  <string name="content_country">Ná»™i dung quá»‘c gia máº·c Ä‘á»‹nh</string>
+  <string name="system_default">Máº·c Ä‘á»‹nh há»‡ thá»‘ng</string>
+  <string name="enable_proxy">Báº­t Proxy</string>
+  <string name="proxy_type">Loáº¡i Proxy</string>
+  <string name="proxy_url">LiÃªn káº¿t Proxy</string>
+  <string name="restart_to_take_effect">Khá»Ÿi Ä‘á»™ng láº¡i Ä‘á»ƒ Ã¡p dá»¥ng</string>
+  <string name="player_and_audio">TrÃ¬nh phÃ¡t vÃ  Ã¢m thanh</string>
+  <string name="audio_quality">Cháº¥t lÆ°á»£ng Ã¢m thanh</string>
+  <string name="audio_quality_auto">Tá»± Ä‘á»™ng</string>
+  <string name="audio_quality_high">Cao</string>
+  <string name="audio_quality_low">Tháº¥p</string>
+  <string name="persistent_queue">Cá»‘ Ä‘á»‹nh hÃ ng Ä‘á»£i</string>
+  <string name="skip_silence">Bá» qua khoáº£ng láº·ng</string>
+  <string name="audio_normalization">Chuáº©n hoÃ¡ Ã¢m lÆ°á»£ng</string>
+  <string name="equalizer">Bá»™ chá»‰nh Ã¢m</string>
+  <string name="storage">Bá»™ nhá»›</string>
+  <string name="cache">Bá»™ nhá»› Ä‘á»‡m</string>
+  <string name="image_cache">Bá»™ nhá»› Ä‘á»‡m hÃ¬nh áº£nh</string>
+  <string name="song_cache">Bá»™ nhá»› Ä‘á»‡m bÃ i hÃ¡t</string>
+  <string name="max_cache_size">KÃ­ch thÆ°á»›c bá»™ nhá»› Ä‘á»‡m tá»‘i Ä‘a</string>
+  <string name="unlimited">KhÃ´ng giá»›i háº¡n</string>
+  <string name="clear_all_downloads">XoÃ¡ táº¥t cáº£ cÃ¡c má»¥c Ä‘Ã£ táº£i xuá»‘ng</string>
+  <string name="max_image_cache_size">KÃ­ch thÆ°á»›c bá»™ nhá»› Ä‘á»‡m hÃ¬nh áº£nh tá»‘i Ä‘a</string>
+  <string name="clear_image_cache">XÃ³a bá»™ nhá»› Ä‘á»‡m hÃ¬nh áº£nh</string>
+  <string name="max_song_cache_size">KÃ­ch thÆ°á»›c bá»™ nhá»› Ä‘á»‡m bÃ i hÃ¡t tá»‘i Ä‘a</string>
+  <string name="clear_song_cache">XÃ³a bá»™ nhá»› Ä‘á»‡m bÃ i hÃ¡t</string>
+  <string name="size_used">ÄÃ£ sá»­ dá»¥ng %s</string>
+  <string name="privacy">Quyá»n riÃªng tÆ°</string>
+  <string name="pause_listen_history">Táº¡m dá»«ng lá»‹ch sá»­ nghe</string>
+  <string name="clear_listen_history">XÃ³a lá»‹ch sá»­ nghe</string>
+  <string name="clear_listen_history_confirm">Báº¡n cÃ³ cháº¯c muá»‘n xoÃ¡ táº¥t cáº£ lá»‹ch sá»­ nghe khÃ´ng?</string>
+  <string name="pause_search_history">Táº¡m dá»«ng lá»‹ch sá»­ tÃ¬m kiáº¿m</string>
+  <string name="clear_search_history">XÃ³a lá»‹ch sá»­ tÃ¬m kiáº¿m</string>
+  <string name="clear_search_history_confirm">Báº¡n cÃ³ cháº¯c muá»‘n xoÃ¡ táº¥t cáº£ lá»‹ch sá»­ tÃ¬m kiáº¿m?</string>
+  <string name="enable_kugou">Báº­t nhÃ  cung cáº¥p lá»i bÃ i hÃ¡t KuGou</string>
+  <string name="backup_restore">Sao lÆ°u vÃ  khÃ´i phá»¥c</string>
+  <string name="action_backup">Sao lÆ°u</string>
+  <string name="action_restore">KhÃ´i phá»¥c</string>
+  <string name="imported_playlist">ÄÃ£ nháº­p danh sÃ¡ch phÃ¡t</string>
+  <string name="backup_create_success">ÄÃ£ táº¡o báº£n sao lÆ°u thÃ nh cÃ´ng</string>
+  <string name="backup_create_failed">KhÃ´ng thá»ƒ táº¡o báº£n sao lÆ°u</string>
+  <string name="restore_failed">KhÃ´ng thá»ƒ khÃ´i phá»¥c báº£n sao lÆ°u</string>
+  <string name="about">Giá»›i thiá»‡u</string>
+  <string name="app_version">PhiÃªn báº£n á»©ng dá»¥ng</string>
+  <string name="new_version_available">PhiÃªn báº£n má»›i cÃ³ sáºµn</string>
+  <string name="translation_models">MÃ´ hÃ¬nh dá»‹ch thuáº­t</string>
+  <string name="clear_translation_models">XoÃ¡ mÃ´ hÃ¬nh dá»‹ch thuáº­t</string>
+  <string name="remove_from_playlist">XoÃ¡ khá»i danh sÃ¡ch phÃ¡t</string>
+  <string name="duplicates">Báº£n sao</string>
+  <string name="skip_duplicates">Bá» qua cÃ¡c báº£n sao</string>
+  <string name="add_anyway">Váº«n cá»© thÃªm vÃ o</string>
+  <string name="duplicates_description_single">BÃ i hÃ¡t Ä‘Ã£ cÃ³ trong danh sÃ¡ch phÃ¡t cá»§a báº¡n</string>
+  <string name="duplicates_description_multiple">%d bÃ i hÃ¡t Ä‘Ã£ cÃ³ trong danh sÃ¡ch phÃ¡t cá»§a báº¡n</string>
+  <string name="remove_download_playlist_confirm">Báº¡n cÃ³ thá»±c sá»± muá»‘n xÃ³a táº¥t cáº£ \"%s\" bÃ i hÃ¡t trong danh sÃ¡ch phÃ¡t khá»i bá»™ nhá»› BÃ i hÃ¡t Ä‘Æ°á»£c táº£i xuá»‘ng khÃ´ng?</string>
+  <string name="delete_playlist_confirm">Báº¡n cÃ³ thá»±c sá»± muá»‘n xÃ³a \"%s\" danh sÃ¡ch phÃ¡t khÃ´ng?</string>
+  <string name="not_logged_in">ChÆ°a Ä‘Äƒng nháº­p</string>
+  <string name="enable_lrclib">Báº­t nhÃ  cung cáº¥p lá»i bÃ i hÃ¡t LrcLib</string>
+  <string name="discord_integration">TÃ­ch há»£p Discord</string>
+  <string name="dismiss">Bá» qua</string>
+  <string name="options">TÃ¹y chá»n</string>
+  <string name="preview">Xem trÆ°á»›c</string>
+  <string name="login_failed">ÄÄƒng nháº­p khÃ´ng thÃ nh cÃ´ng</string>
+  <string name="action_logout">ÄÄƒng xuáº¥t</string>
+  <string name="enable_discord_rpc">KÃ­ch hoáº¡t Rich Presence</string>
+  <string name="sided">Cáº¡nh bÃªn</string>
+  <string name="player_text_alignment">CÄƒn chá»‰nh vÄƒn báº£n cá»§a trÃ¬nh phÃ¡t</string>
+  <string name="hide_explicit">áº¨n ná»™i dung pháº£n cáº£m</string>
+  <string name="forgotten_favorites">Nhá»¯ng má»¥c yÃªu thÃ­ch bá»‹ lÃ£ng quÃªn</string>
+  <string name="keep_listening">Tiáº¿p tá»¥c nghe</string>
+  <string name="library_song_empty">BÃ i hÃ¡t trong thÆ° viá»‡n sáº½ hiá»ƒn thá»‹ á»Ÿ Ä‘Ã¢y</string>
+  <string name="library_artist_empty">Nghá»‡ sÄ© thÆ° viá»‡n sáº½ xuáº¥t hiá»‡n á»Ÿ Ä‘Ã¢y</string>
+  <string name="library_album_empty">Album thÆ° viá»‡n sáº½ hiá»ƒn thá»‹ á»Ÿ Ä‘Ã¢y</string>
+  <string name="library_playlist_empty">Danh sÃ¡ch phÃ¡t cá»§a báº¡n sáº½ hiá»ƒn thá»‹ á»Ÿ Ä‘Ã¢y</string>
+  <string name="other_versions">CÃ¡c phiÃªn báº£n khÃ¡c</string>
+  <string name="tempo_and_pitch">Nhá»‹p Ä‘á»™ vÃ  Cao Ä‘á»™</string>
+  <string name="player">TrÃ¬nh phÃ¡t</string>
+  <string name="player_slider_style">Kiá»ƒu thanh trÆ°á»£t cá»§a trÃ¬nh phÃ¡t</string>
+  <string name="default_">Máº·c Ä‘á»‹nh</string>
+  <string name="squiggly">LÆ°á»£n sÃ³ng</string>
+  <string name="grid_cell_size">KÃ­ch thÆ°á»›c Ã´ lÆ°á»›i</string>
+  <string name="small">Nhá»</string>
+  <string name="misc">KhÃ¡c</string>
+  <string name="big">Lá»›n</string>
+  <string name="persistent_queue_desc">KhÃ´i phá»¥c hÃ ng Ä‘á»£i cuá»‘i cÃ¹ng cá»§a báº¡n khi á»©ng dá»¥ng báº¯t Ä‘áº§u</string>
+  <string name="queue">HÃ ng Ä‘á»£i</string>
+  <string name="auto_load_more">Tá»± Ä‘á»™ng táº£i thÃªm bÃ i hÃ¡t</string>
+  <string name="stop_music_on_task_clear">Dá»«ng nháº¡c khi Ä‘Ã³ng á»©ng dá»¥ng</string>
+  <string name="disable_screenshot">VÃ´ hiá»‡u áº£nh chá»¥p mÃ n hÃ¬nh</string>
+  <string name="auto_skip_next_on_error">Tá»± Ä‘á»™ng chuyá»ƒn sang bÃ i hÃ¡t tiáº¿p theo khi xáº£y ra lá»—i</string>
+  <string name="your_youtube_playlists">Danh sÃ¡ch phÃ¡t YouTube cá»§a báº¡n</string>
+  <string name="similar_to">TÆ°Æ¡ng tá»±</string>
+  <string name="auto_load_more_desc">Tá»± Ä‘á»™ng thÃªm nhiá»u bÃ i hÃ¡t hÆ¡n khi hÃ ng Ä‘á»£i káº¿t thÃºc, náº¿u cÃ³ thá»ƒ</string>
+  <string name="add_all_to_library">ThÃªm táº¥t cáº£ vÃ o thÆ° viá»‡n</string>
+  <string name="remove_all_from_library">XÃ³a táº¥t cáº£ khá»i thÆ° viá»‡n</string>
+  <string name="remove_from_queue">XÃ³a khá»i hÃ ng Ä‘á»£i</string>
+  <string name="action_remove_like_all">XÃ³a táº¥t cáº£ lÆ°á»£t thÃ­ch</string>
+  <string name="action_like_all">ThÃ­ch táº¥t cáº£</string>
+  <string name="listen_history">Lá»‹ch sá»­ nghe</string>
+  <string name="theme">Chá»§ Ä‘á»</string>
+  <string name="auto_skip_next_on_error_desc">Äáº£m báº£o tráº£i nghiá»‡m phÃ¡t láº¡i liÃªn tá»¥c cá»§a báº¡n</string>
+  <string name="search_history">Lá»‹ch sá»­ tÃ¬m kiáº¿m</string>
+  <string name="disable_screenshot_desc">Khi tÃ¹y chá»n nÃ y Ä‘Æ°á»£c báº­t, áº£nh chá»¥p mÃ n hÃ¬nh vÃ  cháº¿ Ä‘á»™ xem á»©ng dá»¥ng trong má»¥c Gáº§n Ä‘Ã¢y sáº½ bá»‹ vÃ´ hiá»‡u hÃ³a.</string>
+  <string name="discord_information">O-Beat sá»­ dá»¥ng thÆ° viá»‡n KizzyRPC Ä‘á»ƒ thiáº¿t láº­p tráº¡ng thÃ¡i tÃ i khoáº£n Discord cá»§a báº¡n. Äiá»u nÃ y liÃªn quan Ä‘áº¿n viá»‡c sá»­ dá»¥ng káº¿t ná»‘i Discord Gateway, cÃ³ thá»ƒ Ä‘Æ°á»£c coi lÃ  vi pháº¡m TOS cá»§a Discord. Tuy nhiÃªn, khÃ´ng cÃ³ trÆ°á»ng há»£p nÃ o Ä‘Æ°á»£c biáº¿t Ä‘áº¿n vá» viá»‡c tÃ i khoáº£n ngÆ°á»i dÃ¹ng bá»‹ Ä‘Ã¬nh chá»‰ vÃ¬ lÃ½ do nÃ y. Sá»­ dá»¥ng theo rá»§i ro cá»§a riÃªng báº¡n. \n \nO-Beat sáº½ chá»‰ trÃ­ch xuáº¥t mÃ£ thÃ´ng bÃ¡o cá»§a báº¡n vÃ  má»i thá»© khÃ¡c Ä‘Æ°á»£c lÆ°u trá»¯ cá»¥c bá»™.</string>
+  <string name="use_login_for_browse">ÄÄƒng nháº­p Ä‘á»ƒ xem ná»™i dung</string>
+  <string name="use_login_for_browse_desc">Äiá»u nÃ y cÃ³ thá»ƒ áº£nh hÆ°á»Ÿng Ä‘áº¿n ná»™i dung báº¡n nhÃ¬n tháº¥y, vÃ­ dá»¥ nhÆ° hiá»‡n nhá»¯ng album dÃ nh riÃªng cho premium náº¿u báº¡n Ä‘Äƒng nháº­p vá»›i tÃ i khoáº£n Premium</string>
+  <string name="action_login">ÄÄƒng nháº­p</string>
+  <string name="app_name">O-Beat</string>
+</resources>

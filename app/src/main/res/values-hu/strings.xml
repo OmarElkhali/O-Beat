@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <!-- Bottom navigation -->
+  <string name="home">KezdÅ‘lap</string>
+  <string name="songs">Dalok</string>
+  <string name="artists">ElÅ‘adÃ³k</string>
+  <string name="albums">Albumok</string>
+  <string name="playlists">LejÃ¡tszÃ¡silistÃ¡k</string>
+  <!-- Top bar -->
+  <plurals name="n_selected">
+    <item quantity="one">%d kijelÃ¶lve</item>
+    <item quantity="other">%d kijelÃ¶lve</item>
+  </plurals>
+  <!-- Home -->
+  <string name="history">ElÅ‘zmÃ©nyek</string>
+  <string name="stats">StatisztikÃ¡k</string>
+  <string name="mood_and_genres">Hangulatok Ã©s MÅ±fajok</string>
+  <string name="account">FiÃ³k</string>
+  <string name="quick_picks">Gyors vÃ¡lasztÃ¡sok</string>
+  <string name="quick_picks_empty">Hallgasson zeneszÃ¡mokat a gyors vÃ¡lasztÃ¡sok generÃ¡lÃ¡sÃ¡hoz</string>
+  <string name="new_release_albums">Ãšjonnan megjelent albumok</string>
+  <!-- History -->
+  <string name="today">Ma</string>
+  <string name="yesterday">Tegnap</string>
+  <string name="this_week">A hÃ©ten</string>
+  <string name="last_week">MÃºlt hÃ©ten</string>
+  <!-- Stats -->
+  <string name="most_played_songs">LegtÃ¶bbet jÃ¡tszott dalok</string>
+  <string name="most_played_artists">LegtÃ¶bbet jÃ¡tszott elÅ‘adÃ³k</string>
+  <string name="most_played_albums">LegtÃ¶bbet jÃ¡tszott albumok</string>
+  <!-- Search -->
+  <string name="search">KeresÃ©s</string>
+  <string name="search_yt_music">KeresÃ©s a YouTube ZenÃ©nâ€¦</string>
+  <string name="search_library">KeresÃ©s a kÃ¶nyvtÃ¡rbanâ€¦</string>
+  <string name="filter_library">KÃ¶nyvtÃ¡r</string>
+  <string name="filter_liked">Kedvelt</string>
+  <string name="filter_downloaded">LetÃ¶ltÃ¶tt</string>
+  <string name="filter_all">Ã–sszes</string>
+  <string name="filter_songs">Dalok</string>
+  <string name="filter_videos">VideÃ³k</string>
+  <string name="filter_albums">Albumok</string>
+  <string name="filter_artists">ElÅ‘adÃ³k</string>
+  <string name="filter_playlists">ListÃ¡k</string>
+  <string name="filter_community_playlists">KÃ¶zÃ¶ssÃ©gi lejÃ¡tszÃ¡si listÃ¡k</string>
+  <string name="filter_featured_playlists">Kiemelt lejÃ¡tszÃ¡si listÃ¡k</string>
+  <string name="filter_bookmarked">KÃ¶nyvjelzÅ‘zÃ¶tt</string>
+  <string name="no_results_found">Nincs talÃ¡lat</string>
+  <!-- Artist screen -->
+  <string name="from_your_library">SajÃ¡t kÃ¶nyvtÃ¡rbÃ³l</string>
+  <!-- Playlist -->
+  <string name="liked_songs">Kedvelt dalok</string>
+  <string name="downloaded_songs">LetÃ¶ltÃ¶tt dalok</string>
+  <string name="playlist_is_empty">A lejÃ¡tszÃ¡si lista Ã¼res</string>
+  <!-- Button -->
+  <string name="retry">Ãšjra</string>
+  <string name="radio">RÃ¡diÃ³</string>
+  <string name="shuffle">KeverÃ©s</string>
+  <string name="reset">VisszaÃ¡llÃ­tÃ¡s</string>
+  <!-- Menu -->
+  <string name="details">RÃ©szletek</string>
+  <string name="edit">SzerkesztÃ©s</string>
+  <string name="start_radio">RÃ¡diÃ³ indÃ­tÃ¡sa</string>
+  <string name="play">LejÃ¡tszÃ¡s</string>
+  <string name="play_next">KÃ¶vetkezÅ‘</string>
+  <string name="add_to_queue">ListÃ¡hoz ad</string>
+  <string name="add_to_library">KÃ¶nyvtÃ¡rhoz ad</string>
+  <string name="remove_from_library">EltÃ¡volÃ­tÃ¡s a kÃ¶nyvtÃ¡rbÃ³l</string>
+  <string name="action_download">LetÃ¶lt</string>
+  <string name="downloading">LetÃ¶ltÃ©s alatt</string>
+  <string name="remove_download">LetÃ¶ltÃ©s eltÃ¡volÃ­tÃ¡sa</string>
+  <string name="import_playlist">LejÃ¡tszÃ¡si lista importÃ¡lÃ¡sa</string>
+  <string name="add_to_playlist">HozzÃ¡adÃ¡s lejÃ¡tszÃ¡si listÃ¡hoz</string>
+  <string name="view_artist">UgrÃ¡s az elÅ‘adÃ³hoz</string>
+  <string name="view_album">UgrÃ¡s az albumhoz</string>
+  <string name="refetch">ÃšjrahÃ­v</string>
+  <string name="share">MegosztÃ¡s</string>
+  <string name="delete">EltÃ¡volÃ­tÃ¡s</string>
+  <string name="remove_from_history">EltÃ¡volÃ­tÃ¡s az elÅ‘zmÃ©nyekbÅ‘l</string>
+  <string name="search_online">KeresÃ©s online</string>
+  <string name="action_sync">SzinkronizÃ¡lÃ¡s</string>
+  <string name="advanced">HaladÃ³</string>
+  <!-- Sort menu -->
+  <string name="sort_by_create_date">HozzÃ¡adÃ¡s dÃ¡tuma</string>
+  <string name="sort_by_name">NÃ©v</string>
+  <string name="sort_by_artist">ElÅ‘adÃ³</string>
+  <string name="sort_by_year">Ã‰v</string>
+  <string name="sort_by_song_count">Dal szÃ¡mlÃ¡lÃ³</string>
+  <string name="sort_by_length">Hossz</string>
+  <string name="sort_by_play_time">JÃ¡tszott idÅ‘</string>
+  <string name="sort_by_custom">Egyedi sorrend</string>
+  <!-- Dialog -->
+  <string name="media_id">MÃ©dia id</string>
+  <string name="mime_type">MIME tÃ­pus</string>
+  <string name="codecs">Kodekek</string>
+  <string name="bitrate">BitrÃ¡ta</string>
+  <string name="sample_rate">MintavÃ©tel rÃ¡ta</string>
+  <string name="loudness">HangossÃ¡g</string>
+  <string name="volume">HangerÅ‘</string>
+  <string name="file_size">FÃ¡jlmÃ©ret</string>
+  <string name="unknown">Ismeretlen</string>
+  <string name="copied">VÃ¡gÃ³lapra mÃ¡solva</string>
+  <string name="edit_lyrics">DalszÃ¶veg szerkesztÃ©se</string>
+  <string name="search_lyrics">DalszÃ¶veg keresÃ©se</string>
+  <string name="edit_song">Dal szerkesztÃ©se</string>
+  <string name="song_title">Dal cÃ­me</string>
+  <string name="song_artists">Dal elÅ‘adÃ³i</string>
+  <string name="error_song_title_empty">Dal cÃ­m nem lehet Ã¼res.</string>
+  <string name="error_song_artist_empty">ElÅ‘adÃ³ neve nem lehet Ã¼res.</string>
+  <string name="save">MentÃ©s</string>
+  <string name="choose_playlist">LejÃ¡tszÃ¡si lista kivÃ¡lasztÃ¡sa</string>
+  <string name="edit_playlist">LejÃ¡tszÃ¡si lista szerkesztÃ©se</string>
+  <string name="create_playlist">LejÃ¡tszÃ¡si lista lÃ©trehozÃ¡sa</string>
+  <string name="playlist_name">LejÃ¡tszÃ¡si lista neve</string>
+  <string name="error_playlist_name_empty">A lejÃ¡tszÃ¡si lista neve nem lehet Ã¼res.</string>
+  <string name="edit_artist">ElÅ‘adÃ³ szerkesztÃ©se</string>
+  <string name="artist_name">ElÅ‘adÃ³ neve</string>
+  <string name="error_artist_name_empty">Az elÅ‘adÃ³ neve nem lehet Ã¼res.</string>
+  <!-- Noun -->
+  <plurals name="n_song">
+    <item quantity="one">%d dal</item>
+    <item quantity="other">%d dal</item>
+  </plurals>
+  <plurals name="n_artist">
+    <item quantity="one">%d elÅ‘adÃ³</item>
+    <item quantity="other">%d elÅ‘adÃ³</item>
+  </plurals>
+  <plurals name="n_album">
+    <item quantity="one">%d album</item>
+    <item quantity="other">%d album</item>
+  </plurals>
+  <plurals name="n_playlist">
+    <item quantity="one">%d lejÃ¡tszÃ¡si lista</item>
+    <item quantity="other">%d lejÃ¡tszÃ¡si lista</item>
+  </plurals>
+  <plurals name="n_week">
+    <item quantity="one">%d hÃ©t</item>
+    <item quantity="other">%d hÃ©t</item>
+  </plurals>
+  <plurals name="n_month">
+    <item quantity="one">%d hÃ³nap</item>
+    <item quantity="other">%d hÃ³nap</item>
+  </plurals>
+  <plurals name="n_year">
+    <item quantity="one">%d Ã©v</item>
+    <item quantity="other">%d Ã©v</item>
+  </plurals>
+  <!-- Snackbar -->
+  <string name="playlist_imported">LejÃ¡tszÃ¡si lista importÃ¡lva</string>
+  <string name="removed_song_from_playlist">\"%s\" eltÃ¡volÃ­tva a lejÃ¡tszÃ¡si listÃ¡bÃ³l</string>
+  <string name="playlist_synced">LejÃ¡tszÃ¡si lista szinkronizÃ¡lva</string>
+  <string name="undo">VisszavonÃ¡s</string>
+  <!-- Player -->
+  <string name="lyrics_not_found">DalszÃ¶veg nem talÃ¡lhatÃ³</string>
+  <string name="sleep_timer">AlvÃ¡sidÅ‘zÃ­tÅ‘</string>
+  <string name="end_of_song">A dal vÃ©ge</string>
+  <plurals name="minute">
+    <item quantity="one">1 perc</item>
+    <item quantity="other">%d perc</item>
+  </plurals>
+  <string name="error_no_stream">Nincs elÃ©rhetÅ‘ adatfolyam</string>
+  <string name="error_no_internet">Nincs hÃ¡lÃ³zati kapcsolat</string>
+  <string name="error_timeout">IdÅ‘tÃºllÃ©pÃ©s</string>
+  <string name="error_unknown">Ismeretlen hiba</string>
+  <!-- Player action -->
+  <string name="action_like">Tetszik</string>
+  <string name="action_remove_like">TetszÃ©s eltÃ¡volÃ­tÃ¡sa</string>
+  <string name="action_shuffle_on">KeverÃ©s BE</string>
+  <string name="action_shuffle_off">KeverÃ©s KI</string>
+  <string name="repeat_mode_off">IsmÃ©tlÅ‘ mÃ³d KI</string>
+  <string name="repeat_mode_one">AktuÃ¡lis dal ismÃ©tlÃ©se</string>
+  <string name="repeat_mode_all">Lista ismÃ©tlÃ©se</string>
+  <!-- Queue Title -->
+  <string name="queue_all_songs">Minden dal</string>
+  <string name="queue_searched_songs">Keresett dalok</string>
+  <!-- Notification name -->
+  <string name="music_player">ZenelejÃ¡tszÃ³</string>
+  <!-- Settings -->
+  <string name="settings">BeÃ¡llÃ­tÃ¡sok</string>
+  <string name="appearance">MegjelenÃ©s</string>
+  <string name="enable_dynamic_theme">Dinamikus tÃ©ma bekapcsolÃ¡sa</string>
+  <string name="dark_theme">SÃ¶tÃ©t tÃ©ma</string>
+  <string name="dark_theme_on">Be</string>
+  <string name="dark_theme_off">Ki</string>
+  <string name="dark_theme_follow_system">Rendszer tÃ©ma kÃ¶vetÃ©se</string>
+  <string name="pure_black">OLED fekete</string>
+  <string name="default_open_tab">AlapÃ©rtelmezett megjelenÅ‘ lap</string>
+  <string name="customize_navigation_tabs">A navigÃ¡ciÃ³s lapok testreszabÃ¡sa</string>
+  <string name="lyrics_text_position">DalszÃ¶veg pozÃ­ciÃ³ja</string>
+  <string name="left">Balra</string>
+  <string name="center">KÃ¶zÃ©pre</string>
+  <string name="right">Jobbra</string>
+  <string name="content">Tartalom</string>
+  <string name="login">BelÃ©pÃ©s</string>
+  <string name="content_language">Tartalom alapÃ©rtelmezett nyelve</string>
+  <string name="content_country">Tartalom alapÃ©rtelmezett orszÃ¡ga</string>
+  <string name="system_default">Rendszer alapÃ©rtÃ©k</string>
+  <string name="enable_proxy">Proxy bekapcsolÃ¡sa</string>
+  <string name="proxy_type">Proxy tÃ­pus</string>
+  <string name="proxy_url">Proxy hivatkozÃ¡s</string>
+  <string name="restart_to_take_effect">Az alkalmazÃ¡shoz ÃºjraindÃ­tÃ¡s szÃ¼ksÃ©ges</string>
+  <string name="player_and_audio">LejÃ¡tszÃ³ Ã©s hang</string>
+  <string name="audio_quality">HangminÅ‘sÃ©g</string>
+  <string name="audio_quality_auto">Automata</string>
+  <string name="audio_quality_high">Magas</string>
+  <string name="audio_quality_low">Gyenge</string>
+  <string name="persistent_queue">ÃllandÃ³ lista</string>
+  <string name="skip_silence">Csend Ã¡tugrÃ¡sa</string>
+  <string name="audio_normalization">Hang normalizÃ¡lÃ¡sa</string>
+  <string name="equalizer">HangszÃ­nszabÃ¡lyzÃ³</string>
+  <string name="storage">TÃ¡rhely</string>
+  <string name="cache">GyorsÃ­tÃ³tÃ¡r</string>
+  <string name="image_cache">KÃ©p gyorsÃ­tÃ³tÃ¡r</string>
+  <string name="song_cache">Dal gyorsÃ­tÃ³tÃ¡r</string>
+  <string name="max_cache_size">Max. gyorsÃ­tÃ³tÃ¡r mÃ©ret</string>
+  <string name="unlimited">KorlÃ¡tlan</string>
+  <string name="clear_all_downloads">Minden letÃ¶ltÃ©s tÃ¶rlÃ©se</string>
+  <string name="max_image_cache_size">Max. kÃ©p gyorsÃ­tÃ³tÃ¡r mÃ©ret</string>
+  <string name="clear_image_cache">KÃ©p gyorsÃ­tÃ³tÃ¡r Ã¼rÃ­tÃ©se</string>
+  <string name="max_song_cache_size">Max. dal gyorsÃ­tÃ³tÃ¡r mÃ©ret</string>
+  <string name="clear_song_cache">Dal gyorsÃ­tÃ³tÃ¡r Ã¼rÃ­tÃ©se</string>
+  <string name="size_used">%s felhasznÃ¡lva</string>
+  <string name="privacy">AdatvÃ©delem</string>
+  <string name="pause_listen_history">A hallgatÃ¡si elÅ‘zmÃ©nyek szÃ¼neteltetÃ©se</string>
+  <string name="clear_listen_history">HallgatÃ¡si elÅ‘zmÃ©nyek tÃ¶rlÃ©se</string>
+  <string name="clear_listen_history_confirm">Biztosan tÃ¶rli az Ã¶sszes hallgatÃ¡si elÅ‘zmÃ©nyt?</string>
+  <string name="pause_search_history">KeresÃ©si elÅ‘zmÃ©nyek szÃ¼neteltetÃ©se</string>
+  <string name="clear_search_history">KeresÃ©si elÅ‘zmÃ©nyek Ã¼rÃ­tÃ©se</string>
+  <string name="clear_search_history_confirm">Biztosan tÃ¶rli az Ã¶sszes keresÃ©si elÅ‘zmÃ©nyt?</string>
+  <string name="enable_kugou">A KuGou dalszÃ¶veg szolgÃ¡ltatÃ³ engedÃ©lyezÃ©se</string>
+  <string name="backup_restore">BiztonsÃ¡gi mentÃ©s Ã©s visszaÃ¡llÃ­tÃ¡s</string>
+  <string name="action_backup">BiztonsÃ¡gi mentÃ©s</string>
+  <string name="action_restore">VisszaÃ¡llÃ­tÃ¡s</string>
+  <string name="imported_playlist">ImportÃ¡lt lejÃ¡tszÃ¡si lista</string>
+  <string name="backup_create_success">A biztonsÃ¡gi mentÃ©s sikeresen lÃ©trehozva</string>
+  <string name="backup_create_failed">Sikertelen biztonsÃ¡gi mentÃ©s</string>
+  <string name="restore_failed">Sikertelen visszaÃ¡llÃ­tÃ¡s</string>
+  <string name="about">NÃ©vjegy</string>
+  <string name="app_version">AlkalmazÃ¡sverziÃ³</string>
+  <string name="new_version_available">Ãšj verziÃ³ Ã©rhetÅ‘ el</string>
+  <string name="translation_models">FordÃ­tÃ¡si modellek</string>
+  <string name="clear_translation_models">FordÃ­tÃ¡si modellek Ã¼rÃ­tÃ©se</string>
+  <string name="forgotten_favorites">Elfelejtett kedvencek</string>
+  <string name="keep_listening">Zene folytatÃ¡sa</string>
+  <string name="similar_to">HasonlÃ³, mint</string>
+  <string name="library_song_empty">A kÃ¶nyvtÃ¡rÃ¡ban levÅ‘ dalok itt jelennek meg</string>
+  <string name="library_artist_empty">A kÃ¶nyvtÃ¡rÃ¡ban levÅ‘ elÅ‘adÃ³k itt jelennek meg</string>
+  <string name="library_album_empty">A kÃ¶nyvtÃ¡rÃ¡ban szereplÅ‘ albumok itt jelennek meg</string>
+  <string name="library_playlist_empty">A lejÃ¡tszÃ¡si listÃ¡i itt jelennek meg</string>
+  <string name="other_versions">EgyÃ©b verziÃ³k</string>
+  <string name="remove_download_playlist_confirm">Biztosan el akarja tÃ¡volÃ­tani a \"%s\" lejÃ¡tszÃ¡si listÃ¡n szereplÅ‘ Ã¶sszes zenÃ©t a LetÃ¶ltÃ¶tt ZenÃ©k tÃ¡rhelyrÅ‘l?</string>
+  <string name="delete_playlist_confirm">Biztosan tÃ¶rÃ¶lni szeretnÃ© a \"%s\" lejÃ¡tszÃ¡si listÃ¡t?</string>
+  <string name="remove_all_from_library">Az Ã¶sszes eltÃ¡volÃ­tÃ¡sa a kÃ¶nyvtÃ¡rbÃ³l</string>
+  <string name="your_youtube_playlists">YouTube lejÃ¡tszÃ¡si listÃ¡i</string>
+  <string name="add_all_to_library">Az Ã¶sszes hozzÃ¡adÃ¡sa a kÃ¶nyvtÃ¡rhoz</string>
+  <string name="remove_from_playlist">EltÃ¡volÃ­tÃ¡s lejÃ¡tszÃ¡si listÃ¡rÃ³l</string>
+  <string name="remove_from_queue">EltÃ¡volÃ­tÃ¡s listÃ¡rÃ³l</string>
+  <string name="tempo_and_pitch">TempÃ³ Ã©s HangszÃ­n</string>
+  <string name="duplicates">DuplikÃ¡ciÃ³</string>
+  <string name="skip_duplicates">DuplikÃ¡ciÃ³k Ã¡tugrÃ¡sa</string>
+  <string name="add_anyway">Adja hozzÃ¡ mindenkÃ©pp</string>
+  <string name="duplicates_description_single">A dal mÃ¡r megtalÃ¡lhatÃ³ a lejÃ¡tszÃ¡si listÃ¡ban</string>
+  <string name="duplicates_description_multiple">%d dal mÃ¡r megtalÃ¡lhatÃ³ a lejÃ¡tszÃ¡si listÃ¡jÃ¡ban</string>
+  <string name="action_like_all">Ã–sszes tetszik</string>
+  <string name="action_remove_like_all">Minden tetszÃ©s eltÃ¡volÃ­tÃ¡sa</string>
+  <string name="theme">TÃ©ma</string>
+  <string name="player">LejÃ¡tszÃ³</string>
+  <string name="player_text_alignment">LejÃ¡tszÃ³ szÃ¶veg igazÃ­tÃ¡s</string>
+  <string name="sided">Oldalra</string>
+  <string name="player_slider_style">LejÃ¡tszÃ³ sÃ¡v stÃ­lus</string>
+  <string name="default_">AlapbeÃ¡llÃ­tÃ¡s</string>
+  <string name="squiggly">HernyÃ³</string>
+  <string name="misc">EgyÃ©b</string>
+  <string name="grid_cell_size">Cella mÃ©ret</string>
+  <string name="small">Kicsi</string>
+  <string name="big">Nagy</string>
+  <string name="action_logout">KijelentkezÃ©s</string>
+  <string name="action_login">BejelentkezÃ©s</string>
+  <string name="not_logged_in">Nincs bejelentkezve</string>
+  <string name="login_failed">Sikertelen bejelentkezÃ©s</string>
+  <string name="queue">Lista</string>
+  <string name="persistent_queue_desc">UtoljÃ¡ra hasznÃ¡lt lista visszaÃ¡llÃ­tÃ¡sa app indÃ­tÃ¡snÃ¡l</string>
+  <string name="auto_load_more">Automatikusan betÃ¶lt mÃ©g dalokat</string>
+  <string name="auto_load_more_desc">Ha lehetsÃ©ges, automatikusan hozzÃ¡ad dalokat a listÃ¡hoz, amint a vÃ©gÃ©hez Ã©rt</string>
+  <string name="auto_skip_next_on_error">Hiba esetÃ©n Ã¡tlÃ©p a kÃ¶vetkezÅ‘ dalra</string>
+  <string name="auto_skip_next_on_error_desc">BiztosÃ­tva a folyamatos zene hallgatÃ¡st</string>
+  <string name="stop_music_on_task_clear">Zene megÃ¡llÃ­tÃ¡sa a feladat Ã¼rÃ­tÃ©skor</string>
+  <string name="listen_history">HallgatÃ¡s elÅ‘zmÃ©ny</string>
+  <string name="search_history">KeresÃ©si elÅ‘zmÃ©nyek</string>
+  <string name="use_login_for_browse">BelÃ©pÃ©s hasznÃ¡lata a tartalom bÃ¶ngÃ©szÃ©sÃ©hez</string>
+  <string name="use_login_for_browse_desc">Ez hatÃ¡ssal lehet az ajÃ¡nlott tartalomra. PÃ©ldÃ¡ul megjelenhetnek prÃ©mium albumok, ha prÃ©mium fiÃ³kkal jelentkezik be</string>
+  <string name="disable_screenshot">KÃ©pernyÅ‘kÃ©p kÃ©szÃ­tÃ©s kikapcsolÃ¡sa</string>
+  <string name="disable_screenshot_desc">Ha ez be van kapcsolva, a kÃ©pernyÅ‘kÃ©p kÃ©szÃ­tÃ©s nem lehetsÃ©ges, Ã©s az elÅ‘zmÃ©nyek sem lÃ¡tszÃ³dnak.</string>
+  <string name="enable_lrclib">A LrcLib dalszÃ¶veg szolgÃ¡ltatÃ³ engedÃ©lyezÃ©se</string>
+  <string name="hide_explicit">FelnÅ‘tt tartalom elrejtÃ©se</string>
+  <string name="discord_integration">Discord integrÃ¡ciÃ³</string>
+  <string name="discord_information">Az O-Beat a KizzyRPC kÃ¶nyvtÃ¡rat hasznÃ¡lja a Discord fiÃ³k stÃ¡tusz beÃ¡llÃ­tÃ¡shoz. Ez a Discord Gateway kapcsolatot hasznÃ¡lja, amely tekinthetÅ‘ a Discord felhasznÃ¡lÃ¡si feltÃ©telek megszegÃ©sÃ©nek is tÃ¡gabb Ã©rtelemben. HabÃ¡r a mÃºltban nem tÃ¶rtÃ©nt fiÃ³k tiltÃ¡s emiatt, ettÅ‘l fÃ¼ggetlenÃ¼l kÃ©rem hasznÃ¡lja sajÃ¡t felelÅ‘ssÃ©gre.\n\nAz O-Beat csak a token-jÃ©t fogja kinyerni, minden mÃ¡s helyben tÃ¡rolt.</string>
+  <string name="dismiss">ElrejtÃ©s</string>
+  <string name="options">OpciÃ³k</string>
+  <string name="preview">ElÅ‘nÃ©zet</string>
+  <string name="enable_discord_rpc">Rich Presence engedÃ©lyezÃ©se</string>
+  <string name="app_name">O-Beat</string>
+</resources>

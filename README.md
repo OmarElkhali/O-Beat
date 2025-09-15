@@ -225,3 +225,5 @@ Copy code
 - Add screenshots to `docs/screenshots/` and reference them in the README.
 - If you later need a French version, create `README.fr.md` and link both at the top.
 ::contentReference[oaicite:0]{index=0}
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/3918ffa4-cb43-4ba9-ae97-6acfc98ff176" />
+

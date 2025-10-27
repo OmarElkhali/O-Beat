@@ -16,14 +16,22 @@ const val ENABLE_FFMETADATAEX = BuildConfig.FLAVOR == "full"
  * Extra configuration
  */
 
-// maximum parallel download jobs allowed
-const val MAX_CONCURRENT_DOWNLOAD_JOBS = 3 // ytm defaults to 3
+// maximum concurrent image resolution jobs
+const val MAX_COIL_JOBS = 16
+const val MAX_IMAGE_JOBS = MAX_COIL_JOBS // Alias for compatibility
+const val MAX_CONCURRENT_JOBS = 7 // Alias for MAX_LM_SCANNER_JOBS
 
-// maximum parallel scanner jobs allowed
-const val MAX_CONCURRENT_JOBS = 4
+// maximum concurrent download jobs allowed
+const val MAX_DL_JOBS = 5
 
-// Maximum concurrent image resolution jobs
-const val MAX_IMAGE_JOBS = 4
+// maximum concurrent scanner jobs allowed
+const val MAX_LM_SCANNER_JOBS = 7 // 1 dispatcher + 6 workers
+
+// maximum concurrent scanner jobs allowed
+const val MAX_YTM_SYNC_JOBS = 3
+
+// maximum concurrent scanner jobs allowed
+const val MAX_YTM_CONTENT_JOBS = 16
 
 
 /**
@@ -31,10 +39,16 @@ const val MAX_IMAGE_JOBS = 4
  */
 const val LYRIC_FETCH_TIMEOUT = 60000L
 const val SNACKBAR_VERY_SHORT = 2000L
+
 const val OOBE_VERSION = 5
+
 const val SCANNER_OWNER_DL = 32
 const val SCANNER_OWNER_LM = 1
 const val SCANNER_OWNER_M3U = 2
+
+const val SYNC_CD = 60000 * 30
+
+const val MAX_PLAYER_CONSECUTIVE_ERR = 3
 
 val DEFAULT_PLAYER_BACKGROUND =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) PlayerBackgroundStyle.BLUR else PlayerBackgroundStyle.GRADIENT
@@ -57,10 +71,4 @@ const val EXTRACTOR_DEBUG = false
 // enable printing of *ALL* data that extractor reads
 const val DEBUG_SAVE_OUTPUT = false // ignored (will be false) when EXTRACTOR_DEBUG IS false
 
-
-
-
-
-
-
-
+const val QUEUE_DEBUG = false

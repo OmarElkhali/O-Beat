@@ -1,7 +1,5 @@
 package com.dd3boh.outertune.constants
 
-import java.time.Instant
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
@@ -24,13 +22,6 @@ enum class StatPeriod {
             `3_MONTH` -> LocalDateTime.now().minusMonths(3)
             `6_MONTH` -> LocalDateTime.now().minusMonths(6)
             `1_YEAR` -> LocalDateTime.now().minusMonths(12)
-            ALL -> LocalDateTime.of(0, 0, 1, 0, 0, 0)
+            ALL -> LocalDateTime.now().minusMonths(2400)
         }
 }
-
-
-
-
-
-
-

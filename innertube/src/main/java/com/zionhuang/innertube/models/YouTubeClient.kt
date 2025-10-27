@@ -79,6 +79,34 @@ data class YouTubeClient(
             isEmbedded = true,
         )
 
+        val TVHTML5 = YouTubeClient(
+            clientName = "TVHTML5",
+            clientVersion = "7.20250312.16.00",
+            clientId = "7",
+            userAgent = "Mozilla/5.0(SMART-TV; Linux; Tizen 4.0.0.2) AppleWebkit/605.1.15 (KHTML, like Gecko) SamsungBrowser/9.2 TV Safari/605.1.15",
+            loginSupported = true,
+            loginRequired = true,
+            useSignatureTimestamp = true
+        )
+
+        val ANDROID = YouTubeClient(
+            clientName = "ANDROID",
+            clientVersion = "20.10.38",
+            clientId = "3",
+            userAgent = "com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip",
+            loginSupported = true,
+            useSignatureTimestamp = true
+        )
+
+        val ANDROID_VR_NO_AUTH = YouTubeClient(
+            clientName = "ANDROID_VR",
+            clientVersion = "1.61.48",
+            clientId = "28",
+            userAgent = "com.google.android.apps.youtube.vr.oculus/1.61.48 (Linux; U; Android 12; en_US; Oculus Quest 3; Build/SQ3A.220605.009.A1; Cronet/132.0.6808.3)",
+            loginSupported = false,
+            useSignatureTimestamp = false
+        )
+
         val IOS = YouTubeClient(
             clientName = "IOS",
             clientVersion = "20.10.4",

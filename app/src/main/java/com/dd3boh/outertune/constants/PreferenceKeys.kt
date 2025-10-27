@@ -10,10 +10,10 @@ import androidx.datastore.preferences.core.stringPreferencesKey
  * Appearance
  */
 val DynamicThemeKey = booleanPreferencesKey("dynamicTheme")
+val ThemeColorKey = intPreferencesKey("themeColor")
 val PlayerBackgroundStyleKey = stringPreferencesKey("playerBackgroundStyle")
 val DarkModeKey = stringPreferencesKey("darkMode")
 val PureBlackKey = booleanPreferencesKey("pureBlack")
-val ThemeColorKey = intPreferencesKey("themeColor") // Cl� pour stocker la couleur du th�me
 val ShowLikedAndDownloadedPlaylist = booleanPreferencesKey("showLikedAndDownloadedPlaylist")
 val SwipeToQueueKey = booleanPreferencesKey("swipeToQueue")
 val FlatSubfoldersKey = booleanPreferencesKey("flatSubfolders")
@@ -52,10 +52,15 @@ val LastRecentActivitySyncKey = longPreferencesKey("lastRecentActivitySync")
 /**
  * Player & audio
  */
+val AudioDecoderKey = intPreferencesKey("audioDecoder")
 val AudioQualityKey = stringPreferencesKey("audioQuality")
-val AudioOffload = booleanPreferencesKey("enableOffload")
+val AudioOffload = booleanPreferencesKey("enableOffload") // Alias for AudioOffloadKey
+val AudioOffloadKey = booleanPreferencesKey("enableOffload")
+val AudioGaplessOffloadKey = booleanPreferencesKey("enableGaplessOffload")
 
+val MaxQueuesKey = intPreferencesKey("maxQueues")
 val PersistentQueueKey = booleanPreferencesKey("persistentQueue")
+
 val SeekIncrementKey = stringPreferencesKey("seekIncrement")
 val SkipSilenceKey = booleanPreferencesKey("skipSilence")
 val SkipOnErrorKey = booleanPreferencesKey("skipOnError")
@@ -226,7 +231,7 @@ val LanguageCodeToName = mapOf(
     "bg" to "Български",
     "ky" to "Кыргызча",
     "kk" to "Қазақ Тілі",
-    "mk" to "Макопгки",
+    "mk" to "Македонски",
     "mn" to "Монгол",
     "ru" to "Русский",
     "sr" to "Српски",
@@ -238,7 +243,7 @@ val LanguageCodeToName = mapOf(
     "ar" to "العربية",
     "fa" to "فارسی",
     "ne" to "नेपाली",
-    "mr" to "मरठी",
+    "mr" to "मराठी",
     "hi" to "हिन्दी",
     "bn" to "বাংলা",
     "pa" to "ਪੰਜਾਬੀ",
@@ -372,11 +377,3 @@ val CountryCodeToName = mapOf(
     "YE" to "Yemen",
     "ZW" to "Zimbabwe",
 )
-
-
-
-
-
-
-
-

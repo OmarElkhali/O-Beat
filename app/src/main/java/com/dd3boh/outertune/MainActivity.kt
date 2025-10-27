@@ -139,6 +139,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.window.core.layout.WindowWidthSizeClass
+import coil3.imageLoader
+import coil3.request.ImageRequest
+import coil3.request.allowHardware
+import coil3.toBitmap
 import com.dd3boh.outertune.constants.AppBarHeight
 import com.dd3boh.outertune.constants.AutomaticScannerKey
 import com.dd3boh.outertune.constants.DEFAULT_ENABLED_TABS
@@ -246,9 +250,11 @@ import com.dd3boh.outertune.ui.utils.clearDtCache
 import com.dd3boh.outertune.ui.utils.resetHeightOffset
 import com.dd3boh.outertune.utils.ActivityLauncherHelper
 import com.dd3boh.outertune.utils.CoilBitmapLoader
+import com.dd3boh.outertune.utils.LocalArtworkPath
 import com.dd3boh.outertune.utils.LmImageCacheMgr
 import com.dd3boh.outertune.utils.NetworkConnectivityObserver
 import com.dd3boh.outertune.utils.SyncUtils
+import com.dd3boh.outertune.utils.coilCoroutine
 import com.dd3boh.outertune.utils.compareVersion
 import com.dd3boh.outertune.utils.dataStore
 import com.dd3boh.outertune.utils.get
@@ -360,8 +366,6 @@ class MainActivity : ComponentActivity() {
 
         activityLauncher = ActivityLauncherHelper(this)
 
-        val bitmapLoader = CoilBitmapLoader(this, CoroutineScope(Dispatchers.IO), imageCache = imageCache)
-
         setContent {
             val coroutineScope = rememberCoroutineScope()
             val haptic = LocalHapticFeedback.current
@@ -396,10 +400,24 @@ class MainActivity : ComponentActivity() {
                 }
                 playerConnection.service.currentMediaMetadata.collectLatest { song ->
                     themeColor = if (song != null) {
-                        withContext(Dispatchers.IO) {
+                        withContext(coilCoroutine) {
                             val uri = (if (song.isLocal) song.localPath else song.thumbnailUrl)?.toUri()
                             if (uri == null) return@withContext Color(themeColorPref)
-                            bitmapLoader.loadBitmapOrNull(uri).get()?.extractThemeColor() ?: Color(themeColorPref)
+                            
+                            val model = if (uri.toString().startsWith("/storage/")) {
+                                LocalArtworkPath(uri.toString(), 100, 100)
+                            } else {
+                                uri
+                            }
+                            
+                            val result = applicationContext.imageLoader.execute(
+                                ImageRequest.Builder(applicationContext)
+                                    .data(model)
+                                    .allowHardware(false)
+                                    .build()
+                            )
+                            
+                            result.image?.toBitmap()?.extractThemeColor() ?: Color(themeColorPref)
                         }
                     } else Color(themeColorPref)
                 }

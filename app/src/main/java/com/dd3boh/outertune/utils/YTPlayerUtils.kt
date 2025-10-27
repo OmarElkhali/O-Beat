@@ -20,7 +20,10 @@ import com.dd3boh.outertune.utils.potoken.PoTokenResult
 import com.zionhuang.innertube.NewPipeUtils
 import com.zionhuang.innertube.YouTube
 import com.zionhuang.innertube.models.YouTubeClient
+import com.zionhuang.innertube.models.YouTubeClient.Companion.ANDROID
+import com.zionhuang.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
 import com.zionhuang.innertube.models.YouTubeClient.Companion.IOS
+import com.zionhuang.innertube.models.YouTubeClient.Companion.TVHTML5
 import com.zionhuang.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
 import com.zionhuang.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.zionhuang.innertube.models.response.PlayerResponse
@@ -44,16 +47,21 @@ object YTPlayerUtils {
      * [com.zionhuang.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
      * - the correct metadata (like loudnessDb)
      * - premium formats
+     * - PoToken support (useWebPoTokens = true)
+     * 
+     * TEMPORARY: Using ANDROID_VR_NO_AUTH because PoTokens don't work on emulator
      */
-    private val MAIN_CLIENT: YouTubeClient = WEB_REMIX
+    private val MAIN_CLIENT: YouTubeClient = ANDROID_VR_NO_AUTH
 
     /**
      * Clients used for fallback streams in case the streams of the main client do not work.
      */
     private val STREAM_FALLBACK_CLIENTS: Array<YouTubeClient> = arrayOf(
-        TVHTML5_SIMPLY_EMBEDDED_PLAYER,
-        IOS,
+        ANDROID_VR_NO_AUTH,
+//        TVHTML5_SIMPLY_EMBEDDED_PLAYER,
+        IOS, // recent api changes produce error 403 after 30 seconds
     )
+
 
     data class PlaybackData(
         val audioConfig: PlayerResponse.PlayerConfig.AudioConfig?,
@@ -219,7 +227,7 @@ object YTPlayerUtils {
         videoId: String,
         playlistId: String? = null,
     ): Result<PlayerResponse> =
-        YouTube.player(videoId, playlistId, client = MAIN_CLIENT)
+        YouTube.player(videoId, playlistId, client = WEB_REMIX) // ANDROID_VR does not work with history
 
     private fun findFormat(
         playerResponse: PlayerResponse,
@@ -297,10 +305,3 @@ object YTPlayerUtils {
         return null
     }
 }
-
-
-
-
-
-
-

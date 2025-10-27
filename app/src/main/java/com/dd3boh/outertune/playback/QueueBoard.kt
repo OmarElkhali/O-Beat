@@ -44,7 +44,11 @@ const val MAX_QUEUES = 20
  * Multiple queues manager. Methods will not automatically (re)load queues into the player unless
  * otherwise explicitly stated.
  */
-class QueueBoard(private val player: MusicService, queues: MutableList<MultiQueueObject> = ArrayList()) {
+class QueueBoard(
+    private val player: MusicService,
+    queues: MutableList<MultiQueueObject> = ArrayList(),
+    private var maxQueues: Int = MAX_QUEUES
+) {
     private val TAG = QueueBoard::class.simpleName.toString()
 
     val masterQueues: SnapshotStateList<MultiQueueObject> = mutableStateListOf()
@@ -53,7 +57,12 @@ class QueueBoard(private val player: MusicService, queues: MutableList<MultiQueu
     var initialized = false
 
     init {
-        masterQueues.addAll(queues)
+        if (maxQueues < 0) {
+            maxQueues = 1
+        }
+        if (!queues.isEmpty()) {
+            masterQueues.addAll(queues.subList(0, min(queues.size, maxQueues)))
+        }
     }
 
     /**

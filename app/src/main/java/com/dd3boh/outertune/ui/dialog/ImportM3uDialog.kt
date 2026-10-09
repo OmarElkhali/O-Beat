@@ -11,6 +11,9 @@ package com.dd3boh.outertune.ui.dialog
 import android.content.Context
 import android.net.Uri
 import android.widget.Toast
+import org.json.JSONArray
+import org.json.JSONObject
+import org.json.JSONTokener
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
@@ -175,7 +178,22 @@ fun ImportM3uDialog(
                 onClick = {
                     importedSongs.clear()
                     rejectedSongs.clear()
-                    importM3uLauncher.launch(arrayOf("audio/*"))
+                    // Playlists are normally exported as text or JSON, not as audio.
+                    // Accept the common interchange formats from Spotify/Apple Music
+                    // exporters, desktop players and playlist migration tools.
+                    importM3uLauncher.launch(
+                        arrayOf(
+                            "audio/x-mpegurl",
+                            "audio/mpegurl",
+                            "application/x-mpegurl",
+                            "application/vnd.apple.mpegurl",
+                            "application/xspf+xml",
+                            "application/json",
+                            "text/csv",
+                            "text/plain",
+                            "*/*",
+                        )
+                    )
                 },
                 enabled = !isLoading
             ) {
@@ -321,7 +339,7 @@ fun loadM3u(
 
     runCatching {
         context.applicationContext.contentResolver.openInputStream(uri)?.use { stream ->
-            val lines = stream.readLines()
+            val lines = stream.readPlaylistLines()
             if (lines.isEmpty()) return@runCatching
             if (lines.first().startsWith("#EXTM3U")) {
                 lines.forEachIndexed { index, rawLine ->
@@ -351,9 +369,11 @@ fun loadM3u(
                         } else {
                             runBlocking(Dispatchers.IO) {
                                 // local songs have a source format of "<id>, <path>", YTM songs have "<url>
-                                var id = source.substringBefore(',')
-                                if (id.isEmpty()) {
-                                    id = source.substringAfter("watch?").substringAfter("=").substringBefore('?')
+                                var id = source.substringBefore(',').trim()
+                                // M3U files from O-Beat, VLC and most migration tools carry
+                                // a YouTube watch URL. Query its video id, not the whole URL.
+                                if (id.startsWith("http", ignoreCase = true)) {
+                                    id = id.substringAfter("v=", "").substringBefore('&')
                                 }
                                 val dbResult = mutableListOf(database.song(id).first())
                                 dbResult.addAll(database.searchSongsInDb(title).first())
@@ -423,6 +443,137 @@ fun loadM3u(
  */
 fun InputStream.readLines(): List<String> {
     return this.bufferedReader().useLines { it.toList() }
+}
+
+/** Turns common playlist exports into the EXTINF representation used by the matcher above. */
+private fun InputStream.readPlaylistLines(): List<String> {
+    val raw = bufferedReader().use { it.readText() }.trimStart('\uFEFF')
+    if (raw.isBlank()) return emptyList()
+    val lines = raw.lines()
+    if (lines.firstOrNull()?.trim()?.startsWith("#EXTM3U", ignoreCase = true) == true) return lines
+    // EXTINF is valid in simple M3U files even when their optional header was
+    // omitted by a desktop exporter.
+    if (lines.any { it.trimStart().startsWith("#EXTINF:", ignoreCase = true) }) {
+        return listOf("#EXTM3U") + lines
+    }
+
+    return when {
+        lines.firstOrNull()?.trim()?.equals("[playlist]", ignoreCase = true) == true ->
+            parsePls(lines)
+        raw.trimStart().startsWith("{") || raw.trimStart().startsWith("[") ->
+            parseJsonPlaylist(raw)
+        lines.firstOrNull()?.contains(',') == true -> parseCsv(lines)
+        else -> emptyList()
+    }
+}
+
+private fun playlistLines(entries: List<PlaylistImportEntry>): List<String> = buildList {
+    add("#EXTM3U")
+    entries.forEach { entry ->
+        if (entry.title.isBlank()) return@forEach
+        val artist = entry.artist.ifBlank { "Unknown artist" }
+        add("#EXTINF:0,$artist - ${entry.title}")
+        add(entry.source.orEmpty())
+    }
+}
+
+private data class PlaylistImportEntry(
+    val title: String,
+    val artist: String = "",
+    val source: String? = null,
+)
+
+private fun parsePls(lines: List<String>): List<String> {
+    val values = lines.mapNotNull { line ->
+        val index = line.indexOf('=')
+        if (index < 1) null else line.substring(0, index).trim().lowercase() to line.substring(index + 1).trim()
+    }.toMap()
+    val entries = generateSequence(1) { it + 1 }
+        .mapNotNull { index ->
+            val source = values["file$index"] ?: return@mapNotNull null
+            val label = values["title$index"].orEmpty()
+            val (artist, title) = label.split(" - ", limit = 2).let {
+                if (it.size == 2) it[0] to it[1] else "" to (it.firstOrNull().orEmpty().ifBlank { source.substringAfterLast('/') })
+            }
+            PlaylistImportEntry(title, artist, source)
+        }
+        .toList()
+    return playlistLines(entries)
+}
+
+private fun parseCsv(lines: List<String>): List<String> {
+    if (lines.size < 2) return emptyList()
+    val header = parseCsvRow(lines.first()).map { it.trim().lowercase().replace(" ", "") }
+    fun value(row: List<String>, vararg names: String): String {
+        val index = header.indexOfFirst { it in names }
+        return row.getOrNull(index).orEmpty()
+    }
+    val entries = lines.drop(1).mapNotNull { line ->
+        val row = parseCsvRow(line)
+        val title = value(row, "trackname", "name", "title", "videotitle")
+        if (title.isBlank()) return@mapNotNull null
+        val artist = value(row, "artistname", "artist", "artists", "channeltitle")
+        val rawSource = value(row, "trackuri", "uri", "url", "videoid", "id")
+        val source = rawSource.toYouTubeUrlOrNull() ?: rawSource.takeIf { it.startsWith("http") }
+        PlaylistImportEntry(title, artist, source)
+    }
+    return playlistLines(entries)
+}
+
+private fun parseCsvRow(row: String): List<String> {
+    val values = mutableListOf<String>()
+    val value = StringBuilder()
+    var quoted = false
+    row.forEachIndexed { index, char ->
+        when {
+            char == '"' && (index == 0 || row[index - 1] != '\\') -> quoted = !quoted
+            char == ',' && !quoted -> {
+                values += value.toString().trim()
+                value.clear()
+            }
+            else -> value.append(char)
+        }
+    }
+    values += value.toString().trim()
+    return values
+}
+
+private fun parseJsonPlaylist(raw: String): List<String> = runCatching {
+    val root = JSONTokener(raw).nextValue()
+    val entries = mutableListOf<PlaylistImportEntry>()
+    fun collect(value: Any?) {
+        when (value) {
+            is JSONArray -> repeat(value.length()) { collect(value.opt(it)) }
+            is JSONObject -> {
+                val title = value.firstString("title", "name", "trackName", "videoTitle")
+                if (title != null) {
+                    val artist = value.firstString("artist", "artistName", "channelTitle")
+                        ?: value.optJSONArray("artists")?.let { artists ->
+                            (0 until artists.length()).joinToString("; ") { artists.optString(it) }
+                        }.orEmpty()
+                    val source = value.firstString("url", "uri", "videoId", "id")?.toYouTubeUrlOrNull()
+                    entries += PlaylistImportEntry(title, artist, source)
+                }
+                listOf("tracks", "items", "songs", "playlist").forEach { key -> collect(value.opt(key)) }
+            }
+        }
+    }
+    collect(root)
+    playlistLines(entries.distinctBy { it.source ?: "${it.artist}|${it.title}" })
+}.getOrDefault(emptyList())
+
+private fun JSONObject.firstString(vararg keys: String): String? =
+    keys.firstNotNullOfOrNull { key -> optString(key).takeIf { it.isNotBlank() } }
+
+private fun String.toYouTubeUrlOrNull(): String? {
+    val id = when {
+        startsWith("spotify:") -> return null // Spotify IDs need a catalogue lookup, never pretend they are YouTube IDs.
+        startsWith("http") -> substringAfter("v=", "").substringBefore('&').takeIf { it.isNotBlank() }
+            ?: return this
+        matches(Regex("[A-Za-z0-9_-]{11}")) -> this
+        else -> return null
+    }
+    return "https://youtube.com/watch?v=$id"
 }
 
 

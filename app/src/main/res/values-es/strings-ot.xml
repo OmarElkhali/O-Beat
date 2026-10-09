@@ -23,7 +23,6 @@
     <string name="song_added_to_queue_end">\"%s\" se aÃ±adiÃ³ al final de la cola</string>
     <string name="auto_playlist">Lista automÃ¡tica</string>
     <string name="select">Modo de selecciÃ³n</string>
-    <string name="like_all">Me gusta a todo</string>
     <string name="err_stop_on_too_many_errors">Han ocurrido muchos errores. ReproducciÃ³n detenida</string>
     <string name="wait_to_reconnect">Espere para reconectar</string>
     <string name="sort_by_date_modified">Fecha de modificaciÃ³n</string>
@@ -46,7 +45,6 @@
     <string name="grp_lyrics_format">Formato</string>
     <string name="grp_lyrics_parser">IntÃ©rprete</string>
     <string name="special_thanks">Agradecimiento especial</string>
-    <string name="new_interface">DisposiciÃ³n de la nueva interfaz</string>
     <string name="show_liked_and_downloaded_playlist">Mostrar listas de canciones que me gustan y descargadas en la biblioteca</string>
     <string name="slim_navbar_title">Barra de navegaciÃ³n delgada</string>
     <string name="tab_arrangement">Organizar pestaÃ±as</string>
@@ -76,11 +74,9 @@
     <string name="scan_paths_incl">Rutas de escaneo</string>
     <string name="scan_paths_excl">Rutas de escaneo excluidas</string>
     <string name="scanner_local_title">EscÃ¡ner local</string>
-    <string name="scanner_missing_ffmpeg">Extractor FFmpeg no detectado</string>
     <string name="scanner_missing_storage_perm">El escÃ¡ner de medios local requiere permisos de almacenamiento para funcionar</string>
     <string name="scanner_btn_idle">Escanear</string>
     <string name="scanner_progress_complete">Escaneo completo</string>
-    <string name="scanner_progress_scanning">Escaneandoâ€¦</string>
     <string name="scanner_scan_fail">El escaneo fallÃ³</string>
     <string name="scanner_ytm_link_fail">Error en la tarea de vinculaciÃ³n de artistas de YouTube</string>
     <string name="scanner_ytm_link_success">Tarea de vinculaciÃ³n de artistas de YouTube completa</string>
@@ -103,7 +99,6 @@
     <string name="action_back">AtrÃ¡s</string>
     <string name="action_skip">Saltar</string>
     <string name="action_cancel">Cancelar</string>
-    <string name="info">InformaciÃ³n</string>
     <string name="folders">Carpetas</string>
     <string name="library">Biblioteca</string>
     <string name="queue_local_history">Historial (local)</string>
@@ -129,7 +124,6 @@
     <string name="dev_settings_description">Revela ajustes avanzadas adicionales destinadas al uso en desarrollo</string>
     <string name="oobe_complete">O-Beat estÃ¡ configurado y listo para usar. Â¡Explora tu mÃºsica, descubre nuevas pistas y disfruta de la experiencia!</string>
     <string name="action_next">Siguiente</string>
-    <string name="grp_proxy">Proxy</string>
     <string name="player_background_blur">Desenfoque</string>
     <string name="slim_navbar_description">Eliminar etiquetas de texto para reducir la altura de la barra de navegaciÃ³n</string>
     <string name="tab_arrangement_disable_tip">--- Arrastrar aquÃ­ abajo para deshabilitar ---</string>
@@ -159,10 +153,7 @@
     <string name="grp_sync">SincronizaciÃ³n</string>
     <string name="playlist_missing_note">Â¿Faltan listas? Pulsa aquÃ­ para habilitar el modo lectura-escritura de sincronizaciÃ³n</string>
     <string name="grp_behavior">Comportamiento</string>
-    <string name="check_for_update">Buscar actualizaciones</string>
-    <string name="checking_for_update">Buscando actualizaciones</string>
     <string name="library_empty">El contenido de tu biblioteca aparecerÃ¡ aquÃ­</string>
-    <string name="no_updates_available">No hay ninguna actualizaciÃ³n disponible</string>
     <string name="scan_paths_description">Selecciona carpetas de tu almacenamiento local para buscar canciones</string>
     <string name="scanner_progress_discovering">Descubriendoâ€¦</string>
     <string name="scanner_progress_processing">Procesandoâ€¦</string>
@@ -179,7 +170,6 @@
     <string name="dl_migrate_title">Migrar descargas a almacenamiento externoâ€¦</string>
     <string name="dl_migrate_description">Mueve las descargas del almacenamiento interno de la aplicaciÃ³n al un almacenamiento externo en el dispositivo</string>
     <string name="tablet_ui_title">Forzar interfaz de tableta</string>
-    <string name="tablet_ui_title_description">Habilita una interfaz horizontal optimizada para pantallas mÃ¡s grandes, independientemente del tamaÃ±o de la pantalla actual</string>
     <string name="attribution_title">AtribuciÃ³n</string>
     <string name="oss_licenses_title">Licencias de cÃ³digo abierto</string>
     <string name="lyrics_karaoke_title">Letra estilo karaoke.</string>
@@ -188,9 +178,7 @@
     <string name="dl_main_path_title">Configurar directorio de descargaâ€¦</string>
     <string name="speed_slow">Lento</string>
     <string name="speed_medium">Medio</string>
-    <string name="speed_very_slow">Muy lento</string>
     <string name="speed_fast">RÃ¡pido</string>
-    <string name="speed_very_fast">Muy rÃ¡pido</string>
     <string name="disable_lm_confirm">Â¿Seguro que desea desactivar las funciones multimedia locales? El contenido de su biblioteca no se verÃ¡ afectado.</string>
     <string name="scanner_rejected_dir">SelecciÃ³n no vÃ¡lida. Una carpeta para escaneo no puede ser un subdirectorio de la carpeta de descargas ni la propia carpeta de descargas</string>
     <string name="clear_downloads_confirm">Â¿EstÃ¡s seguro que quieres eliminar todas las descargas? Solo se eliminarÃ¡n las descargas de la carpeta de descargas principal.</string>

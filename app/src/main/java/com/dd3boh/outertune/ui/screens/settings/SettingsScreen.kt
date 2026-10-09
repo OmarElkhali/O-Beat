@@ -31,7 +31,9 @@ import androidx.compose.material.icons.rounded.Update
 import androidx.compose.material.icons.rounded.WarningAmber
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
-import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.SnackbarDuration
@@ -39,6 +41,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -79,14 +82,17 @@ fun SettingsScreen(
     val context = LocalContext.current
     val snackbarHostState = LocalSnackbarHostState.current
     val uriHandler = LocalUriHandler.current
+    val updateAvailable by rememberPreference(UpdateAvailableKey, false)
+    val latestVersion by rememberPreference(LastVersionKey, "")
 
     ColumnWithContentPadding(
         modifier = Modifier.fillMaxHeight(),
         columnModifier = Modifier
-            .padding(horizontal = 16.dp)
+            .padding(horizontal = 16.dp, vertical = 8.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        ElevatedCard(
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
             modifier = Modifier.fillMaxWidth()
         ) {
             PreferenceEntry(
@@ -102,7 +108,8 @@ fun SettingsScreen(
         }
         Spacer(modifier = Modifier.height(16.dp))
 
-        ElevatedCard(
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
             modifier = Modifier.fillMaxWidth()
         ) {
             PreferenceEntry(
@@ -118,7 +125,8 @@ fun SettingsScreen(
         }
         Spacer(modifier = Modifier.height(16.dp))
 
-        ElevatedCard(
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
             modifier = Modifier.fillMaxWidth()
         ) {
             PreferenceEntry(
@@ -129,7 +137,8 @@ fun SettingsScreen(
         }
         Spacer(modifier = Modifier.height(16.dp))
 
-        ElevatedCard(
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
             modifier = Modifier.fillMaxWidth()
         ) {
             PreferenceEntry(
@@ -143,13 +152,33 @@ fun SettingsScreen(
                 onClick = { navController.navigate("settings/storage") }
             )
         }
-        // Ajout de la mention "POWERED BY OMAR ELKHALI"
+        Spacer(modifier = Modifier.height(16.dp))
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            PreferenceEntry(
+                title = { Text(stringResource(R.string.about)) },
+                description = stringResource(
+                    if (updateAvailable) R.string.update_available_title else R.string.update_section_title,
+                    latestVersion
+                ),
+                icon = {
+                    BadgedBox(badge = {
+                        if (updateAvailable) Badge()
+                    }) { Icon(Icons.Rounded.Info, null) }
+                },
+                onClick = { navController.navigate("settings/about") }
+            )
+        }
         Spacer(modifier = Modifier.height(24.dp))
         Text(
             text = "POWERED BY OMAR ELKHALI",
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            fontWeight = FontWeight.Medium
         )
         Spacer(modifier = Modifier.height(8.dp))
     }
@@ -163,7 +192,7 @@ fun SettingsScreen(
             ) {
                 Icon(
                     Icons.AutoMirrored.Rounded.ArrowBack,
-                    contentDescription = null
+                    contentDescription = stringResource(R.string.a11y_navigate_back)
                 )
             }
         },

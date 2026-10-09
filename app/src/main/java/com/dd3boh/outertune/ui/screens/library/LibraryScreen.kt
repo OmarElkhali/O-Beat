@@ -44,7 +44,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -201,11 +200,11 @@ fun LibraryScreen(
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(MaterialTheme.colorScheme.error)
+                        .background(MaterialTheme.colorScheme.errorContainer)
                 ) {
                     Text(
                         text = stringResource(R.string.missing_media_permission_warning),
-                        color = Color.White,
+                        color = MaterialTheme.colorScheme.onErrorContainer,
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
@@ -240,10 +239,13 @@ fun LibraryScreen(
                         Icon(
                             imageVector =
                                 when (viewType) {
-                                    LibraryViewType.LIST -> Icons.AutoMirrored.Rounded.List
-                                    LibraryViewType.GRID -> Icons.Rounded.GridView
+                                    LibraryViewType.LIST -> Icons.Rounded.GridView
+                                    LibraryViewType.GRID -> Icons.AutoMirrored.Rounded.List
                                 },
-                            contentDescription = null
+                            contentDescription = stringResource(
+                                if (viewType == LibraryViewType.GRID) R.string.a11y_show_list
+                                else R.string.a11y_show_grid
+                            )
                         )
                     }
                 }
@@ -263,7 +265,7 @@ fun LibraryScreen(
                     LibrarySortType.NAME -> R.string.sort_by_name
                 }
             },
-            modifier = Modifier.padding(start = 16.dp)
+            modifier = Modifier.padding(start = 20.dp)
         )
     }
 

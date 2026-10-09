@@ -55,8 +55,7 @@ import com.dd3boh.outertune.ui.component.items.SongListItem
 import com.dd3boh.outertune.viewmodels.LocalFilter
 import com.dd3boh.outertune.viewmodels.LocalSearchViewModel
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.drop
 
 @OptIn(FlowPreview::class)
@@ -88,9 +87,10 @@ fun LocalSearchScreen(
     }
 
     LaunchedEffect(query) {
-        snapshotFlow { query }.debounce { 300L }.collectLatest {
-            viewModel.query.value = query
-        }
+        // Cancellation of LaunchedEffect supplies the debounce without a new
+        // Flow collector for each character typed.
+        delay(250L)
+        viewModel.query.value = query.trim()
     }
 
     Column {

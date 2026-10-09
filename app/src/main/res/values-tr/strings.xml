@@ -17,8 +17,6 @@
   <string name="mood_and_genres">Ruh Hali ve TÃ¼rler</string>
   <string name="account">Hesap</string>
   <string name="quick_picks">HÄ±zlÄ± seÃ§imler</string>
-  <string name="quick_picks_empty">HÄ±zlÄ± seÃ§imlerinizi oluÅŸturmak iÃ§in birkaÃ§ ÅŸarkÄ± dinleyin</string>
-  <string name="new_release_albums">Yeni Ã§Ä±kan albÃ¼mler</string>
   <!-- History -->
   <string name="today">BugÃ¼n</string>
   <string name="yesterday">DÃ¼n</string>
@@ -43,10 +41,8 @@
   <string name="filter_playlists">Ã‡alma Listeleri</string>
   <string name="filter_community_playlists">Topluluk Ã§alma listeleri</string>
   <string name="filter_featured_playlists">Ã–ne Ã§Ä±kan listeler</string>
-  <string name="filter_bookmarked">Favoriler</string>
   <string name="no_results_found">SonuÃ§ bulunamadÄ±</string>
   <!-- Artist screen -->
-  <string name="from_your_library">KÃ¼tÃ¼phanenizden</string>
   <!-- Playlist -->
   <string name="liked_songs">BeÄŸenilen ÅŸarkÄ±lar</string>
   <string name="downloaded_songs">Ä°ndirilen ÅŸarkÄ±lar</string>
@@ -77,7 +73,6 @@
   <string name="delete">Sil</string>
   <string name="remove_from_history">GeÃ§miÅŸten kaldÄ±r</string>
   <string name="search_online">Ã‡evrim iÃ§i ara</string>
-  <string name="action_sync">EÅŸitle</string>
   <string name="advanced">GeliÅŸmiÅŸ</string>
   <!-- Sort menu -->
   <string name="sort_by_create_date">EklendiÄŸi tarih</string>
@@ -86,7 +81,6 @@
   <string name="sort_by_year">YÄ±l</string>
   <string name="sort_by_song_count">ÅžarkÄ± sayÄ±sÄ±</string>
   <string name="sort_by_length">Uzunluk</string>
-  <string name="sort_by_play_time">Ã‡alma sÃ¼resi</string>
   <string name="sort_by_custom">Ã–zel sÄ±ralama</string>
   <!-- Dialog -->
   <string name="media_id">Medya kimliÄŸi</string>
@@ -95,26 +89,15 @@
   <string name="bitrate">Bit hÄ±zÄ±</string>
   <string name="sample_rate">Ã–rnek hÄ±zÄ±</string>
   <string name="loudness">Ses ÅŸiddeti</string>
-  <string name="volume">Ses yÃ¼ksekliÄŸi</string>
   <string name="file_size">Dosya boyutu</string>
   <string name="unknown">Bilinmiyor</string>
   <string name="copied">Panoya kopyalandÄ±</string>
-  <string name="edit_lyrics">SÃ¶zleri dÃ¼zenle</string>
   <string name="search_lyrics">SÃ¶zleri ara</string>
   <string name="edit_song">ÅžarkÄ±yÄ± dÃ¼zenle</string>
   <string name="song_title">ÅžarkÄ± adÄ±</string>
   <string name="song_artists">ÅžarkÄ± sanatÃ§Ä±larÄ±</string>
-  <string name="error_song_title_empty">ÅžarkÄ± adÄ± boÅŸ olamaz.</string>
-  <string name="error_song_artist_empty">ÅžarkÄ± sanatÃ§Ä±sÄ± boÅŸ olamaz.</string>
-  <string name="save">Kaydet</string>
-  <string name="choose_playlist">Ã‡alma listesi seÃ§</string>
   <string name="edit_playlist">Ã‡alma listesini dÃ¼zenle</string>
   <string name="create_playlist">Ã‡alma listesi oluÅŸtur</string>
-  <string name="playlist_name">Ã‡alma listesi adÄ±</string>
-  <string name="error_playlist_name_empty">Ã‡alma listesi adÄ± boÅŸ olamaz.</string>
-  <string name="edit_artist">SanatÃ§Ä±yÄ± dÃ¼zenle</string>
-  <string name="artist_name">SanatÃ§Ä± adÄ±</string>
-  <string name="error_artist_name_empty">SanatÃ§Ä± adÄ± boÅŸ olamaz.</string>
   <!-- Noun -->
   <plurals name="n_song">
     <item quantity="one">%d ÅŸarkÄ±</item>
@@ -145,10 +128,7 @@
     <item quantity="other">%d yÄ±llar</item>
   </plurals>
   <!-- Snackbar -->
-  <string name="playlist_imported">Ã‡alma listesi iÃ§e aktarÄ±ldÄ±</string>
-  <string name="removed_song_from_playlist">\"%s\" Ã§alma listesinden kaldÄ±rÄ±ldÄ±</string>
   <string name="playlist_synced">Ã‡alma listesi eÅŸitlendi</string>
-  <string name="undo">Geri al</string>
   <!-- Player -->
   <string name="lyrics_not_found">ÅžarkÄ± sÃ¶zleri bulunamadÄ±</string>
   <string name="sleep_timer">Uyku zamanlayÄ±cÄ±sÄ±</string>
@@ -157,7 +137,6 @@
     <item quantity="one">1 dakika</item>
     <item quantity="other">%d dakika</item>
   </plurals>
-  <string name="error_no_stream">AkÄ±ÅŸ yok</string>
   <string name="error_no_internet">AÄŸ baÄŸlantÄ±sÄ± yok</string>
   <string name="error_timeout">Zaman aÅŸÄ±mÄ±</string>
   <string name="error_unknown">Bilinmeyen hata</string>
@@ -171,7 +150,6 @@
   <string name="repeat_mode_all">SÄ±rayÄ± tekrarla</string>
   <!-- Queue Title -->
   <string name="queue_all_songs">TÃ¼m ÅŸarkÄ±lar</string>
-  <string name="queue_searched_songs">Aranan ÅŸarkÄ±lar</string>
   <!-- Notification name -->
   <string name="music_player">MÃ¼zik Ã‡alar</string>
   <!-- Settings -->
@@ -184,7 +162,6 @@
   <string name="dark_theme_follow_system">Sistemi izle</string>
   <string name="pure_black">Simsiyah</string>
   <string name="default_open_tab">VarsayÄ±lan giriÅŸ sekmesi</string>
-  <string name="customize_navigation_tabs">Gezinti sekmelerini Ã¶zelleÅŸtir</string>
   <string name="lyrics_text_position">ÅžarkÄ± sÃ¶zleri konumu</string>
   <string name="left">Sol</string>
   <string name="center">Orta</string>
@@ -197,7 +174,6 @@
   <string name="enable_proxy">Proxy\'yi etkinleÅŸtir</string>
   <string name="proxy_type">Proxy tÃ¼rÃ¼</string>
   <string name="proxy_url">Proxy URL\'si</string>
-  <string name="restart_to_take_effect">EtkinleÅŸtirmek iÃ§in yeniden baÅŸlatÄ±n</string>
   <string name="player_and_audio">MÃ¼zik Ã§alar ve ses</string>
   <string name="audio_quality">Ses kalitesi</string>
   <string name="audio_quality_auto">Otomatik</string>
@@ -208,15 +184,12 @@
   <string name="audio_normalization">Ses normalleÅŸtirme</string>
   <string name="equalizer">Ekolayzer</string>
   <string name="storage">Depolama</string>
-  <string name="cache">Ã–nbellek</string>
   <string name="image_cache">GÃ¶rÃ¼ntÃ¼ Ã–nbelleÄŸi</string>
   <string name="song_cache">ÅžarkÄ± Ã–nbelleÄŸi</string>
   <string name="max_cache_size">Maksimum Ã¶nbellek boyutu</string>
   <string name="unlimited">SÄ±nÄ±rsÄ±z</string>
   <string name="clear_all_downloads">TÃ¼m indirilenleri temizle</string>
-  <string name="max_image_cache_size">Maksimum gÃ¶rÃ¼ntÃ¼ Ã¶nbellek boyutu</string>
   <string name="clear_image_cache">GÃ¶rÃ¼ntÃ¼ Ã¶nbelleÄŸini temizle</string>
-  <string name="max_song_cache_size">Maksimum ÅŸarkÄ± Ã¶nbellek boyutu</string>
   <string name="clear_song_cache">ÅžarkÄ± Ã¶nbelleÄŸini temizle</string>
   <string name="size_used">%s kullanÄ±ldÄ±</string>
   <string name="privacy">Gizlilik</string>
@@ -231,38 +204,20 @@
   <string name="backup_restore">Yedekleme ve geri yÃ¼kleme</string>
   <string name="action_backup">Yedekle</string>
   <string name="action_restore">Geri yÃ¼kle</string>
-  <string name="imported_playlist">Ã‡alma listesi iÃ§e aktarÄ±ldÄ±</string>
   <string name="backup_create_success">Yedekleme baÅŸarÄ±yla oluÅŸturuldu</string>
   <string name="backup_create_failed">Yedekleme oluÅŸturulamadÄ±</string>
-  <string name="restore_failed">Yedekleme geri yÃ¼klenemedi</string>
   <string name="about">HakkÄ±nda</string>
-  <string name="app_version">Uygulama sÃ¼rÃ¼mÃ¼</string>
-  <string name="new_version_available">Yeni sÃ¼rÃ¼m mevcut</string>
-  <string name="translation_models">Ã‡eviri Modelleri</string>
-  <string name="clear_translation_models">Ã‡eviri modellerini temizle</string>
-  <string name="big">BÃ¼yÃ¼k</string>
-  <string name="options">SeÃ§enekler</string>
-  <string name="dismiss">Ä°ptal</string>
   <string name="auto_load_more">Daha fazla ÅŸarkÄ±yÄ± otomatik ekle</string>
   <string name="preview">Ã–n izleme</string>
   <string name="theme">Tema</string>
-  <string name="login_failed">Oturum aÃ§ma baÅŸarÄ±sÄ±z</string>
-  <string name="disable_screenshot_desc">Bu Ã¶zellik etkinleÅŸtirildiÄŸinde ekran gÃ¶rÃ¼ntÃ¼leri ve son kullanÄ±lanlardaki uygulamalar gÃ¶rÃ¼nÃ¼mÃ¼ devre dÄ±ÅŸÄ± bÄ±rakÄ±lÄ±r.</string>
-  <string name="disable_screenshot">Ekran gÃ¶rÃ¼ntÃ¼sÃ¼nÃ¼ devre dÄ±ÅŸÄ± bÄ±rak</string>
-  <string name="remove_from_queue">SÄ±radan Ã§Ä±kar</string>
   <string name="auto_load_more_desc">SÄ±ranÄ±n sonuna gelindiÄŸinde mÃ¼mkÃ¼nse otomatik olarak daha fazla ÅŸarkÄ± ekler</string>
   <string name="remove_all_from_library">Hepsini kÃ¼tÃ¼phaneden kaldÄ±r</string>
-  <string name="player">OynatÄ±cÄ±</string>
   <string name="duplicates">Yinelenenler</string>
   <string name="duplicates_description_single">ÅžarkÄ± zaten Ã§alma listenizde var</string>
   <string name="your_youtube_playlists">YouTube Ã§alma listeleriniz</string>
   <string name="remove_from_playlist">Ã‡alma listesinden kaldÄ±r</string>
-  <string name="player_text_alignment">OynatÄ±cÄ± metin hizalamasÄ±</string>
-  <string name="player_slider_style">OynatÄ±cÄ± kaydÄ±rma biÃ§imi</string>
   <string name="queue">SÄ±ra</string>
-  <string name="persistent_queue_desc">Uygulama baÅŸladÄ±ÄŸÄ±nda son ÅŸarkÄ± sÄ±rasÄ±nÄ± geri getirir</string>
   <string name="auto_skip_next_on_error">Hata oluÅŸtuÄŸunda sonraki ÅŸarkÄ±ya otomatik atla</string>
-  <string name="listen_history">Dinleme geÃ§miÅŸi</string>
   <string name="forgotten_favorites">Unutulan favoriler</string>
   <string name="keep_listening">Dinlemeye devam edin</string>
   <string name="similar_to">Benzerleri</string>
@@ -274,29 +229,16 @@
   <string name="remove_download_playlist_confirm">Ä°ndirilen ÅŸarkÄ±lar deposundaki \"%s\" ÅŸarkÄ±nÄ±n hepsini silmek istiyor musunuz?</string>
   <string name="delete_playlist_confirm">\"%s\" Ã§alma listesini silmek istiyor musunuz?</string>
   <string name="add_all_to_library">Hepsini kÃ¼tÃ¼phaneye ekle</string>
-  <string name="tempo_and_pitch">Tempo ve Perde</string>
   <string name="skip_duplicates">Yinelemeleri atla</string>
   <string name="add_anyway">Yine de ekle</string>
   <string name="duplicates_description_multiple">%d ÅŸarkÄ± zaten Ã§alma listenizde</string>
   <string name="action_like_all">Hepsini beÄŸen</string>
   <string name="action_remove_like_all">TÃ¼m beÄŸenileri kaldÄ±r</string>
-  <string name="sided">KenarlÄ±</string>
-  <string name="default_">VarsayÄ±lan</string>
-  <string name="squiggly">DalgalÄ±</string>
-  <string name="misc">Ã‡eÅŸitli</string>
-  <string name="grid_cell_size">Izgara boyutu</string>
-  <string name="small">KÃ¼Ã§Ã¼k</string>
   <string name="not_logged_in">Oturum aÃ§Ä±lmadÄ±</string>
   <string name="auto_skip_next_on_error_desc">Kesintisiz dinleme deneyimi saÄŸlar</string>
   <string name="stop_music_on_task_clear">Arka plandan temizlendiÄŸinde Ã§almayÄ± durdur</string>
-  <string name="search_history">Arama geÃ§miÅŸi</string>
-  <string name="hide_explicit">Uygunsuz iÃ§eriÄŸi gizle</string>
-  <string name="discord_integration">Discord Entegrasyonu</string>
-  <string name="discord_information">O-Beat, Discord hesabÄ±nÄ±zÄ±n durumunu ayarlamak iÃ§in KizzyRPC kÃ¼tÃ¼phanesini kullanÄ±r. Bu, Discord\'un Hizmet ÅžartlarÄ±\'nÄ±n ihlali olarak kabul edilebilecek Discord GeÃ§it baÄŸlantÄ±sÄ±nÄ±n kullanÄ±lmasÄ±nÄ± gerektirir. Fakat kullanÄ±cÄ± hesaplarÄ±nÄ±n bu nedenle askÄ±ya alÄ±ndÄ±ÄŸÄ± bilinen bir Ã¶rnek yoktur. Riski size ait olmak Ã¼zere kullanÄ±n. \n \nO-Beat yalnÄ±zca belirtecinizi Ã§Ä±karÄ±r ve diÄŸer her ÅŸey yerel olarak saklanÄ±r.</string>
   <string name="action_logout">Oturumu kapat</string>
-  <string name="enable_discord_rpc">Rich Presence\'Ä± etkinleÅŸtir</string>
   <string name="use_login_for_browse">Ä°Ã§erikleri gÃ¶rmek iÃ§in GiriÅŸ yap\'Ä± kullanÄ±n</string>
   <string name="use_login_for_browse_desc">Bu gÃ¶rdÃ¼ÄŸÃ¼nÃ¼z iÃ§erikleri etkileyebilir ve Ã¶rnek olarak Premium\'a Ã¶zel iÃ§erikleri Premium\'a sahip bir hesapla giriÅŸ yaptÄ±ysanÄ±z size sunabilir</string>
-  <string name="action_login">GiriÅŸ Yap</string>
   <string name="app_name">O-Beat</string>
 </resources>

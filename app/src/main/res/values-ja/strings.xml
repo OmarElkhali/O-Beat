@@ -16,8 +16,6 @@
   <string name="mood_and_genres">ãƒ ãƒ¼ãƒ‰ã¨ã‚¸ãƒ£ãƒ³ãƒ«</string>
   <string name="account">ã‚¢ã‚«ã‚¦ãƒ³ãƒˆ</string>
   <string name="quick_picks">ãŠã™ã™ã‚</string>
-  <string name="quick_picks_empty">ä½•æ›²ã‹å†ç”Ÿã™ã‚‹ã¨ãŠã™ã™ã‚ã‚’ç”Ÿæˆã—ã¾ã™</string>
-  <string name="new_release_albums">æ–°ä½œã‚¢ãƒ«ãƒãƒ </string>
   <string name="forgotten_favorites">å¿˜ã‚Œã‚‰ã‚Œã¦ã„ã‚‹ãŠæ°—ã«å…¥ã‚Š</string>
   <string name="keep_listening">è¦–è´ã‚’ç¶­æŒ</string>
   <string name="your_youtube_playlists">ã‚ãªãŸã®YouTubeã®å†ç”Ÿãƒªã‚¹ãƒˆ</string>
@@ -46,7 +44,6 @@
   <string name="filter_playlists">å†ç”Ÿãƒªã‚¹ãƒˆ</string>
   <string name="filter_community_playlists">ã‚³ãƒŸãƒ¥ãƒ‹ãƒ†ã‚£ã®å†ç”Ÿãƒªã‚¹ãƒˆ</string>
   <string name="filter_featured_playlists">ãŠã™ã™ã‚ã®å†ç”Ÿãƒªã‚¹ãƒˆ</string>
-  <string name="filter_bookmarked">ãƒ–ãƒƒã‚¯ãƒžãƒ¼ã‚¯æ¸ˆã¿</string>
   <string name="no_results_found">è¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸ</string>
   <!-- Library -->
   <string name="library_song_empty">æ›²ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã¯ã“ã“ã«è¡¨ç¤ºã•ã‚Œã¾ã™</string>
@@ -54,7 +51,6 @@
   <string name="library_album_empty">ã‚¢ãƒ«ãƒãƒ ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã¯ã“ã“ã«è¡¨ç¤ºã•ã‚Œã¾ã™</string>
   <string name="library_playlist_empty">ã‚ãªãŸã®å†ç”Ÿãƒªã‚¹ãƒˆã¯ã“ã“ã«è¡¨ç¤ºã•ã‚Œã¾ã™</string>
   <!-- Artist screen -->
-  <string name="from_your_library">ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‹ã‚‰</string>
   <!-- Album screen -->
   <string name="other_versions">åˆ¥ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³</string>
   <!-- Playlist -->
@@ -91,11 +87,8 @@
   <string name="delete">å‰Šé™¤</string>
   <string name="remove_from_history">å±¥æ­´ã‹ã‚‰å‰Šé™¤</string>
   <string name="remove_from_playlist">å†ç”Ÿãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤</string>
-  <string name="remove_from_queue">ã‚­ãƒ¥ãƒ¼ã‹ã‚‰å‰Šé™¤</string>
   <string name="search_online">ã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã§æ¤œç´¢</string>
-  <string name="action_sync">åŒæœŸ</string>
   <string name="advanced">é«˜åº¦</string>
-  <string name="tempo_and_pitch">é€Ÿåº¦ã¨ãƒ”ãƒƒãƒ</string>
   <!-- Sort menu -->
   <string name="sort_by_create_date">è¿½åŠ æ—¥æ™‚</string>
   <string name="sort_by_name">æ›²å</string>
@@ -103,7 +96,6 @@
   <string name="sort_by_year">ãƒªãƒªãƒ¼ã‚¹å¹´</string>
   <string name="sort_by_song_count">æ›²æ•°</string>
   <string name="sort_by_length">é•·ã•</string>
-  <string name="sort_by_play_time">å†ç”Ÿæ™‚é–“</string>
   <string name="sort_by_custom">ã‚«ã‚¹ã‚¿ãƒ </string>
   <!-- Dialog -->
   <string name="media_id">ãƒ¡ãƒ‡ã‚£ã‚¢ ID</string>
@@ -112,26 +104,15 @@
   <string name="bitrate">ãƒ“ãƒƒãƒˆãƒ¬ãƒ¼ãƒˆ</string>
   <string name="sample_rate">ã‚µãƒ³ãƒ—ãƒ«ãƒ¬ãƒ¼ãƒˆ</string>
   <string name="loudness">ãƒ©ã‚¦ãƒ‰ãƒã‚¹</string>
-  <string name="volume">éŸ³é‡</string>
   <string name="file_size">ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚º</string>
   <string name="unknown">ä¸æ˜Ž</string>
   <string name="copied">ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼</string>
-  <string name="edit_lyrics">æ­Œè©žã‚’ç·¨é›†</string>
   <string name="search_lyrics">æ­Œè©žã‚’æ¤œç´¢</string>
   <string name="edit_song">æ›²ã‚’ç·¨é›†</string>
   <string name="song_title">æ›²å</string>
   <string name="song_artists">æ›²ã®ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆ</string>
-  <string name="error_song_title_empty">æ›²åã¯ç©ºç™½ã«ã§ãã¾ã›ã‚“ã€‚</string>
-  <string name="error_song_artist_empty">æ›²ã®ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆã¯ç©ºç™½ã«ã§ãã¾ã›ã‚“ã€‚</string>
-  <string name="save">ä¿å­˜</string>
-  <string name="choose_playlist">å†ç”Ÿãƒªã‚¹ãƒˆã‚’é¸æŠž</string>
   <string name="edit_playlist">å†ç”Ÿãƒªã‚¹ãƒˆã‚’ç·¨é›†</string>
   <string name="create_playlist">å†ç”Ÿãƒªã‚¹ãƒˆã‚’ä½œæˆ</string>
-  <string name="playlist_name">å†ç”Ÿãƒªã‚¹ãƒˆã®åå‰</string>
-  <string name="error_playlist_name_empty">å†ç”Ÿãƒªã‚¹ãƒˆã®åå‰ã¯ç©ºç™½ã«ã§ãã¾ã›ã‚“ã€‚</string>
-  <string name="edit_artist">ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆã‚’ç·¨é›†</string>
-  <string name="artist_name">ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆå</string>
-  <string name="error_artist_name_empty">ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆåã¯ç©ºç™½ã«ã§ãã¾ã›ã‚“ã€‚</string>
   <string name="duplicates">é‡è¤‡</string>
   <string name="skip_duplicates">é‡è¤‡ã‚’ã‚¹ã‚­ãƒƒãƒ—</string>
   <string name="add_anyway">æ°—ã«ã›ãšè¿½åŠ </string>
@@ -160,10 +141,7 @@
     <item quantity="other">%d å¹´</item>
   </plurals>
   <!-- Snackbar -->
-  <string name="playlist_imported">å†ç”Ÿãƒªã‚¹ãƒˆã‚’ã‚¤ãƒ³ãƒãƒ¼ãƒˆã—ã¾ã—ãŸ</string>
-  <string name="removed_song_from_playlist">å†ç”Ÿãƒªã‚¹ãƒˆã‹ã‚‰ã€Œ%sã€ã‚’å‰Šé™¤ã—ã¾ã—ãŸ</string>
   <string name="playlist_synced">å†ç”Ÿãƒªã‚¹ãƒˆãŒåŒæœŸã•ã‚Œã¾ã—ãŸ</string>
-  <string name="undo">å…ƒã«æˆ»ã™</string>
   <!-- Player -->
   <string name="lyrics_not_found">æ­Œè©žãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“</string>
   <string name="sleep_timer">ã‚¹ãƒªãƒ¼ãƒ—ã‚¿ã‚¤ãƒžãƒ¼</string>
@@ -171,7 +149,6 @@
   <plurals name="minute">
     <item quantity="other">%d åˆ†</item>
   </plurals>
-  <string name="error_no_stream">ã‚¹ãƒˆãƒªãƒ¼ãƒ ãŒåˆ©ç”¨ã§ãã¾ã›ã‚“</string>
   <string name="error_no_internet">ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯æŽ¥ç¶šãŒã‚ã‚Šã¾ã›ã‚“</string>
   <string name="error_timeout">ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã—ã¾ã—ãŸ</string>
   <string name="error_unknown">ä¸æ˜Žãªã‚¨ãƒ©ãƒ¼</string>
@@ -187,7 +164,6 @@
   <string name="repeat_mode_all">ã‚­ãƒ¥ãƒ¼ã‚’ãƒªãƒ”ãƒ¼ãƒˆ</string>
   <!-- Queue Title -->
   <string name="queue_all_songs">ã™ã¹ã¦ã®æ›²</string>
-  <string name="queue_searched_songs">æ¤œç´¢ã—ãŸæ›²</string>
   <!-- Notification name -->
   <string name="music_player">éŸ³æ¥½ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼</string>
   <!-- Settings -->
@@ -200,22 +176,11 @@
   <string name="dark_theme_off">ã‚ªãƒ•</string>
   <string name="dark_theme_follow_system">ã‚·ã‚¹ãƒ†ãƒ ã«å¾“ã†</string>
   <string name="pure_black">ãƒ”ãƒ¥ã‚¢ãƒ–ãƒ©ãƒƒã‚¯</string>
-  <string name="customize_navigation_tabs">ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ãƒ–ã®ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚º</string>
-  <string name="player">ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼</string>
-  <string name="player_text_alignment">ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼ã®æ–‡å­—æƒãˆ</string>
   <string name="lyrics_text_position">æ­Œè©žãƒ†ã‚­ã‚¹ãƒˆã®ä½ç½®</string>
-  <string name="sided">ç«¯</string>
   <string name="left">å·¦</string>
   <string name="center">ä¸­å¤®</string>
   <string name="right">å³</string>
-  <string name="player_slider_style">ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼ã®ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®å½¢</string>
-  <string name="default_">æ¨™æº–</string>
-  <string name="squiggly">ãã­ãã­</string>
-  <string name="misc">ã»ã‹</string>
   <string name="default_open_tab">èµ·å‹•æ™‚ã«é–‹ãã‚¿ãƒ–</string>
-  <string name="grid_cell_size">æ ¼å­ã®ãƒžã‚¹ç›®ã®å¤§ãã•</string>
-  <string name="small">å°</string>
-  <string name="big">å¤§</string>
   <string name="content">ã‚³ãƒ³ãƒ†ãƒ³ãƒ„</string>
   <string name="login">ãƒ­ã‚°ã‚¤ãƒ³</string>
   <string name="not_logged_in">ãƒ­ã‚°ã‚¤ãƒ³ã—ã¦ã„ã¾ã›ã‚“</string>
@@ -225,7 +190,6 @@
   <string name="enable_proxy">ãƒ—ãƒ­ã‚­ã‚·ã‚’æœ‰åŠ¹åŒ–</string>
   <string name="proxy_type">ãƒ—ãƒ­ã‚­ã‚·ã®ç¨®é¡ž</string>
   <string name="proxy_url">ãƒ—ãƒ­ã‚­ã‚·ã® URL</string>
-  <string name="restart_to_take_effect">é©ç”¨ã™ã‚‹ã«ã¯å†èµ·å‹•ã—ã¦ãã ã•ã„</string>
   <string name="player_and_audio">ãƒ—ãƒ¬ãƒ¼ãƒ¤ãƒ¼ã¨éŸ³å£°</string>
   <string name="audio_quality">éŸ³è³ª</string>
   <string name="audio_quality_auto">è‡ªå‹•</string>
@@ -233,7 +197,6 @@
   <string name="audio_quality_low">ä½Ž</string>
   <string name="queue">å†ç”Ÿã‚­ãƒ¥ãƒ¼</string>
   <string name="persistent_queue">å†ç”Ÿã‚­ãƒ¥ãƒ¼ã‚’ä¿æŒ</string>
-  <string name="persistent_queue_desc">ã‚¢ãƒ—ãƒªèµ·å‹•æ™‚ã«å‰å›žã®ã‚­ãƒ¥ãƒ¼ã‚’å¾©å…ƒ</string>
   <string name="auto_load_more">è¿½åŠ ã®æ›²ã‚’è‡ªå‹•ã§èª­ã¿è¾¼ã‚€</string>
   <string name="auto_load_more_desc">ã‚­ãƒ¥ãƒ¼ã®æœ€å¾Œã¾ã§å†ç”Ÿã—ãŸæ™‚ã€å¯èƒ½ãªã‚‰è‡ªå‹•ã§æ›²ã‚’è¿½åŠ </string>
   <string name="skip_silence">ç„¡éŸ³éƒ¨åˆ†ã‚’ã‚¹ã‚­ãƒƒãƒ—</string>
@@ -243,53 +206,32 @@
   <string name="stop_music_on_task_clear">ã‚¿ã‚¹ã‚¯ã‚’å‰Šé™¤ã—ãŸã‚‰éŸ³æ¥½ã‚’åœæ­¢</string>
   <string name="equalizer">ã‚¤ã‚³ãƒ©ã‚¤ã‚¶ãƒ¼</string>
   <string name="storage">ä¿å­˜é ˜åŸŸ</string>
-  <string name="cache">ã‚­ãƒ£ãƒƒã‚·ãƒ¥</string>
   <string name="image_cache">ç”»åƒã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥</string>
   <string name="song_cache">æ›²ã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥</string>
   <string name="max_cache_size">æœ€å¤§ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚µã‚¤ã‚º</string>
   <string name="unlimited">ç„¡åˆ¶é™</string>
   <string name="clear_all_downloads">ã™ã¹ã¦ã®ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã‚’æ¶ˆåŽ»</string>
-  <string name="max_image_cache_size">ç”»åƒã®æœ€å¤§ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚µã‚¤ã‚º</string>
   <string name="clear_image_cache">ç”»åƒã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’æ¶ˆåŽ»</string>
-  <string name="max_song_cache_size">æ›²ã®æœ€å¤§ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚µã‚¤ã‚º</string>
   <string name="clear_song_cache">æ›²ã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’æ¶ˆåŽ»</string>
   <string name="size_used">%s ä½¿ç”¨ä¸­</string>
   <string name="privacy">ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼</string>
-  <string name="listen_history">å†ç”Ÿå±¥æ­´</string>
   <string name="pause_listen_history">å†ç”Ÿå±¥æ­´ã‚’ä¸€æ™‚åœæ­¢</string>
   <string name="clear_listen_history">å†ç”Ÿå±¥æ­´ã‚’æ¶ˆåŽ»</string>
   <string name="clear_listen_history_confirm">ã™ã¹ã¦ã®å†ç”Ÿå±¥æ­´ã‚’æ¶ˆåŽ»ã—ã¾ã™ã‹ï¼Ÿ</string>
-  <string name="search_history">æ¤œç´¢å±¥æ­´</string>
   <string name="pause_search_history">æ¤œç´¢å±¥æ­´ã®è¨˜éŒ²ã‚’ä¸€æ™‚åœæ­¢</string>
   <string name="clear_search_history">æ¤œç´¢å±¥æ­´ã‚’æ¶ˆåŽ»</string>
   <string name="clear_search_history_confirm">ã™ã¹ã¦ã®æ¤œç´¢å±¥æ­´ã‚’æ¶ˆåŽ»ã—ã¾ã™ã‹ï¼Ÿ</string>
-  <string name="disable_screenshot">ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’ç„¡åŠ¹ã«ã™ã‚‹</string>
-  <string name="disable_screenshot_desc">ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã¨æœ€è¿‘ä½¿ç”¨ã—ãŸã‚¢ãƒ—ãƒªã®è¡¨ç¤ºã‚’ç„¡åŠ¹ã«ã—ã¾ã™ã€‚</string>
   <string name="enable_lrclib">æ­Œè©žã®æä¾›å…ƒ LrcLib ã‚’ä½¿ç”¨</string>
   <string name="enable_kugou">æ­Œè©žã®æä¾›å…ƒ KuGou ã‚’ä½¿ç”¨</string>
-  <string name="hide_explicit">éœ²éª¨ãªå†…å®¹ã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’éžè¡¨ç¤º</string>
   <string name="backup_restore">ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã¨å¾©å…ƒ</string>
   <string name="action_backup">ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—</string>
   <string name="action_restore">å¾©å…ƒ</string>
-  <string name="imported_playlist">ã‚¤ãƒ³ãƒãƒ¼ãƒˆã—ãŸå†ç”Ÿãƒªã‚¹ãƒˆ</string>
   <string name="backup_create_success">ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã®ä½œæˆã«æˆåŠŸã—ã¾ã—ãŸ</string>
   <string name="backup_create_failed">ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ä½œæˆã§ãã¾ã›ã‚“ã§ã—ãŸ</string>
-  <string name="restore_failed">ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã®å¾©å…ƒã«å¤±æ•—ã—ã¾ã—ãŸ</string>
-  <string name="discord_integration">Discord çµ±åˆ</string>
-  <string name="discord_information">O-Beat ã¯ KizzyRPC ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‚’ä½¿ã„ã€Discord ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’è¨­å®šã—ã¾ã™ã€‚ã“ã‚Œã¯ Discord ã‚²ãƒ¼ãƒˆã‚¦ã‚§ã‚¤æŽ¥ç¶šã‚’ä½¿ã†ã®ã§ã€Discord ã®åˆ©ç”¨è¦ç´„ã«é•åã™ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚ã—ã‹ã—ã€ã“ã®ç†ç”±ã§ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®ã‚¢ã‚«ã‚¦ãƒ³ãƒˆãŒåœæ­¢ã•ã‚ŒãŸä¾‹ã¯ç¢ºèªã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚è‡ªå·±è²¬ä»»ã§ã”åˆ©ç”¨ãã ã•ã„ã€‚\n\nO-Beat ã¯ãƒˆãƒ¼ã‚¯ãƒ³ã‚’æŠ½å‡ºã™ã‚‹ã ã‘ã§ã™ã€‚ãã‚Œä»¥å¤–ã¯ã™ã¹ã¦ç«¯æœ«å†…ã«ä¿å­˜ã•ã‚Œã¾ã™ã€‚</string>
-  <string name="dismiss">éžè¡¨ç¤º</string>
-  <string name="options">ã‚ªãƒ—ã‚·ãƒ§ãƒ³</string>
   <string name="preview">ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼</string>
-  <string name="login_failed">ãƒ­ã‚°ã‚¤ãƒ³å¤±æ•—</string>
   <string name="action_logout">ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ</string>
-  <string name="enable_discord_rpc">ãƒªãƒƒãƒãƒ—ãƒ¬ã‚¼ãƒ³ã‚¹ã‚’ä½¿ç”¨</string>
   <string name="about">ã‚¢ãƒ—ãƒªã«ã¤ã„ã¦</string>
-  <string name="app_version">ã‚¢ãƒ—ãƒªã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³</string>
-  <string name="new_version_available">æœ€æ–°ç‰ˆã‚ã‚Š</string>
-  <string name="translation_models">ç¿»è¨³ãƒ¢ãƒ‡ãƒ«</string>
-  <string name="clear_translation_models">ç¿»è¨³ãƒ¢ãƒ‡ãƒ«ã‚’æ¶ˆåŽ»</string>
   <string name="use_login_for_browse_desc">ä¾‹ãˆã°ã€Premiumã®ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã§ãƒ­ã‚°ã‚¤ãƒ³ã—ãŸæ™‚ã«ã€Premiumé™å®šã®ã‚¢ãƒ«ãƒãƒ ãŒè¡¨ç¤ºã•ã‚Œã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã™</string>
   <string name="use_login_for_browse">è¡¨ç¤ºã•ã‚Œã‚‹ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã¨çµã³ä»˜ã‘ã‚‹</string>
-  <string name="action_login">ãƒ­ã‚°ã‚¤ãƒ³</string>
   <string name="app_name">O-Beat</string>
 </resources>

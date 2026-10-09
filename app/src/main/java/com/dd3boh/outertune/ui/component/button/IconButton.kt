@@ -19,13 +19,14 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButton as MaterialIconButton
 import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.ripple
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -54,13 +55,15 @@ fun ResizableIconButton(
     color: Color = MaterialTheme.colorScheme.onSurface,
     enabled: Boolean = true,
     indication: Indication? = null,
+    contentDescription: String? = null,
     onClick: () -> Unit = {},
 ) {
     Image(
         painter = painterResource(icon),
-        contentDescription = null,
+        contentDescription = contentDescription,
         colorFilter = ColorFilter.tint(color),
         modifier = Modifier
+            .minimumInteractiveComponentSize()
             .clickable(
                 indication = indication ?: ripple(bounded = false),
                 interactionSource = remember { MutableInteractionSource() },
@@ -79,13 +82,15 @@ fun ResizableIconButton(
     color: Color = MaterialTheme.colorScheme.onSurface,
     enabled: Boolean = true,
     indication: Indication? = null,
+    contentDescription: String? = null,
     onClick: () -> Unit = {},
 ) {
     Image(
         imageVector = icon,
-        contentDescription = null,
+        contentDescription = contentDescription,
         colorFilter = ColorFilter.tint(color),
         modifier = Modifier
+            .minimumInteractiveComponentSize()
             .clickable(
                 indication = indication ?: ripple(bounded = false),
                 interactionSource = remember { MutableInteractionSource() },
@@ -106,10 +111,11 @@ fun IconButton(
     colors: IconButtonColors = IconButtonDefaults.iconButtonColors(),
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     content: @Composable () -> Unit,
-) = IconButton(
+) = MaterialIconButton(
     onClick = onClick,
-    modifier = modifier.combinedClickable(
-        onClick = { },
+    modifier = if (onLongClick == null) modifier else modifier.combinedClickable(
+        enabled = enabled,
+        onClick = onClick,
         onLongClick = onLongClick,
     ),
     enabled = enabled,

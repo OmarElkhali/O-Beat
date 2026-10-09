@@ -17,8 +17,6 @@
   <string name="mood_and_genres">Stimmungen und Genres</string>
   <string name="account">Konto</string>
   <string name="quick_picks">Schnellauswahl</string>
-  <string name="quick_picks_empty">HÃ¶re dir Songs an, um deine Schnellauswahl zu erstellen</string>
-  <string name="new_release_albums">Neu verÃ¶ffentlichte Alben</string>
   <!-- History -->
   <string name="today">Heute</string>
   <string name="yesterday">Gestern</string>
@@ -45,7 +43,6 @@
   <string name="filter_featured_playlists">AusgewÃ¤hlte Playlists</string>
   <string name="no_results_found">Keine Ergebnisse gefunden</string>
   <!-- Artist screen -->
-  <string name="from_your_library">Aus der Bibliothek</string>
   <!-- Playlist -->
   <string name="liked_songs">Songs, die ich mag</string>
   <string name="downloaded_songs">Heruntergeladene Songs</string>
@@ -76,7 +73,6 @@
   <string name="delete">LÃ¶schen</string>
   <string name="remove_from_history">Aus Verlauf entfernen</string>
   <string name="search_online">Online-Suche</string>
-  <string name="action_sync">Synchronisieren</string>
   <string name="advanced">Erweitert</string>
   <!-- Sort menu -->
   <string name="sort_by_create_date">HinzufÃ¼gedatum</string>
@@ -85,7 +81,6 @@
   <string name="sort_by_year">Jahr</string>
   <string name="sort_by_song_count">Song anzahl</string>
   <string name="sort_by_length">LÃ¤nge</string>
-  <string name="sort_by_play_time">Wiedergabedauer</string>
   <string name="sort_by_custom">Individuelle Reinfolge</string>
   <!-- Dialog -->
   <string name="media_id">Medien-ID</string>
@@ -94,26 +89,15 @@
   <string name="bitrate">Bitrate</string>
   <string name="sample_rate">Abtastrate</string>
   <string name="loudness">LautstÃ¤rke</string>
-  <string name="volume">LautstÃ¤rke</string>
   <string name="file_size">DateigrÃ¶ÃŸe</string>
   <string name="unknown">Unbekannt</string>
   <string name="copied">In die Zwischenablage kopiert</string>
-  <string name="edit_lyrics">Songtext bearbeiten</string>
   <string name="search_lyrics">Songtext suchen</string>
   <string name="edit_song">Song bearbeiten</string>
   <string name="song_title">Songtitel</string>
   <string name="song_artists">Song-KÃ¼nstler</string>
-  <string name="error_song_title_empty">Der Songtitel darf nicht leer sein.</string>
-  <string name="error_song_artist_empty">Song-KÃ¼nstler darf nicht leer sein.</string>
-  <string name="save">Speichern</string>
-  <string name="choose_playlist">Playlist auswÃ¤hlen</string>
   <string name="edit_playlist">Playlist bearbeiten</string>
   <string name="create_playlist">Playlist erstellen</string>
-  <string name="playlist_name">Name der Playlist</string>
-  <string name="error_playlist_name_empty">Der Name der Playlist darf nicht leer sein.</string>
-  <string name="edit_artist">KÃ¼nstler bearbeiten</string>
-  <string name="artist_name">Name des KÃ¼nstlers</string>
-  <string name="error_artist_name_empty">Der Name des KÃ¼nstlers darf nicht leer sein.</string>
   <!-- Noun -->
   <plurals name="n_song">
     <item quantity="one">%d Song</item>
@@ -144,10 +128,7 @@
     <item quantity="other">%d Jahre</item>
   </plurals>
   <!-- Snackbar -->
-  <string name="playlist_imported">Playlist importiert</string>
-  <string name="removed_song_from_playlist">\"%s\" aus der Playlist entfernt</string>
   <string name="playlist_synced">Playlist synchronisiert</string>
-  <string name="undo">RÃ¼ckgÃ¤ngig machen</string>
   <!-- Player -->
   <string name="lyrics_not_found">Songtext nicht gefunden</string>
   <string name="sleep_timer">Schlaf-Timer</string>
@@ -156,7 +137,6 @@
     <item quantity="one">1 Minute</item>
     <item quantity="other">%d Minuten</item>
   </plurals>
-  <string name="error_no_stream">Kein Stream verfÃ¼gbar</string>
   <string name="error_no_internet">Keine Netzwerkverbindung</string>
   <string name="error_timeout">ZeitÃ¼berschreitung</string>
   <string name="error_unknown">Unbekannter Fehler</string>
@@ -170,7 +150,6 @@
   <string name="repeat_mode_all">Warteschlange wiederholen</string>
   <!-- Queue Title -->
   <string name="queue_all_songs">Alle Songs</string>
-  <string name="queue_searched_songs">Gesuchte Songs</string>
   <!-- Notification name -->
   <string name="music_player">Musik-Player</string>
   <!-- Settings -->
@@ -183,7 +162,6 @@
   <string name="dark_theme_follow_system">System-Standard</string>
   <string name="pure_black">Reines Schwarz</string>
   <string name="default_open_tab">StandardmÃ¤ÃŸig geÃ¶ffnete Registerkarte</string>
-  <string name="customize_navigation_tabs">Anpassen der Navigationsleiste</string>
   <string name="lyrics_text_position">Position des Songtextes</string>
   <string name="left">Links</string>
   <string name="center">Mitte</string>
@@ -196,7 +174,6 @@
   <string name="enable_proxy">Proxy einschalten</string>
   <string name="proxy_type">Proxy-Typ</string>
   <string name="proxy_url">Proxy-URL</string>
-  <string name="restart_to_take_effect">Neustarten, damit Ã„nderungen wirksam werden</string>
   <string name="player_and_audio">Player und Audio</string>
   <string name="audio_quality">TonqualitÃ¤t</string>
   <string name="audio_quality_auto">Automatisch</string>
@@ -207,15 +184,12 @@
   <string name="audio_normalization">Audio-Normalisierung</string>
   <string name="equalizer">Equalizer</string>
   <string name="storage">Speicher</string>
-  <string name="cache">Cache</string>
   <string name="image_cache">Bild-Cache</string>
   <string name="song_cache">Song-Cache</string>
   <string name="max_cache_size">Maximale Cache-GrÃ¶ÃŸe</string>
   <string name="unlimited">Unbegrenzt</string>
   <string name="clear_all_downloads">Alle Downloads lÃ¶schen</string>
-  <string name="max_image_cache_size">Maximale GrÃ¶ÃŸe des Bild-Caches</string>
   <string name="clear_image_cache">Bild-Cache lÃ¶schen</string>
-  <string name="max_song_cache_size">Maximale GrÃ¶ÃŸe des Song-Cache</string>
   <string name="clear_song_cache">Song-Cache lÃ¶schen</string>
   <string name="size_used">%s verwendet</string>
   <string name="privacy">PrivatsphÃ¤re</string>
@@ -229,18 +203,11 @@
   <string name="backup_restore">Sichern und Wiederherstellen</string>
   <string name="action_backup">Sichern</string>
   <string name="action_restore">Wiederherstellen</string>
-  <string name="imported_playlist">Importierte Playlist</string>
   <string name="backup_create_success">Sicherung erfolgreich erstellt</string>
   <string name="backup_create_failed">Konnte keine Sicherung erstellen</string>
-  <string name="restore_failed">Wiederherstellung der Sicherung fehlgeschlagen</string>
   <string name="about">Ãœber</string>
-  <string name="app_version">App-Version</string>
-  <string name="new_version_available">Neue Version verfÃ¼gbar</string>
-  <string name="translation_models">Ãœbersetzungs-Modelle</string>
-  <string name="clear_translation_models">LÃ¶sche Ãœbersetzungs-Modelle</string>
   <string name="forgotten_favorites">Vergessene Favoriten</string>
   <string name="action_remove_like_all">Alle â€žMag ichâ€œ entfernen</string>
-  <string name="default_">Standard</string>
   <string name="auto_load_more">Automatisch mehr Songs laden</string>
   <string name="action_logout">Abmelden</string>
   <string name="theme">Thema</string>
@@ -249,54 +216,29 @@
   <string name="library_album_empty">Alben aus der Bibliothek werden hier angezeigt</string>
   <string name="add_all_to_library">Alle zur Bibliothek hinzufÃ¼gen</string>
   <string name="similar_to">Ã„hnlich wie</string>
-  <string name="listen_history">HÃ¶rverlauf</string>
   <string name="not_logged_in">Nicht angemeldet</string>
-  <string name="remove_from_queue">Aus Warteschlange entfernen</string>
   <string name="duplicates">Duplikate</string>
   <string name="auto_skip_next_on_error">Automatisch zum nÃ¤chsten Song springen, wenn ein Fehler auftritt</string>
-  <string name="sided">Seite</string>
   <string name="library_artist_empty">KÃ¼nstler aus der Bibliothek werden hier angezeigt</string>
-  <string name="player">Player</string>
   <string name="preview">Vorschau</string>
-  <string name="misc">Sonstiges</string>
   <string name="add_anyway">Trotzdem hinzufÃ¼gen</string>
-  <string name="player_slider_style">Stil des Player-Schiebereglers</string>
   <string name="duplicates_description_multiple">%d Songs sind bereits in deiner Playlist</string>
-  <string name="enable_discord_rpc">Statusanzeige aktivieren</string>
   <string name="auto_skip_next_on_error_desc">Sorge fÃ¼r ein kontinuierliches Wiedergabeerlebnis</string>
-  <string name="dismiss">Ablehnen</string>
-  <string name="player_text_alignment">Ausrichtung des Player-textes</string>
-  <string name="disable_screenshot">Screenshots deaktivieren</string>
-  <string name="small">Klein</string>
-  <string name="login_failed">Anmeldung fehlgeschlagen</string>
   <string name="queue">Warteschlange</string>
   <string name="skip_duplicates">Duplikate Ã¼berspringen</string>
   <string name="remove_from_playlist">Aus Playlist entfernen</string>
-  <string name="tempo_and_pitch">Tempo und TonhÃ¶he</string>
-  <string name="options">Optionen</string>
-  <string name="big">GroÃŸ</string>
   <string name="keep_listening">WeiterhÃ¶ren</string>
   <string name="your_youtube_playlists">Deine Youtube-Playlists</string>
   <string name="library_playlist_empty">Deine Playlists werden hier angezeigt</string>
-  <string name="disable_screenshot_desc">Wenn diese Option aktiviert ist, sind Screenshots und die App-Ansicht in â€žZuletzt gesehenâ€œ deaktiviert.</string>
-  <string name="discord_information">O-Beat verwendet die KizzyRPC-Bibliothek, um den Status deines Discord-Kontos zu setzen. Dazu wird die Discord-Gateway-Verbindung verwendet, was als VerstoÃŸ gegen die AGB von Discord angesehen werden kann. Es sind jedoch keine FÃ¤lle bekannt, in denen Benutzerkonten aus diesem Grund gesperrt wurden. Die Verwendung erfolgt auf eigene Gefahr.\n\nO-Beat extrahiert nur dein Token, alles andere wird lokal gespeichert.</string>
-  <string name="squiggly">SchnÃ¶rkelig</string>
-  <string name="grid_cell_size">GrÃ¶ÃŸe der Rasterzellen</string>
-  <string name="search_history">Suchverlauf</string>
   <string name="enable_lrclib">LrcLib-Songtext-Anbieter aktivieren</string>
-  <string name="hide_explicit">Explizite Inhalte ausblenden</string>
-  <string name="discord_integration">Discord-Integration</string>
   <string name="library_song_empty">Songs aus der Bibliothek werden hier angezeigt</string>
   <string name="remove_download_playlist_confirm">MÃ¶chtest du wirklich alle Songs der Playlist â€ž%sâ€œ aus dem Speicher fÃ¼r heruntergeladene Songs entfernen?</string>
   <string name="delete_playlist_confirm">MÃ¶chtest du die Playlist â€ž%sâ€œ wirklich lÃ¶schen?</string>
   <string name="duplicates_description_single">Der Song befindet sich bereits in deiner Playlist</string>
   <string name="action_like_all">Allen â€žMag ichâ€œ geben</string>
   <string name="remove_all_from_library">Alle aus Bibliothek entfernen</string>
-  <string name="persistent_queue_desc">Wiederherstellung der letzten Warteschlange beim Starten der App</string>
   <string name="auto_load_more_desc">Automatisches HinzufÃ¼gen weiterer Songs, wenn das Ende der Warteschlange erreicht ist, sofern mÃ¶glich</string>
-  <string name="filter_bookmarked">Lesezeichen</string>
   <string name="use_login_for_browse">Anmeldung zum Durchsuchen von Inhalten verwenden</string>
   <string name="use_login_for_browse_desc">Dies kann Einfluss darauf haben, welche Inhalte du siehst und zeigt zum Beispiel nur Premium-Alben an, wenn Sie mit einem Premium-Konto angemeldet sind</string>
-  <string name="action_login">Anmelden</string>
   <string name="app_name">O-Beat</string>
 </resources>

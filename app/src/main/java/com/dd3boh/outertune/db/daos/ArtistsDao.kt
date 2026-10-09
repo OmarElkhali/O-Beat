@@ -33,7 +33,7 @@ interface ArtistsDao {
 
     // region Gets
     @Query("""
-        SELECT 
+        SELECT
             artist.*,
             COUNT(song.id) AS songCount,
             SUM(CASE WHEN song.dateDownload IS NOT NULL THEN 1 ELSE 0 END) AS downloadCount
@@ -55,35 +55,32 @@ interface ArtistsDao {
     fun artistLikeName(name: String): Flow<List<ArtistEntity>>
 
     @Query("""
-        SELECT 
+        SELECT
             artist.*,
             COUNT(song.id) AS songCount,
             SUM(CASE WHEN song.dateDownload IS NOT NULL THEN 1 ELSE 0 END) AS downloadCount
         FROM artist
             LEFT JOIN song_artist_map sam ON artist.id = sam.artistId
             LEFT JOIN song ON sam.songId = song.id
-        WHERE artist.name LIKE '%' || :query || '%' AND song.inLibrary IS NOT NULL
+        WHERE song.inLibrary IS NOT NULL AND (
+            artist.name LIKE '%' || :query || '%'
+            OR lower(artist.name) LIKE lower('%' || :query || '%')
+            OR replace(lower(artist.name), ' ', '') LIKE replace(lower('%' || :query || '%'), ' ', '')
+        )
         GROUP BY artist.id
         HAVING songCount > 0
-        ORDER BY artist.bookmarkedAt ASC
+        ORDER BY
+            CASE
+                WHEN lower(artist.name) = lower(:query) THEN 0
+                WHEN lower(artist.name) LIKE lower(:query || '%') THEN 1
+                WHEN lower(artist.name) LIKE lower('%' || :query) THEN 2
+                WHEN lower(artist.name) LIKE lower('%' || :query || '%') THEN 3
+                ELSE 4
+            END,
+            length(artist.name) ASC
         LIMIT :previewSize
     """)
     fun searchArtists(query: String, previewSize: Int = Int.MAX_VALUE): Flow<List<Artist>>
-
-    @Query("""
-        SELECT 
-            artist.*,
-            COUNT(song.id) AS songCount,
-            SUM(CASE WHEN song.dateDownload IS NOT NULL THEN 1 ELSE 0 END) AS downloadCount
-        FROM artist
-            LEFT JOIN song_artist_map sam ON artist.id = sam.artistId
-            LEFT JOIN song ON sam.songId = song.id
-        WHERE artist.name LIKE '%' || :query || '%' AND song.inLibrary IS NOT NULL AND song.isLocal
-        GROUP BY artist.id
-        HAVING songCount > 0
-        LIMIT :previewSize
-    """)
-    fun searchLocalArtists(query: String, previewSize: Int = Int.MAX_VALUE): Flow<List<Artist>>
 
 
     @Transaction
@@ -100,7 +97,7 @@ interface ArtistsDao {
     fun allLocalArtists(): Flow<List<ArtistEntity>>
 
     @Query("""
-        SELECT 
+        SELECT
             artist.*,
             COUNT(song.id) AS songCount,
             SUM(CASE WHEN song.dateDownload IS NOT NULL THEN 1 ELSE 0 END) AS downloadCount
@@ -108,8 +105,8 @@ interface ArtistsDao {
             LEFT JOIN song_artist_map sam ON artist.id = sam.artistId
             LEFT JOIN song ON sam.songId = song.id
             LEFT JOIN (
-                SELECT 
-                    song AS songId, 
+                SELECT
+                    song AS songId,
                     SUM(count) AS songTotalPlays
                 FROM playCount
                 WHERE year > :fromYear OR (year = :fromYear AND month >= :fromMonth)
@@ -150,7 +147,7 @@ interface ArtistsDao {
         }
 
         val query = SimpleSQLiteQuery("""
-            SELECT 
+            SELECT
                 artist.*,
                 COUNT(song.id) AS songCount,
                 SUM(CASE WHEN song.dateDownload IS NOT NULL THEN 1 ELSE 0 END) AS downloadCount
@@ -176,7 +173,7 @@ interface ArtistsDao {
 
     @Transaction
     @Query("""
-        SELECT 
+        SELECT
             artist.*,
             COUNT(song.id) AS songCount,
             SUM(CASE WHEN song.dateDownload IS NOT NULL THEN 1 ELSE 0 END) AS downloadCount

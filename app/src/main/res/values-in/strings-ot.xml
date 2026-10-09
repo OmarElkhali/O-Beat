@@ -18,7 +18,6 @@
     <string name="queues_empty">Tidak ada antrian</string>
     <string name="auto_playlist">Daftar putar otomatis</string>
     <string name="select">Mode pemilihan</string>
-    <string name="like_all">Sukai semua</string>
     <string name="more_settings">Pengaturan lanjutan</string>
     <string name="delete_lyric_confirm">Apakah Anda yakin ingin menghapus lirik yang tersimpan untuk \"%s\"?</string>
     <string name="tap_show_more">Ketuk untuk menampilkan informasi lebih lanjut</string>
@@ -59,16 +58,12 @@
     <string name="grp_lyrics_parser">Analisis lirik</string>
     <string name="grp_lyrics_source">Sumber lirik</string>
     <string name="grp_manual_scanner">Pemindai manual</string>
-    <string name="grp_proxy">Proxy</string>
     <string name="grp_sync">Sinkronisasi</string>
     <string name="app_info_title">Informasi aplikasi</string>
-    <string name="check_for_update">Periksa pembaruan</string>
-    <string name="checking_for_update">Memeriksa pembaruan</string>
     <string name="device_info_title">Informasi perangkat</string>
     <string name="help_bug_report_action">Laporkan bug (via GitHub)</string>
     <string name="help_contact_email_inquiries">Pertanyaan lainnya (Ketuk untuk menyalin Email)</string>
     <string name="help_support_forum">Bantuan &amp; dukungan (via GitHub)</string>
-    <string name="no_updates_available">Tidak ada pembaruan tersedia</string>
     <string name="oss_licenses_title">Lisensi sumber terbuka</string>
     <string name="wiki">Wiki</string>
     <string name="all_contributors">Tampilkan semua kontributor</string>
@@ -78,7 +73,6 @@
     <string name="att_project_support">Dukungan proyek</string>
     <string name="att_translator">Penerjemah (%s)</string>
     <string name="attribution_title">Atribusi</string>
-    <string name="new_interface">Tata letak antarmuka baru</string>
     <string name="player_background_blur">Buram</string>
     <string name="player_background_default">Ikuti tema</string>
     <string name="player_background_gradient">Gradasi</string>
@@ -90,7 +84,6 @@
     <string name="tab_arrangement_disable_tip">--- Seret ke bawah sini untuk menonaktifkan ---</string>
     <string name="tab_arrangement_home_required">Tab Beranda diperlukan.</string>
     <string name="tablet_ui_title">Paksa tampilan tablet</string>
-    <string name="tablet_ui_title_description">Aktifkan tampilan lanskap untuk layar besar, meski perangkat tidak dalam orientasi lanskap</string>
     <string name="filter_arrangement">Pengaturan filter</string>
     <string name="like_autodownload">Unduh otomatis lagu yang disukai</string>
     <string name="token_adv_login_description">Ini adalah metode masuk TINGKAT LANJUT. Sebagai alternatif dari portal web, Anda dapat langsung memasukkan atau memperbarui token masuk Anda di sini. Contohnya, ini dapat mempercepat proses masuk di beberapa perangkat. Perlu diingat bahwa format token apa pun yang tidak valid dan gagal diurai oleh aplikasi tidak akan diterima</string>
@@ -142,13 +135,11 @@
     <string name="scanner_manual_btn">Mulai sinkronisasi manual</string>
     <string name="scanner_rejected_dir">Pilihan tidak valid. Folder pemindaian tidak dapat menjadi subfolder dari folder unduhan, atau folder unduhan itu sendiri</string>
     <string name="scanner_warning">Secara bawaan, pemindai TIDAK akan memuat ulang metadata dari lagu-lagu yang sudah ada, kecuali jika Anda menentukannya sebaliknya di bagian atas. Tergantung pada ukuran koleksi Anda, proses ini mungkin akan memakan waktu.</string>
-    <string name="scanner_missing_ffmpeg">Ekstraktor FFmpeg tidak terdeteksi</string>
     <string name="scanner_missing_storage_perm">Pemindai media lokal memerlukan izin penyimpanan agar berfungsi</string>
     <string name="scanner_btn_idle">Pindai</string>
     <string name="scanner_progress_complete">Pemindaian selesai</string>
     <string name="scanner_progress_discovering">Mencariâ€¦</string>
     <string name="scanner_progress_processing">Memprosesâ€¦</string>
-    <string name="scanner_progress_scanning">Memindaiâ€¦</string>
     <string name="scanner_progress_syncing">Menyinkronkanâ€¦</string>
     <string name="scanner_scan_fail">Gagal memindai</string>
     <string name="scanner_ytm_link_fail">Pekerjaan penautan artis YouTube gagal</string>
@@ -230,12 +221,9 @@
     <string name="action_next">Selanjutnya</string>
     <string name="action_skip">Lewati</string>
     <string name="action_cancel">Batal</string>
-    <string name="info">Informasi</string>
-    <string name="speed_very_slow">Sangat lambat</string>
     <string name="speed_slow">Lambat</string>
     <string name="speed_medium">Sedang</string>
     <string name="speed_fast">Cepat</string>
-    <string name="speed_very_fast">Sangat cepat</string>
     <string name="attrib_zhuang">Zion Huang untuk O-Beat</string>
     <string name="special_thanks">Ucapan terima kasih</string>
 </resources>

@@ -5,11 +5,14 @@ import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
@@ -37,6 +40,8 @@ import com.dd3boh.outertune.playback.queues.ListQueue
 import com.dd3boh.outertune.ui.component.items.AlbumGridItem
 import com.dd3boh.outertune.ui.component.items.ArtistGridItem
 import com.dd3boh.outertune.ui.component.ChipsRow
+import com.dd3boh.outertune.ui.component.EmptyPlaceholder
+import androidx.compose.material.icons.rounded.BarChart
 import com.dd3boh.outertune.ui.component.button.IconButton
 import com.dd3boh.outertune.ui.component.LazyColumnScrollbar
 import com.dd3boh.outertune.ui.component.NavigationTitle
@@ -88,78 +93,50 @@ fun StatsScreen(
             )
         }
 
-        item(key = "mostPlayedSongs") {
-            NavigationTitle(
-                title = stringResource(R.string.most_played_songs),
-                modifier = Modifier.animateItem()
-            )
-        }
-
-        items(
-            items = mostPlayedSongs,
-            key = { it.id }
-        ) { song ->
-            SongListItem(
-                song = song,
-                onPlay = {
-                    playerConnection.playQueue(
-                        ListQueue(
-                            title = mostPlayedSongTitle,
-                            items = mostPlayedSongs.map { it.toMediaMetadata() }
-                        )
-                    )
-                },
-                onSelectedChange = {},
-                inSelectMode = false,
-                isSelected = false,
-                navController = navController,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .animateItem()
-            )
-        }
-
-        item(key = "mostPlayedArtists") {
-            NavigationTitle(
-                title = stringResource(R.string.most_played_artists),
-                modifier = Modifier.animateItem()
-            )
-
-            LazyRow(
-                modifier = Modifier.animateItem()
-            ) {
-                items(
-                    items = mostPlayedArtists,
-                    key = { it.id }
-                ) { artist ->
-                    ArtistGridItem(
-                        artist = artist,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .combinedClickable(
-                                onClick = {
-                                    navController.navigate("artist/${artist.id}")
-                                },
-                                onLongClick = {
-                                    menuState.show {
-                                        ArtistMenu(
-                                            originalArtist = artist,
-                                            coroutineScope = coroutineScope,
-                                            onDismiss = menuState::dismiss
-                                        )
-                                    }
-                                }
-                            )
-                            .animateItem()
-                    )
-                }
+        if (mostPlayedSongs.isEmpty() && mostPlayedArtists.isEmpty() && mostPlayedAlbums.isEmpty()) {
+            item(key = "emptyStats") {
+                EmptyPlaceholder(
+                    icon = Icons.Rounded.BarChart,
+                    text = stringResource(R.string.stats_empty),
+                    modifier = Modifier.heightIn(min = 280.dp),
+                )
             }
-        }
-
-        if (mostPlayedAlbums.isNotEmpty()) {
-            item(key = "mostPlayedAlbums") {
+        } else {
+            item(key = "mostPlayedSongs") {
                 NavigationTitle(
-                    title = stringResource(R.string.most_played_albums),
+                    title = stringResource(R.string.most_played_songs),
+                    modifier = Modifier.animateItem()
+                )
+            }
+
+            itemsIndexed(
+                items = mostPlayedSongs,
+                key = { _, song -> song.id }
+            ) { index, song ->
+                SongListItem(
+                    song = song,
+                    onPlay = {
+                        playerConnection.playQueue(
+                            ListQueue(
+                                title = mostPlayedSongTitle,
+                                items = mostPlayedSongs.map { it.toMediaMetadata() },
+                                startIndex = index
+                            )
+                        )
+                    },
+                    onSelectedChange = {},
+                    inSelectMode = false,
+                    isSelected = false,
+                    navController = navController,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .animateItem()
+                )
+            }
+
+            item(key = "mostPlayedArtists") {
+                NavigationTitle(
+                    title = stringResource(R.string.most_played_artists),
                     modifier = Modifier.animateItem()
                 )
 
@@ -167,25 +144,22 @@ fun StatsScreen(
                     modifier = Modifier.animateItem()
                 ) {
                     items(
-                        items = mostPlayedAlbums,
+                        items = mostPlayedArtists,
                         key = { it.id }
-                    ) { album ->
-                        AlbumGridItem(
-                            album = album,
-                            isActive = album.id == mediaMetadata?.album?.id,
-                            isPlaying = isPlaying,
-                            coroutineScope = coroutineScope,
+                    ) { artist ->
+                        ArtistGridItem(
+                            artist = artist,
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .combinedClickable(
                                     onClick = {
-                                        navController.navigate("album/${album.id}")
+                                        navController.navigate("artist/${artist.id}")
                                     },
                                     onLongClick = {
                                         menuState.show {
-                                            AlbumMenu(
-                                                originalAlbum = album,
-                                                navController = navController,
+                                            ArtistMenu(
+                                                originalArtist = artist,
+                                                coroutineScope = coroutineScope,
                                                 onDismiss = menuState::dismiss
                                             )
                                         }
@@ -193,6 +167,48 @@ fun StatsScreen(
                                 )
                                 .animateItem()
                         )
+                    }
+                }
+            }
+
+            if (mostPlayedAlbums.isNotEmpty()) {
+                item(key = "mostPlayedAlbums") {
+                    NavigationTitle(
+                        title = stringResource(R.string.most_played_albums),
+                        modifier = Modifier.animateItem()
+                    )
+
+                    LazyRow(
+                        modifier = Modifier.animateItem()
+                    ) {
+                        items(
+                            items = mostPlayedAlbums,
+                            key = { it.id }
+                        ) { album ->
+                            AlbumGridItem(
+                                album = album,
+                                isActive = album.id == mediaMetadata?.album?.id,
+                                isPlaying = isPlaying,
+                                coroutineScope = coroutineScope,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .combinedClickable(
+                                        onClick = {
+                                            navController.navigate("album/${album.id}")
+                                        },
+                                        onLongClick = {
+                                            menuState.show {
+                                                AlbumMenu(
+                                                    originalAlbum = album,
+                                                    navController = navController,
+                                                    onDismiss = menuState::dismiss
+                                                )
+                                            }
+                                        }
+                                    )
+                                    .animateItem()
+                            )
+                        }
                     }
                 }
             }
@@ -211,7 +227,7 @@ fun StatsScreen(
             ) {
                 Icon(
                     Icons.AutoMirrored.Rounded.ArrowBack,
-                    contentDescription = null
+                    contentDescription = stringResource(R.string.a11y_navigate_back)
                 )
             }
         },

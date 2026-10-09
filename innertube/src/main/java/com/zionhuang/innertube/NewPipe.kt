@@ -7,7 +7,6 @@ import io.ktor.http.parseQueryString
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.schabi.newpipe.extractor.NewPipe
-import org.schabi.newpipe.extractor.downloader.CancellableCall
 import org.schabi.newpipe.extractor.downloader.Downloader
 import org.schabi.newpipe.extractor.downloader.Request
 import org.schabi.newpipe.extractor.downloader.Response
@@ -46,22 +45,18 @@ private class NewPipeDownloaderImpl(proxy: Proxy?) : Downloader() {
             }
         }
 
-        val response = client.newCall(requestBuilder.build()).execute()
-
-        if (response.code == 429) {
-            response.close()
-
-            throw ReCaptchaException("reCaptcha Challenge requested", url)
+        return client.newCall(requestBuilder.build()).execute().use { response ->
+            if (response.code == 429) {
+                throw ReCaptchaException("reCaptcha Challenge requested", url)
+            }
+            Response(
+                response.code,
+                response.message,
+                response.headers.toMultimap(),
+                response.body?.string(),
+                response.request.url.toString(),
+            )
         }
-
-        val responseBodyToReturn = response.body?.string()
-
-        val latestUrl = response.request.url.toString()
-        return Response(response.code, response.message, response.headers.toMultimap(), responseBodyToReturn, responseBodyToReturn?.toByteArray(), latestUrl)
-    }
-
-    override fun executeAsync(request: Request, callback: AsyncCallback?): CancellableCall {
-        TODO("Placeholder")
     }
 
 }

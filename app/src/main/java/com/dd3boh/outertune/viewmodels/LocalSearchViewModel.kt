@@ -16,6 +16,8 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.merge
+import kotlinx.coroutines.flow.runningFold
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
@@ -30,48 +32,73 @@ class LocalSearchViewModel @Inject constructor(
     val result = combine(query, filter) { query, filter ->
         query to filter
     }.flatMapLatest { (query, filter) ->
-        if (query.isEmpty()) {
+        if (query.isBlank()) {
             flowOf(LocalSearchResult("", filter, emptyMap()))
         } else {
             when (filter) {
-                LocalFilter.ALL -> combine(
-                    database.searchSongs(query, PREVIEW_SIZE),
-                    database.searchAlbums(query, PREVIEW_SIZE),
-                    database.searchArtists(query, PREVIEW_SIZE),
-                    database.searchArtistSongs(query, PREVIEW_SIZE),
-                    database.searchPlaylists(query, PREVIEW_SIZE),
-                ) { songs, albums, artists, artistSongs, playlists ->
-                    val list = songs + albums + artists + artistSongs + playlists
-                    list.distinctBy { it.id }
+                LocalFilter.ALL -> merge(
+                    combine(
+                        database.searchSongs(query, PREVIEW_SIZE),
+                        database.searchArtistSongs(query, PREVIEW_SIZE),
+                    ) { songs, artistSongs ->
+                        mapOf<LocalFilter, List<LocalItem>>(
+                            LocalFilter.SONG to (songs + artistSongs).distinctBy { it.id }
+                        )
+                    },
+                    database.searchAlbums(query, PREVIEW_SIZE).map { albums ->
+                        mapOf<LocalFilter, List<LocalItem>>(LocalFilter.ALBUM to albums)
+                    },
+                    database.searchArtists(query, PREVIEW_SIZE).map { artists ->
+                        mapOf<LocalFilter, List<LocalItem>>(LocalFilter.ARTIST to artists)
+                    },
+                    database.searchPlaylists(query, PREVIEW_SIZE).map { playlists ->
+                        mapOf<LocalFilter, List<LocalItem>>(LocalFilter.PLAYLIST to playlists)
+                    },
+                ).runningFold(emptyMap<LocalFilter, List<LocalItem>>()) { categories, update ->
+                    categories + update
+                }.map { categories ->
+                    LocalSearchResult(
+                        query = query,
+                        filter = filter,
+                        map = categories.filterValues { it.isNotEmpty() },
+                    )
                 }
-                LocalFilter.SONG -> combine(
-                    database.searchSongs(query),
-                    database.searchArtistSongs(query),
-                ) { songs, artistSongs ->
-                    val list = songs + artistSongs
-                    list.distinctBy { it.id }
-                }
-                LocalFilter.ALBUM -> database.searchAlbums(query)
-                LocalFilter.ARTIST -> database.searchArtists(query)
-                LocalFilter.PLAYLIST -> database.searchPlaylists(query)
-            }.map { list ->
-                LocalSearchResult(
-                    query = query,
-                    filter = filter,
-                    map = list.groupBy {
-                        when (it) {
-                            is Song -> LocalFilter.SONG
-                            is Album -> LocalFilter.ALBUM
-                            is Artist -> LocalFilter.ARTIST
-                            is Playlist -> LocalFilter.PLAYLIST
+
+                else -> {
+                    val items = when (filter) {
+                        LocalFilter.SONG -> combine(
+                            database.searchSongs(query),
+                            database.searchArtistSongs(query),
+                        ) { songs, artistSongs ->
+                            (songs + artistSongs).distinctBy { it.id }
                         }
-                    })
+                        LocalFilter.ALBUM -> database.searchAlbums(query)
+                        LocalFilter.ARTIST -> database.searchArtists(query)
+                        LocalFilter.PLAYLIST -> database.searchPlaylists(query)
+                        LocalFilter.ALL -> error("Handled above")
+                    }
+
+                    items.map { list ->
+                        LocalSearchResult(
+                            query = query,
+                            filter = filter,
+                            map = list.groupBy {
+                                when (it) {
+                                    is Song -> LocalFilter.SONG
+                                    is Album -> LocalFilter.ALBUM
+                                    is Artist -> LocalFilter.ARTIST
+                                    is Playlist -> LocalFilter.PLAYLIST
+                                }
+                            },
+                        )
+                    }
+                }
             }
         }
     }.stateIn(viewModelScope, SharingStarted.Lazily, LocalSearchResult("", filter.value, emptyMap()))
 
     companion object {
-        const val PREVIEW_SIZE = 3
+        const val PREVIEW_SIZE = 10  // Augmenté de 3 à 10 pour plus de résultats fuzzy
     }
 }
 

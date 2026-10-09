@@ -10,7 +10,6 @@
     <string name="song_added_to_queue">Î¤Î¿ Â«%sÂ» ÎµÎ¹ÏƒÎ®Ï‡Î¸Î· ÏƒÏ„Î·Î½ Î¿Ï…ÏÎ¬</string>
     <string name="song_added_to_queue_end">Î¤Î¿ Â«%sÂ» Ï€ÏÎ¿ÏƒÏ„Î­Î¸Î·ÎºÎµ ÏƒÏ„Î¿ Ï„Î­Î»Î¿Ï‚ Ï„Î·Ï‚ Î¿Ï…ÏÎ¬Ï‚</string>
     <string name="auto_playlist">Î‘Ï…Ï„ÏŒÎ¼Î±Ï„Î· Î»Î¯ÏƒÏ„Î± Î±Î½Î±Ï€Î±ÏÎ±Î³Ï‰Î³Î®Ï‚</string>
-    <string name="like_all">ÎœÎ¿Ï… Î±ÏÎ­ÏƒÎ¿Ï…Î½ ÏŒÎ»Î±</string>
     <string name="folders">Î¦Î¬ÎºÎµÎ»Î¿Î¹</string>
     <string name="library">Î’Î¹Î²Î»Î¹Î¿Î¸Î®ÎºÎ·</string>
     <string name="recent_activity">Î ÏÏŒÏƒÏ†Î±Ï„Î· Î´ÏÎ±ÏƒÏ„Î·ÏÎ¹ÏŒÏ„Î·Ï„Î±</string>
@@ -41,10 +40,8 @@
     <string name="grp_lyrics_format">ÎœÎ¿ÏÏ†Î¿Ï€Î¿Î¯Î·ÏƒÎ·</string>
     <string name="grp_lyrics_parser">Î‘Î½Î±Î»Ï…Ï„Î®Ï‚</string>
     <string name="grp_lyrics_source">Î Î·Î³Î­Ï‚ ÏƒÏ„Î¯Ï‡Ï‰Î½</string>
-    <string name="grp_proxy">Î”Î¹Î±Î¼ÎµÏƒÎ¿Î»Î¬Î²Î·ÏƒÎ·</string>
     <string name="attrib_zhuang">Zion Huang Î³Î¹Î± Ï„Î¿ InnerTune</string>
     <string name="special_thanks">Î•Î¹Î´Î¹ÎºÎ­Ï‚ ÎµÏ…Ï‡Î±ÏÎ¹ÏƒÏ„Î¯ÎµÏ‚</string>
-    <string name="new_interface">ÎÎ­Î± Î´Î¹Î¬Ï„Î±Î¾Î· Î´Î¹ÎµÏ€Î±Ï†Î®Ï‚</string>
     <string name="player_background_blur">Î˜ÏŒÎ»Ï‰Î¼Î±</string>
     <string name="player_background_default">ÎŠÎ´Î¹Î¿ Î¼Îµ Î¸Î­Î¼Î±</string>
     <string name="player_background_gradient">Î”Î¹Î±Î²Î¬Î¸Î¼Î¹ÏƒÎ·</string>

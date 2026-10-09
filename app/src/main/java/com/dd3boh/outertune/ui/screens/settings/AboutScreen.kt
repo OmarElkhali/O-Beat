@@ -102,18 +102,16 @@ fun AboutScreen(
         Image(
             painter = painterResource(R.drawable.ic_obeat_foreground),
             contentDescription = null,
-            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground, BlendMode.SrcIn),
             modifier = Modifier
                 .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.surfaceColorAtElevation(NavigationBarDefaults.Elevation))
-                .clickable { }
         )
 
         Row(
             verticalAlignment = Alignment.Top,
         ) {
             Text(
-                text = "OuterTune",
+                text = stringResource(R.string.app_name),
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
@@ -154,7 +152,7 @@ fun AboutScreen(
             IconLabelButton(
                 text = "GitHub",
                 painter = painterResource(R.drawable.github),
-                onClick = { uriHandler.openUri("https://github.com/OuterTune/OuterTune") },
+                onClick = { uriHandler.openUri("https://github.com/OmarElkhali/O-Beat") },
                 modifier = Modifier.padding(horizontal = 8.dp)
             )
 
@@ -166,11 +164,13 @@ fun AboutScreen(
             )
         }
 
-        Spacer(Modifier.height(96.dp))
+        Spacer(Modifier.height(24.dp))
 
         Column(
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
+            UpdateSettings()
+            Spacer(modifier = Modifier.height(16.dp))
             ElevatedCard(
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -195,13 +195,13 @@ fun AboutScreen(
                 PreferenceEntry(
                     title = { Text(stringResource(R.string.help_bug_report_action)) },
                     onClick = {
-                        uriHandler.openUri("https://github.com/OuterTune/OuterTune/issues")
+                        uriHandler.openUri("https://github.com/OmarElkhali/O-Beat/issues")
                     }
                 )
                 PreferenceEntry(
                     title = { Text(stringResource(R.string.help_support_forum)) },
                     onClick = {
-                        uriHandler.openUri("https://github.com/OuterTune/OuterTune/discussions")
+                        uriHandler.openUri("https://github.com/OmarElkhali/O-Beat/discussions")
                     }
                 )
                 PreferenceEntry(

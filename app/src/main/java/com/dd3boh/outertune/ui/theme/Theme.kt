@@ -10,9 +10,11 @@ package com.dd3boh.outertune.ui.theme
 
 import android.graphics.Bitmap
 import android.os.Build
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
@@ -22,6 +24,7 @@ import androidx.compose.runtime.saveable.SaverScope
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
 import androidx.palette.graphics.Palette
 import com.google.material.color.dynamiccolor.DynamicScheme
@@ -52,7 +55,14 @@ fun OBeatTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = MaterialTheme.typography,
+        typography = OBeatTypography,
+        shapes = Shapes(
+            extraSmall = RoundedCornerShape(6.dp),
+            small = RoundedCornerShape(12.dp),
+            medium = RoundedCornerShape(18.dp),
+            large = RoundedCornerShape(24.dp),
+            extraLarge = RoundedCornerShape(32.dp),
+        ),
         content = content
     )
 }

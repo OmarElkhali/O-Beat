@@ -4,8 +4,11 @@ import android.annotation.SuppressLint
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
@@ -39,6 +42,9 @@ import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material.icons.rounded.SdCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.Indicator
 import androidx.compose.material3.pulltorefresh.pullToRefresh
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
@@ -52,6 +58,7 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -146,6 +153,7 @@ fun HomeScreen(
     val accountPlaylists by viewModel.accountPlaylists.collectAsState()
     val homePage by viewModel.homePage.collectAsState()
     val explorePage by viewModel.explorePage.collectAsState()
+    val loadError by viewModel.loadError.collectAsState()
     val playlists by viewModel.playlists.collectAsState()
     val recentActivity by viewModel.recentActivity.collectAsState()
 
@@ -358,9 +366,23 @@ fun HomeScreen(
         forgottenFavoritesLazyGridState.scrollToItem(0)
     }
 
+    val colorScheme = MaterialTheme.colorScheme
+    val homeBackdrop = remember(colorScheme) {
+        Brush.verticalGradient(
+            listOf(
+                colorScheme.surfaceContainerLow,
+                colorScheme.background,
+                colorScheme.background,
+            )
+        )
+    }
+
     BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
+            .background(
+                homeBackdrop
+            )
             .pullToRefresh(
                 state = pullRefreshState,
                 isRefreshing = isRefreshing,
@@ -391,6 +413,26 @@ fun HomeScreen(
             state = lazylistState,
             contentPadding = LocalPlayerAwareWindowInsets.current.asPaddingValues()
         ) {
+            item {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                    modifier = Modifier
+                        .windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal))
+                        .padding(start = 24.dp, end = 24.dp, top = 18.dp, bottom = 12.dp)
+                ) {
+                    Text(
+                        text = stringResource(R.string.obeat_for_you),
+                        style = MaterialTheme.typography.headlineLarge,
+                        color = colorScheme.onSurface
+                    )
+                    Text(
+                        text = stringResource(R.string.obeat_home_subtitle),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
             item {
                 Row(
                     modifier = Modifier
@@ -443,6 +485,26 @@ fun HomeScreen(
                         viewModel.toggleChip(it)
                     }
                 )
+            }
+
+            if (loadError) {
+                item {
+                    Surface(
+                        color = colorScheme.surfaceContainer,
+                        shape = MaterialTheme.shapes.large,
+                        modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp)
+                    ) {
+                        Column(Modifier.padding(16.dp)) {
+                            Text(
+                                text = stringResource(R.string.obeat_home_unavailable),
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                            TextButton(onClick = viewModel::refresh, enabled = !isRefreshing) {
+                                Text(stringResource(R.string.retry))
+                            }
+                        }
+                    }
+                }
             }
 
 

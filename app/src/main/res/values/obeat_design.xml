@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="obeat_for_you">For you</string>
+    <string name="obeat_home_subtitle">Your favorites and fresh discoveries</string>
+    <string name="obeat_home_unavailable">Recommendations could not load. Your library is still available.</string>
+    <string name="obeat_pause">Pause</string>
+    <string name="obeat_replay">Replay</string>
+    <string name="obeat_next">Next song</string>
+    <string name="obeat_previous">Previous song</string>
+    <string name="obeat_more">Song options</string>
+    <string name="obeat_like">Add to liked songs</string>
+    <string name="obeat_unlike">Remove from liked songs</string>
+    <string name="obeat_seek_back">Seek backward</string>
+    <string name="obeat_seek_forward">Seek forward</string>
+</resources>

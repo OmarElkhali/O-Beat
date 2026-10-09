@@ -2,7 +2,6 @@
 <resources>
     <string name="queues_title">Kolejki</string>
     <string name="auto_playlist">Playlista automatyczna</string>
-    <string name="like_all">Polub wszystkie</string>
     <string name="sort_by_like_date">Data polubienia</string>
     <string name="create_sync_playlist_description">Uwaga: To pozwala na synchronizacjÄ™ z YouTube Music. Jest to nieodwracalne. Nie moÅ¼esz dodaÄ‡ lokalnych utworÃ³w do synchronizowanej playlisty.</string>
     <string name="recent_activity">Ostatnia aktywnoÅ›Ä‡</string>
@@ -34,7 +33,6 @@
     <string name="sync_progress_success">Synchronizacja zakoÅ„czona</string>
     <string name="grp_localization">Lokalizacja</string>
     <string name="special_thanks">Specjalne podziÄ™kowania</string>
-    <string name="new_interface">Nowy ukÅ‚ad interfejsu</string>
     <string name="player_background_blur">Rozmycie</string>
     <string name="player_background_default">Jak motyw</string>
     <string name="show_liked_and_downloaded_playlist">PokaÅ¼ playlisty polubionych i pobranych utworÃ³w w bibliotece</string>
@@ -64,7 +62,6 @@
     <string name="local_player_settings_title">Media lokalne</string>
     <string name="lyrics_prefer_local_description">Priorytetyzuj rozwiÄ…zanie lokalnych plikÃ³w tekstowych przed uÅ¼yciem wszystkich dostawcÃ³w z chmury. WyÅ‚Ä…cz tÄ™ opcjÄ™ aby priorytetyzowaÄ‡ dostawcÃ³w z chmury</string>
     <string name="scanner_progress_syncing">Synchronizacjaâ€¦</string>
-    <string name="scanner_missing_ffmpeg">Nie odnaleziono ekstraktora FFmpeg</string>
     <string name="grp_lyrics_source">Å¹rÃ³dÅ‚a tekstÃ³w</string>
     <plurals name="scanner_n_song_processed">
         <item quantity="one">%d piosenki przetworzone</item>
@@ -87,9 +84,7 @@
     <string name="grp_manual_scanner">Skaner rÄ™czny</string>
     <string name="swipe2Queue">PrzeciÄ…gnij by zakolejkowaÄ‡</string>
     <string name="action_next">NastÄ™pne</string>
-    <string name="grp_proxy">Proxy</string>
     <string name="slim_navbar_title">WÄ…ski pasek nawigacji</string>
-    <string name="info">Informacja</string>
     <string name="min_playback_duration_description">Najmniejsza dÅ‚ugoÅ›Ä‡ piosenki jaka musi byÄ‡ odtworzona aby uznaÄ‡ jÄ… za \"odtworzonÄ…\"</string>
     <string name="lyrics_multiline_description">Traktuj wszystkie wersy miÄ™dzy punktami synchronizacji jako jeden kawaÅ‚ek tekstu</string>
     <string name="tab_arrangement_home_required">Karta gÅ‚Ã³wna jest niezbÄ™dna.</string>
@@ -105,7 +100,6 @@
     <string name="ytm_sync">Automatycznie synchronizuj swoje konto YouTube Music</string>
     <string name="audio_offload">WÅ‚Ä…cz offload</string>
     <string name="scan_paths_add_folder">Dodaj nowy folder</string>
-    <string name="scanner_progress_scanning">Skanowanieâ€¦</string>
     <string name="scanner_missing_storage_perm">Do dziaÅ‚ania lokalnego skanera multimediÃ³w wymagane sÄ… uprawnienia do przechowywania danych</string>
     <string name="action_cancel">Anuluj</string>
     <string name="scanner_local_title">Skaner lokalny</string>
@@ -180,13 +174,9 @@
     <string name="oobe_local_music_support">Ekstensywne Â­wsparcie lokalnej muzyki</string>
     <string name="oobe_local_media_title">Lokalne media</string>
     <string name="oobe_downloads_subtitle">Wybierz folder, w ktÃ³rym bÄ™dÄ… przechowywane pobrane piosenki.</string>
-    <string name="speed_very_slow">Bardzo powolna</string>
     <string name="speed_slow">Wolna</string>
     <string name="speed_medium">Åšrednia</string>
     <string name="speed_fast">Szybka</string>
-    <string name="check_for_update">SprawdÅº, czy dostÄ™pna jest nowa aktualizacja</string>
-    <string name="checking_for_update">Sprawdzanie, czy nie zostaÅ‚a wydana nowa aktualizacja</string>
-    <string name="tablet_ui_title_description">WÅ‚Ä…cz krajobrazowy interfejs, ktÃ³ry jest zoptymalizowany dla wiÄ™kszych ekranÃ³w niezaleÅ¼nie od aktualnej wielkoÅ›ci ekranu</string>
     <string name="playlist_missing_note">BrakujÄ…ce playlisty? Kliknij tutaj, by pozwoliÄ‡ na synchronizacjÄ™ typu czytaj-pisz w ustawieniach</string>
     <string name="grp_behavior">Zachowanie</string>
     <string name="dl_rescan_description">Zaktualizuje bazÄ™ danych i odÅ›wieÅ¼ register pobraÅ„ jeÅ¼eli jakiekolwiek pliki lub foldery zostaÅ‚y zmienione</string>
@@ -198,13 +188,11 @@
     <string name="dl_extra_path_title">Konfiguruje dodatkowe lokalizacjÄ™ importuâ€¦</string>
     <string name="m3u_export">Eksportuj plik jako M3U</string>
     <string name="import_success_songs">Import zakoÅ„czony sukcesem</string>
-    <string name="speed_very_fast">Bardzo szybka</string>
     <string name="oobe_local_music_support_description">SÅ‚uchaj swoich plikÃ³w muzycznych(np MP3, OGG, FLAC, itd.)</string>
     <string name="oobe_cross_platform_sync_description">Zachowaj swojÄ… muzykÄ™ niezaleÅ¼nie od urzÄ…dzenia</string>
     <string name="library_empty">ZawartoÅ›Ä‡ twojej biblioteki zostanie wyÅ›wietlona tutaj</string>
     <string name="oobe_ytm_logon_title">Konto</string>
     <string name="oobe_local_media_subtitle">Wybierz foldery, ktÃ³re zawierajÄ… twojÄ… muzykÄ™. ZostanÄ… one przeskanowane, by znaleÅºÄ‡ piosenki gotowe do importu.</string>
-    <string name="no_updates_available">Posiadasz najnowszÄ… wersjÄ™ aplikacji</string>
     <string name="m3u_ytm_lookup">Szukaj w YouTube Music by znaleÅºÄ‡ piosenki nie znalezione w bazie danych aplikacji</string>
     <string name="clear_downloads_confirm">Czy jesteÅ› pewien, Å¼e chcesz usunÄ…Ä‡ wszystkie pobrane piosenki? Tylko te znajdujÄ…ce siÄ™ w gÅ‚Ã³wnym folderze pobraÅ„ zostanÄ… usuniÄ™te.</string>
     <string name="clear_song_cache_confirm">Czy na pewno chcesz usunÄ…Ä‡ pamiÄ™Ä‡ piosenek?</string>

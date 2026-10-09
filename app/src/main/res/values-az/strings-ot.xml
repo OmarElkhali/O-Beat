@@ -14,7 +14,6 @@
     <string name="song_added_to_queue_end">\"%s\" nÃ¶vbÉ™nin sonuna É™lavÉ™ edildi</string>
     <string name="auto_playlist">Avtomatik pleylist</string>
     <string name="select">SeÃ§mÉ™ Ã¼sulu</string>
-    <string name="like_all">HamÄ±sÄ± kimi</string>
     <string name="delete_lyric_confirm">Siz hÉ™qiqÉ™tÉ™n \"%s\" Ã¼Ã§Ã¼n saxlanmÄ±ÅŸ lirikanÄ± silmÉ™k istÉ™yirsiniz?</string>
     <string name="err_play_next_on_error">XÉ™ta baÅŸ verdi. NÃ¶vbÉ™ti sÉ™slÉ™nir</string>
     <string name="err_stop_on_error">XÉ™ta baÅŸ verdi. SÉ™slÉ™nmÉ™ dayandÄ±rÄ±ldÄ±</string>
@@ -34,7 +33,6 @@
     <string name="grp_localization">YerlÉ™ÅŸmÉ™</string>
     <string name="grp_lyrics_format">Formatlama</string>
     <string name="grp_lyrics_parser">TÉ™hlil</string>
-    <string name="grp_proxy">Proxy</string>
     <string name="attrib_zhuang">InnerTune Ã¼Ã§Ã¼n Zion Huang</string>
     <string name="player_background_blur">BulanÄ±q</string>
     <string name="player_background_default">Temaya uyÄŸun</string>
@@ -51,7 +49,6 @@
     <string name="prefs_advanced">QabaqcÄ±l</string>
     <string name="grp_lyrics_source">Lirik mÉ™nbÉ™lÉ™r</string>
     <string name="grp_manual_scanner">Æl ilÉ™ yoxlama</string>
-    <string name="new_interface">Yeni gÃ¶rÃ¼nÃ¼ÅŸ tÉ™rtibatÄ±</string>
     <string name="android_auto">Android Auto</string>
     <string name="more_settings">Daha Ã§ox ayarlar</string>
     <string name="tap_show_more">Daha Ã§ox mÉ™lumat Ã¼Ã§Ã¼n kliklÉ™yin</string>
@@ -61,8 +58,6 @@
     <string name="grp_library_and_content">Kitabxana vÉ™ kontentlÉ™r</string>
     <string name="grp_sync">Sinxronizasiya</string>
     <string name="app_info_title">Mobil É™lavÉ™ mÉ™lumatlarÄ±</string>
-    <string name="check_for_update">YenilÉ™mÉ™lÉ™ri yoxlayÄ±n</string>
-    <string name="checking_for_update">YenilÉ™mÉ™lÉ™r yoxlanÄ±lÄ±r</string>
     <string name="device_info_title">Cihaz mÉ™lumatlarÄ±</string>
     <string name="help_bug_report_action">XÉ™ta bildir</string>
     <string name="help_support_forum">DÉ™stÉ™k</string>

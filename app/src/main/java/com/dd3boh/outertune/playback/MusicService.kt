@@ -38,7 +38,9 @@ import androidx.media3.common.Player.STATE_IDLE
 import androidx.media3.common.Timeline
 import androidx.media3.common.audio.SonicAudioProcessor
 import androidx.media3.datasource.DataSource
+import androidx.media3.datasource.DataSpec
 import androidx.media3.datasource.DefaultDataSource
+import androidx.media3.datasource.HttpDataSource
 import androidx.media3.datasource.ResolvingDataSource
 import androidx.media3.datasource.cache.CacheDataSource
 import androidx.media3.datasource.cache.CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR
@@ -121,8 +123,8 @@ import com.google.common.util.concurrent.MoreExecutors
 import com.zionhuang.innertube.YouTube
 import com.zionhuang.innertube.models.SongItem
 import com.zionhuang.innertube.models.WatchEndpoint
+import com.zionhuang.innertube.models.YouTubeClient
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.anilbeesetti.nextlib.media3ext.ffdecoder.NextRenderersFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -146,6 +148,7 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.time.LocalDateTime
+import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 import kotlin.math.min
 import kotlin.math.pow
@@ -220,6 +223,19 @@ class MusicService : MediaLibraryService(),
     private var isAudioEffectSessionOpened = false
 
     var consecutivePlaybackErr = 0
+
+    /**
+     * YouTube stream URLs are short-lived. Keep their client-specific headers with the URL and
+     * allow one transparent refresh if the CDN rejects an expired or invalidated URL.
+     */
+    private data class CachedStream(
+        val url: String,
+        val expiresAtMs: Long,
+        val requestHeaders: Map<String, String>,
+    )
+
+    private val streamUrlCache = ConcurrentHashMap<String, CachedStream>()
+    private val streamRefreshAttempts = ConcurrentHashMap.newKeySet<String>()
 
     override fun onCreate() {
         super.onCreate()
@@ -585,7 +601,7 @@ class MusicService : MediaLibraryService(),
         val pos = player.currentPosition
         val data = queueBoard.getAllQueues()
         runBlocking(Dispatchers.IO) {
-            data.last().lastSongPos = pos
+            data.lastOrNull()?.lastSongPos = pos
             database.updateAllQueues(data)
         }
     }
@@ -623,14 +639,34 @@ class MusicService : MediaLibraryService(),
                 CacheDataSource.Factory()
                     .setCache(playerCache)
                     .setUpstreamDataSourceFactory(
-                        DefaultDataSource.Factory(
-                            this,
-                            OkHttpDataSource.Factory(
-                                OkHttpClient.Builder()
-                                    .proxy(YouTube.proxy)
-                                    .build()
+                        ResolvingDataSource.Factory(
+                            DefaultDataSource.Factory(
+                                this,
+                                OkHttpDataSource.Factory(
+                                    OkHttpClient.Builder()
+                                        .proxy(YouTube.proxy)
+                                        .protocols(listOf(okhttp3.Protocol.HTTP_1_1))
+                                        .addNetworkInterceptor { chain ->
+                                            val response = chain.proceed(chain.request())
+                                            val request = response.request
+                                            if (!response.isSuccessful && request.url.host.endsWith(".googlevideo.com")) {
+                                                val userAgent = request.header("User-Agent")
+                                                val client = when (userAgent) {
+                                                    YouTubeClient.VISIONOS.userAgent -> "VISIONOS"
+                                                    YouTubeClient.TVHTML5_SIMPLY.userAgent -> "TVHTML5_SIMPLY"
+                                                    YouTubeClient.USER_AGENT_WEB -> "WEB"
+                                                    null -> "MISSING"
+                                                    else -> "OTHER"
+                                                }
+                                                Log.w(TAG, "STREAM: HTTP=${response.code} range=${request.header("Range") ?: "none"} " +
+                                                    "client=$client origin=${request.header("Origin") != null} referer=${request.header("Referer") != null}")
+                                            }
+                                            response
+                                        }
+                                        .build()
+                                )
                             )
-                        )
+                        ) { resolveStreamDataSpec(it) }
                     )
                     .setCacheWriteDataSinkFactory(
                         HybridCacheDataSinkFactory(playerCache) { dataSpec ->
@@ -646,161 +682,135 @@ class MusicService : MediaLibraryService(),
     }
 
     private fun createDataSourceFactory(): DataSource.Factory {
-        val songUrlCache = HashMap<String, Pair<String, Long>>()
         return ResolvingDataSource.Factory(createCacheDataSource()) { dataSpec ->
             val mediaId = dataSpec.key ?: error("No media id")
             Log.d(TAG, "PLAYING: song id = $mediaId")
 
             val song = queueBoard.getCurrentQueue()?.findSong(dataSpec.key ?: "")
             // local song
-            if (song?.localPath != null) {
-                if (song.isLocal) {
-                    Log.d(TAG, "PLAYING: local song")
-                    val file = File(song.localPath)
-                    if (!file.exists()) {
-                        throw PlaybackException(
-                            "File not found",
-                            Throwable(),
-                            PlaybackException.ERROR_CODE_IO_FILE_NOT_FOUND
-                        )
-                    }
+            if (song?.isLocal == true && song.localPath != null) {
+                Log.d(TAG, "PLAYING: local song")
+                val file = File(song.localPath)
+                if (!file.exists()) {
+                    throw PlaybackException(
+                        "File not found",
+                        Throwable(),
+                        PlaybackException.ERROR_CODE_IO_FILE_NOT_FOUND
+                    )
+                }
 
-                    return@Factory dataSpec.withUri(file.toUri())
-                } else {
-                    val isDownloadNew = downloadUtil.localMgr.getFilePathIfExists(mediaId)
-                    isDownloadNew?.let {
-                        Log.d(TAG, "PLAYING: Custom downloaded song")
-                        return@Factory dataSpec.withUri(it)
-                    }
+                return@Factory dataSpec.withUri(file.toUri())
+            }
+            if (song?.isLocal != true) {
+                downloadUtil.localMgr.getFilePathIfExists(mediaId)?.let {
+                    Log.d(TAG, "PLAYING: Custom downloaded song")
+                    return@Factory dataSpec.withUri(it)
                 }
             }
 
-            val isDownload =
-                downloadCache.isCached(mediaId, dataSpec.position, if (dataSpec.length >= 0) dataSpec.length else 1)
-            val isCache = playerCache.isCached(mediaId, dataSpec.position, CHUNK_LENGTH)
-            if (isDownload || isCache) {
-                Log.d(TAG, "PLAYING: remote song (cache = ${isCache}, download = ${isDownload})")
-                offloadScope.launch { recoverSong(mediaId) }
-                return@Factory dataSpec
-            }
-
-            songUrlCache[mediaId]?.takeIf { it.second > System.currentTimeMillis() }?.let {
-                Log.d(TAG, "PLAYING: remote song (temp cache)")
-                offloadScope.launch { recoverSong(mediaId) }
-                return@Factory dataSpec.withUri(it.first.toUri())
-            }
-
-            Log.d(TAG, "PLAYING: remote song (online fetch)")
-
-            val playbackData = runBlocking(Dispatchers.IO) {
-                val audioQuality by enumPreference(this@MusicService, AudioQualityKey, AudioQuality.AUTO)
-                YTPlayerUtils.playerResponseForPlayback(
-                    mediaId,
-                    audioQuality = audioQuality,
-                    connectivityManager = connectivityManager,
-                )
-            }.getOrElse { throwable ->
-                when (throwable) {
-                    is PlaybackException -> throw throwable
-
-                    is ConnectException, is UnknownHostException -> {
-                        throw PlaybackException(
-                            getString(R.string.error_no_internet),
-                            throwable,
-                            PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED
-                        )
-                    }
-
-                    is SocketTimeoutException -> {
-                        throw PlaybackException(
-                            getString(R.string.error_timeout),
-                            throwable,
-                            PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT
-                        )
-                    }
-
-                    else -> throw PlaybackException(
-                        getString(R.string.error_unknown),
-                        throwable,
-                        PlaybackException.ERROR_CODE_REMOTE_ERROR
-                    )
-                }
-            }
-            val format = playbackData.format
-
-            database.query {
-                upsert(
-                    FormatEntity(
-                        id = mediaId,
-                        itag = format.itag,
-                        mimeType = format.mimeType.split(";")[0],
-                        codecs = format.mimeType.split("codecs=")[1].removeSurrounding("\""),
-                        bitrate = format.bitrate,
-                        sampleRate = format.audioSampleRate,
-                        contentLength = format.contentLength!!,
-                        loudnessDb = playbackData.audioConfig?.loudnessDb,
-                        playbackTrackingUrl = playbackData.playbackTracking?.videostatsPlaybackUrl?.baseUrl
-                    )
-                )
-            }
-            offloadScope.launch { recoverSong(mediaId, playbackData) }
-
-            val streamUrl = playbackData.streamUrl
-
-            songUrlCache[mediaId] =
-                streamUrl to System.currentTimeMillis() + (playbackData.streamExpiresInSeconds * 1000L)
-            dataSpec.withUri(streamUrl.toUri()).subrange(dataSpec.uriPositionOffset, CHUNK_LENGTH)
+            // Preserve the true media length; resolve every actual network miss below the caches.
+            offloadScope.launch { recoverSong(mediaId) }
+            dataSpec
         }
     }
 
-    private fun createRenderersFactory(gaplessOffloadAllowed: Boolean): DefaultRenderersFactory {
-        if (ENABLE_FFMETADATAEX) {
-            return object : NextRenderersFactory(this@MusicService) {
-                override fun buildAudioSink(
-                    context: Context,
-                    pcmEncodingRestrictionLifted: Boolean,
-                    enableFloatOutput: Boolean,
-                    enableAudioTrackPlaybackParams: Boolean
-                ): AudioSink? {
-                    return DefaultAudioSink.Builder(this@MusicService)
-                        .setPcmEncodingRestrictionLifted(pcmEncodingRestrictionLifted)
-                        .setEnableAudioTrackPlaybackParams(enableAudioTrackPlaybackParams)
-                        .setAudioProcessorChain(
-                            DefaultAudioSink.DefaultAudioProcessorChain(
-                                emptyArray(),
-                                SilenceSkippingAudioProcessor(),
-                                SonicAudioProcessor()
-                            )
-                        )
-                        .setAudioOffloadSupportProvider(if (!gaplessOffloadAllowed) OtOffloadSupportProvider(context) else DefaultAudioOffloadSupportProvider(context))
-                        .build()
+    private fun resolveStreamDataSpec(dataSpec: DataSpec): DataSpec {
+        if (dataSpec.uri.scheme == "file" || dataSpec.uri.scheme == "content") return dataSpec
+        val mediaId = dataSpec.key ?: error("No media id")
+        Log.d(TAG, "STREAM: network open id=$mediaId position=${dataSpec.position} length=${dataSpec.length}")
+        streamUrlCache[mediaId]?.takeIf { it.expiresAtMs > System.currentTimeMillis() }?.let {
+            Log.d(TAG, "PLAYING: remote song (temp cache)")
+            return dataSpec.withUri(it.url.toUri()).withAdditionalHeaders(it.requestHeaders)
+        }
+
+        Log.d(TAG, "PLAYING: remote song (online fetch)")
+
+        val playbackData = runBlocking(Dispatchers.IO) {
+            val audioQuality by enumPreference(this@MusicService, AudioQualityKey, AudioQuality.AUTO)
+            YTPlayerUtils.playerResponseForPlayback(
+                mediaId,
+                audioQuality = audioQuality,
+                connectivityManager = connectivityManager,
+            )
+        }.getOrElse { throwable ->
+            when (throwable) {
+                is PlaybackException -> throw throwable
+
+                is ConnectException, is UnknownHostException -> {
+                    throw PlaybackException(
+                        getString(R.string.error_no_internet),
+                        throwable,
+                        PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED
+                    )
                 }
-            }
-                .setEnableDecoderFallback(true)
-                .setExtensionRendererMode(audioDecoder)
-        } else {
-            return object : DefaultRenderersFactory(this) {
-                override fun buildAudioSink(
-                    context: Context,
-                    pcmEncodingRestrictionLifted: Boolean,
-                    enableFloatOutput: Boolean,
-                    enableAudioTrackPlaybackParams: Boolean
-                ): AudioSink? {
-                    return DefaultAudioSink.Builder(this@MusicService)
-                        .setPcmEncodingRestrictionLifted(pcmEncodingRestrictionLifted)
-                        .setEnableAudioTrackPlaybackParams(enableAudioTrackPlaybackParams)
-                        .setAudioProcessorChain(
-                            DefaultAudioSink.DefaultAudioProcessorChain(
-                                emptyArray(),
-                                SilenceSkippingAudioProcessor(),
-                                SonicAudioProcessor()
-                            )
-                        )
-                        .setAudioOffloadSupportProvider(if (!gaplessOffloadAllowed) OtOffloadSupportProvider(context) else DefaultAudioOffloadSupportProvider(context))
-                        .build()
+
+                is SocketTimeoutException -> {
+                    throw PlaybackException(
+                        getString(R.string.error_timeout),
+                        throwable,
+                        PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT
+                    )
                 }
+
+                else -> throw PlaybackException(
+                    getString(R.string.error_unknown),
+                    throwable,
+                    PlaybackException.ERROR_CODE_REMOTE_ERROR
+                )
             }
         }
+        val format = playbackData.format
+
+        database.query {
+            upsert(
+                FormatEntity(
+                    id = mediaId,
+                    itag = format.itag,
+                    mimeType = format.mimeType.substringBefore(";"),
+                    codecs = format.mimeType.substringAfter("codecs=", "").removeSurrounding("\""),
+                    bitrate = format.bitrate,
+                    sampleRate = format.audioSampleRate,
+                    contentLength = format.contentLength ?: 0L,
+                    loudnessDb = playbackData.audioConfig?.loudnessDb,
+                    playbackTrackingUrl = playbackData.playbackTracking?.videostatsPlaybackUrl?.baseUrl
+                )
+            )
+        }
+        offloadScope.launch { recoverSong(mediaId, playbackData) }
+
+        val streamUrl = playbackData.streamUrl
+
+        streamUrlCache[mediaId] = CachedStream(
+            url = streamUrl,
+            expiresAtMs = System.currentTimeMillis() + (playbackData.streamExpiresInSeconds * 1000L),
+            requestHeaders = YTPlayerUtils.streamRequestHeaders(playbackData.streamClient),
+        )
+        return dataSpec.withUri(streamUrl.toUri())
+            .withAdditionalHeaders(YTPlayerUtils.streamRequestHeaders(playbackData.streamClient))
+    }
+
+    private fun createRenderersFactory(gaplessOffloadAllowed: Boolean): DefaultRenderersFactory {
+        return object : DefaultRenderersFactory(this) {
+            override fun buildAudioSink(
+                context: Context,
+                pcmEncodingRestrictionLifted: Boolean,
+                enableFloatOutput: Boolean,
+                enableAudioTrackPlaybackParams: Boolean
+            ): AudioSink? {
+                return DefaultAudioSink.Builder(this@MusicService)
+                    .setPcmEncodingRestrictionLifted(pcmEncodingRestrictionLifted)
+                    .setEnableAudioTrackPlaybackParams(enableAudioTrackPlaybackParams)
+                    .setAudioProcessorChain(
+                        DefaultAudioSink.DefaultAudioProcessorChain(
+                            emptyArray(),
+                            SilenceSkippingAudioProcessor(),
+                            SonicAudioProcessor()
+                        )
+                    )
+                    .setAudioOffloadSupportProvider(if (!gaplessOffloadAllowed) OtOffloadSupportProvider(context) else DefaultAudioOffloadSupportProvider(context))
+                    .build()
+            }
+        }.setExtensionRendererMode(audioDecoder)
     }
 
 
@@ -889,6 +899,17 @@ class MusicService : MediaLibraryService(),
     override fun onPlayerError(error: PlaybackException) {
         super.onPlayerError(error)
 
+        val mediaId = player.currentMediaItem?.mediaId
+        if (mediaId != null && isExpiredStreamResponse(error) && streamRefreshAttempts.add(mediaId)) {
+            Log.w(TAG, "Refreshing rejected stream URL for $mediaId")
+            streamUrlCache.remove(mediaId)
+            runCatching { playerCache.removeResource(mediaId) }
+                .onFailure { Log.w(TAG, "Could not remove rejected stream cache for $mediaId", it) }
+            player.prepare()
+            player.play()
+            return
+        }
+
         // wait for reconnection
         val isConnectionError = (error.cause?.cause is PlaybackException)
                 && (error.cause?.cause as PlaybackException).errorCode == PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_FAILED
@@ -919,8 +940,20 @@ class MusicService : MediaLibraryService(),
         super.onIsPlayingChanged(isPlaying)
     }
 
+    private fun isExpiredStreamResponse(error: PlaybackException): Boolean {
+        var cause: Throwable? = error
+        while (cause != null) {
+            if (cause is HttpDataSource.InvalidResponseCodeException && cause.responseCode in setOf(403, 404, 410)) {
+                return true
+            }
+            cause = cause.cause
+        }
+        return false
+    }
+
     override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) {
         super.onMediaItemTransition(mediaItem, reason)
+        mediaItem?.mediaId?.let(streamRefreshAttempts::remove)
         // +2 when and error happens, and -1 when transition. Thus when error, number increments by 1, else doesn't change
         if (consecutivePlaybackErr > 0) {
             consecutivePlaybackErr--
@@ -1101,6 +1134,5 @@ class MusicService : MediaLibraryService(),
         const val CHANNEL_NAME = "fgs_workaround"
         const val NOTIFICATION_ID = 888
         const val ERROR_CODE_NO_STREAM = 1000001
-        const val CHUNK_LENGTH = 512 * 1024L
     }
 }

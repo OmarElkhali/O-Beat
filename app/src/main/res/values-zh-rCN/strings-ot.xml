@@ -14,7 +14,6 @@
     <string name="song_added_to_queue_end">â€œ%sâ€ å·²æ·»åŠ åˆ°é˜Ÿåˆ—æœ«å°¾</string>
     <string name="auto_playlist">è‡ªåŠ¨æ’­æ”¾åˆ—è¡¨</string>
     <string name="select">é€‰æ‹©æ¨¡å¼</string>
-    <string name="like_all">å–œæ¬¢æ‰€æœ‰</string>
     <string name="delete_lyric_confirm">æ‚¨çœŸçš„è¦åˆ é™¤â€œ%sâ€çš„å­˜å‚¨æ­Œè¯å—ï¼Ÿ</string>
     <string name="err_play_next_on_error">å‘ç”Ÿé”™è¯¯ã€‚æ’­æ”¾ä¸‹ä¸€é¦–</string>
     <string name="err_stop_on_error">å‘ç”Ÿé”™è¯¯ã€‚æ’­æ”¾æš‚åœ</string>
@@ -40,10 +39,8 @@
     <string name="grp_lyrics_parser">è§£æžå™¨</string>
     <string name="grp_lyrics_source">æ­Œè¯æ¥æº</string>
     <string name="grp_manual_scanner">æ‰‹åŠ¨æ‰«æ</string>
-    <string name="grp_proxy">ä»£ç†</string>
     <string name="attrib_zhuang">Zion Huang ä¸º InnerTune</string>
     <string name="special_thanks">ç‰¹åˆ«é¸£è°¢</string>
-    <string name="new_interface">æ–°çš„ç•Œé¢å¸ƒå±€</string>
     <string name="player_background_blur">æ¨¡ç³Š</string>
     <string name="player_background_default">å…³æ³¨ä¸»é¢˜</string>
     <string name="player_background_gradient">æ¸å˜</string>
@@ -87,8 +84,6 @@
     <string name="scan_paths_excl">æŽ’é™¤çš„æ‰«æè·¯å¾„</string>
     <string name="scanner_local_title">æœ¬åœ°æ‰«æ</string>
     <string name="scanner_manual_btn">è§¦å‘æ‰‹åŠ¨åŒæ­¥</string>
-    <string name="scanner_missing_ffmpeg">æœªæ£€æµ‹åˆ° FFmpeg æå–å™¨</string>
-    <string name="scanner_progress_scanning">æ‰«æ..â€¦</string>
     <string name="scanner_progress_syncing">åŒæ­¥..â€¦</string>
     <string name="scanner_scan_fail">æ‰«æå¤±è´¥</string>
     <string name="scanner_ytm_link_fail">YouTube éŸ³ä¹äººé“¾æŽ¥ä»»åŠ¡å¤±è´¥</string>
@@ -118,7 +113,6 @@
     <string name="action_back">è¿”å›ž</string>
     <string name="action_next">ä¸‹ä¸€ä¸ª</string>
     <string name="action_skip">è·³è¿‡</string>
-    <string name="info">ä¿¡æ¯</string>
     <string name="playlist_add_local_to_synced_note">æ³¨æ„ï¼šä¸æ”¯æŒå°†æœ¬åœ°æ­Œæ›²æ·»åŠ åˆ°åŒæ­¥/è¿œç¨‹æ’­æ”¾åˆ—è¡¨ã€‚ä»»ä½•å…¶ä»–ç»„åˆå‡æœ‰æ•ˆ</string>
     <string name="player_background_style">æ’­æ”¾å™¨èƒŒæ™¯æ ·å¼</string>
     <string name="scanner_missing_storage_perm">æ‰«æéœ€è¦å­˜å‚¨æƒé™</string>
@@ -134,7 +128,6 @@
     <string name="pause_remote_listen_history">ä¸Ž YouTube Music åˆ†äº«æ”¶å¬è®°å½•</string>
     <string name="queues_empty">æ— æ’­æ”¾é˜Ÿåˆ—</string>
     <string name="speed_fast">å¿«é€Ÿ</string>
-    <string name="speed_very_fast">éžå¸¸å¿«é€Ÿ</string>
     <string name="android_auto">Android Auto</string>
     <string name="err_restore_incompatible_database">æ— æ³•æ¢å¤ä¸å…¼å®¹çš„æ•°æ®åº“</string>
     <string name="grp_library_and_content">éŸ³ä¹åº“å’Œå†…å®¹</string>
@@ -152,7 +145,6 @@
     <string name="m3u_import_failed">æ²¡æœ‰æ‰¾åˆ°æ­Œæ›²ã€‚æ— æ•ˆçš„M3Uæ–‡ä»¶ï¼Œæˆ–æ²¡æœ‰æ‰¾åˆ°åŒ¹é…çš„æ­Œæ›²</string>
     <string name="m3u_ytm_lookup">åœ¨YouTubeéŸ³ä¹ä¸­æœç´¢ä¸åœ¨APPæ•°æ®åº“ä¸­çš„æ­Œæ›²</string>
     <string name="more_settings">æ›´å¤šè®¾ç½®</string>
-    <string name="no_updates_available">æ²¡æœ‰å¯ç”¨çš„æ›´æ–°</string>
     <string name="missing_media_permission_warning">éœ€è¦èŽ·å–å­˜å‚¨æƒé™ä»¥èŽ·å¾—æœ¬åœ°åª’ä½“ã€‚ç‚¹æ­¤æŽˆäºˆæƒé™ã€‚</string>
     <string name="oobe_ad_free_exp">æ— å¹¿å‘Šä½“éªŒ</string>
     <string name="oobe_ad_free_exp_description">ä½“éªŒè¿žç»­çš„å›žæ”¾éŸ³ä¹</string>
@@ -167,7 +159,6 @@
     <string name="oobe_interface_subtitle">ä¸ªæ€§åŒ–O-Beatæ ·å¼ä»¥åŠæ˜¾ç¤ºçš„å†…å®¹ã€‚</string>
     <string name="action_cancel">å–æ¶ˆ</string>
     <string name="grp_sync">åŒæ­¥</string>
-    <string name="check_for_update">æ£€æŸ¥æ›´æ–°</string>
     <string name="clear_song_cache_confirm">æ‚¨ç¡®è®¤æƒ³æ¸…ç†éŸ³ä¹æ¢æˆå—?</string>
     <string name="disable_lm_confirm">æ‚¨ç¡®å®šè¦ç¦ç”¨æœ¬åœ°åª’ä½“åŠŸèƒ½å—ï¼Ÿ</string>
     <string name="scan_paths_description">é€‰æ‹©æœ¬åœ°å­˜å‚¨ä¸Šçš„æ–‡ä»¶å¤¹æ¥æ‰«ææ­Œæ›²</string>
@@ -176,13 +167,11 @@
     <string name="oobe_complete_title">å…¨éƒ¨è®¾ç½®å®Œæ¯•ï¼</string>
     <string name="oobe_local_media_subtitle">é€‰æ‹©æ‹¥æœ‰ä½ çš„éŸ³ä¹çš„æ–‡ä»¶å¤¹ã€‚æˆ‘ä»¬å°†æ‰«æå¹¶å¯¼å…¥è¿™äº›æ–‡ä»¶å¤¹ä¸­çš„æ›²ç›®.</string>
     <string name="oobe_downloads_subtitle">é€‰æ‹©ä¿å­˜ä¸‹è½½çš„æ–‡ä»¶å¤¹ã€‚</string>
-    <string name="speed_very_slow">éžå¸¸ç¼“æ…¢</string>
     <string name="queues_title">æ’­æ”¾é˜Ÿåˆ—</string>
     <string name="tap_show_more">ç‚¹å‡»ä»¥æ˜¾ç¤ºæ›´å¤šä¿¡æ¯</string>
     <string name="err_invalid_ytm_song">æ’­æ”¾æ­Œæ›²å¤±è´¥ã€‚åªèƒ½æ’­æ”¾åœ¨ YouTube Music ä¸Šå¯ç”¨çš„å†…å®¹</string>
     <string name="playlist_missing_note">ç¼ºå°‘æ’­æ”¾åˆ—è¡¨ï¼Ÿç‚¹å‡»æ­¤å¤„åœ¨è®¾ç½®ä¸­å¯ç”¨åŒæ­¥è¯»å†™æ¨¡å¼</string>
     <string name="app_info_title">åº”ç”¨ä¿¡æ¯</string>
-    <string name="checking_for_update">æ£€æŸ¥æ›´æ–°</string>
     <string name="device_info_title">è®¾å¤‡ä¿¡æ¯</string>
     <string name="oss_licenses_title">å¼€æºè®¸å¯è¯</string>
     <string name="wiki">ç»´åŸº</string>
@@ -192,7 +181,6 @@
     <string name="att_maintainer">ç»´æŠ¤è€…</string>
     <string name="att_translator">è¯‘è€… (%s)</string>
     <string name="tablet_ui_title">å¼ºåˆ¶ä½¿ç”¨å¹³æ¿å¸ƒå±€</string>
-    <string name="tablet_ui_title_description">å¿½ç•¥å½“å‰å±å¹•å°ºå¯¸ï¼Œå¯ç”¨ä¸“ä¸ºå¤§å±å¹•ä¼˜åŒ–çš„æ¨ªå‘ç•Œé¢å¸ƒå±€</string>
     <string name="filter_arrangement">è®¾ç½®ç­›é€‰</string>
     <string name="sync_conflict_add_only">ä¿ç•™æ‰€æœ‰æœ¬åœ°å†…å®¹å¹¶æ·»åŠ æ¥è‡ªè¿œç¨‹çš„æ–°å†…å®¹</string>
     <string name="sync_conflict_overwrite">ç”¨è¿œç¨‹å†…å®¹è¦†ç›–æœ¬åœ°å†…å®¹</string>

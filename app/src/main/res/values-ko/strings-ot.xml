@@ -11,7 +11,6 @@
     <string name="song_added_to_queue">\"%s\" í˜„ìž¬ ìž¬ìƒëª©ë¡ì— ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤</string>
     <string name="queues_empty">ìž¬ìƒëª©ë¡ ì—†ìŒ</string>
     <string name="more_settings">ì¶”ê°€ ì„¤ì •</string>
-    <string name="like_all">ëª¨ë‘ ì¢‹ì•„ìš”</string>
     <string name="err_stop_on_error">ë¬¸ì œê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ìž¬ìƒì´ ì¤‘ì§€ë˜ì—ˆìŠµë‹ˆë‹¤</string>
     <string name="err_stop_on_too_many_errors">ë¬¸ì œê°€ ëŒ€ë‹¨ížˆ ë§Žì´ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ìž¬ìƒì´ ì¤‘ì§€ë˜ì—ˆìŠµë‹ˆë‹¤</string>
     <string name="sort_by_date_modified">ìˆ˜ì •ëœ ë‚ ì§œ</string>
@@ -27,7 +26,6 @@
     <string name="grp_manual_scanner">ìˆ˜ë™ ìŠ¤ìº”</string>
     <string name="attrib_zhuang">InnerTune ì˜ Zion Huang</string>
     <string name="special_thanks">íŠ¹ë³„ ë„ì›€</string>
-    <string name="new_interface">ìƒˆ ì¸í„°íŽ˜ì´ìŠ¤ ë ˆì´ì•„ì›ƒ</string>
     <string name="player_background_blur">ë¸”ëŸ¬</string>
     <string name="player_background_default">í…Œë§ˆ ìƒ‰</string>
     <string name="player_background_gradient">ê·¸ë ˆë””ì–¸íŠ¸</string>
@@ -52,7 +50,6 @@
     <string name="flat_subfolders_title">í•˜ìœ„ í´ë” í‰íƒ„í™”</string>
     <string name="auto_scanner_title">ìžë™ ìŠ¤ìº”</string>
     <string name="scanner_local_title">ë¡œì»¬ ìŠ¤ìº”</string>
-    <string name="scanner_missing_ffmpeg">FFmpeg ì¶”ì¶œê¸°ê°€ ê°ì§€ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤</string>
     <string name="scanner_progress_syncing">ë™ê¸°í™” ì¤‘â€¦</string>
     <string name="scanner_scan_fail">ìŠ¤ìº” ì‹¤íŒ¨</string>
     <string name="scanner_ytm_link_fail">ìœ íŠœë¸Œ ì•„í‹°ìŠ¤íŠ¸ ì—°ê²° ì‹¤íŒ¨</string>
@@ -75,7 +72,6 @@
     <string name="swipe_to_skip_description">ê°€ë¡œë¡œ ìŠ¤ì™€ì´í”„í•˜ì—¬ ê³¡ì„ ë³€ê²½í•©ë‹ˆë‹¤</string>
     <string name="action_skip">ê±´ë„ˆë›°ê¸°</string>
     <string name="action_cancel">ì·¨ì†Œí•˜ê¸°</string>
-    <string name="info">ì •ë³´</string>
     <string name="oobe_use_backup">ë°±ì—… íŒŒì¼ì´ ìžˆìŠµë‹ˆë‹¤</string>
     <string name="action_next">ë‹¤ìŒ</string>
     <string name="android_auto">Android Auto</string>
@@ -106,10 +102,8 @@
     <string name="create_sync_playlist_description">ì°¸ê³ : YouTube Musicê³¼ ì—°ë™ë©ë‹ˆë‹¤. ì´ ìž‘ì—…ì€ ì·¨ì†Œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë™ê¸°í™”ëœ ìž¬ìƒëª©ë¡ì— ê¸°ê¸° ë¯¸ë””ì–´ë¥¼ ì¶”ê°€í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.</string>
     <string name="grp_audio">ì˜¤ë””ì˜¤</string>
     <string name="grp_library_and_content">ë¼ì´ë¸ŒëŸ¬ë¦¬ ë° ì½˜í…ì¸ </string>
-    <string name="grp_proxy">í”„ë¡ì‹œ</string>
     <string name="token_adv_login_description">ê³ ê¸‰ ë¡œê·¸ì¸ ë°©ë²•ìž…ë‹ˆë‹¤. ì›¹ ì‚¬ì´íŠ¸ì—ì„œ ë¡œê·¸ì¸ í•˜ëŠ” ëŒ€ì‹ , ë¡œê·¸ì¸ í† í°ì„ ì§ì ‘ ìž…ë ¥í•˜ê±°ë‚˜ ì—…ë°ì´íŠ¸ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì´ ë°©ë²•ì€ ì—¬ëŸ¬ ê¸°ê¸°ì—ì„œ ë¡œê·¸ì¸í•  ë•Œ ì†ë„ë¥¼ ë†’ì¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. í•˜ì§€ë§Œ ì•±ì´ íŒŒì‹±í•  ìˆ˜ ì—†ëŠ” ìž˜ëª»ëœ í† í° í˜•ì‹ì€ í—ˆìš©ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤</string>
     <string name="grp_extra_scanner_settings">ì¶”ê°€ ìŠ¤ìº” ì„¤ì •</string>
-    <string name="scanner_progress_scanning">ìŠ¤ìº” ì¤‘â€¦</string>
     <string name="scanner_variant_rescan">ë¼ì´ë¸ŒëŸ¬ë¦¬ ì „ì²´ë¥¼ ë‹¤ì‹œ ìŠ¤ìº”í•˜ê³  ëª¨ë“  ê³¡ì˜ ë©”íƒ€ë°ì´í„°ë¥¼ ë‹¤ì‹œ ë¶ˆëŸ¬ì˜¤ê¸°</string>
     <string name="grp_interface">ì¸í„°íŽ˜ì´ìŠ¤</string>
     <string name="scan_paths_title">ìŠ¤ìº” ìœ„ì¹˜ ì„¤ì •â€¦</string>
@@ -153,24 +147,18 @@
     <string name="dev_settings_description">ê°œë°œìžìš© ê³ ê¸‰ ì„¤ì •ì„ í‘œì‹œí•©ë‹ˆë‹¤</string>
     <string name="scanner_sensitivity_L3">ì œëª©, ì•„í‹°ìŠ¤íŠ¸, ì•¨ë²” ì¼ì¹˜</string>
     <string name="scanner_sensitivity_L2">ì œëª©, ì•„í‹°ìŠ¤íŠ¸ ì¼ì¹˜</string>
-    <string name="checking_for_update">ì—…ë°ì´íŠ¸ í™•ì¸ ì¤‘</string>
-    <string name="no_updates_available">ì—…ë°ì´íŠ¸ ì—†ìŒ</string>
-    <string name="check_for_update">ì—…ë°ì´íŠ¸ í™•ì¸</string>
     <string name="grp_behavior">í–‰ë™</string>
     <string name="playlist_missing_note">ìž¬ìƒëª©ë¡ì´ ì—†ë‚˜ìš”? ì´ê³³ì„ ëˆŒëŸ¬ ì„¤ì •ì—ì„œ ì½ê¸°-ì“°ê¸° ëª¨ë“œ ë™ê¸°í™”ë¥¼ í™œì„±í™”í•˜ì„¸ìš”</string>
     <string name="library_empty">ë¼ì´ë¸ŒëŸ¬ë¦¬</string>
     <string name="m3u_ytm_lookup">ì•± ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì°¾ì„ ìˆ˜ ì—†ëŠ” ë…¸ëž˜ë¥¼ YouTube Musicì—ì„œ ê²€ìƒ‰í•˜ì„¸ìš”</string>
     <string name="lyrics_karaoke_title">ë…¸ëž˜ë°© ìŠ¤íƒ€ì¼ ìžë§‰.</string>
     <string name="attribution_title">ê¸°ì—¬</string>
-    <string name="speed_very_fast">ë§¤ìš° ë¹ ë¦„</string>
     <string name="tablet_ui_title">ê°•ì œ í…Œë¸”ë¦¿ UI</string>
-    <string name="tablet_ui_title_description">í˜„ìž¬ í™”ë©´ í¬ê¸°ì— ê´€ê³„ì—†ì´ ë” í° í™”ë©´ì— ìµœì í™”ëœ ê°€ë¡œí˜• ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ í™œì„±í™”í•©ë‹ˆë‹¤</string>
     <string name="oss_licenses_title">ì˜¤í”ˆ ì†ŒìŠ¤ ë¼ì´ì„¼ìŠ¤</string>
     <string name="lyrics_karaoke_description">ë‹¨ì–´ë³„ ê°€ì‚¬ ë™ê¸°í™”ë¥¼ ì§€ì›í•©ë‹ˆë‹¤. ê°€ì‚¬ í˜•ì‹ ì§€ì›ì´ í•„ìš”í•©ë‹ˆë‹¤.</string>
     <string name="lyrics_karaoke_hz_title">ë…¸ëž˜ë°© ìžë§‰ ì†ë„ ì¡°ì •</string>
     <string name="import_success_songs">ì„±ê³µì ìœ¼ë¡œ ê°€ì ¸ì™”ìŠµë‹ˆë‹¤</string>
     <string name="m3u_export">MSU íŒŒì¼ë¡œ ë‚´ë³´ë‚´ê¸°</string>
-    <string name="speed_very_slow">ë§¤ìš° ëŠë¦¼</string>
     <string name="speed_slow">ëŠë¦¼</string>
     <string name="speed_medium">ì¤‘ê°„</string>
     <string name="speed_fast">ë¹ ë¦„</string>

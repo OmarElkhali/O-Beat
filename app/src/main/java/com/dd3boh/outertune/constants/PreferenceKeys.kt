@@ -185,6 +185,10 @@ val AccountChannelHandleKey = stringPreferencesKey("accountChannelHandle")
 val LastUpdateCheckKey = longPreferencesKey("lastUpdateCheck")
 val LastVersionKey = stringPreferencesKey("lastVersion")
 val UpdateAvailableKey = booleanPreferencesKey("updateAvailable")
+val AutomaticUpdatesKey = booleanPreferencesKey("automaticUpdates")
+val UpdateApkUrlKey = stringPreferencesKey("updateApkUrl")
+val UpdateReleaseUrlKey = stringPreferencesKey("updateReleaseUrl")
+val LastNotifiedUpdateKey = stringPreferencesKey("lastNotifiedUpdate")
 
 val LanguageCodeToName = mapOf(
     "af" to "Afrikaans",

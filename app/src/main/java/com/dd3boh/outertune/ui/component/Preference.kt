@@ -1,5 +1,6 @@
 package com.dd3boh.outertune.ui.component
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -9,6 +10,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProvideTextStyle
@@ -49,11 +52,15 @@ fun PreferenceEntry(
                 onClick = onClick
             )
             .alpha(if (isEnabled) 1f else 0.5f)
-            .padding(horizontal = 16.dp, vertical = 16.dp)
+            .heightIn(min = 76.dp)
+            .padding(horizontal = 20.dp, vertical = 14.dp)
     ) {
         if (icon != null) {
             Box(
-                modifier = Modifier.padding(horizontal = 4.dp)
+                contentAlignment = Alignment.Center,
+                modifier = Modifier
+                    .size(40.dp)
+                    .background(MaterialTheme.colorScheme.surfaceContainerHigh, MaterialTheme.shapes.small)
             ) {
                 icon()
             }
@@ -62,7 +69,7 @@ fun PreferenceEntry(
         }
 
         Column(
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.spacedBy(3.dp),
             modifier = Modifier.weight(1f)
         ) {
             ProvideTextStyle(MaterialTheme.typography.titleMedium) {
@@ -72,8 +79,8 @@ fun PreferenceEntry(
             if (description != null) {
                 Text(
                     text = description,
-                    style = MaterialTheme.typography.titleSmall,
-                    color = MaterialTheme.colorScheme.secondary
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
 
@@ -243,10 +250,10 @@ fun PreferenceGroupTitle(
     modifier: Modifier = Modifier,
 ) {
     Text(
-        text = title.uppercase(),
+        text = title,
         style = MaterialTheme.typography.labelLarge,
         color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(16.dp)
+        modifier = modifier.padding(start = 20.dp, end = 20.dp, top = 28.dp, bottom = 8.dp)
     )
 }
 

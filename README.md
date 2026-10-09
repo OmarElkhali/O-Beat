@@ -17,6 +17,12 @@ It’s lightweight, beautiful, and respects your privacy: **no analytics, no tra
 
 ## Table of Contents
 
+Maintenance guides: [native design](docs/DESIGN.md),
+[YouTube Music and OuterTune comparison](docs/YOUTUBE_MUSIC.md),
+[signed GitHub releases and update notifications](docs/RELEASING.md).
+Release evidence: [verification results](docs/VERIFICATION.md) and
+[unused-file cleanup](docs/CLEANUP.md).
+
 - [Highlights](#highlights)
 - [Screenshots](#screenshots)
 - [Download & Install](#download--install)
@@ -92,6 +98,11 @@ For legacy/32-bit phones, build/install a v7a-only APK (see below).
 Build From Source
 Requires: Android Studio (latest), JDK 21, Android SDK/NDK, and Git.
 
+Before the first Gradle build, restore the ignored `ffMetadataEx` module and
+its pinned FFmpeg libraries as described in [the native build setup](docs/RELEASING.md#github-actions).
+Cloning this repository alone does not supply those files. Use SDK 36,
+Build Tools 36.0.0, NDK 29.0.13113456 and CMake 3.31.6.
+
 Quick Start (Windows PowerShell)
 powershell
 Copy code
@@ -115,6 +126,10 @@ full — includes extra modules (FFmpeg extensions, etc.)
 Pick tasks like assembleCoreRelease or assembleFullRelease.
 
 Signing (Release)
+For an update to an existing O-Beat installation, keep its original keystore
+and application ID. A newly generated key cannot update an APK signed with
+the historical key. See [the release guide](docs/RELEASING.md).
+
 Create a keystore (use the same password for store & key to avoid “Cannot recover key”):
 
 powershell

@@ -51,8 +51,21 @@ interface AlbumsDao : ArtistsDao {
         SELECT album.*, count(song.dateDownload) downloadCount
         FROM album
             LEFT JOIN song ON song.albumId = album.id
-        WHERE album.title LIKE '%' || :query || '%' AND song.inLibrary IS NOT NULL
+        WHERE song.inLibrary IS NOT NULL AND (
+            album.title LIKE '%' || :query || '%'
+            OR lower(album.title) LIKE lower('%' || :query || '%')
+            OR replace(lower(album.title), ' ', '') LIKE replace(lower('%' || :query || '%'), ' ', '')
+        )
         GROUP BY album.id
+        ORDER BY
+            CASE
+                WHEN lower(album.title) = lower(:query) THEN 0
+                WHEN lower(album.title) LIKE lower(:query || '%') THEN 1
+                WHEN lower(album.title) LIKE lower('%' || :query) THEN 2
+                WHEN lower(album.title) LIKE lower('%' || :query || '%') THEN 3
+                ELSE 4
+            END,
+            length(album.title) ASC
         LIMIT :previewSize
     """)
     fun searchAlbums(query: String, previewSize: Int = Int.MAX_VALUE): Flow<List<Album>>
@@ -121,7 +134,7 @@ interface AlbumsDao : ArtistsDao {
     @Transaction
     @Query("""
         SELECT album.*, count(song.dateDownload) downloadCount
-        FROM album_artist_map 
+        FROM album_artist_map
             JOIN album ON album_artist_map.albumId = album.id
             JOIN song ON album_artist_map.albumId = song.albumId
         WHERE artistId = :artistId

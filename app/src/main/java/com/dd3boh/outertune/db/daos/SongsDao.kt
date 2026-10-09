@@ -30,11 +30,45 @@ interface SongsDao {
     fun song(songId: String?): Flow<Song?>
 
     @Transaction
-    @Query("SELECT * FROM song WHERE title LIKE '%' || :query || '%' AND inLibrary IS NOT NULL LIMIT :previewSize")
+    @Query("""
+        SELECT * FROM song
+        WHERE inLibrary IS NOT NULL AND (
+            title LIKE '%' || :query || '%'
+            OR lower(title) LIKE lower('%' || :query || '%')
+            OR replace(lower(title), ' ', '') LIKE replace(lower('%' || :query || '%'), ' ', '')
+        )
+        ORDER BY
+            CASE
+                WHEN lower(title) = lower(:query) THEN 0
+                WHEN lower(title) LIKE lower(:query || '%') THEN 1
+                WHEN lower(title) LIKE lower('%' || :query) THEN 2
+                WHEN lower(title) LIKE lower('%' || :query || '%') THEN 3
+                ELSE 4
+            END,
+            length(title) ASC
+        LIMIT :previewSize
+    """)
     fun searchSongs(query: String, previewSize: Int = Int.MAX_VALUE): Flow<List<Song>>
 
     @Transaction
-    @Query("SELECT * FROM song WHERE title LIKE '%' || :query || '%' LIMIT :previewSize")
+    @Query("""
+        SELECT * FROM song
+        WHERE (
+            title LIKE '%' || :query || '%'
+            OR lower(title) LIKE lower('%' || :query || '%')
+            OR replace(lower(title), ' ', '') LIKE replace(lower('%' || :query || '%'), ' ', '')
+        )
+        ORDER BY
+            CASE
+                WHEN lower(title) = lower(:query) THEN 0
+                WHEN lower(title) LIKE lower(:query || '%') THEN 1
+                WHEN lower(title) LIKE lower('%' || :query) THEN 2
+                WHEN lower(title) LIKE lower('%' || :query || '%') THEN 3
+                ELSE 4
+            END,
+            length(title) ASC
+        LIMIT :previewSize
+    """)
     fun searchSongsInDb(query: String, previewSize: Int = Int.MAX_VALUE): Flow<List<Song>>
 
     @Transaction
@@ -51,7 +85,7 @@ interface SongsDao {
 
     @Transaction
     @Query("""
-        SELECT * FROM song 
+        SELECT * FROM song
         WHERE isLocal = 1 AND inLibrary IS NOT NULL AND localpath LIKE :dir || '%' AND title LIKE '%' || :query || '%'
         LIMIT :previewSize
         """)
@@ -107,8 +141,8 @@ interface SongsDao {
 
     @Transaction
     @Query("""
-        SELECT * FROM song 
-        WHERE inLibrary IS NOT NULL 
+        SELECT * FROM song
+        WHERE inLibrary IS NOT NULL
         ORDER BY (
             SELECT LOWER(GROUP_CONCAT(name, ''))
             FROM artist
@@ -125,11 +159,11 @@ interface SongsDao {
     @RewriteQueriesToDropUnusedColumns
     @Transaction
     @Query("""
-        SELECT song.*, (SELECT SUM(playCount.count) 
-            FROM playCount 
-            WHERE playCount.song = song.id) AS pc 
-        FROM song 
-        WHERE inLibrary IS NOT NULL 
+        SELECT song.*, (SELECT SUM(playCount.count)
+            FROM playCount
+            WHERE playCount.song = song.id) AS pc
+        FROM song
+        WHERE inLibrary IS NOT NULL
         ORDER BY pc ASC
     """)
     fun songsByPlayCountAsc(): Flow<List<Song>>
@@ -165,7 +199,7 @@ interface SongsDao {
     @Transaction
     @Query("""
         SELECT * FROM song
-        WHERE isLocal = 1 AND inLibrary IS NOT NULL AND localpath LIKE :filter || '%' 
+        WHERE isLocal = 1 AND inLibrary IS NOT NULL AND localpath LIKE :filter || '%'
         AND instr(substr(localpath, length(:filter) + 1), '/') = 0
         UNION
         SELECT * FROM song
@@ -225,8 +259,8 @@ interface SongsDao {
 
     @Transaction
     @Query("""
-        SELECT * FROM song 
-        WHERE liked 
+        SELECT * FROM song
+        WHERE liked
         ORDER BY (
             SELECT LOWER(GROUP_CONCAT(name, ''))
             FROM artist
@@ -239,11 +273,11 @@ interface SongsDao {
     @RewriteQueriesToDropUnusedColumns
     @Transaction
     @Query("""
-        SELECT song.*, (SELECT SUM(playCount.count) 
-            FROM playCount 
-            WHERE playCount.song = song.id) AS pc 
-        FROM song 
-        WHERE liked IS NOT NULL 
+        SELECT song.*, (SELECT SUM(playCount.count)
+            FROM playCount
+            WHERE playCount.song = song.id) AS pc
+        FROM song
+        WHERE liked IS NOT NULL
         ORDER BY pc ASC
     """)
     fun likedSongsByPlayCountAsc(): Flow<List<Song>>
@@ -329,10 +363,10 @@ interface SongsDao {
     @RewriteQueriesToDropUnusedColumns
     @Transaction
     @Query("""
-        SELECT song.*, (SELECT SUM(playCount.count) 
-            FROM playCount 
-            WHERE playCount.song = song.id) AS pc 
-        FROM song 
+        SELECT song.*, (SELECT SUM(playCount.count)
+            FROM playCount
+            WHERE playCount.song = song.id) AS pc
+        FROM song
         WHERE isLocal = 0 AND dateDownload IS NOT NULL
         ORDER BY pc ASC
     """)

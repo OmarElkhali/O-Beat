@@ -53,7 +53,12 @@ fun <E> ChipsRow(
             FilterChip(
                 label = { Text(label) },
                 selected = currentValue == value,
-                colors = FilterChipDefaults.filterChipColors(containerColor = MaterialTheme.colorScheme.surface),
+                shape = MaterialTheme.shapes.small,
+                colors = FilterChipDefaults.filterChipColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+                    selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                    selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                ),
                 onClick = { onValueUpdate(value) },
                 trailingIcon = {
                     if (isLoading(value)) {
@@ -108,7 +113,12 @@ fun <E> ChipsLazyRow(
             FilterChip(
                 label = { Text(label) },
                 selected = selected?.let { it(value) } ?: (currentValue == value),
-                colors = FilterChipDefaults.filterChipColors(containerColor = MaterialTheme.colorScheme.surface),
+                shape = MaterialTheme.shapes.small,
+                colors = FilterChipDefaults.filterChipColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+                    selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                    selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                ),
                 onClick = {
                     onValueUpdate(value)
                     haptic.performHapticFeedback(HapticFeedbackType.ContextClick)

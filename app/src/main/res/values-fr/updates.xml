@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_later">Plus tard</string>
+    <string name="update_debug_notice">Version de développement : les APK GitHub installent séparément l’application de production. Les notifications automatiques sont désactivées.</string>
+    <string name="update_section_title">Mises à jour</string>
+    <string name="update_installed_version">Version installée : %1$s</string>
+    <string name="update_available_title">O-Beat %1$s est disponible</string>
+    <string name="update_download">Télécharger l’APK</string>
+    <string name="update_check_now">Rechercher une mise à jour</string>
+    <string name="update_checking">Vérification sur GitHub…</string>
+    <string name="update_current">Vous avez la dernière version publiée.</string>
+    <string name="update_none_published">Aucune version publique n’est disponible pour le moment.</string>
+    <string name="update_no_compatible_apk">Cette version ne propose pas d’APK compatible avec votre appareil et votre édition.</string>
+    <string name="update_check_failed">Impossible de vérifier GitHub. Vérifiez votre connexion et réessayez.</string>
+    <string name="update_release_notes">Notes de version sur GitHub</string>
+    <string name="update_automatic">Recherche automatique des mises à jour</string>
+    <string name="update_automatic_description">Vérifier chaque jour les versions O-Beat sur GitHub avec une connexion disponible.</string>
+    <string name="update_enable_notifications">Notifications de mise à jour</string>
+    <string name="update_notifications_description">Autoriser les notifications pour savoir quand un nouvel APK est disponible.</string>
+    <string name="update_channel">Mises à jour O-Beat</string>
+    <string name="update_notification_description">Appuyez pour télécharger le nouvel APK depuis GitHub.</string>
+</resources>

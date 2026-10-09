@@ -155,7 +155,6 @@ import com.dd3boh.outertune.constants.ENABLE_UPDATE_CHECKER
 import com.dd3boh.outertune.constants.EnabledTabsKey
 import com.dd3boh.outertune.constants.ExcludedScanPathsKey
 import com.dd3boh.outertune.constants.LastLocalScanKey
-import com.dd3boh.outertune.constants.LastVersionKey
 import com.dd3boh.outertune.constants.LibraryFilterKey
 import com.dd3boh.outertune.constants.LocalLibraryEnableKey
 import com.dd3boh.outertune.constants.LookupYtmArtistsKey
@@ -244,6 +243,7 @@ import com.dd3boh.outertune.ui.theme.OBeatTheme
 import com.dd3boh.outertune.ui.theme.extractThemeColor
 import com.dd3boh.outertune.ui.utils.MEDIA_PERMISSION_LEVEL
 import com.dd3boh.outertune.ui.utils.Updater
+import com.dd3boh.outertune.ui.component.UpdateNotice
 import com.dd3boh.outertune.ui.utils.appBarScrollBehavior
 import com.dd3boh.outertune.ui.utils.backToMain
 import com.dd3boh.outertune.ui.utils.clearDtCache
@@ -255,7 +255,6 @@ import com.dd3boh.outertune.utils.LmImageCacheMgr
 import com.dd3boh.outertune.utils.NetworkConnectivityObserver
 import com.dd3boh.outertune.utils.SyncUtils
 import com.dd3boh.outertune.utils.coilCoroutine
-import com.dd3boh.outertune.utils.compareVersion
 import com.dd3boh.outertune.utils.dataStore
 import com.dd3boh.outertune.utils.get
 import com.dd3boh.outertune.utils.rememberEnumPreference
@@ -446,11 +445,10 @@ class MainActivity : ComponentActivity() {
             )
 
             // updater
-            val (updateAvailable, onUpdateAvailableChange) = rememberPreference(
+            val (updateAvailable) = rememberPreference(
                 UpdateAvailableKey,
                 defaultValue = false
             )
-            val (lastVer, onLastVerChange) = rememberPreference(LastVersionKey, defaultValue = "0.0.0")
 
             LaunchedEffect(Unit) {
                 downloadUtil.resumeDownloadsOnStart()
@@ -512,20 +510,8 @@ class MainActivity : ComponentActivity() {
                 }
 
                 if (!ENABLE_UPDATE_CHECKER) return@LaunchedEffect
-                if (compareVersion(lastVer, BuildConfig.VERSION_NAME) <= 0) {
-                    onLastVerChange(BuildConfig.VERSION_NAME)
-                    onUpdateAvailableChange(false)
-                    Log.d(MAIN_TAG, "App version is >= latest. Tracking current version")
-                }
-
-                Updater.tryCheckUpdate(this@MainActivity as Context)?.let {
-                    if (compareVersion(lastVer, it) < 0) {
-                        onUpdateAvailableChange(true)
-                        Log.d(MAIN_TAG, "Update available. UpdateAvailable set to true")
-                    } else {
-                        Log.d(MAIN_TAG, "No new updates available")
-                    }
-                }
+                Updater.schedule(this@MainActivity)
+                Updater.tryCheckUpdate(this@MainActivity)
             }
 
             OBeatTheme(
@@ -533,6 +519,7 @@ class MainActivity : ComponentActivity() {
                 pureBlack = pureBlack,
                 themeColor = themeColor
             ) {
+                UpdateNotice()
                 BoxWithConstraints(
                     modifier = Modifier
                         .fillMaxSize()
@@ -672,16 +659,19 @@ class MainActivity : ComponentActivity() {
 
                     val searchBarFocusRequester = remember { FocusRequester() }
 
-                    val onSearch: (String) -> Unit = {
-                        if (it.isNotEmpty()) {
+                    val onSearch: (String) -> Unit = { rawQuery ->
+                        // Whitespace-only searches create an empty route and duplicate history.
+                        // Normalize once so suggestions, local search and online search agree.
+                        val searchQuery = rawQuery.trim().replace(Regex("\\s+"), " ")
+                        if (searchQuery.isNotEmpty()) {
                             onSearchActiveChange(false)
-                            if (youtubeNavigator(it.toUri())) {
+                            if (youtubeNavigator(searchQuery.toUri())) {
                                 // don't do anything
                             } else {
-                                navController.navigate("search/${it.urlEncode()}")
+                                navController.navigate("search/${searchQuery.urlEncode()}")
                                 if (dataStore[PauseSearchHistoryKey] != true) {
                                     database.query {
-                                        insert(SearchHistory(query = it))
+                                        insert(SearchHistory(query = searchQuery))
                                     }
                                 }
                             }
@@ -855,10 +845,13 @@ class MainActivity : ComponentActivity() {
                         onDispose { removeOnNewIntentListener(listener) }
                     }
 
+                    val menuSheetState = rememberModalBottomSheetState()
+                    val menuState = remember(menuSheetState) { MenuState(menuSheetState) }
+
                     CompositionLocalProvider(
                         LocalDatabase provides database,
                         LocalContentColor provides contentColorFor(MaterialTheme.colorScheme.surface),
-                        LocalMenuState provides MenuState(rememberModalBottomSheetState()),
+                        LocalMenuState provides menuState,
                         LocalPlayerConnection provides playerConnection,
                         LocalPlayerAwareWindowInsets provides playerAwareWindowInsets,
                         LocalDownloadUtil provides downloadUtil,
@@ -1258,7 +1251,7 @@ class MainActivity : ComponentActivity() {
                                                     ) {
                                                         Icon(
                                                             imageVector = Icons.Rounded.Settings,
-                                                            contentDescription = null
+                                                            contentDescription = stringResource(R.string.settings)
                                                         )
                                                     }
                                                 }

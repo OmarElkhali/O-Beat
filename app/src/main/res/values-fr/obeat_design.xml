@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="obeat_for_you">Pour vous</string>
+    <string name="obeat_home_subtitle">Vos favoris et de nouvelles découvertes</string>
+    <string name="obeat_home_unavailable">Les recommandations sont indisponibles. Votre bibliothèque reste accessible.</string>
+    <string name="obeat_pause">Pause</string>
+    <string name="obeat_replay">Relancer</string>
+    <string name="obeat_next">Titre suivant</string>
+    <string name="obeat_previous">Titre précédent</string>
+    <string name="obeat_more">Options du titre</string>
+    <string name="obeat_like">Ajouter aux titres favoris</string>
+    <string name="obeat_unlike">Retirer des titres favoris</string>
+    <string name="obeat_seek_back">Reculer</string>
+    <string name="obeat_seek_forward">Avancer</string>
+</resources>

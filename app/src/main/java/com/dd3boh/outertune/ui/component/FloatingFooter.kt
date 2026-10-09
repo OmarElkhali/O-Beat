@@ -17,14 +17,13 @@ import androidx.compose.foundation.layout.union
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.dd3boh.outertune.LocalPlayerAwareWindowInsets
 import com.dd3boh.outertune.constants.MenuCornerRadius
+import com.dd3boh.outertune.ui.theme.GlassSurface
 
 @Composable
 fun FloatingFooter(
@@ -46,11 +45,8 @@ fun FloatingFooter(
                 .align(Alignment.BottomCenter)
                 .then(modifier)
         ) {
-            Surface(
+            GlassSurface(
                 shape = RoundedCornerShape(MenuCornerRadius),
-                tonalElevation = 8.dp,
-                shadowElevation = 4.dp,
-                color = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
                     .wrapContentHeight()

@@ -55,6 +55,7 @@ import com.dd3boh.outertune.constants.ThumbnailCornerRadius
 import com.dd3boh.outertune.models.MediaMetadata
 import com.dd3boh.outertune.ui.component.AsyncImageLocal
 import com.dd3boh.outertune.ui.component.Lyrics
+import com.dd3boh.outertune.ui.utils.resize
 import com.dd3boh.outertune.utils.rememberPreference
 
 @SuppressLint("UnusedBoxWithConstraintsScope")
@@ -125,7 +126,7 @@ fun Thumbnail(
                     } else {
                         // YTM thumbnail arts
                         AsyncImage(
-                            model = mediaMetadata?.thumbnailUrl,
+                            model = mediaMetadata?.thumbnailUrl?.resize(1200, 1200),
                             contentDescription = null,
                             contentScale = contentScale,
                             onSuccess = { success ->

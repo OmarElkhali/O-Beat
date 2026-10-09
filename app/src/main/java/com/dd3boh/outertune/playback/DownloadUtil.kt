@@ -80,7 +80,7 @@ class DownloadUtil @Inject constructor(
 
     private val connectivityManager = context.getSystemService<ConnectivityManager>()!!
     private val audioQuality by enumPreference(context, AudioQualityKey, AudioQuality.AUTO)
-    private val songUrlCache = HashMap<String, Pair<String, Long>>()
+    private val songUrlCache = HashMap<String, Triple<String, Long, Map<String, String>>>()
     private val dataSourceFactory = ResolvingDataSource.Factory(
         CacheDataSource.Factory()
             .setCache(playerCache)
@@ -88,6 +88,7 @@ class DownloadUtil @Inject constructor(
                 OkHttpDataSource.Factory(
                     OkHttpClient.Builder()
                         .proxy(YouTube.proxy)
+                        .protocols(listOf(okhttp3.Protocol.HTTP_1_1))
                         .build()
                 )
             )
@@ -99,7 +100,7 @@ class DownloadUtil @Inject constructor(
         }
 
         songUrlCache[mediaId]?.takeIf { it.second > System.currentTimeMillis() }?.let {
-            return@Factory dataSpec.withUri(it.first.toUri())
+            return@Factory dataSpec.withUri(it.first.toUri()).withAdditionalHeaders(it.third)
         }
 
         val playbackData = runBlocking(Dispatchers.IO) {
@@ -116,11 +117,11 @@ class DownloadUtil @Inject constructor(
                 FormatEntity(
                     id = mediaId,
                     itag = format.itag,
-                    mimeType = format.mimeType.split(";")[0],
-                    codecs = format.mimeType.split("codecs=")[1].removeSurrounding("\""),
+                    mimeType = format.mimeType.substringBefore(";"),
+                    codecs = format.mimeType.substringAfter("codecs=", "").removeSurrounding("\""),
                     bitrate = format.bitrate,
                     sampleRate = format.audioSampleRate,
-                    contentLength = format.contentLength!!,
+                    contentLength = format.contentLength ?: 0L,
                     loudnessDb = playbackData.audioConfig?.loudnessDb,
                     playbackTrackingUrl = playbackData.playbackTracking?.videostatsPlaybackUrl?.baseUrl
                 )
@@ -132,8 +133,13 @@ class DownloadUtil @Inject constructor(
             "${it}&range=0-${format.contentLength ?: 10000000}"
         }
 
-        songUrlCache[mediaId] = streamUrl to System.currentTimeMillis() + (playbackData.streamExpiresInSeconds * 1000L)
+        songUrlCache[mediaId] = Triple(
+            streamUrl,
+            System.currentTimeMillis() + (playbackData.streamExpiresInSeconds * 1000L),
+            YTPlayerUtils.streamRequestHeaders(playbackData.streamClient),
+        )
         dataSpec.withUri(streamUrl.toUri())
+            .withAdditionalHeaders(YTPlayerUtils.streamRequestHeaders(playbackData.streamClient))
     }
     val downloadNotificationHelper = DownloadNotificationHelper(context, ExoDownloadService.CHANNEL_ID)
     val downloadManager: DownloadManager =
@@ -287,6 +293,7 @@ class DownloadUtil @Inject constructor(
                             OkHttpDataSource.Factory(
                                 OkHttpClient.Builder()
                                     .proxy(YouTube.proxy)
+                                    .protocols(listOf(okhttp3.Protocol.HTTP_1_1))
                                     .build()
                             )
                         )

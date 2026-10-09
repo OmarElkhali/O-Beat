@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a11y_navigate_back">Revenir</string>
+    <string name="a11y_show_list">Afficher en liste</string>
+    <string name="a11y_show_grid">Afficher en grille</string>
+    <string name="stats_empty">Écoutez de la musique pour voir vos statistiques.</string>
+    <string name="history_empty">Votre historique d’écoute apparaîtra ici.</string>
+</resources>

@@ -52,11 +52,16 @@ fun <T> rememberPreference(
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
 
-    val state = remember {
+    // Reading DataStore with the blocking `get` operator during the first
+    // composition can stall the UI long enough to trigger an input ANR on a
+    // busy device/emulator. Let Compose render with the default, then update
+    // as soon as DataStore emits the persisted value.
+    val preferenceFlow = remember(context, key, defaultValue) {
         context.dataStore.data
             .map { it[key] ?: defaultValue }
             .distinctUntilChanged()
-    }.collectAsState(context.dataStore[key] ?: defaultValue)
+    }
+    val state = preferenceFlow.collectAsState(initial = defaultValue)
 
     return remember {
         object : MutableState<T> {
@@ -84,12 +89,14 @@ inline fun <reified T : Enum<T>> rememberEnumPreference(
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
 
-    val initialValue = context.dataStore[key].toEnum(defaultValue = defaultValue)
-    val state = remember {
+    // See rememberPreference: do not synchronously read DataStore from the
+    // main thread while the activity is composing its initial screen.
+    val preferenceFlow = remember(context, key, defaultValue) {
         context.dataStore.data
             .map { it[key].toEnum(defaultValue = defaultValue) }
             .distinctUntilChanged()
-    }.collectAsState(initialValue)
+    }
+    val state = preferenceFlow.collectAsState(initial = defaultValue)
 
     return remember {
         object : MutableState<T> {

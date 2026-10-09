@@ -22,6 +22,7 @@ import com.zionhuang.innertube.utils.completed
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.first
@@ -37,6 +38,7 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     val isRefreshing = MutableStateFlow(false)
     val isLoading = MutableStateFlow(false)
+    val loadError = MutableStateFlow(false)
 
     val quickPicks = MutableStateFlow<List<Song>?>(null)
     val forgottenFavorites = MutableStateFlow<List<Song>?>(null)
@@ -57,6 +59,20 @@ class HomeViewModel @Inject constructor(
 
     private suspend fun load() {
         isLoading.value = true
+        loadError.value = false
+        try {
+            loadContent()
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            loadError.value = true
+            reportException(e)
+        } finally {
+            isLoading.value = false
+        }
+    }
+
+    private suspend fun loadContent() {
 
         quickPicks.value = database.quickPicks()
             .first().shuffled().take(20)
@@ -128,6 +144,7 @@ class HomeViewModel @Inject constructor(
         YouTube.home().onSuccess { page ->
             homePage.value = page
         }.onFailure {
+            loadError.value = true
             reportException(it)
         }
 
@@ -142,7 +159,6 @@ class HomeViewModel @Inject constructor(
         allYtItems.value = similarRecommendations.value?.flatMap { it.items }.orEmpty() +
                 homePage.value?.sections?.flatMap { it.items }.orEmpty()
 
-        isLoading.value = false
     }
     
     private val _isLoadingMore = MutableStateFlow(false)
@@ -151,15 +167,18 @@ class HomeViewModel @Inject constructor(
 
         viewModelScope.launch(Dispatchers.IO) {
             _isLoadingMore.value = true
-            val nextSections = YouTube.home(continuation).getOrNull() ?: run {
+            val requestedPage = homePage.value
+            try {
+                val nextSections = YouTube.home(continuation).getOrNull() ?: return@launch
+                // A refresh or a filter change must not receive the old page's continuation.
+                if (homePage.value !== requestedPage) return@launch
+                homePage.value = nextSections.copy(
+                    chips = requestedPage?.chips,
+                    sections = requestedPage?.sections.orEmpty() + nextSections.sections
+                )
+            } finally {
                 _isLoadingMore.value = false
-                return@launch
             }
-            homePage.value = nextSections.copy(
-                chips = homePage.value?.chips,
-                sections = homePage.value?.sections.orEmpty() + nextSections.sections
-            )
-            _isLoadingMore.value = false
         }
     }
 
@@ -190,8 +209,11 @@ class HomeViewModel @Inject constructor(
         if (isRefreshing.value) return
         viewModelScope.launch(Dispatchers.IO) {
             isRefreshing.value = true
-            load()
-            isRefreshing.value = false
+            try {
+                load()
+            } finally {
+                isRefreshing.value = false
+            }
         }
     }
 

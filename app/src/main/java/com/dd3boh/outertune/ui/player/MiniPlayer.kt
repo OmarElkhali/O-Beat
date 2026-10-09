@@ -49,6 +49,8 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.media3.common.C
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -86,7 +88,11 @@ fun MiniPlayer(
 //            .background(MaterialTheme.colorScheme.surfaceColorAtElevation(6.dp))
     ) {
         LinearProgressIndicator(
-            progress = { (position.toFloat() / duration).coerceIn(0f, 1f) },
+            progress = {
+                if (duration > 0 && duration != C.TIME_UNSET) {
+                    (position.toFloat() / duration).coerceIn(0f, 1f)
+                } else 0f
+            },
             drawStopIndicator = { },
             modifier = Modifier
                 .fillMaxWidth()
@@ -95,11 +101,9 @@ fun MiniPlayer(
         )
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = modifier
-
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(horizontal = 8.dp),
         ) {
-            val iconButtonColor = MaterialTheme.colorScheme.onSecondaryContainer
+            val iconButtonColor = MaterialTheme.colorScheme.onSurface
             Box(Modifier.weight(1f)) {
                 mediaMetadata?.let {
                     MiniMediaInfo(
@@ -123,7 +127,10 @@ fun MiniPlayer(
                 Icon(
                     imageVector = if (playbackState == Player.STATE_ENDED) Icons.Rounded.Replay else if (isPlaying) Icons.Rounded.Pause else Icons.Rounded.PlayArrow,
                     tint = iconButtonColor,
-                    contentDescription = null
+                    contentDescription = stringResource(
+                        if (playbackState == Player.STATE_ENDED) R.string.obeat_replay
+                        else if (isPlaying) R.string.obeat_pause else R.string.play
+                    )
                 )
             }
 
@@ -134,7 +141,7 @@ fun MiniPlayer(
                 Icon(
                     painter = painterResource(R.drawable.skip_next),
                     tint = iconButtonColor,
-                    contentDescription = null
+                    contentDescription = stringResource(R.string.obeat_next)
                 )
             }
         }
@@ -254,15 +261,14 @@ fun MiniMediaInfo(
             Text(
                 text = mediaMetadata.title,
                 color = MaterialTheme.colorScheme.onSurface,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
+                style = MaterialTheme.typography.titleSmall,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
             )
             Text(
                 text = mediaMetadata.artists.joinToString { it.name },
-                color = MaterialTheme.colorScheme.secondary,
-                fontSize = 12.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = MaterialTheme.typography.bodySmall,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
             )

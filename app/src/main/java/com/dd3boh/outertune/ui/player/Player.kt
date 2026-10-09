@@ -17,6 +17,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -97,6 +98,8 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -240,16 +243,7 @@ fun BottomSheetPlayer(
         if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
     }
 
-    val onBackgroundColor = when (playerBackground) {
-        PlayerBackgroundStyle.FOLLOW_THEME -> MaterialTheme.colorScheme.secondary
-        else ->
-            if (useDarkTheme)
-                MaterialTheme.colorScheme.onSurface
-            else {
-                val c = MaterialTheme.colorScheme.secondary
-                c.copy(alpha = 1f, red = c.red - 0.2f, green = c.green - 0.2f, blue = c.blue - 0.2f)
-            }
-    }
+    val onBackgroundColor = MaterialTheme.colorScheme.onSurface
 
     val showLyrics by rememberPreference(ShowLyricsKey, defaultValue = false)
 
@@ -341,14 +335,16 @@ fun BottomSheetPlayer(
 
             Box(
                 modifier = Modifier
-                    .offset(y = 5.dp)
-                    .size(36.dp)
-                    .clip(RoundedCornerShape(24.dp))
-                    .background(MaterialTheme.colorScheme.primary)
+                    .size(48.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(MaterialTheme.colorScheme.surfaceContainerHigh)
             ) {
                 ResizableIconButton(
                     icon = if (currentSong?.song?.liked == true) R.drawable.favorite else R.drawable.favorite_border,
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    contentDescription = stringResource(
+                        if (currentSong?.song?.liked == true) R.string.obeat_unlike else R.string.obeat_like
+                    ),
                     modifier = Modifier
                         .align(Alignment.Center)
                         .size(24.dp),
@@ -360,14 +356,14 @@ fun BottomSheetPlayer(
 
             Box(
                 modifier = Modifier
-                    .offset(y = 5.dp)
-                    .size(36.dp)
-                    .clip(RoundedCornerShape(24.dp))
-                    .background(MaterialTheme.colorScheme.primary)
+                    .size(48.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(MaterialTheme.colorScheme.surfaceContainerHigh)
             ) {
                 ResizableIconButton(
                     icon = Icons.Rounded.MoreVert,
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    contentDescription = stringResource(R.string.obeat_more),
                     modifier = Modifier
                         .size(24.dp)
                         .align(Alignment.Center),
@@ -387,8 +383,8 @@ fun BottomSheetPlayer(
 
         val controlsContent: @Composable ColumnScope.(MediaMetadata) -> Unit = { mediaMetadata ->
             val playPauseRoundness by animateDpAsState(
-                targetValue = if (isPlaying) 24.dp else 36.dp,
-                animationSpec = tween(durationMillis = 100, easing = LinearEasing),
+                targetValue = if (isPlaying) 24.dp else 32.dp,
+                animationSpec = spring(dampingRatio = 1f, stiffness = 500f),
                 label = "playPauseRoundness"
             )
 
@@ -415,7 +411,7 @@ fun BottomSheetPlayer(
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = mediaMetadata.title,
-                            style = MaterialTheme.typography.titleLarge,
+                            style = MaterialTheme.typography.headlineSmall,
                             color = onBackgroundColor,
                             fontWeight = FontWeight.Bold,
                             maxLines = 1,
@@ -467,9 +463,11 @@ fun BottomSheetPlayer(
                 }
             }
 
+            val seekableDuration = duration.takeIf { it > 0 && it != C.TIME_UNSET } ?: 0L
             Slider(
-                value = (sliderPosition ?: position).toFloat(),
-                valueRange = 0f..(if (duration == C.TIME_UNSET) 0f else duration.toFloat()),
+                value = (sliderPosition ?: position).coerceIn(0L, seekableDuration).toFloat(),
+                valueRange = 0f..seekableDuration.toFloat(),
+                enabled = seekableDuration > 0,
                 onValueChange = {
                     sliderPosition = it.toLong()
                     // slider too granular for this haptic to feel right
@@ -530,8 +528,9 @@ fun BottomSheetPlayer(
                 Box(modifier = Modifier.weight(1f)) {
                     ResizableIconButton(
                         icon = if (shuffleModeEnabled) R.drawable.shuffle_on else R.drawable.shuffle_off,
+                        contentDescription = stringResource(if (shuffleModeEnabled) R.string.action_shuffle_on else R.string.action_shuffle_off),
                         modifier = Modifier
-                            .size(32.dp)
+                            .size(48.dp)
                             .padding(4.dp)
                             .align(Alignment.Center),
                         color = onBackgroundColor,
@@ -545,9 +544,10 @@ fun BottomSheetPlayer(
                 Box(modifier = Modifier.weight(1f)) {
                     ResizableIconButton(
                         icon = Icons.Rounded.SkipPrevious,
+                        contentDescription = stringResource(R.string.obeat_previous),
                         enabled = canSkipPrevious,
                         modifier = Modifier
-                            .size(32.dp)
+                            .size(48.dp)
                             .align(Alignment.Center),
                         color = onBackgroundColor,
                         onClick = {
@@ -555,21 +555,6 @@ fun BottomSheetPlayer(
                             haptic.performHapticFeedback(HapticFeedbackType.ToggleOn)
                         }
                     )
-                }
-
-                if(seekIncrement != SeekIncrement.OFF) {
-                    Box(modifier = Modifier.weight(1f)) {
-                        ResizableIconButton (
-                            icon = Icons.Rounded.FastRewind,
-                            modifier = Modifier
-                                .size(32.dp)
-                                .align(Alignment.Center),
-                            color = onBackgroundColor,
-                            onClick = {
-                                playerConnection.player.seekTo(playerConnection.player.currentPosition - seekIncrement.millisec)
-                            }
-                        )
-                    }
                 }
 
                 Spacer(Modifier.width(8.dp))
@@ -580,7 +565,7 @@ fun BottomSheetPlayer(
                         .animateContentSize()
                         .clip(RoundedCornerShape(playPauseRoundness))
                         .background(MaterialTheme.colorScheme.primary)
-                        .clickable {
+                        .clickable(role = Role.Button) {
                             if (playbackState == STATE_ENDED) {
                                 playerConnection.player.seekTo(0, 0)
                                 playerConnection.player.playWhenReady = true
@@ -593,7 +578,10 @@ fun BottomSheetPlayer(
                 ) {
                     Image(
                         imageVector = if (playbackState == STATE_ENDED) Icons.Rounded.Replay else if (isPlaying) Icons.Rounded.Pause else Icons.Rounded.PlayArrow,
-                        contentDescription = null,
+                        contentDescription = stringResource(
+                            if (playbackState == STATE_ENDED) R.string.obeat_replay
+                            else if (isPlaying) R.string.obeat_pause else R.string.play
+                        ),
                         colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimary),
                         modifier = Modifier
                             .align(Alignment.Center)
@@ -603,31 +591,13 @@ fun BottomSheetPlayer(
 
                 Spacer(Modifier.width(8.dp))
 
-                if(seekIncrement != SeekIncrement.OFF) {
-                    Box(modifier = Modifier.weight(1f)) {
-                        ResizableIconButton(
-                            icon = Icons.Rounded.FastForward,
-                            modifier = Modifier
-                                .size(32.dp)
-                                .align(Alignment.Center),
-                            color = onBackgroundColor,
-                            onClick = {
-                                //ExoPlayer seek increment can only be set in builder
-                                //playerConnection.player.seekForward()
-                                playerConnection.player.seekTo(playerConnection.player.currentPosition + seekIncrement.millisec)
-                            }
-                        )
-                    }
-                }
-
-
-
                 Box(modifier = Modifier.weight(1f)) {
                     ResizableIconButton(
                         icon = Icons.Rounded.SkipNext,
+                        contentDescription = stringResource(R.string.obeat_next),
                         enabled = canSkipNext,
                         modifier = Modifier
-                            .size(32.dp)
+                            .size(48.dp)
                             .align(Alignment.Center),
                         color = onBackgroundColor,
                         onClick = {
@@ -639,6 +609,11 @@ fun BottomSheetPlayer(
 
                 Box(modifier = Modifier.weight(1f)) {
                     ResizableIconButton(
+                        contentDescription = stringResource(when (repeatMode) {
+                            REPEAT_MODE_ALL -> R.string.repeat_mode_all
+                            REPEAT_MODE_ONE -> R.string.repeat_mode_one
+                            else -> R.string.repeat_mode_off
+                        }),
                         icon = when (repeatMode) {
                             REPEAT_MODE_OFF -> R.drawable.repeat_off
                             REPEAT_MODE_ALL -> R.drawable.repeat_on
@@ -646,13 +621,41 @@ fun BottomSheetPlayer(
                             else -> throw IllegalStateException()
                         },
                         modifier = Modifier
-                            .size(32.dp)
+                            .size(48.dp)
                             .padding(4.dp)
                             .align(Alignment.Center),
                         color = onBackgroundColor,
                         onClick = {
                             playerConnection.player.toggleRepeatMode()
                             haptic.performHapticFeedback(HapticFeedbackType.ToggleOn)
+                        }
+                    )
+                }
+            }
+            if (seekIncrement != SeekIncrement.OFF) {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterHorizontally),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    ResizableIconButton(
+                        icon = Icons.Rounded.FastRewind,
+                        contentDescription = stringResource(R.string.obeat_seek_back),
+                        modifier = Modifier.size(48.dp),
+                        color = onBackgroundColor,
+                        onClick = {
+                            playerConnection.player.seekTo(
+                                (playerConnection.player.currentPosition - seekIncrement.millisec).coerceAtLeast(0L)
+                            )
+                        }
+                    )
+                    ResizableIconButton(
+                        icon = Icons.Rounded.FastForward,
+                        contentDescription = stringResource(R.string.obeat_seek_forward),
+                        modifier = Modifier.size(48.dp),
+                        color = onBackgroundColor,
+                        onClick = {
+                            val target = playerConnection.player.currentPosition + seekIncrement.millisec
+                            playerConnection.player.seekTo(if (seekableDuration > 0) target.coerceAtMost(seekableDuration) else target)
                         }
                     )
                 }

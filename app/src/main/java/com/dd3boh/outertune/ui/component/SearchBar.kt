@@ -17,6 +17,7 @@ import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.waitForUpOrCancellation
@@ -76,9 +77,10 @@ import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.res.stringResource
+import com.dd3boh.outertune.R
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
@@ -171,7 +173,6 @@ fun SearchBar(
             )
         }
     }
-
     BoxWithConstraints(
         modifier = modifier
             .offset {
@@ -202,6 +203,7 @@ fun SearchBar(
             shape = animatedShape,
             color = colors.containerColor,
             contentColor = contentColorFor(colors.containerColor),
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.45f)),
             tonalElevation = tonalElevation,
             modifier = Modifier
                 .padding(
@@ -259,8 +261,7 @@ private fun SearchBarInputField(
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     focusRequester: FocusRequester = remember { FocusRequester() },
 ) {
-    val searchSemantics = "Search" // getString(Strings.SearchBarSearch) R.string.m3c_search_bar_search
-    val suggestionsAvailableSemantics = "Suggestions below" // getString(Strings.SuggestionsAvailable) R.string.m3c_suggestions_available
+    val searchSemantics = stringResource(R.string.search)
     val textColor = LocalTextStyle.current.color.takeOrElse {
         colors.focusedTextColor
     }
@@ -295,9 +296,6 @@ private fun SearchBarInputField(
                 }
                 .semantics {
                     contentDescription = searchSemantics
-                    if (active) {
-                        stateDescription = suggestionsAvailableSemantics
-                    }
                 }
                 .onKeyEvent {
                     if (it.key == Key.Enter) {
@@ -308,7 +306,7 @@ private fun SearchBarInputField(
                 },
             enabled = enabled,
             singleLine = true,
-            textStyle = LocalTextStyle.current.merge(TextStyle(color = textColor)),
+            textStyle = MaterialTheme.typography.bodyLarge.merge(TextStyle(color = textColor)),
             cursorBrush = SolidColor(colors.cursorColor),
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
             keyboardActions = KeyboardActions(onSearch = { onSearch(query.text) }),

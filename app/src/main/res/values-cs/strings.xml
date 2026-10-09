@@ -18,8 +18,6 @@
   <string name="mood_and_genres">NÃ¡lada a Å¾Ã¡nry</string>
   <string name="account">ÃšÄet</string>
   <string name="quick_picks">RychlÃ½ vÃ½bÄ›r</string>
-  <string name="quick_picks_empty">Pro vytvoÅ™enÃ­ rychlÃ©ho vÃ½bÄ›ru si nejprve poslechnÄ›te pÃ¡r skladeb</string>
-  <string name="new_release_albums">NovÄ› vydanÃ¡ alba</string>
   <!-- History -->
   <string name="today">Dnes</string>
   <string name="yesterday">VÄera</string>
@@ -44,10 +42,8 @@
   <string name="filter_playlists">Playlisty</string>
   <string name="filter_community_playlists">KomunitnÃ­ playlisty</string>
   <string name="filter_featured_playlists">DoporuÄenÃ© playlisty</string>
-  <string name="filter_bookmarked">ZÃ¡loÅ¾ky</string>
   <string name="no_results_found">Nenalezeny Å¾Ã¡dnÃ© vÃ½sledky</string>
   <!-- Artist screen -->
-  <string name="from_your_library">Z vaÅ¡Ã­ knihovny</string>
   <!-- Playlist -->
   <string name="liked_songs">OblÃ­benÃ© skladby</string>
   <string name="downloaded_songs">StaÅ¾enÃ© skladby</string>
@@ -78,7 +74,6 @@
   <string name="delete">Odstranit</string>
   <string name="remove_from_history">Odstranit z historie</string>
   <string name="search_online">Hledat online</string>
-  <string name="action_sync">Synchronizace</string>
   <string name="advanced">PokroÄilÃ©</string>
   <!-- Sort menu -->
   <string name="sort_by_create_date">Datum pÅ™idÃ¡nÃ­</string>
@@ -87,7 +82,6 @@
   <string name="sort_by_year">Rok</string>
   <string name="sort_by_song_count">PoÄet skladeb</string>
   <string name="sort_by_length">DÃ©lka</string>
-  <string name="sort_by_play_time">Doba pÅ™ehrÃ¡vÃ¡nÃ­</string>
   <string name="sort_by_custom">VlastnÃ­ poÅ™adÃ­</string>
   <!-- Dialog -->
   <string name="media_id">ID mÃ©dia</string>
@@ -96,26 +90,15 @@
   <string name="bitrate">PÅ™enosovÃ¡ rychlost</string>
   <string name="sample_rate">VzorkovacÃ­ frekvence</string>
   <string name="loudness">HluÄnost</string>
-  <string name="volume">Hlasitost</string>
   <string name="file_size">Velikost souboru</string>
   <string name="unknown">NeznÃ¡mÃ©</string>
   <string name="copied">ZkopÃ­rovÃ¡no do schrÃ¡nky</string>
-  <string name="edit_lyrics">Upravit texty</string>
   <string name="search_lyrics">Hledat texty</string>
   <string name="edit_song">Upravit skladbu</string>
   <string name="song_title">NÃ¡zev skladby</string>
   <string name="song_artists">UmÄ›lci skladby</string>
-  <string name="error_song_title_empty">NÃ¡zev skladby nemÅ¯Å¾e bÃ½t prÃ¡zdnÃ½.</string>
-  <string name="error_song_artist_empty">UmÄ›lec skladby nemÅ¯Å¾e bÃ½t prÃ¡zdnÃ½.</string>
-  <string name="save">UloÅ¾it</string>
-  <string name="choose_playlist">Vybrat playlist</string>
   <string name="edit_playlist">Upravit playlist</string>
   <string name="create_playlist">VytvoÅ™it playlist</string>
-  <string name="playlist_name">NÃ¡zev playlistu</string>
-  <string name="error_playlist_name_empty">NÃ¡zev playlistu nemÅ¯Å¾e bÃ½t prÃ¡zdnÃ½.</string>
-  <string name="edit_artist">Upravit umÄ›lce</string>
-  <string name="artist_name">JmÃ©no umÄ›lce</string>
-  <string name="error_artist_name_empty">JmÃ©no umÄ›lce nemÅ¯Å¾e bÃ½t prÃ¡zdnÃ©.</string>
   <!-- Noun -->
   <plurals name="n_song">
     <item quantity="one">%d skladba</item>
@@ -153,10 +136,7 @@
     <item quantity="other">%d let</item>
   </plurals>
   <!-- Snackbar -->
-  <string name="playlist_imported">Playlist importovÃ¡n</string>
-  <string name="removed_song_from_playlist">Skladba â€ž%sâ€œ odebrÃ¡na z playlistu</string>
   <string name="playlist_synced">Playlist synchronizovÃ¡n</string>
-  <string name="undo">ZruÅ¡it</string>
   <!-- Player -->
   <string name="lyrics_not_found">Texty nenalezeny</string>
   <string name="sleep_timer">ÄŒasovaÄ spÃ¡nku</string>
@@ -166,7 +146,6 @@
     <item quantity="few">%d minuty</item>
     <item quantity="other">%d minut</item>
   </plurals>
-  <string name="error_no_stream">NenÃ­ dostupnÃ½ Å¾Ã¡dnÃ½ stream</string>
   <string name="error_no_internet">NenÃ­ dostupnÃ© pÅ™ipojenÃ­ k internetu</string>
   <string name="error_timeout">VyprÅ¡el Äas</string>
   <string name="error_unknown">NeznÃ¡mÃ¡ chyba</string>
@@ -180,7 +159,6 @@
   <string name="repeat_mode_all">Opakovat frontu</string>
   <!-- Queue Title -->
   <string name="queue_all_songs">VÅ¡echny skladby</string>
-  <string name="queue_searched_songs">HledanÃ© skladby</string>
   <!-- Notification name -->
   <string name="music_player">HudebnÃ­ pÅ™ehrÃ¡vaÄ</string>
   <!-- Settings -->
@@ -193,7 +171,6 @@
   <string name="dark_theme_follow_system">Podle systÃ©mu</string>
   <string name="pure_black">ÄŒistÄ› ÄernÃ¡</string>
   <string name="default_open_tab">VÃ½chozÃ­ karta</string>
-  <string name="customize_navigation_tabs">PÅ™izpÅ¯sobit karty navigace</string>
   <string name="lyrics_text_position">Pozice textÅ¯</string>
   <string name="left">Vlevo</string>
   <string name="center">UprostÅ™ed</string>
@@ -206,7 +183,6 @@
   <string name="enable_proxy">Povolit proxy</string>
   <string name="proxy_type">Typ proxy</string>
   <string name="proxy_url">Adresa URL proxy</string>
-  <string name="restart_to_take_effect">Restartujte pro uplatnÄ›nÃ­ zmÄ›n</string>
   <string name="player_and_audio">PÅ™ehrÃ¡vaÄ a zvuk</string>
   <string name="audio_quality">Kvalita zvuku</string>
   <string name="audio_quality_auto">AutomatickÃ¡</string>
@@ -217,15 +193,12 @@
   <string name="audio_normalization">Normalizace zvuku</string>
   <string name="equalizer">EkvalizÃ©r</string>
   <string name="storage">ÃšloÅ¾iÅ¡tÄ›</string>
-  <string name="cache">MezipamÄ›Å¥</string>
   <string name="image_cache">MezipamÄ›Å¥ obrÃ¡zkÅ¯</string>
   <string name="song_cache">MezipamÄ›Å¥ skladeb</string>
   <string name="max_cache_size">MaximÃ¡lnÃ­ velikost mezipamÄ›ti</string>
   <string name="unlimited">NeomezenÃ¡</string>
   <string name="clear_all_downloads">Vymazat vÅ¡echna stahovÃ¡nÃ­</string>
-  <string name="max_image_cache_size">MaximÃ¡lnÃ­ velikost mezipamÄ›ti obrÃ¡zkÅ¯</string>
   <string name="clear_image_cache">Vymazat mezipamÄ›Å¥ obrÃ¡zkÅ¯</string>
-  <string name="max_song_cache_size">MaximÃ¡lnÃ­ velikost mezipamÄ›ti skladeb</string>
   <string name="clear_song_cache">Vymazat mezipamÄ›Å¥ skladeb</string>
   <string name="size_used">VyuÅ¾ito %s</string>
   <string name="privacy">SoukromÃ­</string>
@@ -239,35 +212,15 @@
   <string name="backup_restore">ZÃ¡loha a obnovenÃ­</string>
   <string name="action_backup">ZÃ¡lohovat</string>
   <string name="action_restore">Obnovit</string>
-  <string name="imported_playlist">Playlist importovÃ¡n</string>
   <string name="backup_create_success">ZÃ¡loha ÃºspÄ›Å¡nÄ› vytvoÅ™ena</string>
   <string name="backup_create_failed">NepodaÅ™ilo se vytvoÅ™it zÃ¡lohu</string>
-  <string name="restore_failed">NepodaÅ™ilo se obnovit zÃ¡lohu</string>
   <string name="about">O aplikaci</string>
-  <string name="app_version">Verze aplikace</string>
-  <string name="new_version_available">Je dostupnÃ¡ novÃ¡ verze</string>
-  <string name="translation_models">Modely pÅ™ekladÅ¯</string>
-  <string name="clear_translation_models">Vymazat modely pÅ™ekladÅ¯</string>
   <string name="remove_from_playlist">Odstranit z playlistu</string>
-  <string name="discord_integration">Integrace Discordu</string>
-  <string name="squiggly">KlikatÃ¡</string>
   <string name="duplicates_description_single">Skladba se jiÅ¾ nachÃ¡zÃ­ ve vaÅ¡em playlistu</string>
   <string name="keep_listening">Poslouchejte dÃ¡l</string>
   <string name="duplicates">DuplikÃ¡ty</string>
-  <string name="sided">Na stranÄ›</string>
-  <string name="big">VelkÃ©</string>
-  <string name="disable_screenshot_desc">Po zapnutÃ­ budou zakÃ¡zÃ¡ny snÃ­mky obrazovky a nÃ¡hled aplikace v NedÃ¡vnÃ½ch.</string>
   <string name="library_song_empty">Zde se zobrazÃ­ skladby v knihovnÄ›</string>
-  <string name="misc">RÅ¯znÃ©</string>
-  <string name="player_slider_style">Styl liÅ¡ty pÅ™ehrÃ¡vaÄe</string>
-  <string name="grid_cell_size">Velikost poloÅ¾ek mÅ™Ã­Å¾ky</string>
-  <string name="remove_from_queue">Odstranit z fronty</string>
   <string name="similar_to">PodobnÃ©</string>
-  <string name="small">MalÃ©</string>
-  <string name="search_history">Historie vyhledÃ¡vÃ¡nÃ­</string>
-  <string name="dismiss">ZavÅ™Ã­t</string>
-  <string name="tempo_and_pitch">Tempo a vÃ½Å¡ka</string>
-  <string name="player">PÅ™ehrÃ¡vaÄ</string>
   <string name="auto_load_more">Automaticky naÄÃ­st dalÅ¡Ã­ skladby</string>
   <string name="other_versions">DalÅ¡Ã­ verze</string>
   <string name="queue">Fronta</string>
@@ -285,27 +238,16 @@
   <string name="action_like_all">OblÃ­bit vÅ¡e</string>
   <string name="action_remove_like_all">Odstranit vÅ¡echny oblÃ­benÃ©</string>
   <string name="not_logged_in">Nejste pÅ™ihlÃ¡Å¡eni</string>
-  <string name="persistent_queue_desc">Obnovit poslednÃ­ frontu po spuÅ¡tÄ›nÃ­ aplikace</string>
   <string name="auto_load_more_desc">Automaticky pÅ™idat vÃ­ce skladeb po dosaÅ¾enÃ­ konce fronty, pokud je to moÅ¾nÃ©</string>
   <string name="auto_skip_next_on_error">Automaticky pÅ™ejÃ­t na dalÅ¡Ã­ sklabdu pÅ™i vÃ½skytu chyby</string>
   <string name="auto_skip_next_on_error_desc">ZajistÄ›te si nepÅ™etrÅ¾itÃ© pÅ™ehrÃ¡vÃ¡nÃ­</string>
   <string name="stop_music_on_task_clear">Zastavit hudbu po vymazÃ¡nÃ­ Ãºlohy</string>
-  <string name="listen_history">Historie poslechu</string>
-  <string name="disable_screenshot">ZakÃ¡zat snÃ­mky obrazovky</string>
   <string name="enable_lrclib">Povolit poskytovatele textÅ¯ LrcLib</string>
-  <string name="hide_explicit">SkrÃ½t explicitnÃ­ obsah</string>
-  <string name="options">MoÅ¾nosti</string>
   <string name="preview">NÃ¡hled</string>
-  <string name="login_failed">PÅ™ihlÃ¡Å¡enÃ­ selhalo</string>
   <string name="delete_playlist_confirm">Opravdu chcete odstranit playlist â€ž%sâ€œ?</string>
-  <string name="default_">VÃ½chozÃ­</string>
   <string name="theme">Motiv</string>
-  <string name="player_text_alignment">ZarovnÃ¡nÃ­ textu pÅ™ehrÃ¡vaÄe</string>
-  <string name="discord_information">O-Beat pouÅ¾Ã­vÃ¡ knihovnu KizzyRPC, aby mohl nastavit vÃ¡Å¡ stav na Discordu. Tato funkce zahrnuje pÅ™ipojenÃ­ k brÃ¡nÄ› Discord, coÅ¾ mÅ¯Å¾e bÃ½t povaÅ¾ovÃ¡no za poruÅ¡enÃ­ podmÃ­nek spoleÄnosti Discord. NeexistujÃ­ nicmÃ©nÄ› Å¾Ã¡dnÃ© znÃ¡mÃ© pÅ™Ã­pady uzamÄenÃ­ ÃºÄtu z tohoto dÅ¯vodu. PouÅ¾Ã­vejte na vlastnÃ­ nebezpeÄÃ­. \n \nO-Beat pouze extrahuje vÃ¡Å¡ token, vÅ¡e ostatnÃ­ je uloÅ¾eno lokÃ¡lnÄ›.</string>
-  <string name="enable_discord_rpc">Povolit stav na Discordu</string>
   <string name="action_logout">OdhlÃ¡sit se</string>
   <string name="use_login_for_browse">PouÅ¾Ã­t ÃºÄet pro prochÃ¡zenÃ­ obsahu</string>
   <string name="use_login_for_browse_desc">MÅ¯Å¾e ovlivnit obsah, kterÃ½ se vÃ¡m zobrazÃ­ â€“ pÅ™i pÅ™ihlÃ¡Å¡enÃ­ napÅ™Ã­klad mohou bÃ½t zobrazena napÅ™Ã­klad alba, kterÃ¡ jsou dostupnÃ¡ pouze s Premium ÃºÄtem</string>
-  <string name="action_login">PÅ™ihlÃ¡sit se</string>
   <string name="app_name">O-Beat</string>
 </resources>

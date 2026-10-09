@@ -10,8 +10,10 @@ import com.zionhuang.innertube.models.PlaylistItem
 import com.zionhuang.innertube.models.SongItem
 import com.zionhuang.innertube.models.YTItem
 import com.zionhuang.innertube.models.clean
+import com.zionhuang.innertube.models.getItems
 import com.zionhuang.innertube.models.oddElements
 import com.zionhuang.innertube.models.splitBySeparator
+import com.zionhuang.innertube.models.response.SearchResponse
 import com.zionhuang.innertube.utils.parseTime
 
 data class SearchSummary(
@@ -23,6 +25,32 @@ data class SearchSummaryPage(
     val summaries: List<SearchSummary>,
 ) {
     companion object {
+        fun fromResponse(response: SearchResponse): SearchSummaryPage {
+            val sections = response.contents?.tabbedSearchResultsRenderer?.tabs?.firstOrNull()
+                ?.tabRenderer?.content?.sectionListRenderer?.contents.orEmpty()
+            val summaries = sections.mapNotNull { section ->
+                val card = section.musicCardShelfRenderer
+                val shelf = section.musicShelfRenderer
+                val title = card?.header?.musicCardShelfHeaderBasicRenderer?.title?.runs
+                    ?: card?.title?.runs ?: shelf?.title?.runs
+                val items = if (card != null) {
+                    listOfNotNull(fromMusicCardShelfRenderer(card)) + card.contents.orEmpty()
+                        .mapNotNull { it.musicResponsiveListItemRenderer }
+                        .mapNotNull(::fromMusicResponsiveListItemRenderer)
+                } else {
+                    shelf?.contents.orEmpty().getItems().mapNotNull(::fromMusicResponsiveListItemRenderer)
+                }
+                items.distinctBy { it.id }.takeIf { it.isNotEmpty() }?.let {
+                    SearchSummary(title?.joinToString("") { run -> run.text }.orEmpty(), it)
+                }
+            }
+            val sectionItems = sections.flatMap { it.itemSectionRenderer?.contents.orEmpty() }
+                .getItems().mapNotNull(::fromMusicResponsiveListItemRenderer).distinctBy { it.id }
+            return SearchSummaryPage(
+                summaries + if (sectionItems.isEmpty()) emptyList() else listOf(SearchSummary("", sectionItems))
+            )
+        }
+
         fun fromMusicCardShelfRenderer(renderer: MusicCardShelfRenderer): YTItem? {
             val subtitle = renderer.subtitle.runs?.splitBySeparator()
             return when {
@@ -123,12 +151,14 @@ data class SearchSummaryPage(
                         title = renderer.flexColumns.firstOrNull()
                             ?.musicResponsiveListItemFlexColumnRenderer?.text?.runs
                             ?.firstOrNull()?.text ?: return null,
-                        artists = listRun.getOrNull(0)?.oddElements()?.map {
+                        artists = listRun.getOrNull(0)?.oddElements()?.filter {
+                            it.text.parseTime() == null
+                        }?.map {
                             Artist(
                                 name = it.text,
                                 id = it.navigationEndpoint?.browseEndpoint?.browseId
                             )
-                        } ?: return null,
+                        }.orEmpty(),
                         album = listRun.getOrNull(1)?.firstOrNull()?.takeIf { it.navigationEndpoint?.browseEndpoint != null }?.let {
                             Album(
                                 name = it.text,

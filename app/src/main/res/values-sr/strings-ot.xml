@@ -18,7 +18,6 @@
     <string name="queues_empty">Nema listi</string>
     <string name="auto_playlist">Auto plejlista</string>
     <string name="select">ReÅ¾im selekcije</string>
-    <string name="like_all">Svidi sve</string>
     <string name="more_settings">ViÅ¡e podeÅ¡avanja</string>
     <string name="delete_lyric_confirm">Da li zaista Å¾elite da obriÅ¡ete saÄuvane tekstove pesama za \"%s\"?</string>
     <string name="tap_show_more">Dodirni za viÅ¡e informacija</string>
@@ -53,16 +52,12 @@
     <string name="grp_lyrics_parser">Parser</string>
     <string name="grp_lyrics_source">Izvori za tekstove pesama</string>
     <string name="grp_manual_scanner">RuÄno skeniranje</string>
-    <string name="grp_proxy">Proksi</string>
     <string name="grp_sync">Sinhronizacija</string>
     <string name="app_info_title">Informacije o aplikaciji</string>
-    <string name="check_for_update">Proveri aÅ¾uriranja</string>
-    <string name="checking_for_update">Proveravam aÅ¾uriranja</string>
     <string name="device_info_title">Informacije o ureÄ‘aju</string>
     <string name="help_bug_report_action">PoÅ¡aljite izveÅ¡taj o greÅ¡ci (preko Githab-a)</string>
     <string name="help_contact_email_inquiries">Ostala pitanja (Dodirnite da biste kopirali imejl)</string>
     <string name="help_support_forum">PomoÄ‡ i podrÅ¡ka (preko Githab-a)</string>
-    <string name="no_updates_available">Nema raspoloÅ¾ivih aÅ¾uriranja</string>
     <string name="oss_licenses_title">Licence otvorenog koda</string>
     <string name="wiki">Wiki</string>
     <string name="all_contributors">PrikaÅ¾i sve saradnike</string>
@@ -74,7 +69,6 @@
     <string name="attrib_zhuang">Zion Huang za InnerTune</string>
     <string name="attribution_title">Pripisivanje</string>
     <string name="special_thanks">Specijalna zahvalnost</string>
-    <string name="new_interface">Novi raspored interfejsa</string>
     <string name="player_background_blur">ZamuÄ‡enje</string>
     <string name="player_background_default">Prati temu</string>
     <string name="player_background_gradient">Gradijent</string>
@@ -86,7 +80,6 @@
     <string name="tab_arrangement_disable_tip">--- Prevucite ovde ispod da biste onemoguÄ‡ili ---</string>
     <string name="tab_arrangement_home_required">PoÄetna kartica je obavezna.</string>
     <string name="tablet_ui_title">Prisilno koristi tablet interfejs</string>
-    <string name="tablet_ui_title_description">OmoguÄ‡i poloÅ¾eni interfejs koji je optimizovan za veÄ‡e ekrane bez obzira na trenutnu veliÄinu ekrana</string>
     <string name="filter_arrangement">Rasporedi filtere</string>
     <string name="like_autodownload">Automatski preuzmi pesme koje ti se sviÄ‘aju</string>
     <string name="token_adv_login_description">Ovo je NAPREDNI metod prijavljivanja. Kao alternativa veb portalu, moÅ¾ete direktno uneti ili aÅ¾urirati svoj token za prijavu ovde. Na primer, ovo moÅ¾e ubrzati prijavljivanje na viÅ¡e ureÄ‘aja. Imajte na umu da svi nevaÅ¾eÄ‡i formati tokena koje aplikacija ne uspe da analizira neÄ‡e biti prihvaÄ‡eni</string>
@@ -138,13 +131,11 @@
     <string name="scanner_manual_btn">Pokreni ruÄnu sinhronizaciju</string>
     <string name="scanner_rejected_dir">NevaÅ¾eÄ‡i izbor. Fasikla za skeniranje ne moÅ¾e biti poddirektorijum fascikle za preuzimanje, niti sama fascikla za preuzimanje</string>
     <string name="scanner_warning">Podrazumevano, skener NEÄŒE ponovo uÄitati metapodatke postojeÄ‡ih pesama osim ako gore ne navedete drugaÄije. U zavisnosti od veliÄine vaÅ¡e biblioteke, to moÅ¾e potrajati neko vreme.</string>
-    <string name="scanner_missing_ffmpeg">FFmpeg ekstraktor ne postoji</string>
     <string name="scanner_missing_storage_perm">Lokalni skener medija zahteva dozvole za skladiÅ¡tenje da bi funkcionisao</string>
     <string name="scanner_btn_idle">Skeniranje</string>
     <string name="scanner_progress_complete">Skeniranje zavrÅ¡eno</string>
     <string name="scanner_progress_discovering">TraÅ¾enjeâ€¦</string>
     <string name="scanner_progress_processing">Obradaâ€¦</string>
-    <string name="scanner_progress_scanning">Skeniranjeâ€¦</string>
     <string name="scanner_progress_syncing">Sinhronizovanjeâ€¦</string>
     <string name="scanner_scan_fail">Skener nije uspeo</string>
     <string name="scanner_ytm_link_fail">Povezivanje izvoÄ‘aÄa na YouTube-u nije uspelo</string>
@@ -230,12 +221,9 @@
     <string name="action_next">SledeÄ‡e</string>
     <string name="action_skip">PreskoÄi</string>
     <string name="action_cancel">otkaÅ¾i</string>
-    <string name="info">Informacije</string>
-    <string name="speed_very_slow">Veoma sporo</string>
     <string name="speed_slow">Sporo</string>
     <string name="speed_medium">Srednje</string>
     <string name="speed_fast">Brzo</string>
-    <string name="speed_very_fast">Veoma brzo</string>
 </resources>
 
 

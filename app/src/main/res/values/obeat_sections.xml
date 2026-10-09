@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a11y_navigate_back">Go back</string>
+    <string name="a11y_show_list">Show as a list</string>
+    <string name="a11y_show_grid">Show as a grid</string>
+    <string name="stats_empty">Play music to see your listening stats.</string>
+    <string name="history_empty">Your listening history will appear here.</string>
+</resources>

@@ -13,19 +13,20 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.union
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.MoreVert
+import androidx.compose.material.icons.rounded.History
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -77,6 +78,7 @@ import com.dd3boh.outertune.extensions.togglePlayPause
 import com.dd3boh.outertune.models.toMediaMetadata
 import com.dd3boh.outertune.playback.queues.ListQueue
 import com.dd3boh.outertune.ui.component.ChipsRow
+import com.dd3boh.outertune.ui.component.EmptyPlaceholder
 import com.dd3boh.outertune.ui.component.FloatingFooter
 import com.dd3boh.outertune.ui.component.button.IconButton
 import com.dd3boh.outertune.ui.component.LazyColumnScrollbar
@@ -218,14 +220,16 @@ fun HistoryScreen(
                 if (isSearching) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.background(MaterialTheme.colorScheme.background)
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp, vertical = 8.dp)
+                            .background(MaterialTheme.colorScheme.surfaceContainerHigh, MaterialTheme.shapes.medium)
                     ) {
                         IconButton(
                             onClick = { isSearching = true }
                         ) {
                             Icon(
                                 Icons.Rounded.Search,
-                                contentDescription = null
+                                contentDescription = stringResource(R.string.search)
                             )
                         }
                         TextField(
@@ -234,11 +238,11 @@ fun HistoryScreen(
                             placeholder = {
                                 Text(
                                     text = stringResource(R.string.search),
-                                    style = MaterialTheme.typography.titleLarge
+                                    style = MaterialTheme.typography.bodyLarge
                                 )
                             },
                             singleLine = true,
-                            textStyle = MaterialTheme.typography.titleLarge,
+                            textStyle = MaterialTheme.typography.bodyLarge,
                             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
                             colors = TextFieldDefaults.colors(
                                 focusedContainerColor = Color.Transparent,
@@ -248,7 +252,7 @@ fun HistoryScreen(
                                 disabledIndicatorColor = Color.Transparent,
                             ),
                             modifier = Modifier
-                                .fillMaxWidth()
+                                .weight(1f)
                                 .focusRequester(focusRequester)
                         )
                     }
@@ -274,6 +278,16 @@ fun HistoryScreen(
                 )
             }
 
+            if (historySource == HistorySource.LOCAL && eventsMap.isEmpty()) {
+                item(key = "emptyHistory") {
+                    EmptyPlaceholder(
+                        icon = Icons.Rounded.History,
+                        text = stringResource(R.string.history_empty),
+                        modifier = Modifier.heightIn(min = 280.dp),
+                    )
+                }
+            }
+
             if (historySource == HistorySource.REMOTE && isLoggedIn) {
                 historyPage?.sections?.forEach { section ->
                     stickyHeader {
@@ -285,10 +299,10 @@ fun HistoryScreen(
                         )
                     }
 
-                    items(
+                    itemsIndexed(
                         items = section.songs,
-                        key = { it.id }
-                    ) { song ->
+                        key = { _, song -> song.id }
+                    ) { index, song ->
                         val content: @Composable () -> Unit = {
                             YouTubeListItem(
                                 item = song,
@@ -322,7 +336,8 @@ fun HistoryScreen(
                                                 playerConnection.playQueue(
                                                     ListQueue(
                                                         title = context.getString(R.string.queue_remote_history),
-                                                        items = section.songs.map { it.toMediaMetadata() }
+                                                        items = section.songs.map { it.toMediaMetadata() },
+                                                        startIndex = index
                                                     )
                                                 )
                                             }
@@ -468,7 +483,7 @@ fun HistoryScreen(
             ) {
                 Icon(
                     Icons.AutoMirrored.Rounded.ArrowBack,
-                    contentDescription = null
+                    contentDescription = stringResource(R.string.a11y_navigate_back)
                 )
             }
         },
@@ -479,7 +494,7 @@ fun HistoryScreen(
                 ) {
                     Icon(
                         Icons.Rounded.Search,
-                        contentDescription = null
+                        contentDescription = stringResource(R.string.search)
                     )
                 }
             }

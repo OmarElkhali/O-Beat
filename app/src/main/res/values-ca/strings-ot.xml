@@ -20,14 +20,10 @@
     <string name="queue_searched_songs_ot">Cerca:</string>
     <string name="auto_playlist">Llista automÃ tica</string>
     <string name="select">Mode de selecciÃ³</string>
-    <string name="like_all">Agradar a tot</string>
     <string name="tap_show_more">Clica per mostrar mÃ©s informaciÃ³</string>
-    <string name="speed_very_fast">Molt rÃ pid</string>
     <string name="speed_fast">RÃ pid</string>
     <string name="speed_medium">MitjÃ </string>
     <string name="speed_slow">Lent</string>
-    <string name="speed_very_slow">Molt lent</string>
-    <string name="info">InformaciÃ³</string>
     <string name="action_cancel">Cancelar</string>
     <string name="action_skip">Saltar</string>
     <string name="action_next">SegÃ¼ent</string>

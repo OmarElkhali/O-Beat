@@ -42,7 +42,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -176,7 +175,7 @@ fun LibrarySongsScreen(
     val headerContent = @Composable {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(start = 16.dp, end = 8.dp)
+            modifier = Modifier.padding(start = 20.dp, end = 12.dp)
         ) {
             SortHeader(
                 sortType = sortType,
@@ -204,7 +203,7 @@ fun LibrarySongsScreen(
                     Text(
                         text = pluralStringResource(R.plurals.n_song, songs.size, songs.size),
                         style = MaterialTheme.typography.titleSmall,
-                        color = MaterialTheme.colorScheme.secondary
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Spacer(Modifier.width(4.dp))
                     ActionDropdown(
@@ -268,11 +267,11 @@ fun LibrarySongsScreen(
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .background(MaterialTheme.colorScheme.error)
+                                .background(MaterialTheme.colorScheme.errorContainer)
                         ) {
                             Text(
                                 text = stringResource(R.string.missing_media_permission_warning),
-                                color = Color.White,
+                                color = MaterialTheme.colorScheme.onErrorContainer,
                                 style = MaterialTheme.typography.bodyLarge
                             )
                         }

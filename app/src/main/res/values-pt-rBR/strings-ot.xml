@@ -26,7 +26,6 @@
     <string name="song_added_to_queue">\"%s\" foi adicionado Ã  fila</string>
     <string name="song_added_to_queue_end">\"%s\" foi adicionado ao final da fila</string>
     <string name="auto_playlist">Lista automÃ¡tica</string>
-    <string name="like_all">Favoritar tudo</string>
     <string name="delete_lyric_confirm">VocÃª tem certeza que deseja apagar a letra salva de \"%s\"?</string>
     <string name="sort_by_date_modified">Ãšltima modificaÃ§Ã£o</string>
     <string name="sort_by_date_released">Data de lanÃ§amento</string>
@@ -38,7 +37,6 @@
     <string name="settings_debug">DepuraÃ§Ã£o</string>
     <string name="attrib_zhuang">Zion Huang pelo InnerTune</string>
     <string name="special_thanks">Agradecimentos especiais</string>
-    <string name="new_interface">Nova organizaÃ§Ã£o da interface</string>
     <string name="player_background_blur">Borrado</string>
     <string name="player_background_style">Estilo do fundo do reprodutor</string>
     <string name="show_liked_and_downloaded_playlist">Mostrar listas de mÃºsicas favoritas e baixadas na biblioteca</string>
@@ -56,7 +54,6 @@
     <string name="keep_alive_description">Usar um serviÃ§o de primeiro plano persistente para evitar que o O-Beat seja encerrado em segundo plano.</string>
     <string name="persistent_queue_desc_ot">Restaurar fila(s) aberta(s) previamente ao iniciar o app</string>
     <string name="min_playback_duration">DuraÃ§Ã£o mÃ­nima de reproduÃ§Ã£o</string>
-    <string name="grp_proxy">Proxy</string>
     <string name="lyrics_settings_title">Letra</string>
     <string name="lyrics_multiline_title">Ler letras multi-linhas</string>
     <string name="lyrics_trim_title">Remover espaÃ§os entre letras</string>
@@ -89,7 +86,6 @@
     <string name="action_back">Voltar</string>
     <string name="action_next">AvanÃ§ar</string>
     <string name="action_skip">Pular</string>
-    <string name="info">InformaÃ§Ã£o</string>
     <string name="recent_activity">Atividade recente</string>
     <string name="create_queue">Nova fila</string>
     <string name="scanner_warning">Por padrÃ£o, a busca NÃƒO recarregarÃ¡ os metadados de mÃºsicas existentes, exceto que vocÃª especificar que quer isso. Dependendo no tamanho da sua biblioteca, isso pode demorar um pouco.</string>
@@ -99,7 +95,6 @@
     <string name="token_adv_login_description">Esse Ã© um mÃ©todo AVANÃ‡ADO de conectar Ã  sua conta. Como uma alternativa ao portal web, vocÃª pode digitar ou atualizar seu token de login diretamente aqui. Por exemplo, isso pode fazer com que se conectar em vÃ¡rios dispositivos seja mais rÃ¡pido. Note que qualquer formato de token invÃ¡lido qual o app nÃ£o consegue entender nÃ£o serÃ¡ aceitado</string>
     <string name="min_playback_duration_description">A duraÃ§Ã£o mÃ­nima que uma mÃºsica deve ser reproduzida antes que seja considerada realmente reproduzida</string>
     <string name="scan_paths_add_folder">Adicionar uma nova pasta</string>
-    <string name="scanner_progress_scanning">Buscandoâ€¦</string>
     <string name="tab_arrangement_disable_tip">--- Arraste abaixo disso para desativar ---</string>
     <string name="sync_progress_success">A sincronizaÃ§Ã£o foi concluÃ­da</string>
     <string name="swipe2Queue_description">Deslize em uma mÃºsica para adicionÃ¡-la Ã  fila apÃ³s a mÃºsica em reproduÃ§Ã£o no momento</string>
@@ -122,7 +117,6 @@
         <item quantity="many">%d de mÃºsicas encontradas</item>
         <item quantity="other">%d mÃºsicas encontradas</item>
     </plurals>
-    <string name="scanner_missing_ffmpeg">O extrator FFmpeg nÃ£o foi detectado</string>
     <string name="sync_progress_active">Sincronizando com a conta do YouTubeâ€¦</string>
     <string name="grp_lyrics_format">FormataÃ§Ã£o</string>
     <string name="grp_lyrics_source">Fontes das letras</string>
@@ -157,25 +151,19 @@
     <string name="sync_conflict_title">ResoluÃ§Ã£o de conflitos</string>
     <string name="sync_mode_rw">Leitura e gravaÃ§Ã£o (tambÃ©m permitir fazer mudanÃ§as no conteÃºdo remoto)</string>
     <string name="grp_sync">SincronizaÃ§Ã£o</string>
-    <string name="checking_for_update">Buscando atualizaÃ§Ãµes</string>
-    <string name="check_for_update">Buscar atualizaÃ§Ãµes</string>
-    <string name="no_updates_available">Nenhuma atualizaÃ§Ã£o disponÃ­vel</string>
     <string name="playlist_missing_note">Suas listas sumiram? Clique aqui para ativar a sincronizaÃ§Ã£o no modo de ler/gravar nas configuraÃ§Ãµes</string>
     <string name="library_empty">Os conteÃºdos da sua biblioteca aparecerÃ£o aqui</string>
     <string name="grp_behavior">Comportamento</string>
     <string name="m3u_ytm_lookup">Pesquisar no YouTube Music por mÃºsicas ausentes no banco de dados do app</string>
-    <string name="tablet_ui_title_description">Ativar uma interface em modo paisagem que Ã© otimizada para telas maiores, independente do tamanho da tela atual</string>
     <string name="tablet_ui_title">ForÃ§ar interface de tablet</string>
     <string name="oss_licenses_title">LicenÃ§as de cÃ³digo aberto</string>
     <string name="lyrics_karaoke_description">Ativa a sincronizaÃ§Ã£o de palavra por palavra. Requer suporte pelo formato da letra.</string>
     <string name="lyrics_karaoke_hz_title">Ajustar velocidade de recarregamento da letra de karaoke</string>
     <string name="import_success_songs">Importadas com sucesso</string>
     <string name="m3u_export">Exportar como um arquivo M3U</string>
-    <string name="speed_very_slow">Muito lento</string>
     <string name="speed_slow">Lento</string>
     <string name="speed_medium">MÃ©dio</string>
     <string name="speed_fast">RÃ¡pido</string>
-    <string name="speed_very_fast">Muito rÃ¡pido</string>
     <string name="lyrics_karaoke_title">Letra em estilo karaoke.</string>
     <string name="attribution_title">AtribuiÃ§Ãµes</string>
     <string name="scanner_rejected_dir">SeleÃ§Ã£o invÃ¡lida. A pasta de busca nÃ£o pode ser uma subpasta da pasta de downloads, ou ser a prÃ³pria pasta de downloads</string>

@@ -37,7 +37,6 @@ while also allowing users to translate our app as well. New, specific strings to
 
 <!-- Menu -->
     <string name="select">Selection mode</string>
-    <string name="like_all">Like all</string>
     <string name="more_settings">More settings</string>
     <string name="delete_lyric_confirm">Do you really want to delete the stored lyrics for \"%s\"?</string>
     <string name="tap_show_more">Tap to show more information</string>
@@ -89,19 +88,15 @@ while also allowing users to translate our app as well. New, specific strings to
     <string name="grp_lyrics_parser">Parser</string>
     <string name="grp_lyrics_source">Lyric sources</string>
     <string name="grp_manual_scanner">Manual scanner</string>
-    <string name="grp_proxy">Proxy</string>
     <string name="grp_sync">Sync</string>
 
 <!-- About settings -->
     <string name="app_info_title">Application information</string>
-    <string name="check_for_update">Check for updates</string>
-    <string name="checking_for_update">Checking for updates</string>
     <string name="device_info_title">Device information</string>
     <string name="ffmpeg_lgpl">This software uses libraries from the FFmpeg project under the LGPLv2.1</string>
     <string name="help_bug_report_action">Submit a bug report (Via GitHub)</string>
     <string name="help_contact_email_inquiries">Other inquires (Tap to copy Email)</string>
     <string name="help_support_forum">Help and support (Via GitHub)</string>
-    <string name="no_updates_available">No updates available</string>
     <string name="oss_licenses_title">Open source licenses</string>
     <string name="wiki">Wiki</string>
 
@@ -117,7 +112,6 @@ while also allowing users to translate our app as well. New, specific strings to
     <string name="special_thanks">Special thanks</string>
 
 <!-- Appearance settings -->
-    <string name="new_interface">New interface layout</string>
     <string name="player_background_blur">Blur</string>
     <string name="player_background_default">Follow theme</string>
     <string name="player_background_gradient">Gradient</string>
@@ -129,7 +123,6 @@ while also allowing users to translate our app as well. New, specific strings to
     <string name="tab_arrangement_disable_tip">--- Drag below here to disable ---</string>
     <string name="tab_arrangement_home_required">The Home tab is required.</string>
     <string name="tablet_ui_title">Force tablet UI</string>
-    <string name="tablet_ui_title_description">Enable a landscape interface that is optimized for larger screens regardless of the current screen size</string>
     <string name="filter_arrangement">Arrange filters</string>
 
 <!-- Content settings -->
@@ -195,14 +188,12 @@ while also allowing users to translate our app as well. New, specific strings to
     <string name="scanner_warning">By default, the scanner will NOT reload any metadata of existing songs unless you specify otherwise above. Depending on the size of your library, it make take a while.</string>
 
 <!-- Scanner progress strings-->
-	<string name="scanner_missing_ffmpeg">FFmpeg extractor not detected</string>
     <string name="scanner_missing_storage_perm">The local media scanner requires storage permissions to function</string>
 
     <string name="scanner_btn_idle">Scan</string>
     <string name="scanner_progress_complete">Scan complete</string>
     <string name="scanner_progress_discovering">DiscoveringÃ¢â‚¬Â¦</string>
     <string name="scanner_progress_processing">ProcessingÃ¢â‚¬Â¦</string>
-	<string name="scanner_progress_scanning">ScanningÃ¢â‚¬Â¦</string>
     <string name="scanner_progress_syncing">SyncingÃ¢â‚¬Â¦</string>
 	<string name="scanner_scan_fail">Scanner failed</string>
 
@@ -324,16 +315,13 @@ while also allowing users to translate our app as well. New, specific strings to
     <string name="action_next">Next</string>
     <string name="action_skip">Skip</string>
     <string name="action_cancel">Cancel</string>
-    <string name="info">Information</string>
     <plurals name="second">
         <item quantity="one">1 second</item>
         <item quantity="other">%d seconds</item>
     </plurals>
-    <string name="speed_very_slow">Very slow</string>
     <string name="speed_slow">Slow</string>
     <string name="speed_medium">Medium</string>
     <string name="speed_fast">Fast</string>
-    <string name="speed_very_fast">Very fast</string>
 </resources>
 
 

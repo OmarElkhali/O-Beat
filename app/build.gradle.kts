@@ -28,8 +28,9 @@ android {
         applicationId = "com.obeat.ocompany"
         minSdk = 24
         targetSdk = 36
-        versionCode = 67
-        versionName = "0.9.3.1"
+        // Keep this above the previous public build so Android installs it as an update.
+        versionCode = 69
+        versionName = "0.9.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         // === Forcer le nom affich� de l�app ===
@@ -197,6 +198,7 @@ ksp {
 }
 
 dependencies {
+    testImplementation(libs.junit)
     implementation(libs.guava)
     implementation(libs.coroutines.guava)
     implementation(libs.concurrent.futures)
@@ -235,6 +237,7 @@ dependencies {
     implementation(libs.media3.okhttp)
     implementation(libs.media3.session)
     implementation(libs.media3.workmanager)
+    implementation("androidx.work:work-runtime:2.8.1")
 
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)

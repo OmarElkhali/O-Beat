@@ -64,8 +64,7 @@ import com.zionhuang.innertube.models.ArtistItem
 import com.zionhuang.innertube.models.PlaylistItem
 import com.zionhuang.innertube.models.SongItem
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.drop
 
 @OptIn(FlowPreview::class)
@@ -102,9 +101,10 @@ fun OnlineSearchScreen(
     }
 
     LaunchedEffect(query) {
-        snapshotFlow { query }.debounce { 300L }.collectLatest {
-            viewModel.query.value = query
-        }
+        // A single delayed effect is cancelled by Compose as the user keeps
+        // typing. It avoids starting a flow for every keystroke.
+        delay(250L)
+        viewModel.query.value = query.trim()
     }
 
     LazyColumn(

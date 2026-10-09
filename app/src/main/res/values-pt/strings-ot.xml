@@ -18,7 +18,6 @@
     <string name="queues_empty">Sem filas</string>
     <string name="auto_playlist">Playlist automÃ¡tica</string>
     <string name="select">Modo de seleÃ§Ã£o</string>
-    <string name="like_all">Gostar de todas</string>
     <string name="more_settings">Mais configuraÃ§Ãµes</string>
     <string name="delete_lyric_confirm">Tem certeza que deseja apagar a letra gravada de \"%s\"?</string>
     <string name="tap_show_more">Toque para mostrar mais informaÃ§Ãµes</string>
@@ -59,16 +58,12 @@
     <string name="grp_lyrics_parser">Interpretador</string>
     <string name="grp_lyrics_source">Fontes de letras</string>
     <string name="grp_manual_scanner">AnÃ¡lise manual</string>
-    <string name="grp_proxy">Proxy</string>
     <string name="grp_sync">SincronizaÃ§Ã£o</string>
     <string name="app_info_title">InformaÃ§Ãµes da aplicaÃ§Ã£o</string>
-    <string name="check_for_update">Procurar por atualizaÃ§Ãµes</string>
-    <string name="checking_for_update">A procurar por atualizaÃ§Ãµes</string>
     <string name="device_info_title">InformaÃ§Ãµes do dispositivo</string>
     <string name="help_bug_report_action">Enviar um relatÃ³rio de erro (pelo GitHub)</string>
     <string name="help_contact_email_inquiries">Outras consultas (toque para copiar o e-mail)</string>
     <string name="help_support_forum">Ajuda e apoio (pelo GitHub)</string>
-    <string name="no_updates_available">Nenhuma atualizaÃ§Ã£o disponÃ­vel</string>
     <string name="oss_licenses_title">LicenÃ§as de cÃ³digo aberto</string>
     <string name="wiki">Wiki</string>
     <string name="all_contributors">Mostrar todos os colaboradores</string>
@@ -80,7 +75,6 @@
     <string name="attrib_zhuang">Zion Huang pelo InnerTune</string>
     <string name="attribution_title">AtribuiÃ§Ãµes</string>
     <string name="special_thanks">Agradecimentos especiais</string>
-    <string name="new_interface">Nova organizaÃ§Ã£o do layout</string>
     <string name="player_background_blur">Desfocado</string>
     <string name="player_background_default">Seguir o tema</string>
     <string name="player_background_gradient">Gradiente</string>
@@ -92,7 +86,6 @@
     <string name="tab_arrangement_disable_tip">--- Arraste para baixo aqui para desativar ---</string>
     <string name="tab_arrangement_home_required">A Home Tab nÃ£o pode ser removida.</string>
     <string name="tablet_ui_title">ForÃ§ar interface de tablet</string>
-    <string name="tablet_ui_title_description">Ativar uma interface em modo paisagem que Ã© otimizada para ecrÃ£s maiores, independente do tamanho do ecrÃ£ atual</string>
     <string name="filter_arrangement">Organizar filtros</string>
     <string name="like_autodownload">Descarregar mÃºsicas favoritas automaticamente</string>
     <string name="token_adv_login_description">Este Ã© um mÃ©todo AVANÃ‡ADO de conectar Ã  sua conta. Como uma alternativa ao portal web, pode digitar ou atualizar o seu token de login diretamente aqui. Por exemplo, isto pode fazer com que conectar em vÃ¡rios dispositivos seja mais rÃ¡pido. Note que qualquer formato de token invÃ¡lido qual a app nÃ£o consegue perceber nÃ£o serÃ¡ aceitado</string>
@@ -144,13 +137,11 @@
     <string name="scanner_manual_btn">Executar sincronizaÃ§Ã£o manual</string>
     <string name="scanner_rejected_dir">SeleÃ§Ã£o invÃ¡lida. A pasta de anÃ¡lise nÃ£o pode ser uma subpasta da pasta de descargas, ou ser a prÃ³pria pasta de descargas</string>
     <string name="scanner_warning">Por padrÃ£o, a anÃ¡lise NÃƒO recarregarÃ¡ os metadados de mÃºsicas existentes, exceto que especificar que o queira. Dependendo no tamanho da sua biblioteca, pode demorar um pouco.</string>
-    <string name="scanner_missing_ffmpeg">O extrator FFmpeg nÃ£o foi detetado</string>
     <string name="scanner_missing_storage_perm">A anÃ¡lise de mÃ©dia local requer permissÃµes de armazenamento</string>
     <string name="scanner_btn_idle">Analisar</string>
     <string name="scanner_progress_complete">AnÃ¡lise concluÃ­da</string>
     <string name="scanner_progress_discovering">A descobrirâ€¦</string>
     <string name="scanner_progress_processing">A processarâ€¦</string>
-    <string name="scanner_progress_scanning">A analisarâ€¦</string>
     <string name="scanner_progress_syncing">A sincronizarâ€¦</string>
     <string name="scanner_scan_fail">A anÃ¡lise falhou</string>
     <string name="scanner_ytm_link_fail">O processo de vÃ­nculo de artistas do YouTube falhou</string>
@@ -236,12 +227,9 @@
     <string name="action_next">AvanÃ§ar</string>
     <string name="action_skip">Pular</string>
     <string name="action_cancel">Cancelar</string>
-    <string name="info">InformaÃ§Ã£o</string>
-    <string name="speed_very_slow">Muito lento</string>
     <string name="speed_slow">Lento</string>
     <string name="speed_medium">MÃ©dio</string>
     <string name="speed_fast">RÃ¡pido</string>
-    <string name="speed_very_fast">Muito rÃ¡pido</string>
 </resources>
 
 

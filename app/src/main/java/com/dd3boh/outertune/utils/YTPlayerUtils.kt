@@ -20,14 +20,14 @@ import com.dd3boh.outertune.utils.potoken.PoTokenResult
 import com.zionhuang.innertube.NewPipeUtils
 import com.zionhuang.innertube.YouTube
 import com.zionhuang.innertube.models.YouTubeClient
-import com.zionhuang.innertube.models.YouTubeClient.Companion.ANDROID
-import com.zionhuang.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
-import com.zionhuang.innertube.models.YouTubeClient.Companion.IOS
-import com.zionhuang.innertube.models.YouTubeClient.Companion.TVHTML5
-import com.zionhuang.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
+import com.zionhuang.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY
+import com.zionhuang.innertube.models.YouTubeClient.Companion.VISIONOS
+import com.zionhuang.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import com.zionhuang.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.zionhuang.innertube.models.response.PlayerResponse
+import com.zionhuang.innertube.utils.runCatchingCancellable
 import okhttp3.OkHttpClient
+import kotlin.coroutines.cancellation.CancellationException
 
 object YTPlayerUtils {
 
@@ -35,6 +35,7 @@ object YTPlayerUtils {
 
     private val httpClient = OkHttpClient.Builder()
         .proxy(YouTube.proxy)
+        .protocols(listOf(okhttp3.Protocol.HTTP_1_1))
         .build()
 
     private val poTokenGenerator = PoTokenGenerator()
@@ -44,22 +45,18 @@ object YTPlayerUtils {
      * Do not use other clients for this because it can result in inconsistent metadata.
      * For example other clients can have different normalization targets (loudnessDb).
      *
-     * [com.zionhuang.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
-     * - the correct metadata (like loudnessDb)
-     * - premium formats
-     * - PoToken support (useWebPoTokens = true)
-     * 
-     * TEMPORARY: Using ANDROID_VR_NO_AUTH because PoTokens don't work on emulator
+     * VisionOS is the default because it currently returns direct audio streams without a
+     * WebView BotGuard round-trip. Web clients remain available as fallbacks when needed.
      */
-    private val MAIN_CLIENT: YouTubeClient = ANDROID_VR_NO_AUTH
+    private val MAIN_CLIENT: YouTubeClient = VISIONOS
 
     /**
      * Clients used for fallback streams in case the streams of the main client do not work.
      */
     private val STREAM_FALLBACK_CLIENTS: Array<YouTubeClient> = arrayOf(
-        ANDROID_VR_NO_AUTH,
-//        TVHTML5_SIMPLY_EMBEDDED_PLAYER,
-        IOS, // recent api changes produce error 403 after 30 seconds
+        TVHTML5_SIMPLY,
+        WEB_CREATOR,
+        WEB_REMIX,
     )
 
 
@@ -70,11 +67,19 @@ object YTPlayerUtils {
         val format: PlayerResponse.StreamingData.Format,
         val streamUrl: String,
         val streamExpiresInSeconds: Int,
+        val streamClient: YouTubeClient,
+    )
+
+    fun streamRequestHeaders(client: YouTubeClient): Map<String, String> = mapOf(
+        "User-Agent" to client.userAgent,
+        "Origin" to YouTubeClient.ORIGIN_YOUTUBE_MUSIC,
+        "Referer" to YouTubeClient.REFERER_YOUTUBE_MUSIC,
     )
 
     /**
      * Custom player response intended to use for playback.
-     * Metadata like audioConfig and videoDetails are from [MAIN_CLIENT].
+     * Metadata like audioConfig and videoDetails are from [MAIN_CLIENT], or the working
+     * fallback response when the main request fails before returning metadata.
      * Format & stream can be from [MAIN_CLIENT] or [STREAM_FALLBACK_CLIENTS].
      */
     suspend fun playerResponseForPlayback(
@@ -82,7 +87,7 @@ object YTPlayerUtils {
         playlistId: String? = null,
         audioQuality: AudioQuality,
         connectivityManager: ConnectivityManager,
-    ): Result<PlaybackData> = runCatching {
+    ): Result<PlaybackData> = runCatchingCancellable {
         Log.d(TAG, "Playback info requested: $videoId")
 
         /**
@@ -91,7 +96,7 @@ object YTPlayerUtils {
          * is required even if the streams won't work from this client.
          * This is why it is allowed to be null.
          */
-        val signatureTimestamp = getSignatureTimestampOrNull(videoId)
+        val signatureTimestamp by lazy { getSignatureTimestampOrNull(videoId) }
 
         val isLoggedIn = YouTube.cookie != null
         val sessionId =
@@ -103,25 +108,39 @@ object YTPlayerUtils {
                 YouTube.visitorData
             }
 
-        Log.d(TAG, "[$videoId] signatureTimestamp: $signatureTimestamp, isLoggedIn: $isLoggedIn")
+        Log.d(TAG, "[$videoId] isLoggedIn: $isLoggedIn")
 
-        val (webPlayerPot, webStreamingPot) = getWebClientPoTokenOrNull(videoId, sessionId)?.let {
-            Pair(it.playerRequestPoToken, it.streamingDataPoToken)
-        } ?: Pair(null, null).also {
-            Log.w(TAG, "[$videoId] No po token")
+        var webPlayerPot: String? = null
+        var webStreamingPot: String? = null
+        var didRequestWebPoTokens = false
+
+        /**
+         * BotGuard runs in a WebView and may take several seconds to initialise. Direct clients
+         * (VisionOS) do not need it, so never make normal playback wait for it.
+         */
+        fun ensureWebPoTokens() {
+            if (didRequestWebPoTokens) return
+            didRequestWebPoTokens = true
+            getWebClientPoTokenOrNull(videoId, sessionId)?.let {
+                webPlayerPot = it.playerRequestPoToken
+                webStreamingPot = it.streamingDataPoToken
+            } ?: Log.w(TAG, "[$videoId] No web po token")
         }
 
-        val mainPlayerResponse =
-            YouTube.player(videoId, playlistId, MAIN_CLIENT, signatureTimestamp, webPlayerPot)
-                .getOrThrow()
-
-        val audioConfig = mainPlayerResponse.playerConfig?.audioConfig
-        val videoDetails = mainPlayerResponse.videoDetails
-        val playbackTracking = mainPlayerResponse.playbackTracking
+        if (MAIN_CLIENT.useWebPoTokens) ensureWebPoTokens()
+        val mainPlayerResult =
+            YouTube.player(
+                videoId, playlistId, MAIN_CLIENT,
+                if (MAIN_CLIENT.useSignatureTimestamp) signatureTimestamp else null,
+                webPlayerPot,
+            )
+        val mainPlayerResponse = mainPlayerResult.getOrNull()
+        var lastRequestFailure = mainPlayerResult.exceptionOrNull()
 
         var format: PlayerResponse.StreamingData.Format? = null
         var streamUrl: String? = null
         var streamExpiresInSeconds: Int? = null
+        var streamClient: YouTubeClient? = null
 
         var streamPlayerResponse: PlayerResponse? = null
         for (clientIndex in (-1 until STREAM_FALLBACK_CLIENTS.size)) {
@@ -147,8 +166,14 @@ object YTPlayerUtils {
                     continue
                 }
 
+                if (client.useWebPoTokens) ensureWebPoTokens()
                 streamPlayerResponse =
-                    YouTube.player(videoId, playlistId, client, signatureTimestamp, webPlayerPot)
+                    YouTube.player(
+                        videoId, playlistId, client,
+                        if (client.useSignatureTimestamp) signatureTimestamp else null,
+                        webPlayerPot,
+                    )
+                        .onFailure { lastRequestFailure = it }
                         .getOrNull()
             }
 
@@ -173,13 +198,10 @@ object YTPlayerUtils {
                     streamUrl += "&pot=$webStreamingPot";
                 }
 
-                if (clientIndex == STREAM_FALLBACK_CLIENTS.size - 1) {
-                    /** skip [validateStatus] for last client */
-                    break
-                }
-                if (validateStatus(streamUrl)) {
+                if (validateStatus(streamUrl, client)) {
                     // working stream found
                     Log.i(TAG, "[$videoId] [${client.clientName}] found working stream")
+                    streamClient = client
                     break
                 } else {
                     Log.w(TAG, "[$videoId] [${client.clientName}] got bad http status code")
@@ -188,7 +210,7 @@ object YTPlayerUtils {
         }
 
         if (streamPlayerResponse == null) {
-            throw Exception("Bad stream player response")
+            throw lastRequestFailure ?: Exception("Bad stream player response")
         }
         if (streamPlayerResponse.playabilityStatus.status != "OK") {
             throw PlaybackException(
@@ -206,16 +228,19 @@ object YTPlayerUtils {
         if (streamUrl == null) {
             throw Exception("Could not find stream url")
         }
+        if (streamClient == null) {
+            throw Exception("No verified stream client")
+        }
 
-        Log.d(TAG, "[$videoId] stream url: $streamUrl")
-
+        val metadataResponse = mainPlayerResponse ?: streamPlayerResponse
         PlaybackData(
-            audioConfig,
-            videoDetails,
-            playbackTracking,
+            metadataResponse.playerConfig?.audioConfig,
+            metadataResponse.videoDetails,
+            metadataResponse.playbackTracking,
             format,
             streamUrl,
             streamExpiresInSeconds,
+            streamClient,
         )
     }
 
@@ -249,14 +274,21 @@ object YTPlayerUtils {
      * If this returns true the url is likely to work.
      * If this returns false the url might cause an error during playback.
      */
-    private fun validateStatus(url: String): Boolean {
+    private fun validateStatus(url: String, client: YouTubeClient): Boolean {
         try {
-            val requestBuilder = okhttp3.Request.Builder()
-                .head()
+            val request = okhttp3.Request.Builder()
+                .get()
                 .url(url)
-            val response = httpClient.newCall(requestBuilder.build()).execute()
-            return response.isSuccessful
+                .apply {
+                    streamRequestHeaders(client).forEach { (name, value) -> header(name, value) }
+                    header("Range", "bytes=0-0")
+                }
+                .build()
+            return httpClient.newCall(request).execute().use { response ->
+                response.isSuccessful
+            }
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             reportException(e)
         }
         return false
@@ -300,6 +332,7 @@ object YTPlayerUtils {
         try {
             return poTokenGenerator.getWebClientPoToken(videoId, sessionId)
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             reportException(e)
         }
         return null
